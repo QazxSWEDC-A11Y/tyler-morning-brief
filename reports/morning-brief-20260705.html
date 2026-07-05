@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TYLER MORNING BRIEF Vol.006 — 2026年7月5日</title>
+<style>
+:root{--ink:#0B1F35;--paper:#F8F5EF;--gold:#C0870B;--navy:#1E3A5F;--rule:#DDD8CE;--muted:#EAE6DE;--caption:#7A7368;--green:#1A6B3C;--red:#8B1A1A;--f-serif:Georgia,"Times New Roman","Hiragino Mincho ProN","MS Mincho",serif;--f-sans:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Meiryo",system-ui,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-size:15px;line-height:1.65;max-width:1000px;margin:0 auto;padding:2rem 1.5rem 4rem}
+.masthead{border-top:4px solid var(--ink);border-bottom:1px solid var(--ink);padding:.85rem 0 .7rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem}
+.masthead-meta{font-size:.67rem;text-transform:uppercase;letter-spacing:.1em;color:var(--caption);line-height:1.65}
+.masthead-meta.right{text-align:right}
+.masthead-title{font-family:var(--f-serif);font-size:2.4rem;font-weight:700;letter-spacing:-.02em;line-height:1;white-space:nowrap}
+.kicker-bar{border-bottom:1px solid var(--rule);padding:.45rem 0;display:flex;justify-content:space-between;align-items:center}
+.kicker-text{font-size:.68rem;text-transform:uppercase;letter-spacing:.09em;color:var(--caption)}
+.date-line{display:flex;justify-content:space-between;align-items:baseline;padding:.5rem 0 1.5rem;border-bottom:2px solid var(--ink);margin-bottom:2rem}
+.date-main{font-family:var(--f-serif);font-size:1.15rem;font-weight:700}
+.date-sub{font-size:.7rem;color:var(--caption);letter-spacing:.08em}
+.kpi-strip{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--rule);margin-bottom:2rem}
+.kpi-item{padding:.75rem .9rem;border-right:1px solid var(--rule)}
+.kpi-item:last-child{border-right:none}
+.kpi-label{font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;color:var(--caption);margin-bottom:.2rem}
+.kpi-value{font-family:var(--f-serif);font-size:1.3rem;font-weight:700;line-height:1}
+.kpi-sub{font-size:.62rem;color:var(--caption);margin-top:.15rem}
+.up{color:var(--green)}
+.section-head{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem;margin-top:2.5rem}
+.section-tag{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.17em;background:var(--ink);color:var(--paper);padding:.28rem .75rem;white-space:nowrap}
+.section-tag.japan{background:var(--navy)}
+.section-line{flex:1;height:1px;background:var(--rule)}
+.lead-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:2.5rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--rule)}
+.topics-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.75rem 2.25rem;margin-bottom:2rem}
+.topic-card{border-top:2px solid var(--rule);padding-top:1rem}
+.topic-card.smb{border-top-color:var(--gold)}
+.topic-card.wide{grid-column:1/-1;border-top:3px solid var(--navy)}
+.topic-meta{display:flex;align-items:center;gap:.5rem;margin-bottom:.4rem;flex-wrap:wrap}
+.topic-num{font-size:.6rem;font-weight:700;color:var(--caption);letter-spacing:.1em}
+.topic-cat{font-size:.58rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);font-weight:700}
+.topic-cat.jp{color:var(--navy)}
+.smb-badge{font-size:.55rem;font-weight:700;background:var(--gold);color:white;padding:.1rem .35rem;letter-spacing:.05em}
+.topic-head{font-family:var(--f-serif);font-size:1.08rem;font-weight:700;line-height:1.28;margin-bottom:.5rem}
+.topic-body{font-size:.82rem;color:var(--caption);line-height:1.62;margin-bottom:.7rem}
+.topic-data{font-size:.8rem;font-weight:700;background:var(--muted);padding:.4rem .7rem;margin-bottom:.7rem;line-height:1.45}
+.analysis-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--rule)}
+.analysis-cell{padding:.55rem .7rem;border-right:1px solid var(--rule)}
+.analysis-cell:last-child{border-right:none}
+.analysis-label{font-size:.54rem;text-transform:uppercase;letter-spacing:.14em;color:var(--caption);margin-bottom:.22rem;font-weight:700}
+.analysis-text{font-size:.74rem;line-height:1.5}
+.chart-label{font-size:.64rem;text-transform:uppercase;letter-spacing:.1em;color:var(--caption);margin-bottom:.65rem;font-weight:700}
+.chart-note{font-size:.59rem;color:var(--caption);margin-top:.4rem}
+.footer{margin-top:3rem;border-top:1px solid var(--rule);padding-top:.85rem;display:flex;justify-content:space-between}
+.footer-text{font-size:.63rem;color:var(--caption);line-height:1.65}
+.footer-text a{color:var(--caption)}
+@media(max-width:700px){
+  .masthead{grid-template-columns:1fr;text-align:center}
+  .masthead-meta{display:none}
+  .masthead-title{font-size:1.85rem}
+  .kpi-strip{grid-template-columns:repeat(3,1fr)}
+  .lead-grid,.topics-grid{grid-template-columns:1fr}
+  .analysis-grid{grid-template-columns:1fr}
+  .analysis-cell{border-right:none;border-bottom:1px solid var(--rule)}
+  .analysis-cell:last-child{border-bottom:none}
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-meta">World Business Intelligence<br>毎朝8:00 JST 定期発行</div>
+  <div class="masthead-title">TYLER MORNING BRIEF</div>
+  <div class="masthead-meta right">Vol. 006<br>Sunday Edition</div>
+</header>
+
+<div class="kicker-bar">
+  <span class="kicker-text">世界トピックス 5本 ／ 日本トピックス 5本 ／ ◎ = 中小企業向け情報</span>
+  <span class="kicker-text">Powered by TYLER CEO AI</span>
+</div>
+
+<div class="date-line">
+  <div class="date-main">2026年7月5日（日曜日）</div>
+  <div class="date-sub">SUNDAY, JULY 5, 2026 ／ VOL. 006 ／ 6TH EDITION</div>
+</div>
+
+<div class="kpi-strip">
+  <div class="kpi-item">
+    <div class="kpi-label">IIoT市場（2035年予測）</div>
+    <div class="kpi-value">$964B</div>
+    <div class="kpi-sub up">↑ $276.6B（2025年）</div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-label">グリッド蓄電池市場</div>
+    <div class="kpi-value">$81.6B</div>
+    <div class="kpi-sub">2026年、CAGR 9.1%</div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-label">精密発酵 CAGR</div>
+    <div class="kpi-value">31.5%</div>
+    <div class="kpi-sub">$6.89B→$75.76B（2035）</div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-label">日本半導体投資</div>
+    <div class="kpi-value">¥5兆円</div>
+    <div class="kpi-sub">8社 〜2029年計画</div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-label">訪日インバウンド消費</div>
+    <div class="kpi-value">¥9.5兆</div>
+    <div class="kpi-sub">過去最高更新（2025年）</div>
+  </div>
+</div>
+
+<div class="section-head">
+  <span class="section-tag">World — 世界トピックス</span>
+  <div class="section-line"></div>
+</div>
+
+<div class="lead-grid">
+  <div>
+    <div class="topic-meta">
+      <span class="topic-num">W-01</span>
+      <span class="topic-cat">MANUFACTURING / AI</span>
+    </div>
+    <h2 class="topic-head">産業AI・スマートファクトリー：グローバル採用率47%突破、IIoT市場2035年$964Bへ</h2>
+    <p class="topic-body">
+      2026年、世界のスマートファクトリー採用率が47%に達し前年比+12ptを記録。産業用IoT（IIoT）市場は$276.6B（2025年）から2035年に$964Bへ拡大すると予測される。AIがリアルタイムのセンサーデータを解析し生産効率を+31%改善、計画外ダウンタイムを-43%削減した事例が続出している。製造業でのLLM活用意向は2025年の16%から2026年には35%へ急上昇。コボット（協働ロボット）市場は$11.3Bに達し、受注の70%が非自動車分野からとなった。
+    </p>
+    <div class="topic-data">IIoT $276.6B（2025）→ $964B（2035） ｜ スマートファクトリー採用 47%（前年比+12pt） ｜ コボット市場 $11.3B ｜ 製造業LLM活用 16%→35%</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">Insight</div>
+        <div class="analysis-text">AIとセンサーの融合が「自動化」から「自律化」へシフト。リアルタイム品質管理・予知保全が製造競争力の核心に</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">Impact</div>
+        <div class="analysis-text">中小製造業でもコボット・AIカメラが導入可能なコストに低下。人手不足の解決策として政策補助も整備が進む</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">Opportunity</div>
+        <div class="analysis-text">既存設備へのIIoTリトロフィット（後付けセンサー）、製造データ活用コンサル。省人化投資補助金の申請支援も有望</div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="chart-label">グリッド蓄電池容量：年次追加量（GWh）</div>
+    <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+      <rect width="300" height="200" fill="#F8F5EF"/>
+      <!-- 2024: 170.6 GWh → 170.6/353.4 * 190 = 91.7px -->
+      <text x="55" y="42" text-anchor="end" font-size="9" fill="#7A7368" font-family="sans-serif">2024年</text>
+      <rect x="60" y="28" width="92" height="22" fill="#1E3A5F"/>
+      <text x="156" y="43" font-size="8.5" fill="#1E3A5F" font-family="sans-serif" font-weight="700">170.6 GWh</text>
+      <!-- 2025: 275.3 GWh → 275.3/353.4 * 190 = 147.9px -->
+      <text x="55" y="88" text-anchor="end" font-size="9" fill="#7A7368" font-family="sans-serif">2025年</text>
+      <rect x="60" y="74" width="148" height="22" fill="#0B1F35"/>
+      <text x="212" y="89" font-size="8.5" fill="#0B1F35" font-family="sans-serif" font-weight="700">275.3 GWh</text>
+      <!-- 2026: 353.4 GWh → 190px (max) -->
+      <text x="55" y="134" text-anchor="end" font-size="9" fill="#7A7368" font-family="sans-serif">2026年</text>
+      <rect x="60" y="120" width="190" height="22" fill="#C0870B"/>
+      <text x="254" y="135" font-size="8.5" fill="#C0870B" font-family="sans-serif" font-weight="700">353.4 GWh</text>
+      <text x="255" y="147" font-size="7" fill="#C0870B" font-family="sans-serif">（予測）</text>
+      <!-- Delta labels -->
+      <text x="60" y="172" font-size="8" fill="#1A6B3C" font-family="sans-serif" font-weight="700">2025: +61.3% YoY ／ 2026: +28.4% YoY（予測）</text>
+      <!-- Axis -->
+      <line x1="60" y1="158" x2="250" y2="158" stroke="#DDD8CE" stroke-width="0.5"/>
+      <text x="60" y="170" font-size="7" fill="#7A7368" font-family="sans-serif">0</text>
+      <text x="155" y="170" font-size="7" fill="#7A7368" font-family="sans-serif">177 GWh</text>
+      <text x="245" y="170" font-size="7" fill="#7A7368" font-family="sans-serif" text-anchor="end">353 GWh</text>
+    </svg>
+    <div class="chart-note">出所：IEA Global EV Outlook 2026 ／ Energy Industry Review 2026</div>
+  </div>
+</div>
+
+<div class="topics-grid">
+
+  <div class="topic-card">
+    <div class="topic-meta">
+      <span class="topic-num">W-02</span>
+      <span class="topic-cat">TECHNOLOGY / QUANTUM</span>
+    </div>
+    <h2 class="topic-head">量子コンピュータ商業化：IonQが初の実務タスクでHPCを超越、IBM 1,121量子ビット公開</h2>
+    <p class="topic-body">
+      IonQの36量子ビット機が医療機器向け流体力学シミュレーションで古典HPCを12%上回る性能を記録（2025年3月）——量子コンピュータが実業務タスクで初めてHPCを超えた歴史的マイルストーン。IBMは1,121量子ビットのCondorプロセッサを公開。AWS・Azure・Google Cloud全てでIonQが利用可能となり、クラウドアクセスが商業化を加速する。市場規模は$1.42B（2024年）から2030年に$4.24Bへ拡大。
+    </p>
+    <div class="topic-data">IonQ：HPC比+12%達成（医療機器シミュレーション、2025.03） ｜ IBM：1,121量子ビット Condor ｜ 市場 $1.42B（2024）→ $4.24B（2030）</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">Insight</div>
+        <div class="analysis-text">「量子優越性」が実験から実務へ。製薬・金融・材料設計が最初に恩恵を受ける分野として確定しつつある</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">Impact</div>
+        <div class="analysis-text">現行暗号（RSA等）へのリスクが現実化。ポスト量子暗号への移行が中長期の企業セキュリティ課題に浮上</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">Opportunity</div>
+        <div class="analysis-text">量子クラウドAPIを活用した物流最適化・金融ポートフォリオSaaS。量子セキュリティ移行コンサル需要も増大</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-meta">
+      <span class="topic-num">W-03</span>
+      <span class="topic-cat">FOOD TECH / BIOTECH</span>
+    </div>
+    <h2 class="topic-head">精密発酵・代替タンパク：$6.89B→$75.76B（2035年）、乳製品セグメント主導で産業化加速</h2>
+    <p class="topic-body">
+      精密発酵市場が2026年の$6.89Bから2035年に$75.76B（CAGR 31.47%）へ急成長。乳製品（ラクトース不要・動物不使用）がシェア最大。The EVERY Company（$55M）・Verley（ホエイタンパク、$38M）等に産業実証可能な企業への資本集中が続く。「スケールアップ可能か」という問いへの答えが出た企業に資金が集まるフェーズへ移行した。
+    </p>
+    <div class="topic-data">精密発酵市場 $6.89B（2026）→ $75.76B（2035）CAGR 31.47% ｜ Verley $38M ｜ The EVERY Company $55M ｜ 乳製品セグメントが最大シェア</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">Insight</div>
+        <div class="analysis-text">精密発酵はGLP-1後の次の食品産業パラダイム転換。乳製品→肉→卵の順に商業化が進む構造が明確化</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">Impact</div>
+        <div class="analysis-text">食料安全保障・農業CO₂削減に直結。従来の畜産業への構造的圧力が2030年代に顕在化する</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">Opportunity</div>
+        <div class="analysis-text">日本の発酵技術（味噌・醤油・清酒）とバイオテックの融合。和食材の精密発酵版として輸出競争力の新軸</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-meta">
+      <span class="topic-num">W-04</span>
+      <span class="topic-cat">ENERGY / STORAGE</span>
+    </div>
+    <h2 class="topic-head">グリッド蓄電池：2025年+61%の記録的成長、欧州で初めて大型蓄電池が新規容量の過半数へ</h2>
+    <p class="topic-body">
+      世界の電池貯蔵システム（BESS）新規容量が275.3 GWh（2025年、前年比+61.3%）に達し、2026年は353.4 GWhが見込まれる。BESS市場規模は$81.6B（2026年）→$195B（2036年）。欧州では初めて大型グリッド蓄電池が全新規容量の55%超を占めた。AI超大型データセンターの電力需要急増が蓄電池需要をさらに後押しする構造が定着している。
+    </p>
+    <div class="topic-data">世界 275.3 GWh（2025 +61.3%）→ 353.4 GWh（2026予測） ｜ BESS市場 $81.6B（2026）→ $195B（2036） ｜ 欧州：大型蓄電池が新規容量 55%超（初）</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">Insight</div>
+        <div class="analysis-text">変動性再エネの弱点を蓄電池が補完。電力グリッドのリデザインが進み、系統安定化ビジネスが勃興</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">Impact</div>
+        <div class="analysis-text">電力料金の安定化と再エネ100%達成の実現可能性が向上。中国製セルの価格低下が世界普及を加速</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">Opportunity</div>
+        <div class="analysis-text">工場・商業施設のBESS導入コンサル。日本国内の蓄電池設置補助金（経産省・NEF補助）申請支援サービス</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-card smb">
+    <div class="topic-meta">
+      <span class="topic-num">W-05</span>
+      <span class="topic-cat">FINTECH / PAYMENTS</span>
+      <span class="smb-badge">◎ 中小企業</span>
+    </div>
+    <h2 class="topic-head">組込型金融・越境B2B決済：$115B市場（2026年）、中小企業の海外展開コストが急低下</h2>
+    <p class="topic-body">
+      組込型金融（Embedded Finance）市場が2026年に$115Bへ拡大し、2031年$622B（CAGR 40%）が視野に入る。越境B2B決済市場も年率15%成長。Stripe・Adyen・Wise Business等が中小企業向けのAPI決済・多通貨管理・後払いB2B決済を拡張。日本ではインバウンド消費¥9.5兆円を背景に越境EC×決済需要が急増し、導入障壁が大幅に低下した。
+    </p>
+    <div class="topic-data">組込型金融 $115B（2026）→ $622B（2031）CAGR 40% ｜ 越境B2B決済 $42.7T 年率+15% ｜ Stripe・Adyen・Wise Business 中小向け拡張</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">Insight</div>
+        <div class="analysis-text">中小企業が多通貨決済・後払いB2Bを低コストで利用できる時代に。海外展開のハードルが資本力でなくアイデア力に</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">Impact</div>
+        <div class="analysis-text">輸出中小企業の競争力向上。インバウンド消費に乗る地方中小の越境EC参入が現実的選択肢に</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">Opportunity</div>
+        <div class="analysis-text">越境ECの立ち上げ支援・外貨決済コンサル。海外向けSaaS課金基盤（Stripe Connect等）の実装支援</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section-head">
+  <span class="section-tag japan">Japan — 日本トピックス</span>
+  <div class="section-line"></div>
+</div>
+
+<div class="topics-grid">
+
+  <div class="topic-card">
+    <div class="topic-meta">
+      <span class="topic-num">J-01</span>
+      <span class="topic-cat jp">半導体</span>
+    </div>
+    <h2 class="topic-head">半導体復権：国内8社 ¥5兆円投資計画、TSMC熊本・Sony・Renesas が産業集積を形成</h2>
+    <p class="topic-body">
+      Sony・Mitsubishi Electric・Rohm・東芝・Kioxia・Renesas・富士電機・Rapidusの8社が2029年までに合計¥5兆円（約$30B）の半導体投資計画を公表。政府はJASM（TSMC熊本工場第1・2工場）に¥1.2兆円、Rapidusに¥9,200億円を補助。Sonyは¥1.6兆円をFY2021〜2026にCMOSイメージセンサーに投下し熊本に新工場建設。Renesas甲府工場が12インチ転換後2025年にパワー半導体量産開始。
+    </p>
+    <div class="topic-data">8社合計 ¥5兆円投資（〜2029年） ｜ 政府補助：JASM ¥1.2兆円 ＋ Rapidus ¥9,200億円 ｜ Sony CMOSイメージセンサー ¥1.6兆円</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">Insight</div>
+        <div class="analysis-text">半導体を「産業の米」と定義した官民一体プロジェクトが実装フェーズへ。熊本・北海道等の地方で製造業集積が始動</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">Impact</div>
+        <div class="analysis-text">高賃金製造雇用の地方創出。関連産業（素材・部品・装置）への発注増、周辺不動産・宿泊・飲食に特需発生</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">Opportunity</div>
+        <div class="analysis-text">素材・検査装置・物流サプライヤーへの需要急増。工場立地周辺での労働者向けサービス（宿泊・食事・送迎）</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-meta">
+      <span class="topic-num">J-02</span>
+      <span class="topic-cat jp">観光・ホスピタリティ</span>
+    </div>
+    <h2 class="topic-head">インバウンド消費¥9.5兆円で過去最高：ホスピタリティ市場$49B、地方への分散が加速</h2>
+    <p class="topic-body">
+      訪日外客数4,268万人（前年比+581万人）、旅行消費額¥9.5兆円（過去最高）を記録。日本ホスピタリティ市場は$47.39B（2025年）→$49.34B（2026年）→$60.35B（2031年）へ成長（CAGR 4.12%）。弱い円・ビザ緩和・地方観光開拓が持続成長を牽引。2026年はWBC・アジア大会・PokéPark Kanto開業でさらに需要増が見込まれる。MarriottとHyattが2026年中に地方新ホテルを開業。
+    </p>
+    <div class="topic-data">訪日客 4,268万人（前年比+581万人）｜ 旅行消費 ¥9.5兆円（過去最高）｜ ホスピタリティ市場 $49.34B（2026）→ $60.35B（2031）</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">Insight</div>
+        <div class="analysis-text">インバウンドは「量」から「消費単価」と「地方分散」へシフト。東京・大阪集中から全国展開へ構造が変化</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">Impact</div>
+        <div class="analysis-text">地方宿泊・飲食・交通・観光施設への需要が急拡大。外国語対応・キャッシュレス化が受け入れの競争要件に</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">Opportunity</div>
+        <div class="analysis-text">◎ 地方中小の宿泊・観光施設がインバウンド対応改修・多言語対応を行う際の補助金活用とブランド構築支援</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-card smb">
+    <div class="topic-meta">
+      <span class="topic-num">J-03</span>
+      <span class="topic-cat jp">住宅・建設</span>
+      <span class="smb-badge">◎ 中小企業</span>
+    </div>
+    <h2 class="topic-head">住宅リノベーション市場$21.9B→$32.7B：新築減少でストック活用経済への転換が加速</h2>
+    <p class="topic-body">
+      新築住宅着工件数が2025〜2026年にかけて減少傾向にある一方、日本ホームインプルーブメント市場は$21.91B（2024年）→$32.74B（2033年）CAGR 4.10%で成長。耐震補強・バリアフリー・省エネ改修・テレワーク対応リフォームへの政府補助が整備され、スマートホーム化需要も拡大。耐震・省エネの補助金制度が複数スタックでき、実質的なリノベーションコストが大幅低下している。
+    </p>
+    <div class="topic-data">ホームインプルーブメント市場 $21.91B（2024）→ $32.74B（2033）CAGR 4.10% ｜ 新築着工減少 ｜ 耐震・省エネ・バリアフリー補助金スタック可</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">Insight</div>
+        <div class="analysis-text">新築から「ストック活用」へ市場の重心が移動。中古物件×高品質リノベが都市郊外・地方の不動産流動性を高める</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">Impact</div>
+        <div class="analysis-text">空き家・築古物件の付加価値向上。補助金と金利優遇が組み合わさり、個人によるリフォーム投資採算が改善</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">Opportunity</div>
+        <div class="analysis-text">◎ 地方工務店・リフォーム業者が補助金活用×3D設計AIで営業力強化。補助金コーディネーターとしての収益化も可能</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-card smb">
+    <div class="topic-meta">
+      <span class="topic-num">J-04</span>
+      <span class="topic-cat jp">労働・人材</span>
+      <span class="smb-badge">◎ 中小企業</span>
+    </div>
+    <h2 class="topic-head">特定技能 19分野拡大・123万人受入計画：2030年労働力不足700万人に官民が本腰</h2>
+    <p class="topic-body">
+      政府はFY2028までの外国人労働者受入目標を約123万人（特定技能1号：805,700人）に設定。物流倉庫・リネンサプライ・資源リサイクルを追加し19分野に拡大。飲食業の割当5万人は上限到達のため新規発給停止（初の分野別制限）。技能実習制度を廃止し「育成就労制度」に移行。2030年の労働力不足は650〜700万人と政府が試算しており、外国人材は補完から主力戦力へ位置づけが変わった。
+    </p>
+    <div class="topic-data">受入目標 約123万人（〜FY2028）｜ 特定技能 19分野（3分野追加）｜ 飲食業 割当5万人で新規停止 ｜ 2030年 労働力不足 650〜700万人</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">Insight</div>
+        <div class="analysis-text">外国人労働者は「緊急避難」でなく「恒常的主力」へ。採用・定着・多文化マネジメントが経営の本質的課題に</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">Impact</div>
+        <div class="analysis-text">建設・農業・介護・製造業の中小企業に最大の影響。国籍多様化によるコミュニケーション・労務管理の高度化が必要</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">Opportunity</div>
+        <div class="analysis-text">◎ 特定技能外国人の採用支援・日本語教育・住居確保サービス。多言語対応の労務管理SaaSへの需要が急拡大</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-card wide">
+    <div class="topic-meta">
+      <span class="topic-num">J-05</span>
+      <span class="topic-cat jp">自動車・EV</span>
+    </div>
+    <h2 class="topic-head">日本EV販売2年連続減・ハイブリッド主導戦略：国産BEVシェア75%に高まりながらも普及は緩やか</h2>
+    <p class="topic-body">
+      国内BEV販売は2024年に-5%、2025年に-7.7%（93,584台）と2年連続で減少。世界的EVブームと逆行しているが、一方で日本ブランドのBEVシェアは59%（2021年）から75%（2025年）に上昇——軽BEV（日産サクラ・三菱eKクロスEV）が生活圏内移動の需要を取り込んだ。政府は2035年のガソリン車新規販売禁止方針を維持しつつ、HEV・PHEVを現実的脱炭素解として推進する独自路線を継続。日本EV市場全体は$50.7B（2025年）から2034年に$198.4B（CAGR 15.89%）への成長が予測される。
+    </p>
+    <div class="topic-data">国内BEV販売 -7.7%（2025年、93,584台）｜ 日本ブランドBEVシェア 59%→75% ｜ 市場規模 $50.7B（2025）→ $198.4B（2034）CAGR 15.89%</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">Insight</div>
+        <div class="analysis-text">日本は急速なEV化より「HEV×段階的移行」の独自路線。充電インフラ整備の遅れとエネルギー安保の観点が背景にある</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">Impact</div>
+        <div class="analysis-text">2035年目標に向け充電スタンド設置補助が拡充へ。EV向け部品・整備・電池リサイクルの新市場が形成される</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">Opportunity</div>
+        <div class="analysis-text">◎ EV充電設備設置（住宅・商業施設・駐車場）の補助金申請支援。既存整備工場のEV対応化コンサル・研修サービス</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-text">
+    TYLER MORNING BRIEF ／ 毎朝8:00 JST 定期発行<br>
+    全号のリサーチは世界規模の多角並列検索 ＋ ファクトチェック済み
+  </div>
+  <div class="footer-text" style="text-align:right;">
+    Vol.006 ／ 2026年7月5日（日）<br>
+    Powered by TYLER CEO AI ／ <a href="../index.html">← バックナンバー</a>
+  </div>
+</footer>
+
+</body>
+</html>
