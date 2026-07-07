@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TYLER MORNING BRIEF Vol.008 — 2026年7月7日</title>
+<style>
+:root{--ink:#0B1F35;--paper:#F8F5EF;--gold:#C0870B;--navy:#1E3A5F;--rule:#DDD8CE;--muted:#EAE6DE;--caption:#7A7368;--green:#1A6B3C;--red:#8B1A1A;--f-serif:Georgia,"Times New Roman","Hiragino Mincho ProN","MS Mincho",serif;--f-sans:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Meiryo",system-ui,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-size:15px;line-height:1.65;max-width:1000px;margin:0 auto;padding:2rem 1.5rem 4rem}
+.masthead{border-top:4px solid var(--ink);border-bottom:1px solid var(--ink);padding:.85rem 0 .7rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem}
+.masthead-meta{font-size:.67rem;text-transform:uppercase;letter-spacing:.1em;color:var(--caption);line-height:1.65}
+.masthead-meta.right{text-align:right}
+.masthead-title{font-family:var(--f-serif);font-size:2.4rem;font-weight:700;letter-spacing:-.02em;line-height:1;white-space:nowrap}
+.kicker-bar{border-bottom:1px solid var(--rule);padding:.45rem 0;display:flex;justify-content:space-between;align-items:center}
+.kicker-text{font-size:.68rem;text-transform:uppercase;letter-spacing:.09em;color:var(--caption)}
+.date-line{display:flex;justify-content:space-between;align-items:baseline;padding:.5rem 0 1.5rem;border-bottom:2px solid var(--ink);margin-bottom:2rem}
+.date-main{font-family:var(--f-serif);font-size:1.15rem;font-weight:700}
+.date-sub{font-size:.7rem;color:var(--caption);letter-spacing:.08em}
+.kpi-strip{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--rule);margin-bottom:2rem}
+.kpi-item{padding:.75rem .9rem;border-right:1px solid var(--rule)}
+.kpi-item:last-child{border-right:none}
+.kpi-label{font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;color:var(--caption);margin-bottom:.2rem}
+.kpi-value{font-family:var(--f-serif);font-size:1.3rem;font-weight:700;line-height:1}
+.kpi-sub{font-size:.62rem;color:var(--caption);margin-top:.15rem}
+.up{color:var(--green)}
+.section-head{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem;margin-top:2.5rem}
+.section-tag{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.17em;background:var(--ink);color:var(--paper);padding:.28rem .75rem;white-space:nowrap}
+.section-tag.japan{background:var(--navy)}
+.section-line{flex:1;height:1px;background:var(--rule)}
+.lead-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:2.5rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--rule)}
+.topics-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.75rem 2.25rem;margin-bottom:2rem}
+.topic-card{border-top:2px solid var(--rule);padding-top:1rem}
+.topic-card.smb{border-top-color:var(--gold)}
+.topic-card.wide{grid-column:1/-1;border-top:3px solid var(--navy)}
+.topic-meta{display:flex;align-items:center;gap:.5rem;margin-bottom:.4rem;flex-wrap:wrap}
+.topic-num{font-size:.6rem;font-weight:700;color:var(--caption);letter-spacing:.1em}
+.topic-cat{font-size:.58rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);font-weight:700}
+.topic-cat.jp{color:var(--navy)}
+.smb-badge{font-size:.55rem;font-weight:700;background:var(--gold);color:white;padding:.1rem .35rem;letter-spacing:.05em}
+.topic-head{font-family:var(--f-serif);font-size:1.08rem;font-weight:700;line-height:1.28;margin-bottom:.5rem}
+.topic-body{font-size:.82rem;color:var(--caption);line-height:1.62;margin-bottom:.7rem}
+.topic-data{font-size:.8rem;font-weight:700;background:var(--muted);padding:.4rem .7rem;margin-bottom:.7rem;line-height:1.45}
+.analysis-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--rule)}
+.analysis-cell{padding:.55rem .7rem;border-right:1px solid var(--rule)}
+.analysis-cell:last-child{border-right:none}
+.analysis-label{font-size:.62rem;letter-spacing:.05em;color:var(--caption);margin-bottom:.22rem;font-weight:700}
+.analysis-text{font-size:.74rem;line-height:1.5}
+.chart-label{font-size:.64rem;text-transform:uppercase;letter-spacing:.1em;color:var(--caption);margin-bottom:.65rem;font-weight:700}
+.footer{margin-top:3rem;border-top:1px solid var(--rule);padding-top:.85rem;display:flex;justify-content:space-between}
+.footer-text{font-size:.63rem;color:var(--caption);line-height:1.65}
+.footer-text a{color:var(--caption)}
+@media(max-width:700px){
+  .masthead{grid-template-columns:1fr;text-align:center}
+  .masthead-meta{display:none}
+  .masthead-title{font-size:1.85rem}
+  .kpi-strip{grid-template-columns:repeat(3,1fr)}
+  .lead-grid,.topics-grid{grid-template-columns:1fr}
+  .analysis-grid{grid-template-columns:1fr}
+  .analysis-cell{border-right:none;border-bottom:1px solid var(--rule)}
+  .analysis-cell:last-child{border-bottom:none}
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-meta">World Business Intelligence<br>毎朝8:00 JST 定期発行</div>
+  <div class="masthead-title">TYLER MORNING BRIEF</div>
+  <div class="masthead-meta right">Vol. 008<br>Tuesday Edition</div>
+</header>
+
+<div class="kicker-bar">
+  <span class="kicker-text">世界トピックス 5本 ／ 日本トピックス 5本 ／ ◎ = 中小企業向け情報</span>
+  <span class="kicker-text">Powered by TYLER CEO AI</span>
+</div>
+
+<div class="date-line">
+  <div class="date-main">2026年7月7日（火曜日）</div>
+  <div class="date-sub">TUESDAY, JULY 7, 2026 ／ VOL. 008 ／ 8TH EDITION</div>
+</div>
+
+<div class="kpi-strip">
+  <div class="kpi-item">
+    <div class="kpi-label">自動運転車市場</div>
+    <div class="kpi-value">$364B</div>
+    <div class="kpi-sub up">↑ CAGR 34.84%</div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-label">核融合投資（米国）</div>
+    <div class="kpi-value">$3.02B</div>
+    <div class="kpi-sub">→$6.20B（2031）</div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-label">ステーブルコイン時価総額</div>
+    <div class="kpi-value">$321B</div>
+    <div class="kpi-sub up">↑ YoY +50%超</div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-label">訪日消費（2025年）</div>
+    <div class="kpi-value">¥9.46兆</div>
+    <div class="kpi-sub up">↑ 過去最高更新</div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-label">日本VC調達（H1 2026）</div>
+    <div class="kpi-value">$4.25B</div>
+    <div class="kpi-sub up">↑ +129.6% YoY</div>
+  </div>
+</div>
+
+<!-- WORLD -->
+<div class="section-head">
+  <span class="section-tag">World — 世界トピックス</span>
+  <div class="section-line"></div>
+</div>
+
+<div class="lead-grid">
+  <div>
+    <div class="topic-meta">
+      <span class="topic-num">W-01</span>
+      <span class="topic-cat">AV / MOBILITY</span>
+    </div>
+    <h2 class="topic-head">自動運転・ロボタクシー：$364B市場・Waymo週50万回突破、10倍成長で「商業化」フェーズへ</h2>
+    <p class="topic-body">
+      自動運転車（AV）市場が2026年に$364.08Bに達し、ロボタクシー部門単独でも$8.3Bを記録した（CAGR 51.7%）。Waymoは2026年3月に週間有料乗車回数50万回を達成——2024年5月の5万回から10倍増。2026年2月には$160億の新規調達（評価額$1,260億）を実現し、2026年中に週100万回を目標とする。展開都市数は2026年内に20都市超（東京・ロンドンへの国際展開を含む）に拡大予定。AV市場全体のCAGRは34.84%（2026〜2035年）、テスラFSD・Zoox・Baiduも商業展開を加速している。
+    </p>
+    <div class="topic-data">AV市場 $364.08B（2026）CAGR 34.84% ｜ロボタクシー $8.3B CAGR 51.7% ｜Waymo 週50万回（10倍増）・評価額$1,260億 ｜国際展開：東京・ロンドン</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">選定</div>
+        <div class="analysis-text">ロボタクシーが「実証実験」から「都市交通インフラ」に転換した転換点。乗車回数の10倍増が商業モデルの成立を証明</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">強み</div>
+        <div class="analysis-text">保険・マッピング・充電インフラ・車内広告・データ活用など周辺産業への波及が広大。Waymo展開都市の不動産価値にも影響</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">競合</div>
+        <div class="analysis-text">東京展開に向けたWaymoの参入は日本のタクシー・ライドシェア市場を根底から揺るがす。国内勢の対応戦略が急務</div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="chart-label">Waymo 週間有料乗車回数の推移</div>
+    <svg viewBox="0 0 300 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+      <rect width="300" height="210" fill="#F8F5EF"/>
+      <!-- Scale: max=1,000,000. bar width area = 210px (x:80 to 290). Scale=210/1,000,000=0.00021 -->
+
+      <!-- Bar 1: 2024年5月 50,000 → 10.5px -->
+      <text x="76" y="37" text-anchor="end" font-size="8" fill="#7A7368" font-family="sans-serif">2024年5月</text>
+      <rect x="80" y="24" width="11" height="18" fill="#DDD8CE"/>
+      <text x="95" y="37" font-size="8" fill="#7A7368" font-family="sans-serif">5万回</text>
+
+      <!-- Bar 2: 2025年初 150,000 → 31.5px -->
+      <text x="76" y="67" text-anchor="end" font-size="8" fill="#7A7368" font-family="sans-serif">2025年初頭</text>
+      <rect x="80" y="54" width="32" height="18" fill="#EAE6DE"/>
+      <text x="116" y="67" font-size="8" fill="#7A7368" font-family="sans-serif">15万回</text>
+
+      <!-- Bar 3: 2026年3月 500,000 → 105px -->
+      <text x="76" y="97" text-anchor="end" font-size="8" fill="#0B1F35" font-family="sans-serif">2026年3月</text>
+      <rect x="80" y="84" width="105" height="18" fill="#0B1F35"/>
+      <text x="189" y="97" font-size="8" fill="#0B1F35" font-family="sans-serif" font-weight="700">50万回</text>
+
+      <!-- Bar 4: 2026年末目標 1,000,000 → 210px -->
+      <text x="76" y="127" text-anchor="end" font-size="8" fill="#1E3A5F" font-family="sans-serif">2026年末目標</text>
+      <rect x="80" y="114" width="210" height="18" fill="#1E3A5F"/>
+      <text x="288" y="127" font-size="8" fill="#1E3A5F" font-family="sans-serif" font-weight="700" text-anchor="end">100万回</text>
+
+      <line x1="80" y1="143" x2="290" y2="143" stroke="#DDD8CE" stroke-width="0.5"/>
+
+      <text x="80" y="158" font-size="7.5" fill="#7A7368" font-family="sans-serif">2024年5月比 10倍増を2年以内に達成</text>
+      <text x="80" y="171" font-size="7.5" fill="#7A7368" font-family="sans-serif">展開：米国10都市 → 20都市超（東京・ロンドン含む）</text>
+      <text x="80" y="185" font-size="7.5" fill="#7A7368" font-family="sans-serif">調達：$160億（2026年2月）／評価額 $1,260億</text>
+      <text x="80" y="200" font-size="7" fill="#7A7368" font-family="sans-serif">出所：Waymo公式 ／ IndexBox ／ GlobeNewswire 2026</text>
+    </svg>
+  </div>
+</div>
+
+<div class="topics-grid">
+
+  <div class="topic-card">
+    <div class="topic-meta">
+      <span class="topic-num">W-02</span>
+      <span class="topic-cat">RETAIL / AI</span>
+    </div>
+    <h2 class="topic-head">リテールAI：$18.6B市場・AI接客の成約率が4倍、Amazon売上の35%はAIレコメンド経由</h2>
+    <p class="topic-body">
+      小売AI市場が$18.64B（2026年）に達し、CAGR 34.72%で2031年に拡大見通し。ECのAIチャットボット接客は成約率12.3%対非AI3.1%と4倍の差を記録。AI経由の米国ECサイトトラフィックが前年比4,700%増。Amazonの売上の35%はAIパーソナライゼーションが貢献。EC各社の84%が2026年最重要戦略にAIを挙げており、AI導入小売業者は年間収益+5〜15%・コスト-30%を達成。
+    </p>
+    <div class="topic-data">リテールAI $18.64B（2026）CAGR 34.72% ｜AI接客 成約率12.3% vs 非AI 3.1%（4倍）｜Amazon売上の35%がAI推薦由来 ｜AI経由ECトラフィック +4,700% YoY</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">選定</div>
+        <div class="analysis-text">「検索してから買う」から「AIに聞いてから買う」へ。4,700%のトラフィック増はSEO主導のEC戦略が通用しなくなる転換点</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">強み</div>
+        <div class="analysis-text">小規模ECでもAIチャットボット・レコメンドAPIで大手と同等の接客体験を実装可能。参入障壁は資本でなく実装速度</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">競合</div>
+        <div class="analysis-text">AIに最適化されない商品説明・サイト構造はリコメンドエンジンに拾われにくくなる。「AI可視性」が新たな競争軸に</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-meta">
+      <span class="topic-num">W-03</span>
+      <span class="topic-cat">FINANCE / CRYPTO</span>
+    </div>
+    <h2 class="topic-head">ステーブルコイン$321B・GENIUS Act施行：Visa・PayPalが決済インフラとして本格採用開始</h2>
+    <p class="topic-body">
+      ステーブルコイン時価総額が2026年4月に$3,210億（過去最高）を突破し、前年比50%超成長。米国GENIUS Act（2025年7月署名）の実施規則が2026年3月にOCCより公布。USDT $1,880億・USDC $780億の2強が市場の83%を支配。Visaが年換算$35億のステーブルコイン取引量を達成し、2025年のグローバルステーブルコイン送金総額は$33兆ドルに達した。2030年の発行額はCitiが$1.9兆ドル（ベース）〜$4.0兆ドル（強気）と予測。
+    </p>
+    <div class="topic-data">時価総額 $3,210億（2026年4月・最高値）YoY +50%超 ｜ GENIUS Act実施規則（2026年3月公布）｜Visa 年換算 $35億 ｜送金総額 $33兆（2025）→$1.9〜4.0兆（2030・Citi予測）</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">選定</div>
+        <div class="analysis-text">法整備完了でステーブルコインが「仮想通貨の一種」から「規制された決済インフラ」に格上げ。銀行・Visaの本格採用が証明</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">強み</div>
+        <div class="analysis-text">越境送金・B2B決済でのコスト削減効果は絶大。従来の国際送金（2〜5%手数料・数日）をほぼゼロコスト・即時に代替可能</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">競合</div>
+        <div class="analysis-text">日本の外為法・資金決済法との整合性が課題。海外ステーブルコイン決済サービスが先行する前に国内フィンテックが先手を打つ必要</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-meta">
+      <span class="topic-num">W-04</span>
+      <span class="topic-cat">ENERGY / FUSION</span>
+    </div>
+    <h2 class="topic-head">核融合：民間投資累計$100億超・Helion 1.5億度達成・Microsoftが2028年電力購入契約</h2>
+    <p class="topic-body">
+      核融合市場が米国単独で$3.02B（2026年）→$6.20B（2031年）CAGR 13.4%で成長。Commonwealth Fusion Systems（CFS）がNvidia・Google・Khoslaを含む累計$30億を調達しSPARCトカマク試験機を2027年初プラズマに向けて建設中。Helion Energyは2026年2月にDT燃料で1.5億度を達成（民間初）、Microsoftが50MW発電所からの購入契約締結（目標2028年稼働）。Trump Media×TAE Technologies合併（$60億）で核融合初の上場企業が誕生。民間+公的累計投資は$100億超に。
+    </p>
+    <div class="topic-data">米国核融合市場 $3.02B（2026）→ $6.20B（2031）CAGR 13.4% ｜CFS 累計$30億調達（Nvidia・Google参画）｜Helion 1.5億度達成（2026.02）｜Microsoft 電力購入契約（2028目標）</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">選定</div>
+        <div class="analysis-text">核融合が「夢のエネルギー」から「2028年電力購入契約が存在するエネルギー」に転換。Google・Microsoftの資本参加が信頼性の証明</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">強み</div>
+        <div class="analysis-text">実用化されれば燃料費ほぼゼロ・CO2ゼロ・廃棄物最小という究極のエネルギー源。先行投資でサプライチェーン上流を押さえる機会</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">競合</div>
+        <div class="analysis-text">日本もITER（那珂研究所）で国際核融合研究に参画。民間核融合スタートアップ育成と国際共同研究の連携が競争力の鍵</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-card smb">
+    <div class="topic-meta">
+      <span class="topic-num">W-05</span>
+      <span class="topic-cat">LOGISTICS / ROBOTICS</span>
+      <span class="smb-badge">◎ 中小企業</span>
+    </div>
+    <h2 class="topic-head">倉庫ロボティクス：市場$10.96B・Amazon100万台稼働、世界469万台導入が2026年末に</h2>
+    <p class="topic-body">
+      倉庫ロボティクス市場が$10.96B（2026年）、倉庫自動化全体では$34.17B（CAGR 13.98%）。Amazonが2026年に倉庫ロボット累計100万台稼働を達成（2025年比75%増）。2026年末時点でグローバル5万倉庫以上に469万台が稼働予定。物流ロボット販売台数は45万台（2025年）、2019年比6年で+500%。Walmartが$10億の自動化投資、世界の倉庫60%が2026年に自動化予算を20%以上増額予定。
+    </p>
+    <div class="topic-data">倉庫ロボティクス $10.96B（2026）CAGR 17.5% ｜Amazon累計100万台稼働 ｜世界469万台導入見通し（2026年末）｜販売台数 +500%（6年）</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">選定</div>
+        <div class="analysis-text">倉庫ロボティクスが大手専有技術から汎用インフラへ転換。中小物流事業者でも手の届くAMR（自律移動ロボット）が普及段階に</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">強み</div>
+        <div class="analysis-text">人手不足対策と納品速度向上を同時解決。ロボット導入による生産性向上は短期で回収でき、運転コストが劇的に低下</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">競合</div>
+        <div class="analysis-text">◎ 中小倉庫・EC配送事業者向けに小規模対応AMRの導入支援・ファイナンシング提供。補助金（IT導入補助金等）活用で初期費用を圧縮</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- JAPAN -->
+<div class="section-head">
+  <span class="section-tag japan">Japan — 日本トピックス</span>
+  <div class="section-line"></div>
+</div>
+
+<div class="topics-grid">
+
+  <div class="topic-card">
+    <div class="topic-meta">
+      <span class="topic-num">J-01</span>
+      <span class="topic-cat jp">インバウンド観光</span>
+    </div>
+    <h2 class="topic-head">訪日消費¥9.46兆・4,268万人（2025年最多）：「量から質」へ転換、中国急落・台米韓が補完</h2>
+    <p class="topic-body">
+      2025年の訪日外客が4,268万人（過去最高）、訪日消費¥9.4559兆円（過去最高）、1人あたり¥229,000（過去最高）の3冠達成。2026年Q1は¥2.3兆（+2.5% YoY）。2026年4月は369万人来訪、ただし中国が-50.4%急落する一方、台湾+22.5%・韓国+12.7%・米国+16.6%が補完。JTB 2026年通年予測は4,140万人（-2.8%）ながら消費額は拡大傾向。宿泊費（36.7%）・買い物（25.2%）・飲食（22.9%）の順。
+    </p>
+    <div class="topic-data">2025年 訪日 4,268万人・消費¥9.4559兆円・1人あたり¥22.9万（すべて過去最高）｜2026年Q1消費 ¥2.3兆 +2.5% ｜中国 -50.4%・台湾 +22.5%・米国 +16.6%</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">選定</div>
+        <div class="analysis-text">中国消費急落を高消費力の台米韓が補完する「質への転換」が自律的に進行中。人数より消費額を最大化する戦略に適合</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">強み</div>
+        <div class="analysis-text">東京・大阪に集中する観光需要の地方分散が喫緊課題。地方の宿泊・体験・食の供給不足が成長の最大障壁</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">競合</div>
+        <div class="analysis-text">高消費層向けプレミアム体験（ラグジュアリー宿泊・ガストロノミー・アドベンチャー）の開発が高収益につながる。地方×インバウンドの事業機会</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-meta">
+      <span class="topic-num">J-02</span>
+      <span class="topic-cat jp">防衛・安全保障</span>
+    </div>
+    <h2 class="topic-head">防衛予算¥9.04兆・GDP比2%を2年前倒し達成：三菱重工・川崎・IHIに防衛輸出解禁の波</h2>
+    <p class="topic-body">
+      日本のFY2026防衛予算が¥9.04兆円（$580億）と初めて¥9兆を超え、GDP比2.0%を当初目標（FY2028）の2年前倒しで達成。12年連続の過去最高更新、前年比+9.4%。世界第3位の防衛支出国へ。GCAP次世代戦闘機（英伊日共同、2035年配備）に¥1,600億を計上。武器輸出規制の大幅緩和でオーストラリアが三菱重工製フリゲートのアップグレードを受注。東南アジア・欧州への防衛装備品輸出が本格化。
+    </p>
+    <div class="topic-data">FY2026防衛予算 ¥9.04兆 GDP比2.0%達成（2年前倒し）｜12年連続最高更新 +9.4% YoY ｜GCAP ¥1,600億計上 ｜武器輸出規制緩和→オーストラリアが三菱重工フリゲート受注</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">選定</div>
+        <div class="analysis-text">防衛産業が専業大手だけの市場から、デュアルユース技術（AI・センサー・通信・素材）の民間企業が参入できる市場に転換</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">強み</div>
+        <div class="analysis-text">輸出解禁で三菱重工・川崎・IHI・NECが海外競合入札に参加可能に。防衛技術の民生転用でスピンオフ産業も誕生</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">競合</div>
+        <div class="analysis-text">防衛サプライチェーンの国産化推進で精密部品・電子部品・素材メーカーへの発注拡大が見込まれる。中堅製造業の参入機会</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-card smb">
+    <div class="topic-meta">
+      <span class="topic-num">J-03</span>
+      <span class="topic-cat jp">AI政策・産業</span>
+      <span class="smb-badge">◎ 中小企業</span>
+    </div>
+    <h2 class="topic-head">日本AI促進法施行・¥10兆円公的支援：EU規制と真逆の「促進型」アプローチで国際優位を狙う</h2>
+    <p class="topic-body">
+      AI促進法（2025年5月制定）が同年9月に全面施行。METIのAI・半導体政策に7年で¥10兆円超の公的支援（FY2030まで）、官民合計¥50兆円・経済効果¥160兆円を目標。基盤モデル開発に¥7,250億円の計算資源補助金を5社に交付。2026年12月にAI基本計画を策定（初の国家AIアクションプラン）。EUのAI法が罰則・禁止リスト主体なのに対し、日本は促進・R&D優遇中心の「規制フリー・ゾーン」として国際AIビジネスの集積を狙う。
+    </p>
+    <div class="topic-data">AI促進法 2025年9月全面施行 ｜公的支援 ¥10兆円超（7年）・官民 ¥50兆円 ｜計算資源補助 ¥7,250億円 ｜AI基本計画 2025年12月策定 ｜目標：AI活用人口80%</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">選定</div>
+        <div class="analysis-text">EU規制コストを避けたい企業の「AI特区」として日本が機能し始める可能性。医療・介護・製造でのAI実装に規制障壁が低い</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">強み</div>
+        <div class="analysis-text">政府の計算資源補助で国産基盤モデルが育成中。Sakana AI（ユニコーン）のような新興モデル企業が相次いで登場</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">競合</div>
+        <div class="analysis-text">◎ AI導入補助金・IT導入補助金を活用した中小企業のAI実装支援。政府の「AI活用人口80%」目標を追い風に研修・実装サービスが需要増</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-meta">
+      <span class="topic-num">J-04</span>
+      <span class="topic-cat jp">スタートアップ・VC</span>
+    </div>
+    <h2 class="topic-head">日本VC H1 2026で$42.5億調達（+129.6%）：Sakana AIユニコーン・A16Z東京拠点設置</h2>
+    <p class="topic-body">
+      日本スタートアップのH1 2026調達額が$42.5億（376件）と前年同期比+129.6%で急増。2025年通年は$32.1億（491件、+12.1%）。国内スタートアップ2.5万社超、ユニコーン8〜15社を確認。Sakana AIは創業1年未満でユニコーン到達（評価額¥2,000億超）、Series Bで$1.35億調達（MUFG・四国電力・In-Q-Tel参画）。Andreessen Horowitz（a16z）が東京オフィス開設、Khosla Ventures・NEAも日本への初投資を開始。政府の5カ年計画（¥10兆円）・2027年ユニコーン100社目標を追い風に。
+    </p>
+    <div class="topic-data">H1 2026調達 $42.5億 +129.6% YoY（376件）｜国内スタートアップ 2.5万社超 ｜a16z東京拠点開設 ｜Sakana AI ¥200B+評価額でユニコーン ｜政府目標：2027年ユニコーン100社</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">選定</div>
+        <div class="analysis-text">H1の+129%急増は一過性でなく構造的転換の証拠。グローバルトップTVCが東京拠点を構える動きが先行指標として最も重要</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">強み</div>
+        <div class="analysis-text">大企業のCVC設置・スタートアップ買収が加速。AI・ロボティクス・宇宙・バイオで深技術（ディープテック）スタートアップへの資金流入が顕著</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">競合</div>
+        <div class="analysis-text">大企業がCVCを通じてスタートアップの技術・人材を取り込む「オープンイノベーション」が事業創出の新定番に。社内起業家の輩出が急務</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-card wide">
+    <div class="topic-meta">
+      <span class="topic-num">J-05</span>
+      <span class="topic-cat jp">コーポレートガバナンス</span>
+    </div>
+    <h2 class="topic-head">TSEガバナンス改革：PBR1倍割れ 50%→27%に改善・自社株買い10年で6倍、M&A活発化へ</h2>
+    <p class="topic-body">
+      東証によるPBR・ROE改善要求（2022年〜）の効果が数値に表れ始めた。プライム市場のPBR1倍未満企業が約50%（2022年）→27%（2025年）に低下、平均PBRは1.1→1.4（+27%）、平均ROEは8.4%→9.0%に上昇。プライム企業の98%超が独立社外取締役1/3以上を達成、85%以上が指名・報酬委員会を設置。自社株買いは10年で約6倍に増加、政策保有株（相互持合い）の売却も過去最速ペース。会社法改正（2024年5月成立）が2026年に施行され、少数株主保護とTOBルール厳格化でM&A環境が整備。
+    </p>
+    <div class="topic-data">PBR1倍割れ 50%（2022）→27%（2025）｜平均PBR 1.1→1.4（+27%）｜平均ROE 8.4%→9.0% ｜自社株買い 10年で6倍 ｜会社法改正 2026年施行</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">選定</div>
+        <div class="analysis-text">ガバナンス改革が「要求」から「成果」に移行。PBR改善は投資家の期待が経営に反映された証拠であり、資本効率重視の経営が定着しつつある</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">強み</div>
+        <div class="analysis-text">政策保有株の解消と会社法改正でM&A・MBO・子会社上廃が活発化。割安な日本株への海外アクティビストの関心が継続</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">競合</div>
+        <div class="analysis-text">非中核子会社の売却・統合機会が拡大。カーブアウト・MBO案件へのPEファンド参入が相次ぎ、M&Aアドバイザリー需要が急増</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-text">
+    TYLER MORNING BRIEF ／ 毎朝8:00 JST 定期発行<br>
+    全号のリサーチは世界規模の多角並列検索 ＋ ファクトチェック済み
+  </div>
+  <div class="footer-text" style="text-align:right;">
+    Vol.008 ／ 2026年7月7日（火）<br>
+    Powered by TYLER CEO AI ／ <a href="../index.html">← バックナンバー</a>
+  </div>
+</footer>
+
+</body>
+</html>
