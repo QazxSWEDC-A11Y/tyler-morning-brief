@@ -19,9 +19,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-siz
 .masthead-title{font-family:var(--f-serif);font-size:2.4rem;font-weight:700;letter-spacing:-.02em;line-height:1;white-space:nowrap}
 .kicker-bar{border-bottom:1px solid var(--rule);padding:.45rem 0;margin-bottom:2rem;display:flex;justify-content:space-between;align-items:center}
 .kicker-text{font-size:.68rem;text-transform:uppercase;letter-spacing:.09em;color:var(--caption)}
-/* PAGE LAYOUT */
 .page-layout{display:grid;grid-template-columns:228px 1fr;gap:2.5rem;align-items:start}
-/* SIDEBAR */
 .sidebar{position:sticky;top:1.5rem}
 .sidebar-head{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.17em;background:var(--ink);color:var(--paper);padding:.3rem .75rem;display:block}
 .sidebar-list{list-style:none;border:1px solid var(--rule);border-top:none}
@@ -32,11 +30,9 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-siz
 .si-vol{font-size:.56rem;font-weight:700;color:var(--caption);letter-spacing:.1em;white-space:nowrap}
 .si-date{font-size:.67rem;font-weight:700;color:var(--ink)}
 .si-title{font-size:.66rem;color:var(--caption);line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-/* SECTION HEAD */
 .section-head{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
 .section-tag{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.17em;background:var(--ink);color:var(--paper);padding:.28rem .75rem;white-space:nowrap}
 .section-line{flex:1;height:1px;background:var(--rule)}
-/* FEATURED CARD */
 .report-card.featured{border:2px solid var(--gold);background:#fff;display:grid;grid-template-columns:200px 1fr;text-decoration:none;color:inherit;position:relative;transition:box-shadow .15s ease;margin-bottom:1.5rem}
 .report-card.featured:hover{box-shadow:0 6px 28px rgba(11,31,53,.14)}
 .report-card.featured .card-header{background:var(--ink);padding:1.5rem 1.3rem;display:flex;flex-direction:column;justify-content:center;gap:.4rem}
@@ -44,9 +40,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-siz
 .report-card.featured .card-body{padding:1.1rem 1.5rem .9rem;display:flex;flex-direction:column;gap:.5rem}
 .report-card.featured .card-topics{display:grid;grid-template-columns:1fr 1fr;gap:.2rem 1.4rem;flex:1}
 .report-card.featured .card-footer{border-top:1px solid var(--rule);padding:.6rem 1.5rem;display:flex;justify-content:space-between;align-items:center}
-/* RECENT 2-COL GRID */
 .recent-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.15rem}
-/* ARCHIVE CARDS */
 .report-card{border:1px solid var(--rule);background:#fff;display:flex;flex-direction:column;transition:box-shadow .15s ease;position:relative;text-decoration:none;color:inherit}
 .report-card:hover{box-shadow:0 4px 18px rgba(11,31,53,.12)}
 .report-card:focus{outline:2px solid var(--gold);outline-offset:2px}
@@ -91,7 +85,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-siz
 
 <div class="kicker-bar">
   <span class="kicker-text">発行済み全号 ／ 最新号は毎朝更新 ／ ◎ = 中小企業向けトピック含む</span>
-  <span class="kicker-text">Vol.001 〜 Vol.017 掲載中</span>
+  <span class="kicker-text">Vol.001 〜 Vol.021 掲載中</span>
 </div>
 
 <div class="page-layout">
@@ -100,6 +94,30 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-siz
   <aside class="sidebar">
     <span class="sidebar-head">📁 バックナンバー</span>
     <ul class="sidebar-list">
+      <li class="sidebar-item">
+        <a href="reports/morning-brief-20260715.html" target="_blank" rel="noopener">
+          <div class="si-top"><span class="si-vol">Vol.016</span><span class="si-date">7/15 水</span></div>
+          <div class="si-title">プライベートクレジット$1.7兆→$4兆・ラピダス2nm成功・GX¥150兆</div>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="reports/morning-brief-20260714.html" target="_blank" rel="noopener">
+          <div class="si-top"><span class="si-vol">Vol.015</span><span class="si-date">7/14 火</span></div>
+          <div class="si-title">Fed 3.625%・日銀1.00%（95年来高）・太陽光$3,650億</div>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="reports/morning-brief-20260713.html" target="_blank" rel="noopener">
+          <div class="si-top"><span class="si-vol">Vol.014</span><span class="si-date">7/13 月</span></div>
+          <div class="si-title">米リショアリング民間投資・Waymo週50万回・日本M&amp;A¥35.7兆</div>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="reports/morning-brief-20260712.html" target="_blank" rel="noopener">
+          <div class="si-top"><span class="si-vol">Vol.013</span><span class="si-date">7/12 日</span></div>
+          <div class="si-title">世界EV 2,300万台・BYD首位・量子コンピュータCAGR 41.8%</div>
+        </a>
+      </li>
       <li class="sidebar-item">
         <a href="reports/morning-brief-20260711.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.012</span><span class="si-date">7/11 土</span></div>
@@ -175,34 +193,34 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-siz
     </ul>
   </aside>
 
-  <!-- MAIN: latest 5 -->
+  <!-- MAIN -->
   <main>
     <div class="section-head">
       <span class="section-tag" style="background:var(--gold);">★ 最新号 / LATEST</span>
       <div class="section-line"></div>
     </div>
 
-    <!-- Vol.017 FEATURED -->
-    <a class="report-card featured" href="reports/morning-brief-20260716.html" target="_blank" rel="noopener">
+    <!-- Vol.021 FEATURED -->
+    <a class="report-card featured" href="reports/morning-brief-20260720.html" target="_blank" rel="noopener">
       <div class="card-header">
-        <div class="card-vol">Vol. 017</div>
-        <div class="card-date">2026.07.16</div>
-        <div class="card-day">木曜日</div>
+        <div class="card-vol">Vol. 021</div>
+        <div class="card-date">2026.07.20</div>
+        <div class="card-day">月曜日</div>
       </div>
       <div class="card-body">
         <div class="card-format">世界5本 ＋ 日本5本</div>
-        <div class="card-headline">AIデータセンター$3,700億・AIエージェントROI 171%・SMB AI活用89%、防衛費9兆円・インバウンド9.5兆円・日米関税10%へ</div>
+        <div class="card-headline">AI医療診断$8.9B（5年8倍）・量子センシングCAGR28%・新興国フィンテック$320B、政府AI予算6,200億円・出生率0.97・海外M&amp;A9.8兆円</div>
         <ul class="card-topics">
-          <li>AIインフラ：MS/Amazon/Google 各社$60〜105B・2030年$3兆累積必要</li>
-          <li>AIエージェント：$10.8B CAGR44%・企業アプリ40%統合・ROI 171%</li>
-          <li>GLP-1肥満薬：経口版承認・企業薬剤費11.4%急上昇・3,000万人市場</li>
-          <li>サプライチェーン：CEO81%ニアショア計画・貿易25%が3年以内に移転</li>
-          <li class="smb">◎ 中小AI活用：89%（2023年36%）・ROI 3.7倍・週5.6h削減</li>
-          <li>防衛費：9.04兆円（+9.4%）・スタンドオフミサイル・SHIELD無人機</li>
-          <li>インバウンド：消費9.5兆円・訪日4,268万人・観光庁予算2.4倍</li>
-          <li>外資VC：H1 $42.5億 +130%・a16z日本オフィス・ユニコーン10社</li>
-          <li class="smb">◎ 中小賃上げ：5.26%・35.5%が防衛的賃上げ・分配率80%</li>
-          <li>日米関税：IEEPA違憲判決→10%付加税・自動車輸出▲20%</li>
+          <li>AI医療診断：$1.1B→$8.9B（5年8倍）・FDA承認950件超・日本診療報酬加算</li>
+          <li>再保険/CAT Bond：$21.4B発行・自然災害損失$153B・気候リスクの金融化</li>
+          <li>クリエイター経済：$4,800億・フルタイムクリエイター5,000万人・AIが後押し</li>
+          <li>量子センシング：$1.8億 CAGR 28%・GPS不要ナビ・地下探査・脳磁図</li>
+          <li class="smb">◎ 新興国フィンテック：残高$320B・審査期間14日→24時間</li>
+          <li>政府AI戦略2.0：予算6,200億円・手続き95%AI処理（2027目標）</li>
+          <li>出生率0.97（過去最低）・少子化対策第2弾10.2兆円</li>
+          <li class="smb">◎ 士業DX・AI会計：クラウド会計導入率61%（+29pt）</li>
+          <li>スポーツ経済圏：12.5兆円→15兆円（2030）・新スタジアム15超</li>
+          <li>日本海外M&amp;A：9.8兆円・インド向け+68%・過去最高水準</li>
         </ul>
       </div>
       <div class="card-footer">
@@ -217,118 +235,118 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-siz
     </div>
     <div class="recent-grid">
 
-      <!-- Vol.016 -->
-      <a class="report-card" href="reports/morning-brief-20260715.html" target="_blank" rel="noopener">
+      <!-- Vol.020 -->
+      <a class="report-card" href="reports/morning-brief-20260719.html" target="_blank" rel="noopener">
         <span class="badge-prev">前号</span>
         <div class="card-header">
-          <div class="card-vol">Vol. 016</div>
-          <div class="card-date">2026.07.15</div>
-          <div class="card-day">水曜日</div>
-        </div>
-        <div class="card-body">
-          <div class="card-format">世界5本 ＋ 日本5本</div>
-          <div class="card-headline">プライベートクレジット$1.7兆→$4兆・気候テックVC$560億・世界IPO+34%、ラピダス2nm成功・水素¥15兆・GX¥150兆</div>
-          <ul class="card-topics">
-            <li>プライベートクレジット：$1.7兆→$4兆（2030）CAGR 11.8%</li>
-            <li>気候テックVC：$560億・CCUS・蓄電池・水素が三大成長領域</li>
-            <li>世界IPO：H1 2026 件数+34%・Klarna $4.5B・CoreWeave $1.5B</li>
-            <li>生成AI著作権：EU AI Act施行・米著作権局「AI生成物は保護対象外」</li>
-            <li class="smb">◎ 代替タンパク：$25.6B→$94.4B（2033）CAGR19.7%</li>
-            <li>ラピダス：2nm試作成功（2026年5月）・量産交渉開始</li>
-            <li>水素・アンモニア：官民¥15兆円・IHI専焼タービン商用運転</li>
-            <li>ASEAN展開：対ASEAN FDI +18%・63%が追加投資計画</li>
-            <li class="smb">◎ FC・多店舗DX：27兆円市場・AI発注廃棄▲30%</li>
-            <li>GX・カーボン：経済移行債¥20兆・ETS 2028年義務化</li>
-          </ul>
-        </div>
-        <div class="card-footer">
-          <span class="card-cta">→ 読む</span>
-          <span class="card-count">10トピックス</span>
-        </div>
-      </a>
-
-      <!-- Vol.015 -->
-      <a class="report-card" href="reports/morning-brief-20260714.html" target="_blank" rel="noopener">
-        <span class="badge-prev">前号</span>
-        <div class="card-header">
-          <div class="card-vol">Vol. 015</div>
-          <div class="card-date">2026.07.14</div>
-          <div class="card-day">火曜日</div>
-        </div>
-        <div class="card-body">
-          <div class="card-format">世界5本 ＋ 日本5本</div>
-          <div class="card-headline">Fed 3.625%・日銀1.00%（95年来高）・政策大分岐、太陽光$3,650億・越境決済$193〜238億、IT人材80万人ギャップ</div>
-          <ul class="card-topics">
-            <li>中央銀行：Fed 175bp引き下げ・日銀1.00%（95年来高）・ECB〜2.00%</li>
-            <li>太陽光：2,383GW・$3,650億投資・ストレージ$200/kWh突破</li>
-            <li>重要鉱物：リチウム+16%・中国コバルト70%・EXIM $148億LOI</li>
-            <li>サイバー：$3,080億・ゼロトラスト61%・AI侵害検知241→51日</li>
-            <li class="smb">◎ 越境決済：$193〜238億・80ヶ国RTP・ステーブルコイン$3,000億</li>
-            <li>円・為替：USD/JPY 162円・GS目標165円・金利差250bp継続</li>
-            <li>スマートシティ：DX人材230万人・スーパーシティ2拠点</li>
-            <li>介護：人材不足25万人・ロボットCAGR 67%・採用率8%</li>
-            <li class="smb">◎ 製造業DX：IT補助金50〜67%・AI×PLC</li>
-            <li>教育：EdTech $177.7億 CAGR19%・IT人材ギャップ80万人</li>
-          </ul>
-        </div>
-        <div class="card-footer">
-          <span class="card-cta">→ 読む</span>
-          <span class="card-count">10トピックス</span>
-        </div>
-      </a>
-
-      <!-- Vol.014 -->
-      <a class="report-card" href="reports/morning-brief-20260713.html" target="_blank" rel="noopener">
-        <span class="badge-prev">前号</span>
-        <div class="card-header">
-          <div class="card-vol">Vol. 014</div>
-          <div class="card-date">2026.07.13</div>
-          <div class="card-day">月曜日</div>
-        </div>
-        <div class="card-body">
-          <div class="card-format">世界5本 ＋ 日本5本</div>
-          <div class="card-headline">米国リショアリング民間投資・Waymo週50万回、日本DC投資¥3.7兆・M&amp;A¥35.7兆・出生率1.14過去最低</div>
-          <ul class="card-topics">
-            <li>リショアリング：CHIPS/IRA民間投資・製造建設2倍・雇用36万人</li>
-            <li>mRNA治療薬：CAGR 18.4%→$1,001億（2033）</li>
-            <li>ソーシャルコマース $6.1兆・TikTok Shop+48%</li>
-            <li>自動運転：Waymo週50万回・$1,260億・CAGR 71.9%</li>
-            <li class="smb">◎ SaaS $1,170億・SMBチャーン24〜48%・AI機能が切り札</li>
-            <li>日本M&amp;A：5,115件・¥35.7兆・2年連続最高</li>
-            <li>防衛費9兆353億円（GDP比1.9%）・GCAP・SHIELD</li>
-            <li>日本DC：Microsoft¥1.5兆・AWS¥2.3兆・電力問題</li>
-            <li class="smb">◎ 飲食DX：倒産900件・人手不足80%・3点DXが生存戦略</li>
-            <li>出生数67.1万人・出生率1.14（過去最低）</li>
-          </ul>
-        </div>
-        <div class="card-footer">
-          <span class="card-cta">→ 読む</span>
-          <span class="card-count">10トピックス</span>
-        </div>
-      </a>
-
-      <!-- Vol.013 -->
-      <a class="report-card" href="reports/morning-brief-20260712.html" target="_blank" rel="noopener">
-        <span class="badge-prev">前号</span>
-        <div class="card-header">
-          <div class="card-vol">Vol. 013</div>
-          <div class="card-date">2026.07.12</div>
+          <div class="card-vol">Vol. 020</div>
+          <div class="card-date">2026.07.19</div>
           <div class="card-day">日曜日</div>
         </div>
         <div class="card-body">
           <div class="card-format">世界5本 ＋ 日本5本</div>
-          <div class="card-headline">世界EV 2,300万台・BYD首位・量子コンピュータCAGR 41.8%・日本越境EC+14.6%</div>
+          <div class="card-headline">世界蓄電158GW（5年7倍）・eVTOL$21.6億・SiC/GaN CAGR26%、TOD$45億超・建設DX・洋上風力10GW・EV電池$164億</div>
           <ul class="card-topics">
-            <li>世界EV：2,300万台・シェア27%・BYD首位・電池コスト低下</li>
-            <li>量子コンピュータ：$1.2億 CAGR 41.8%・IonQ+202%</li>
-            <li>高級品：$1,841億・中国底打ち・米国消費が牽引</li>
-            <li>医療AI：FDA承認1,451件・病院75%導入</li>
-            <li class="smb">◎ ハイブリッドワーク：ROI 280〜420%・在宅深作業6.2時間</li>
-            <li>日本EV：比率3.5%（過去最高）・補助金¥130万</li>
-            <li>スタートアップ：VC¥7,793億・ユニコーン15社</li>
-            <li>フードテック：¥1,341億→¥2,113億（2030）</li>
-            <li class="smb">◎ 越境EC：+14.6%・円安が輸出競争力を構造的に押し上げ</li>
-            <li>労働市場：求人倍率1.17・賃上げ+5.46%</li>
+            <li>スマートグリッド/蓄電：158GW(2026E)・2021年比7.2倍</li>
+            <li>eVTOL都市航空：$11.9億→$21.6億 CAGR 29.7%</li>
+            <li>世界年金資産：$68.3兆→$70.9兆(2026E)</li>
+            <li>SiC/GaN半導体：$25.3億→$161.7億(2034) CAGR 26.1%</li>
+            <li class="smb">◎ パラメトリック保険：$210.9億・自動支払い24〜48時間</li>
+            <li>TOD鉄道連携開発：渋谷・品川・池袋 $45億超</li>
+            <li class="smb">◎ 建設DX/BIM義務化：中小工務店直撃・2026年度始動</li>
+            <li>デジタル政府：行政手続き75%デジタル化・2027年95%目標</li>
+            <li>洋上風力：2030年10GW目標・第3次公募3GW始動</li>
+            <li>EV電池/全固体：$86.1億→$163.9億(2031)・トヨタ2027〜28年量産</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <span class="card-cta">→ 読む</span>
+          <span class="card-count">10トピックス</span>
+        </div>
+      </a>
+
+      <!-- Vol.019 -->
+      <a class="report-card" href="reports/morning-brief-20260718.html" target="_blank" rel="noopener">
+        <span class="badge-prev">前号</span>
+        <div class="card-header">
+          <div class="card-vol">Vol. 019</div>
+          <div class="card-date">2026.07.18</div>
+          <div class="card-day">土曜日</div>
+        </div>
+        <div class="card-body">
+          <div class="card-format">世界5本 ＋ 日本5本</div>
+          <div class="card-headline">ヒューマノイドロボット2030年$153億・CRISPR$220万承認・物流自動化$531億、メガバンクステーブルコイン・診療報酬+3.09%</div>
+          <ul class="card-topics">
+            <li>ヒューマノイドロボット：$41億(2026E)→$153億(2030) CAGR 39.2%</li>
+            <li>CRISPR遺伝子療法：10か国超承認・$220万/回の根治薬</li>
+            <li>物流自動化：$531億(2026)→$2,093億(2036) CAGR 14.7%</li>
+            <li>半導体装置：ASML €430〜450億・市場$1,659億（過去最高）</li>
+            <li class="smb">◎ サブスクリプション経済：$7,388億 CAGR 18.2%</li>
+            <li class="smb">◎ 物流DX：改正法施行・次世代物流9,627億円</li>
+            <li>インシュアテック：$16.7億→$100億超(2036) CAGR 19.6%</li>
+            <li>メガバンクステーブルコイン：3行・2028年1兆円B2B目標</li>
+            <li>コンビニ革新：セブン・ローソンリテールメディア8,700店</li>
+            <li>診療報酬+3.09%・電子カルテ標準化2030年目標</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <span class="card-cta">→ 読む</span>
+          <span class="card-count">10トピックス</span>
+        </div>
+      </a>
+
+      <!-- Vol.018 -->
+      <a class="report-card" href="reports/morning-brief-20260717.html" target="_blank" rel="noopener">
+        <span class="badge-prev">前号</span>
+        <div class="card-header">
+          <div class="card-vol">Vol. 018</div>
+          <div class="card-date">2026.07.17</div>
+          <div class="card-day">金曜日</div>
+        </div>
+        <div class="card-body">
+          <div class="card-format">世界5本 ＋ 日本5本</div>
+          <div class="card-headline">LEO衛星$184億→$546億・ロボタクシーWaymo$1,260億・SMR$35→$141億、原発15基33GW・アニメ輸出1.58兆円</div>
+          <ul class="card-topics">
+            <li>LEO衛星市場：$184億(2026E)→$546億(2033) CAGR 16.8%</li>
+            <li>ロボタクシー：Waymo$1,260億・2032年市場$969億</li>
+            <li>長寿バイオ：$232億(2026)・2年で$26億調達・35件ディール</li>
+            <li>SMR小型モジュール炉：$35億→$141億(2035) CAGR 14.8%</li>
+            <li class="smb">◎ 遠隔医療SaaS：$1,230億・月5〜15ドルで採用競争力に直結</li>
+            <li>柏崎刈羽再稼働：14年ぶり・稼働炉15基33GW・2030年22%</li>
+            <li class="smb">◎ キャッシュレス58%：QR4倍超・売上データ融資が現実に</li>
+            <li>アニメ輸出：1.58兆円（初めて国内超え）・2033年6兆円目標</li>
+            <li>医療DXロードマップ：クラウド化義務化・2030年全医療機関</li>
+            <li>東証CGコード改定：資本効率が最終評価指標・ESGと一体化</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <span class="card-cta">→ 読む</span>
+          <span class="card-count">10トピックス</span>
+        </div>
+      </a>
+
+      <!-- Vol.017 -->
+      <a class="report-card" href="reports/morning-brief-20260716.html" target="_blank" rel="noopener">
+        <span class="badge-prev">前号</span>
+        <div class="card-header">
+          <div class="card-vol">Vol. 017</div>
+          <div class="card-date">2026.07.16</div>
+          <div class="card-day">木曜日</div>
+        </div>
+        <div class="card-body">
+          <div class="card-format">世界5本 ＋ 日本5本</div>
+          <div class="card-headline">AIデータセンター$3,700億・AIエージェントROI 171%・SMB AI活用89%、防衛費9兆円・インバウンド9.5兆円・日米関税10%</div>
+          <ul class="card-topics">
+            <li>AIインフラ：MS/Amazon/Google 各社$60〜105B・2030年$3兆累積</li>
+            <li>AIエージェント：$10.8B CAGR44%・企業アプリ40%統合・ROI 171%</li>
+            <li>GLP-1肥満薬：経口版承認・企業薬剤費11.4%急上昇</li>
+            <li>サプライチェーン：CEO81%ニアショア計画・貿易25%が3年以内に移転</li>
+            <li class="smb">◎ 中小AI活用：89%（2023年36%）・ROI 3.7倍・週5.6h削減</li>
+            <li>防衛費：9.04兆円（+9.4%）・スタンドオフミサイル・SHIELD</li>
+            <li>インバウンド：消費9.5兆円・訪日4,268万人・観光庁予算2.4倍</li>
+            <li>外資VC：H1 $42.5億 +130%・a16z日本オフィス開設</li>
+            <li class="smb">◎ 中小賃上げ：5.26%・35.5%が防衛的賃上げ</li>
+            <li>日米関税：IEEPA違憲判決→10%付加税・自動車輸出▲20%</li>
           </ul>
         </div>
         <div class="card-footer">
@@ -343,8 +361,8 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-siz
 
 <footer class="footer">
   <div class="footer-text">TYLER MORNING BRIEF ／ 毎朝定期発行<br>全号のリサーチは世界規模の多角並列検索 ＋ ファクトチェック済み</div>
-  <div class="footer-text" style="text-align:right;">最新号：Vol.017 ／ 2026年7月16日<br>
-    <a href="reports/morning-brief-20260716.html" style="color:var(--navy);font-weight:700;">→ 最新号を読む</a>
+  <div class="footer-text" style="text-align:right;">最新号：Vol.021 ／ 2026年7月20日<br>
+    <a href="reports/morning-brief-20260720.html" style="color:var(--navy);font-weight:700;">→ 最新号を読む</a>
   </div>
 </footer>
 </body>
