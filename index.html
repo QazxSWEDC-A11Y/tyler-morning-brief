@@ -31,6 +31,10 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-siz
 .si-vol{font-size:.56rem;font-weight:700;color:var(--caption);letter-spacing:.1em;white-space:nowrap}
 .si-date{font-size:.67rem;font-weight:700;color:var(--ink)}
 .si-title{font-size:.66rem;color:var(--caption);line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.sidebar-extra{display:none}
+.sidebar-extra.open{display:block}
+.sidebar-toggle{display:block;width:100%;padding:.38rem .75rem;background:var(--muted);border:none;border-top:1px solid var(--rule);font-size:.62rem;color:var(--navy);font-weight:700;text-align:center;cursor:pointer;font-family:var(--f-sans);letter-spacing:.04em}
+.sidebar-toggle:hover{background:var(--rule)}
 .section-head{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
 .section-tag{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.17em;background:var(--ink);color:var(--paper);padding:.28rem .75rem;white-space:nowrap}
 .section-line{flex:1;height:1px;background:var(--rule)}
@@ -95,6 +99,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-siz
   <aside class="sidebar">
     <span class="sidebar-head">📁 バックナンバー</span>
 
+    <!-- 2026年8月 (3件 — 全件表示) -->
     <span class="sidebar-month">2026年8月 — 3件</span>
     <ul class="sidebar-list">
       <li class="sidebar-item">
@@ -106,7 +111,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-siz
       <li class="sidebar-item">
         <a href="reports/morning-brief-20260802.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.034</span><span class="si-date">8/2 日</span></div>
-          <div class="si-title">デジタルヘルス$335B・量子コンピューティング$10.8B・リテールテック$35B・HRテック$6.5B・ASEAN FinTech$3.9B・スタートアップ¥1.2兆・訪問介護DX・フォトレジスト85%・水道¥15兆</div>
+          <div class="si-title">デジタルヘルス$335B・量子コンピューティング$10.8B・リテールテック$35B・HRテック$6.5B・ASEAN FinTech$3.9B・スタートアップ¥1.2兆・訪問介護DX・フォトレジスト85%</div>
         </a>
       </li>
       <li class="sidebar-item">
@@ -117,8 +122,9 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-siz
       </li>
     </ul>
 
+    <!-- 2026年7月 (30件 — 5件表示 + 折りたたみ) -->
     <span class="sidebar-month">2026年7月 — 30件</span>
-    <ul class="sidebar-list">
+    <ul class="sidebar-list" id="jul-list">
       <li class="sidebar-item">
         <a href="reports/morning-brief-20260731.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.032</span><span class="si-date">7/31 金</span></div>
@@ -149,158 +155,163 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-siz
           <div class="si-title">SAF$15B CAGR62%・PE AUM$14.5T・精密農業$56.9B・EU AI法・NISA¥45兆・日米通商交渉¥2.3兆</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <!-- 以下25件は折りたたみ -->
+      <li class="sidebar-item sidebar-extra">
         <a href="reports/morning-brief-20260726.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.027</span><span class="si-date">7/26 日</span></div>
           <div class="si-title">Web3市場$27.5B・mRNA$122.5B・宇宙$630B・越境EC¥5.3兆・九州半導体¥10兆・こども家庭庁¥5.3兆</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <li class="sidebar-item sidebar-extra">
         <a href="reports/morning-brief-20260725.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.026</span><span class="si-date">7/25 土</span></div>
           <div class="si-title">量子コンピュータ$2.35B・グリーンボンド$3.5T・Waymo週100万回・フードテック¥2.5兆・JGB1.5%</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <li class="sidebar-item sidebar-extra">
         <a href="reports/morning-brief-20260724.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.025</span><span class="si-date">7/24 金</span></div>
           <div class="si-title">AIデータセンター565TWh・VC$510B・ヒューマノイド5万台・GPIF¥7.8兆・コンビニAI・J-REIT</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <li class="sidebar-item sidebar-extra">
         <a href="reports/morning-brief-20260723.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.024</span><span class="si-date">7/23 木</span></div>
           <div class="si-title">プロップテック$4.53B・産業AIロボットHyperReality・フィンテック$650B・東京不動産APAC1位</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <li class="sidebar-item sidebar-extra">
         <a href="reports/morning-brief-20260722.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.023</span><span class="si-date">7/22 水</span></div>
           <div class="si-title">PropTech$20B超・産業ロボット$16.7B・フィンテック規制統合・エネルギー転換$2.3兆</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <li class="sidebar-item sidebar-extra">
         <a href="reports/morning-brief-20260721.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.022</span><span class="si-date">7/21 火</span></div>
           <div class="si-title">AIエージェント$10.9B・ソブリンAI$24.8B・MetaAIグラス・Rapidus 2nm・日銀1.00%</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <li class="sidebar-item sidebar-extra">
         <a href="reports/morning-brief-20260720.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.021</span><span class="si-date">7/20 月</span></div>
           <div class="si-title">AI医療診断$8.9B・量子センシングCAGR28%・出生率0.97・海外M&A9.8兆円</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <li class="sidebar-item sidebar-extra">
         <a href="reports/morning-brief-20260719.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.020</span><span class="si-date">7/19 日</span></div>
           <div class="si-title">世界蓄電158GW（5年7倍）・eVTOL$21.6億・SiC/GaN CAGR26%・洋上風力10GW</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <li class="sidebar-item sidebar-extra">
         <a href="reports/morning-brief-20260718.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.019</span><span class="si-date">7/18 土</span></div>
           <div class="si-title">ヒューマノイドロボット2030年$153億・CRISPR$220万承認・物流自動化$531億</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <li class="sidebar-item sidebar-extra">
         <a href="reports/morning-brief-20260717.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.018</span><span class="si-date">7/17 金</span></div>
           <div class="si-title">LEO衛星$184億→$546億・ロボタクシーWaymo$1,260億・SMR$35→$141億</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <li class="sidebar-item sidebar-extra">
         <a href="reports/morning-brief-20260716.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.017</span><span class="si-date">7/16 木</span></div>
           <div class="si-title">AIデータセンター$3,700億・AIエージェントROI 171%・防衛費9兆円</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <li class="sidebar-item sidebar-extra">
         <a href="reports/morning-brief-20260715.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.016</span><span class="si-date">7/15 水</span></div>
           <div class="si-title">プライベートクレジット$1.7兆→$4兆・ラピダス2nm成功・GX¥150兆</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <li class="sidebar-item sidebar-extra">
         <a href="reports/morning-brief-20260714.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.015</span><span class="si-date">7/14 火</span></div>
           <div class="si-title">Fed 3.625%・日銀1.00%（95年来高）・太陽光$3,650億</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <li class="sidebar-item sidebar-extra">
         <a href="reports/morning-brief-20260713.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.014</span><span class="si-date">7/13 月</span></div>
           <div class="si-title">米リショアリング民間投資・Waymo週50万回・日本M&amp;A¥35.7兆</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <li class="sidebar-item sidebar-extra">
         <a href="reports/morning-brief-20260712.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.013</span><span class="si-date">7/12 日</span></div>
           <div class="si-title">世界EV 2,300万台・BYD首位・量子コンピュータCAGR 41.8%</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <li class="sidebar-item sidebar-extra">
         <a href="reports/morning-brief-20260711.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.012</span><span class="si-date">7/11 土</span></div>
           <div class="si-title">企業GenAI+59%・訪日観光2026年4月に前年割れ転換</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <li class="sidebar-item sidebar-extra">
         <a href="reports/morning-brief-20260710.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.011</span><span class="si-date">7/10 金</span></div>
           <div class="si-title">AI半導体・トヨタ固体電池2026年量産・GPIF¥277兆</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <li class="sidebar-item sidebar-extra">
         <a href="reports/morning-brief-20260709.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.010</span><span class="si-date">7/9 木</span></div>
           <div class="si-title">AI教育・シルバーエコノミー¥96兆・EV充電CAGR58%</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <li class="sidebar-item sidebar-extra">
         <a href="reports/morning-brief-20260708.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.009</span><span class="si-date">7/8 水</span></div>
           <div class="si-title">エージェントAI・mRNAがんワクチン・洋上風力100GW</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <li class="sidebar-item sidebar-extra">
         <a href="reports/morning-brief-20260707.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.008</span><span class="si-date">7/7 火</span></div>
           <div class="si-title">Waymo自動運転・ステーブルコイン・核融合・VC+129%</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <li class="sidebar-item sidebar-extra">
         <a href="reports/morning-brief-20260706.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.007</span><span class="si-date">7/6 月</span></div>
           <div class="si-title">生成AI企業導入・プライベートクレジット・医療DX</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <li class="sidebar-item sidebar-extra">
         <a href="reports/morning-brief-20260705.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.006</span><span class="si-date">7/5 日</span></div>
           <div class="si-title">産業AI・量子コンピュータ・精密発酵・蓄電池</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <li class="sidebar-item sidebar-extra">
         <a href="reports/morning-brief-20260704.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.005</span><span class="si-date">7/4 土</span></div>
           <div class="si-title">SMR原子力・長寿バイオテック・LEO衛星・AI創薬</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <li class="sidebar-item sidebar-extra">
         <a href="reports/morning-brief-20260703.html" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.004</span><span class="si-date">7/3 金</span></div>
           <div class="si-title">BTR共同住宅・合成生物学・Waymoロボタクシー</div>
         </a>
       </li>
-      <li class="sidebar-item">
+      <li class="sidebar-item sidebar-extra">
         <a href="https://claude.ai/code/artifact/7201011b-dea9-4da0-bff0-ceb9d8377c3c" target="_blank" rel="noopener">
           <div class="si-top"><span class="si-vol">Vol.003</span><span class="si-date">7/2 木</span></div>
           <div class="si-title">不動産トークン化・ヒューマノイドロボット・GLP-1</div>
         </a>
       </li>
+      <li style="list-style:none">
+        <button class="sidebar-toggle" data-count="25">▼ 残り25件を見る</button>
+      </li>
     </ul>
 
+    <!-- 2026年6月 (2件 — 全件表示) -->
     <span class="sidebar-month">2026年6月 — 2件</span>
     <ul class="sidebar-list">
       <li class="sidebar-item">
@@ -490,5 +501,19 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-siz
     <a href="reports/morning-brief-20260803.html" style="color:var(--navy);font-weight:700;">→ 最新号を読む</a>
   </div>
 </footer>
+
+<script>
+document.querySelectorAll('.sidebar-toggle').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var list = this.closest('ul');
+    var extras = list.querySelectorAll('.sidebar-extra');
+    var isOpen = extras.length > 0 && extras[0].classList.contains('open');
+    extras.forEach(function(el) { el.classList.toggle('open', !isOpen); });
+    this.textContent = isOpen
+      ? '▼ 残り' + extras.length + '件を見る'
+      : '▲ 折りたたむ';
+  });
+});
+</script>
 </body>
 </html>
