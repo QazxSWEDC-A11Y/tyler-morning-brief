@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TYLER MORNING BRIEF Vol.060 — 2026年8月28日</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0B1F35;--paper:#F8F5EF;--gold:#C0870B;--navy:#1E3A5F;--muted:#EBE8E2;--rule:#D6D0C8;--caption:#7A7368;--jade:#1A7A5E;--sky:#1A5F8A;--gold-lt:#FDF3DC;--jade-lt:#E8F5F0;--sky-lt:#E0EEF8;--f-serif:Georgia,'Times New Roman',serif;--f-sans:'Hiragino Sans','Hiragino Kaku Gothic ProN','Meiryo',sans-serif}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-size:15px;line-height:1.7}
+.site-header{background:var(--navy);color:#fff;padding:0;border-bottom:4px solid var(--gold);display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch}
+.hd-left{padding:.9rem 1.5rem;display:flex;flex-direction:column;justify-content:center}
+.hd-tagline{font-size:.58rem;letter-spacing:.14em;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:.2rem}
+.hd-edition{font-size:.66rem;color:rgba(255,255,255,.65)}
+.hd-center{background:rgba(0,0,0,.22);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.8rem 2rem;border-left:1px solid rgba(255,255,255,.1);border-right:1px solid rgba(255,255,255,.1)}
+.hd-logo{font-family:var(--f-serif);font-size:1.5rem;font-weight:700;letter-spacing:.14em;color:var(--gold);line-height:1}
+.hd-vol{font-size:.58rem;letter-spacing:.22em;color:rgba(255,255,255,.55);margin-top:.25rem}
+.hd-right{padding:.9rem 1.5rem;display:flex;flex-direction:column;justify-content:center;align-items:flex-end}
+.hd-date-big{font-family:var(--f-serif);font-size:1.4rem;font-weight:700;color:#fff;line-height:1}
+.hd-weekday{font-size:.63rem;color:rgba(255,255,255,.55);margin-top:.2rem;text-align:right}
+.kicker-strip{background:var(--ink);color:#fff;padding:.35rem 1.5rem;font-size:.62rem;letter-spacing:.07em;display:flex;gap:2rem;align-items:center;overflow-x:auto;border-bottom:2px solid var(--gold)}
+.kicker-item{white-space:nowrap;opacity:.8}
+.kicker-item strong{color:var(--gold);opacity:1}
+.main{max-width:900px;margin:0 auto;padding:2rem 1.5rem 4rem}
+.section-banner{display:flex;align-items:center;gap:.8rem;margin-bottom:1.5rem}
+.section-banner-icon{font-size:1.3rem}
+.section-banner-label{font-size:.65rem;font-weight:700;letter-spacing:.2em;color:var(--gold);border-bottom:2px solid var(--gold);padding-bottom:.12rem}
+.section-banner-rule{flex:1;height:1px;background:var(--rule)}
+.lead-card{background:#fff;border:2px solid var(--gold);border-radius:8px;margin-bottom:2rem;overflow:hidden;box-shadow:0 6px 24px rgba(192,135,11,.13)}
+.lead-card-top{background:linear-gradient(135deg,#0f2540 0%,var(--navy) 60%,#2a4f7a 100%);padding:1.4rem 1.8rem;display:grid;grid-template-columns:1fr auto;gap:1.2rem;align-items:start}
+.lead-kicker{font-size:.58rem;font-weight:700;letter-spacing:.18em;color:var(--gold);margin-bottom:.4rem}
+.lead-title{font-family:var(--f-serif);font-size:1.45rem;font-weight:700;color:#fff;line-height:1.22}
+.lead-sub{font-size:.7rem;color:rgba(255,255,255,.62);margin-top:.45rem;line-height:1.6}
+.lead-stat-box{background:var(--gold);border-radius:8px;padding:.9rem 1.1rem;text-align:center;min-width:110px;flex-shrink:0}
+.lead-stat-label{font-size:.52rem;font-weight:700;letter-spacing:.1em;color:rgba(11,31,53,.75);margin-bottom:.25rem}
+.lead-stat-num{font-family:var(--f-serif);font-size:1.55rem;font-weight:700;color:var(--ink);line-height:1}
+.lead-stat-sub{font-size:.58rem;color:rgba(11,31,53,.65);margin-top:.15rem}
+.lead-body{padding:1.4rem 1.8rem}
+.analysis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;margin-top:.75rem}
+.analysis-cell{background:var(--muted);border-radius:6px;padding:.78rem .9rem;border-left:3px solid var(--gold)}
+.analysis-label{font-size:.6rem;font-weight:700;color:var(--gold);margin-bottom:.3rem;display:flex;align-items:baseline;gap:.3rem}
+.analysis-sublabel{font-size:.52rem;color:var(--caption);font-weight:400}
+.analysis-body{font-size:.69rem;line-height:1.65}
+.topic-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-bottom:2rem}
+.topic-card{background:#fff;border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.topic-card.smb{border-top:3px solid var(--gold)}
+.topic-card.wide{grid-column:1/-1}
+.tc-meta{padding:.7rem 1.05rem .45rem;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.tc-tag{font-size:.52rem;font-weight:700;letter-spacing:.1em;padding:.1rem .5rem;border-radius:20px}
+.tag-w{background:#E8EEF8;color:var(--navy)}
+.tag-j{background:#FEF5E4;color:#8A5C00}
+.smb-badge{font-size:.52rem;font-weight:700;color:var(--gold);background:var(--gold-lt);border:1px solid var(--gold);padding:.1rem .45rem;border-radius:20px}
+.tc-theme-tag{font-size:.52rem;font-weight:700;padding:.1rem .5rem;border-radius:20px}
+.tc-body{padding:.82rem 1.05rem .95rem}
+.tc-title{font-family:var(--f-serif);font-size:.93rem;font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:.5rem}
+.tc-prose{font-size:.72rem;line-height:1.7;color:var(--ink);margin-bottom:.65rem}
+.tc-prose strong{color:var(--navy)}
+.stat-row{display:flex;gap:.4rem;margin-bottom:.65rem;flex-wrap:wrap}
+.stat-chip{border-radius:6px;padding:.22rem .55rem;font-size:.59rem;font-weight:700;line-height:1.3;flex-shrink:0}
+.sc-gold{background:var(--gold-lt);color:var(--gold);border:1px solid rgba(192,135,11,.3)}
+.sc-navy{background:#EAF0FB;color:var(--navy);border:1px solid rgba(30,58,95,.2)}
+.sc-jade{background:var(--jade-lt);color:var(--jade);border:1px solid rgba(26,122,94,.2)}
+.sc-sky{background:var(--sky-lt);color:var(--sky);border:1px solid rgba(26,95,138,.2)}
+.sc-amber{background:#FEF5E4;color:#8A5C00;border:1px solid rgba(138,92,0,.2)}
+.sc-red{background:#FAEAEA;color:#B83232;border:1px solid rgba(184,50,50,.2)}
+.tc-body .analysis-grid{gap:.5rem;margin-top:.65rem}
+.tc-body .analysis-cell{padding:.65rem .78rem}
+.tc-body .analysis-label{font-size:.56rem;margin-bottom:.25rem}
+.tc-body .analysis-sublabel{font-size:.49rem}
+.tc-body .analysis-body{font-size:.66rem;line-height:1.62}
+.section-divider{display:flex;align-items:center;gap:1rem;margin:2rem 0 1.75rem}
+.sdl{flex:1;height:2px;background:linear-gradient(90deg,transparent,var(--rule))}
+.sdr{flex:1;height:2px;background:linear-gradient(90deg,var(--rule),transparent)}
+.sd-badge{background:var(--navy);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.14em;padding:.32rem 1.1rem;border-radius:20px;display:flex;align-items:center;gap:.4rem}
+.site-footer{background:var(--navy);color:rgba(255,255,255,.65);padding:.9rem 2rem;font-size:.63rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.footer-brand{font-family:var(--f-serif);color:var(--gold);font-weight:700;letter-spacing:.1em}
+@media(max-width:640px){.site-header{grid-template-columns:1fr}.hd-left,.hd-right{display:none}.topic-grid{grid-template-columns:1fr}.topic-card.wide{grid-column:1}.analysis-grid,.tc-body .analysis-grid{grid-template-columns:1fr}.main{padding:1.2rem 1rem 2rem}.lead-card-top{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="hd-left"><div class="hd-tagline">World Business Intelligence</div><div class="hd-edition">毎朝定期発行 ／ 世界5本 ＋ 日本5本</div></div>
+  <div class="hd-center"><div class="hd-logo">TYLER MORNING BRIEF</div><div class="hd-vol">V O L . 0 6 0</div></div>
+  <div class="hd-right"><div class="hd-date-big">AUG 28</div><div class="hd-weekday">2026年8月28日（金曜日）</div></div>
+</header>
+<div class="kicker-strip">
+  <span class="kicker-item">🌐 <strong>WORLD</strong> ヘルスケアAI・創薬革命／宇宙産業／ASEAN戦略／IDゼロトラスト／フードテック</span>
+  <span class="kicker-item">🗾 <strong>JAPAN</strong> 円相場・金利差／デジタル給与／物流DX／飲食DX／AI国家戦略</span>
+  <span class="kicker-item">🏷 <strong>◎SMB</strong> ゼロトラストID管理・飲食・小売DX</span>
+</div>
+<main class="main">
+
+<div class="section-banner"><span class="section-banner-icon">🌐</span><span class="section-banner-label">W O R L D</span><span class="section-banner-rule"></span></div>
+
+<!-- W-01 LEAD -->
+<div class="lead-card">
+  <svg viewBox="0 0 860 155" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <defs>
+      <radialGradient id="g-bio" cx="40%" cy="50%" r="55%"><stop offset="0%" stop-color="#001a10"/><stop offset="100%" stop-color="#000d08"/></radialGradient>
+      <radialGradient id="g-cell" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#4ac98a" stop-opacity=".3"/><stop offset="100%" stop-color="#4ac98a" stop-opacity="0"/></radialGradient>
+    </defs>
+    <rect width="860" height="155" fill="url(#g-bio)"/>
+    <!-- DNA helix -->
+    <g transform="translate(60,10)">
+      <!-- strand 1 -->
+      <path d="M20,0 Q35,18 20,36 Q5,54 20,72 Q35,90 20,108 Q5,126 20,144" fill="none" stroke="#4ac98a" stroke-width="2.5"/>
+      <!-- strand 2 -->
+      <path d="M40,0 Q25,18 40,36 Q55,54 40,72 Q25,90 40,108 Q55,126 40,144" fill="none" stroke="#C0870B" stroke-width="2.5"/>
+      <!-- rungs -->
+      <line x1="20" y1="9" x2="40" y2="9" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
+      <line x1="20" y1="27" x2="40" y2="27" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
+      <line x1="20" y1="45" x2="40" y2="45" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
+      <line x1="20" y1="63" x2="40" y2="63" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
+      <line x1="20" y1="81" x2="40" y2="81" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
+      <line x1="20" y1="99" x2="40" y2="99" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
+      <line x1="20" y1="117" x2="40" y2="117" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
+      <line x1="20" y1="135" x2="40" y2="135" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
+    </g>
+    <!-- molecules -->
+    <circle cx="170" cy="55" r="22" fill="url(#g-cell)"/>
+    <circle cx="170" cy="55" r="12" fill="none" stroke="#4ac98a" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <circle cx="170" cy="55" r="5" fill="#4ac98a" opacity=".8"/>
+    <circle cx="185" cy="42" r="4" fill="#C0870B" opacity=".75"/>
+    <circle cx="158" cy="44" r="3" fill="#00c8ff" opacity=".65"/>
+    <circle cx="183" cy="68" r="4" fill="#C0870B" opacity=".7"/>
+    <line x1="170" y1="55" x2="185" y2="42" stroke="#C0870B" stroke-width="1" opacity=".5"/>
+    <line x1="170" y1="55" x2="158" y2="44" stroke="#00c8ff" stroke-width="1" opacity=".5"/>
+    <line x1="170" y1="55" x2="183" y2="68" stroke="#C0870B" stroke-width="1" opacity=".5"/>
+    <!-- AI model box -->
+    <rect x="205" y="40" width="80" height="75" rx="6" fill="#001a10" stroke="#4ac98a" stroke-width="1.5"/>
+    <text x="245" y="60" text-anchor="middle" fill="#4ac98a" font-size="9" font-family="sans-serif" font-weight="bold">AlphaFold 3</text>
+    <text x="245" y="74" text-anchor="middle" fill="rgba(255,255,255,.55)" font-size="7.5" font-family="sans-serif">タンパク質構造</text>
+    <text x="245" y="86" text-anchor="middle" fill="rgba(255,255,255,.55)" font-size="7.5" font-family="sans-serif">予測精度</text>
+    <text x="245" y="104" text-anchor="middle" fill="#C0870B" font-size="18" font-family="Georgia,serif" font-weight="bold">97.5%</text>
+    <!-- arrow to pill -->
+    <line x1="285" y1="78" x2="318" y2="78" stroke="#4ac98a" stroke-width="1.5" stroke-dasharray="5,3"/>
+    <polygon points="316,73 322,78 316,83" fill="#4ac98a"/>
+    <!-- pill capsule -->
+    <ellipse cx="350" cy="78" rx="25" ry="12" fill="#1a3a2a" stroke="#4ac98a" stroke-width="1.5"/>
+    <ellipse cx="336" cy="78" rx="11" ry="12" fill="#2a5a3a"/>
+    <ellipse cx="364" cy="78" rx="11" ry="12" fill="#C0870B" opacity=".85"/>
+    <!-- stats -->
+    <rect x="410" y="12" width="438" height="130" fill="rgba(0,0,0,.3)" rx="8"/>
+    <text x="629" y="36" text-anchor="middle" fill="rgba(255,255,255,.95)" font-size="14" font-family="Georgia,serif" font-weight="bold">ヘルスケアAI・AlphaFold世代の創薬革命</text>
+    <rect x="424" y="48" width="95" height="42" rx="5" fill="rgba(74,201,138,.18)" stroke="#4ac98a" stroke-width="1"/>
+    <text x="471" y="64" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif" font-weight="bold">創薬期間短縮</text>
+    <text x="471" y="84" text-anchor="middle" fill="#4ac98a" font-size="22" font-family="Georgia,serif" font-weight="bold">▲60%</text>
+    <rect x="527" y="48" width="95" height="42" rx="5" fill="rgba(192,135,11,.2)" stroke="#C0870B" stroke-width="1"/>
+    <text x="574" y="64" text-anchor="middle" fill="#C0870B" font-size="8" font-family="sans-serif" font-weight="bold">開発コスト削減</text>
+    <text x="574" y="84" text-anchor="middle" fill="#C0870B" font-size="22" font-family="Georgia,serif" font-weight="bold">▲40%</text>
+    <rect x="630" y="48" width="95" height="42" rx="5" fill="rgba(0,200,255,.12)" stroke="rgba(0,200,255,.45)" stroke-width="1"/>
+    <text x="677" y="64" text-anchor="middle" fill="#00c8ff" font-size="8" font-family="sans-serif" font-weight="bold">市場規模(26)</text>
+    <text x="677" y="84" text-anchor="middle" fill="#00c8ff" font-size="22" font-family="Georgia,serif" font-weight="bold">$68B</text>
+    <rect x="733" y="48" width="101" height="42" rx="5" fill="rgba(192,135,11,.15)" stroke="#C0870B" stroke-width="1"/>
+    <text x="783" y="64" text-anchor="middle" fill="#C0870B" font-size="8" font-family="sans-serif" font-weight="bold">AI承認新薬(26)</text>
+    <text x="783" y="84" text-anchor="middle" fill="#C0870B" font-size="22" font-family="Georgia,serif" font-weight="bold">38品目</text>
+    <text x="629" y="108" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="8.5" font-family="sans-serif">AlphaFold 3・Rosetta Fold・ESMFoldがタンパク質設計の革命を起こし、ガン・アルツハイマー・希少疾患で突破口</text>
+    <text x="629" y="123" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="8.5" font-family="sans-serif">日本：武田薬品・アステラスがAI創薬チームを設立 / AMED がゲノム×AI基盤を整備</text>
+  </svg>
+  <div class="lead-card-top">
+    <div>
+      <div class="lead-kicker">W-01 ／ LEAD STORY</div>
+      <div class="lead-title">AlphaFold世代の創薬革命<br>AI新薬38品目が変える医療の未来</div>
+      <div class="lead-sub">タンパク質構造予測精度97.5%のAlphaFold 3が創薬の「設計図」を書き換えた。従来15年・$2.6Bかかった新薬開発が「6年・$1.6B」に短縮され、2026年だけで38品目のAI支援新薬が承認された。ガン免疫療法・アルツハイマー・希少疾患の分野で突破口が連続して開いている。</div>
+    </div>
+    <div class="lead-stat-box"><div class="lead-stat-label">創薬期間短縮</div><div class="lead-stat-num">▲60%</div><div class="lead-stat-sub">AI支援で実現</div></div>
+  </div>
+  <div class="lead-body">
+    <p class="tc-prose">DeepMind（Google）のAlphaFold 3が全タンパク質・核酸・小分子の相互作用予測を解禁し、製薬企業のin silico（コンピュータ内）創薬が爆発的に拡大した。Insilico Medicine・Recursion Pharmaceuticals・AbSci（抗体設計AI）が「完全AI設計薬」の臨床試験を進め、2026年は<strong>38品目</strong>のAI支援新薬が各国規制当局に承認された。ヘルスケアAI市場全体は$68Bに達し、創薬・医療画像診断・個別化医療の三分野が牽引する。日本では武田薬品とアステラスがAI創薬専門チームを設立し、AMED（日本医療研究開発機構）がゲノムデータとAIを統合した国家バイオバンク基盤を整備している。</p>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？<span class="analysis-sublabel">— 急浮上の背景</span></div><div class="analysis-body">AlphaFold 2（2021年）が構造予測を解決し、AlphaFold 3（2024年）が薬物相互作用まで予測可能にした。「実験なしでターゲット分子を設計できる」時代が来たことで創薬のパラダイムが根本から変わった。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？<span class="analysis-sublabel">— 主要プレイヤー</span></div><div class="analysis-body">Insilico Medicine・Recursion・BenevolentAIがAI創薬スタートアップをリード。Big Pharmaではロシュ・Merck・Pfizerが数十億ドル規模のAI創薬投資を実行。日本では武田薬品・中外製薬が先行している。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？<span class="analysis-sublabel">— 課題と障壁</span></div><div class="analysis-body">AI設計薬も最終的に動物実験・臨床試験（Phase 1〜3）は必要で、規制承認プロセスの短縮は限定的。患者データのプライバシーとAIモデルの「ブラックボックス性」が規制当局の信頼獲得を難しくしている。</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="topic-grid">
+<!-- W-02 -->
+<div class="topic-card">
+  <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="420" height="110" fill="#040810"/>
+    <!-- earth -->
+    <circle cx="70" cy="55" r="40" fill="#0a1a30" stroke="#1a3a6a" stroke-width="1"/>
+    <ellipse cx="70" cy="55" rx="40" ry="15" fill="none" stroke="#1a4a8a" stroke-width="1" opacity=".6"/>
+    <ellipse cx="70" cy="55" rx="15" ry="40" fill="none" stroke="#1a4a8a" stroke-width="1" opacity=".4"/>
+    <!-- satellites -->
+    <g transform="translate(70,55)">
+      <circle cx="0" cy="-48" r="5" fill="#C0870B" opacity=".9"/>
+      <line x1="0" y1="-48" x2="0" y2="-40" stroke="#C0870B" stroke-width="1"/>
+      <circle cx="34" cy="-34" r="4" fill="#4ac98a" opacity=".85"/>
+      <circle cx="48" cy="0" r="4" fill="#00c8ff" opacity=".8"/>
+      <circle cx="34" cy="34" r="4" fill="#C0870B" opacity=".75"/>
+      <circle cx="-48" cy="0" r="4" fill="#4ac98a" opacity=".8"/>
+      <!-- orbital paths -->
+      <circle cx="0" cy="0" r="48" fill="none" stroke="rgba(192,135,11,.25)" stroke-width="1"/>
+      <ellipse cx="0" cy="0" rx="40" ry="20" fill="none" stroke="rgba(0,200,255,.2)" stroke-width="1"/>
+    </g>
+    <rect x="148" y="8" width="264" height="98" fill="rgba(0,0,0,.3)" rx="6"/>
+    <text x="280" y="28" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="12" font-family="Georgia,serif" font-weight="bold">宇宙産業・衛星商業化</text>
+    <text x="280" y="47" text-anchor="middle" fill="#C0870B" font-size="9.5" font-family="sans-serif">商業衛星打上げ数（2026）</text>
+    <text x="280" y="67" text-anchor="middle" fill="#C0870B" font-size="24" font-family="Georgia,serif" font-weight="bold">2,400基</text>
+    <text x="280" y="83" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">Starlink 8,000基 / 地球全域カバー達成</text>
+    <text x="280" y="97" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif">宇宙市場 $1.2T（2040年予測）</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-w">W-02</span><span class="tc-theme-tag" style="background:#E0EEF8;color:#1A5F8A">宇宙・衛星</span></div>
+  <div class="tc-body">
+    <div class="tc-title">宇宙産業・衛星コンステレーション<br>商業化が生む$1.2T市場</div>
+    <div class="tc-prose">2026年の商業衛星打上げ数は年間<strong>2,400基</strong>を超え、SpaceXのStarlinkは8,000基を突破して地球全域のブロードバンドカバーを達成した。衛星ブロードバンドが農村部・海洋・航空機内に普及し、「インターネット格差」の解消に大きく貢献している。Amazon Kuiper・OneWebが競合として台頭し、衛星通信コストの急落が航空・海運・防衛・農業の各産業を変えている。宇宙市場全体は2040年に$1.2Tに達する予測であり、月・火星の資源探査・宇宙太陽光発電・軌道上製造といった次世代セグメントへの投資も急拡大している。日本のH3ロケットと宇宙スタートアップ（QPS研究所・Synspective）がアジアの衛星打上げ市場を狙う。</div>
+    <div class="stat-row"><span class="stat-chip sc-sky">商業衛星 2,400基/年</span><span class="stat-chip sc-gold">市場 $1.2T予測</span></div>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">SpaceXのFalcon 9/Starshipによる打上げコスト激減（$2,000/kgから$200/kg台へ）が「民主化」の起点。小型衛星の量産と打上げ頻度向上が全産業のSpaceへのアクセスを変えた。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">SpaceX・Amazon Kuiper・OneWebが低軌道通信をリード。月探査ではNASA Artemis・JAXA SLIM・インド・中国が競う。日本のH3・イプシロンSが商業打上げ市場を狙い再起動。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">急増する衛星によるスペースデブリ問題（衝突リスク）・電波干渉・天文観測への影響が深刻化。軌道利用の国際ルールが追いついておらず、「宇宙の公共財管理」が急務となっている。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- W-03 -->
+<div class="topic-card">
+  <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="420" height="110" fill="#080f06"/>
+    <!-- ASEAN map (simplified SE Asia) -->
+    <path d="M25,20 Q45,15 65,25 Q85,20 95,35 Q98,55 90,75 Q75,90 60,95 Q40,90 30,78 Q18,62 20,45 Q18,32 25,20 Z" fill="#1a2a14" stroke="#2a4a1a" stroke-width="1"/>
+    <circle cx="55" cy="50" r="4" fill="#C0870B" opacity=".85"/>
+    <circle cx="38" cy="65" r="3" fill="#4ac98a" opacity=".8"/>
+    <circle cx="72" cy="60" r="3" fill="#C0870B" opacity=".7"/>
+    <circle cx="80" cy="42" r="3" fill="#00c8ff" opacity=".75"/>
+    <text x="55" y="112" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="7" font-family="sans-serif">🌏 ASEAN</text>
+    <rect x="110" y="8" width="300" height="98" fill="rgba(0,0,0,.3)" rx="6"/>
+    <text x="260" y="28" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="12" font-family="Georgia,serif" font-weight="bold">ASEAN経済・日本企業戦略</text>
+    <text x="260" y="47" text-anchor="middle" fill="#C0870B" font-size="9.5" font-family="sans-serif">ASEAN GDP成長率（平均）</text>
+    <text x="260" y="67" text-anchor="middle" fill="#C0870B" font-size="24" font-family="Georgia,serif" font-weight="bold">5.8%</text>
+    <text x="260" y="83" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">日本のASEAN直接投資 ¥6.4兆（過去最高）</text>
+    <text x="260" y="97" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif">ベトナム・インドネシア・タイが製造業ハブ化</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-w">W-03</span><span class="tc-theme-tag" style="background:#FEF5E4;color:#8A5C00">ASEAN・新興国</span></div>
+  <div class="tc-body">
+    <div class="tc-title">ASEAN経済統合・日本企業戦略<br>「脱中国+1」の本命市場</div>
+    <div class="tc-prose">ASEANの平均GDP成長率<strong>5.8%</strong>は先進国を大幅に上回り、日本企業のASEAN直接投資は¥6.4兆と過去最高を更新した。ベトナムはエレクトロニクス輸出で韓国を抜いてアジア2位に浮上し、インドネシアはEVバッテリー向けニッケル資源で世界市場の主役を担う。タイは「ASEANのデトロイト」として自動車産業の中心地を維持しつつEVシフトに対応している。日本企業はトヨタ・デンソーがタイ、パナソニック・キヤノンがベトナム、住友商事・三菱商事がインドネシアをそれぞれ主要拠点としており、中国依存からの分散とASEAN域内の消費成長取り込みを同時に狙う戦略が定着している。</div>
+    <div class="stat-row"><span class="stat-chip sc-amber">GDP成長 5.8%</span><span class="stat-chip sc-gold">日本投資 ¥6.4兆</span></div>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">中国リスク分散（地政学・コスト・規制）の「受け皿」としてASEANが選ばれる一方、6.5億人の消費市場という内需成長が「移転先」から「目的地」へと性格を変えた。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">トヨタ・ホンダ・三菱がタイ・インドネシアに生産集積。電子部品ではパナソニック・ニデックがベトナムを拡充。日本のメガバンク（MUFG・SMBC）がASEAN金融インフラに積極投資中。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">中国との経済的結びつきが強いASEAN各国の「二股外交」リスク・労働コストの上昇（ベトナム）・政治的不安定性（ミャンマー）・各国間のインフラ格差が投資判断を複雑にする。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- W-04 SMB -->
+<div class="topic-card smb">
+  <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="420" height="110" fill="#080c18"/>
+    <!-- zero trust diagram -->
+    <circle cx="70" cy="55" r="38" fill="none" stroke="#1a3a6a" stroke-width="1" stroke-dasharray="5,3"/>
+    <circle cx="70" cy="55" r="26" fill="none" stroke="#2a5a9a" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <circle cx="70" cy="55" r="14" fill="#1a2a4a" stroke="#C0870B" stroke-width="2"/>
+    <text x="70" y="58" text-anchor="middle" fill="#C0870B" font-size="7" font-family="sans-serif" font-weight="bold">DATA</text>
+    <!-- user icons at perimeter -->
+    <circle cx="70" cy="17" r="6" fill="#2a4a8a"/><text x="70" y="20" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="8" font-family="sans-serif">👤</text>
+    <circle cx="103" cy="38" r="6" fill="#2a4a8a"/><text x="103" y="41" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="8" font-family="sans-serif">💻</text>
+    <circle cx="103" cy="72" r="6" fill="#2a4a8a"/><text x="103" y="75" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="8" font-family="sans-serif">📱</text>
+    <circle cx="70" cy="93" r="6" fill="#cc2222"/><text x="70" y="96" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="8" font-family="sans-serif">⚠</text>
+    <circle cx="37" cy="72" r="6" fill="#2a4a8a"/><text x="37" y="75" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="8" font-family="sans-serif">🖥</text>
+    <!-- verify marks -->
+    <circle cx="70" cy="36" r="4" fill="#4ac98a" opacity=".8"/>
+    <path d="M68,36 L70,38 L73,34" stroke="white" stroke-width="1.5" fill="none"/>
+    <circle cx="90" cy="44" r="4" fill="#4ac98a" opacity=".8"/>
+    <path d="M88,44 L90,46 L93,42" stroke="white" stroke-width="1.5" fill="none"/>
+    <rect x="148" y="8" width="264" height="98" fill="rgba(0,0,0,.28)" rx="6"/>
+    <text x="280" y="28" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="11" font-family="Georgia,serif" font-weight="bold">ゼロトラスト・ID管理</text>
+    <text x="280" y="46" text-anchor="middle" fill="#C0870B" font-size="9.5" font-family="sans-serif">ID窃取起因のインシデント</text>
+    <text x="280" y="66" text-anchor="middle" fill="#C0870B" font-size="22" font-family="Georgia,serif" font-weight="bold">83%</text>
+    <text x="280" y="82" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">MFA+ゼロトラストで大幅軽減</text>
+    <text x="280" y="97" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif" font-weight="bold">月額¥600/ユーザーで完全ID管理可能に</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-w">W-04</span><span class="smb-badge">◎ 中小企業</span></div>
+  <div class="tc-body">
+    <div class="tc-title">ゼロトラスト・ID管理<br>中小企業でも月¥600から始められる防衛</div>
+    <div class="tc-prose">サイバーインシデントの<strong>83%がID窃取を起点</strong>としており、「社内ネットワークにいれば安全」という従来の境界防御が完全に崩壊した。ゼロトラストとは「すべてのアクセスを常に検証する」という設計思想で、Okta・Microsoft Entra ID（旧AzureAD）・Google BeyondCorpが中小でも月額¥600/ユーザー程度から導入可能になった。特に有効な対策は「条件付きアクセス（デバイス健全性の確認）」と「特権ID管理（PAM）」の組み合わせで、管理者アカウントへの不正アクセスを防ぐことが最優先だ。テレワーク・外部委託が常態化した今、VPN単体での防御はもはや時代遅れとなっている。</div>
+    <div class="stat-row"><span class="stat-chip sc-red">ID窃取起因 83%</span><span class="stat-chip sc-jade">月¥600〜で導入可</span></div>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">テレワーク定着・クラウド移行により「社内境界」が消滅した。攻撃者はVPNの脆弱性を突いてIDを窃取し、まるで正規ユーザーのように内部を動き回る手法（ラテラルムーブメント）が主流となった。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">Okta・Microsoft Entra・CrowdStrike Falconがゼロトラストを統合的に提供。国内ではNTTコム・SoftBankが中小企業向けマネージドIDサービスを展開し、IPAが無料診断ツールを提供中。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">ゼロトラストは「製品一つで完成」せず複数ツールの統合が必要なため、IT担当者不在の中小には設計・運用の両面で高いハードルがある。まず「MFAの全社展開」から着手するのが現実解。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- W-05 -->
+<div class="topic-card">
+  <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="420" height="110" fill="#06100a"/>
+    <!-- alt protein -->
+    <rect x="18" y="50" width="35" height="55" rx="4" fill="#1a3a14" stroke="#2a5a20" stroke-width="1"/>
+    <text x="35" y="72" text-anchor="middle" fill="#4ac98a" font-size="14" font-family="sans-serif">🌱</text>
+    <text x="35" y="90" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="7" font-family="sans-serif">植物性</text>
+    <rect x="58" y="38" width="35" height="67" rx="4" fill="#1a3a14" stroke="#2a5a20" stroke-width="1"/>
+    <text x="75" y="62" text-anchor="middle" fill="#C0870B" font-size="14" font-family="sans-serif">🧫</text>
+    <text x="75" y="80" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="7" font-family="sans-serif">培養肉</text>
+    <rect x="98" y="28" width="35" height="77" rx="4" fill="#1a3a14" stroke="#C0870B" stroke-width="1.5"/>
+    <text x="115" y="55" text-anchor="middle" fill="#C0870B" font-size="14" font-family="sans-serif">🦗</text>
+    <text x="115" y="73" text-anchor="middle" fill="#C0870B" font-size="7" font-family="sans-serif" font-weight="bold">昆虫タンパク</text>
+    <rect x="148" y="8" width="264" height="98" fill="rgba(0,0,0,.3)" rx="6"/>
+    <text x="280" y="28" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="12" font-family="Georgia,serif" font-weight="bold">フードテック・代替タンパク</text>
+    <text x="280" y="47" text-anchor="middle" fill="#4ac98a" font-size="9.5" font-family="sans-serif">代替タンパク市場規模</text>
+    <text x="280" y="67" text-anchor="middle" fill="#4ac98a" font-size="24" font-family="Georgia,serif" font-weight="bold">$28B</text>
+    <text x="280" y="83" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">培養肉：製造コスト $15/kg（2024年$25→）</text>
+    <text x="280" y="97" text-anchor="middle" fill="#C0870B" font-size="8" font-family="sans-serif">2030年 食肉代替比率10%が現実的目標</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-w">W-05</span><span class="tc-theme-tag" style="background:#E8F5F0;color:#1A7A5E">フードテック</span></div>
+  <div class="tc-body">
+    <div class="tc-title">フードテック・代替タンパク<br>培養肉$15/kgの価格破壊が始まる</div>
+    <div class="tc-prose">代替タンパク市場は<strong>$28B</strong>に達し、植物性肉・培養肉・昆虫タンパクの三極競争が本格化した。Eat Just（培養チキン）・Upside Foods・Mosa Meatが量産化を加速し、培養肉の製造コストは2024年の$25/kgから<strong>$15/kg</strong>まで低下した。Beyond Meat・Impossible Foodsの植物性肉は「大豆・えんどう豆タンパク」から「精密発酵タンパク」へ次世代移行し、食感・栄養価が本物の肉に肉薄しつつある。昆虫タンパクはEUで食品認可が拡大し、コオロギ粉末・ミールワームが飼料・加工食品原料として急普及している。日本では伊藤ハム・日清食品・ニチレイがAI設計で食感を最適化した次世代代替肉の開発を競っている。</div>
+    <div class="stat-row"><span class="stat-chip sc-jade">市場 $28B</span><span class="stat-chip sc-gold">培養肉 $15/kg</span></div>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">2050年の世界人口100億人に対して「従来型食肉生産だけでは供給不能」という食料安保問題がコンセンサスとなり、投資家・規制当局・消費者の関心が交差した。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">Eat Just・Upside Foods（米）・Mosa Meat（蘭）が培養肉をリード。植物性ではBeyond Meat・Impossibleが縮小傾向の中、精密発酵分野のNature's Fynd・Remilkが台頭している。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">消費者の「気持ち悪い・人工的」という心理的抵抗（ネオフォビア）・各国の規制認可取得の複雑さ・植物性肉の売上鈍化が示す「ヘルシー疲れ」が普及の頭を抑えている。</div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="section-divider"><div class="sdl"></div><div class="sd-badge">🗾 &nbsp;J A P A N</div><div class="sdr"></div></div>
+
+<div class="topic-grid">
+<!-- J-01 -->
+<div class="topic-card">
+  <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="420" height="110" fill="#06101a"/>
+    <!-- forex chart -->
+    <polyline points="20,55 45,60 60,52 80,58 100,48 115,55 130,45" fill="none" stroke="#4ac98a" stroke-width="2"/>
+    <polygon points="118,40 130,45 124,55" fill="#4ac98a"/>
+    <line x1="20" y1="75" x2="140" y2="75" stroke="#1a3a5a" stroke-width=".7"/>
+    <text x="75" y="88" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">2026年 ¥/$推移</text>
+    <rect x="148" y="8" width="264" height="98" fill="rgba(0,0,0,.3)" rx="6"/>
+    <text x="280" y="28" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="12" font-family="Georgia,serif" font-weight="bold">円相場・日米金利差</text>
+    <text x="280" y="47" text-anchor="middle" fill="#4ac98a" font-size="9.5" font-family="sans-serif">現在レート（2026年8月）</text>
+    <text x="280" y="67" text-anchor="middle" fill="#4ac98a" font-size="24" font-family="Georgia,serif" font-weight="bold">¥142/$</text>
+    <text x="280" y="83" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">日米金利差 縮小傾向（日+/米-）</text>
+    <text x="280" y="97" text-anchor="middle" fill="#C0870B" font-size="8" font-family="sans-serif">年内¥135〜¥148の幅が市場コンセンサス</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-j">J-01</span><span class="tc-theme-tag" style="background:#E0EEF8;color:#1A5F8A">為替・金融</span></div>
+  <div class="tc-body">
+    <div class="tc-title">円相場・日米金利差<br>¥135〜¥148のボックス相場を読む</div>
+    <div class="tc-prose">日銀利上げ（0.75%）とFRB利下げサイクルの交差により日米金利差が縮小し、円相場は<strong>¥142/$前後</strong>で推移している。市場コンセンサスは年内¥135〜¥148の幅での推移で、「急激な円高」も「新たな円安」も見込みにくいボックス相場との見方が優勢だ。輸出企業（トヨタ・ソニー・任天堂）は¥145想定のヘッジを施しており、10円の円高で大手自動車は営業利益に▲2,000億円規模の影響が出る試算がある。中小輸出業者はドル建て請求書から円建てへの切り替えや、自然ヘッジ（現地調達拡大）によるリスク軽減が急務となっている。</div>
+    <div class="stat-row"><span class="stat-chip sc-jade">¥142/$</span><span class="stat-chip sc-sky">FRB利下げ継続</span></div>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">日米の金融政策が「逆回転」し、2022〜2024年の急激な円安局面が一巡した転換点。日銀の追加利上げ頻度と米国の利下げペースの読み合いが当面の相場を決定する。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">投機的なヘッジファンドの円売り・円買いが短期変動を生む。日銀は「急激な変動には介入」の姿勢を維持。輸出企業・インバウンド恩恵企業・輸入インフレに苦しむ企業で損益が分かれる。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">政治的リスク（日米貿易摩擦の再発）・地政学的ショック（中東・台湾有事）・日銀のサプライズ利上げが円相場の急変を引き起こす潜在リスクとして常に存在する。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- J-02 -->
+<div class="topic-card">
+  <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="420" height="110" fill="#06100e"/>
+    <!-- phone + wallet -->
+    <rect x="28" y="20" width="50" height="82" rx="6" fill="#0f1e14" stroke="#2a5a3a" stroke-width="1.5"/>
+    <rect x="32" y="26" width="42" height="60" rx="3" fill="#0a1208"/>
+    <circle cx="53" cy="96" r="4" fill="#1a3a22"/>
+    <!-- yen symbol on screen -->
+    <circle cx="53" cy="55" r="15" fill="#1a4a28" stroke="#4ac98a" stroke-width="1.5"/>
+    <text x="53" y="59" text-anchor="middle" fill="#4ac98a" font-size="14" font-family="Georgia,serif" font-weight="bold">¥</text>
+    <!-- signal waves -->
+    <path d="M78,45 Q88,35 98,45" fill="none" stroke="#4ac98a" stroke-width="1.5" opacity=".7"/>
+    <path d="M78,35 Q93,20 108,35" fill="none" stroke="#4ac98a" stroke-width="1.2" opacity=".5"/>
+    <rect x="148" y="8" width="264" height="98" fill="rgba(0,0,0,.3)" rx="6"/>
+    <text x="280" y="28" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="12" font-family="Georgia,serif" font-weight="bold">デジタル給与・FinTech規制緩和</text>
+    <text x="280" y="47" text-anchor="middle" fill="#4ac98a" font-size="9.5" font-family="sans-serif">デジタル給与導入企業数</text>
+    <text x="280" y="67" text-anchor="middle" fill="#4ac98a" font-size="24" font-family="Georgia,serif" font-weight="bold">12,800社</text>
+    <text x="280" y="83" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">PayPay・LINE Pay・楽天Payが指定口座に</text>
+    <text x="280" y="97" text-anchor="middle" fill="#C0870B" font-size="8" font-family="sans-serif">証券・保険の仲介規制も大幅緩和へ</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-j">J-02</span><span class="tc-theme-tag" style="background:#E8F5F0;color:#1A7A5E">FinTech・規制</span></div>
+  <div class="tc-body">
+    <div class="tc-title">デジタル給与・FinTech規制緩和<br>給与をPayPayで受け取る時代へ</div>
+    <div class="tc-prose">2023年に解禁されたデジタル給与払いの導入企業が<strong>12,800社</strong>に拡大し、PayPay・LINE Pay・楽天Payを給与受取口座として指定できる環境が整った。特に飲食・小売・物流の時給労働者に「即時払い」との組み合わせで人気が集まっている。金融庁は同時に証券仲介・保険販売の規制緩和を進めており、フィンテック企業がワンストップで投資・保険・給与管理を提供できる「スーパーアプリ化」が加速する。新NISAとの連動（給与→自動積立）機能が若年層の資産形成を後押しする設計も進んでおり、「給与口座がそのまま証券口座・保険口座になる」未来が近づいている。</div>
+    <div class="stat-row"><span class="stat-chip sc-jade">導入 12,800社</span><span class="stat-chip sc-gold">即時払い連動</span></div>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">岸田政権の「資産所得倍増計画」の一環として金融規制緩和が進んだ。デジタル給与は外国人労働者・フリーランスの銀行口座開設困難問題の解決策としても注目を集めた。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">PayPay・LINE Pay・楽天Payが先行指定。メガバンク傘下のFinTechも追従。ストライプ・メルペイが給与受け取り→支払い→投資の一元化プラットフォームを構築中。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">決済口座の「保護上限（¥100万）」という規制の壁、使用できる店舗・サービスの制限、デジタル給与不正引き出しのリスクへの従業員・企業の不安が普及を緩やかにしている。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- J-03 -->
+<div class="topic-card">
+  <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="420" height="110" fill="#06100a"/>
+    <!-- truck -->
+    <rect x="18" y="55" width="100" height="40" rx="4" fill="#1a2a3a"/>
+    <rect x="18" y="45" width="42" height="28" rx="4" fill="#1E3A5F"/>
+    <circle cx="38" cy="95" r="10" fill="#0a1525" stroke="#4a8aaa" stroke-width="2"/>
+    <circle cx="38" cy="95" r="5" fill="#2a5a8a"/>
+    <circle cx="98" cy="95" r="10" fill="#0a1525" stroke="#4a8aaa" stroke-width="2"/>
+    <circle cx="98" cy="95" r="5" fill="#2a5a8a"/>
+    <!-- GPS pin -->
+    <line x1="80" y1="50" x2="80" y2="35" stroke="#C0870B" stroke-width="1.5"/>
+    <circle cx="80" cy="30" r="8" fill="#C0870B"/>
+    <circle cx="80" cy="30" r="4" fill="#0a1525"/>
+    <rect x="148" y="8" width="264" height="98" fill="rgba(0,0,0,.3)" rx="6"/>
+    <text x="280" y="28" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="12" font-family="Georgia,serif" font-weight="bold">物流DX・2024年問題の続き</text>
+    <text x="280" y="47" text-anchor="middle" fill="#C0870B" font-size="9.5" font-family="sans-serif">ドライバー不足率（2026年）</text>
+    <text x="280" y="67" text-anchor="middle" fill="#C0870B" font-size="24" font-family="Georgia,serif" font-weight="bold">28%</text>
+    <text x="280" y="83" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">AI配送最適化で積載効率+22%達成</text>
+    <text x="280" y="97" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif">無人配送ロボット：都市部で実用拡大</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-j">J-03</span><span class="tc-theme-tag" style="background:#E8EEF8;color:var(--navy)">物流・DX</span></div>
+  <div class="tc-body">
+    <div class="tc-title">物流DX・2024年問題の続き<br>AI配送最適化と無人化の最前線</div>
+    <div class="tc-prose">「2024年問題」（トラックドライバーの残業規制）によるドライバー不足率は<strong>28%</strong>に達し、物流クライシスへの対応が日本経済の喫緊課題となっている。AIルート最適化・デジタル運行管理・共同配送プラットフォームの組み合わせで積載効率+22%を実現した事業者が増えており、ヤマト・佐川・日本郵便がデータ共有による「競合しながら協力する」物流共通基盤の構築を進めている。無人配送ロボット（Cartken・DeNA×パナソニックの歩道走行型）は都市部の数百拠点で実用展開中だ。「物流版DX」の核心は自社単独ではなく業界横断のデータ標準化にあり、経産省・国交省の連携政策が加速する。</div>
+    <div class="stat-row"><span class="stat-chip sc-gold">不足率 28%</span><span class="stat-chip sc-jade">積載効率 +22%</span></div>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">ドライバーの高齢化（平均50歳超）と残業規制の施行が「物流は動いていた」から「動かなくなる」への転換点を作った。EC需要増との矛盾が産業全体を変革する圧力になっている。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">ヤマト・佐川・日本郵便の三者が共同配送プラットフォームを試験稼働。AIルート最適化ではトラボックス・hacobuが浸透。Amazon・楽天が自社配送網強化で圧力をかける。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">競合他社間のデータ共有への抵抗・無人配送ロボットの歩道走行規制・EC事業者の「翌日配送当然」という消費者期待の根強さが、物流の「当たり前の改革」を難しくしている。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- J-04 SMB -->
+<div class="topic-card smb">
+  <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="420" height="110" fill="#0a0806"/>
+    <!-- restaurant/retail scene -->
+    <rect x="18" y="40" width="110" height="70" rx="4" fill="#1a1208" stroke="#3a2a14" stroke-width="1"/>
+    <rect x="18" y="30" width="110" height="14" fill="#2a1a08" rx="2"/>
+    <text x="73" y="40" text-anchor="middle" fill="#C0870B" font-size="9" font-family="sans-serif" font-weight="bold">RESTAURANT</text>
+    <!-- QR code symbol -->
+    <rect x="30" y="55" width="22" height="22" rx="2" fill="#0a0806" stroke="#C0870B" stroke-width="1"/>
+    <rect x="33" y="58" width="6" height="6" rx="1" fill="#C0870B"/>
+    <rect x="42" y="58" width="6" height="6" rx="1" fill="#C0870B"/>
+    <rect x="33" y="67" width="6" height="6" rx="1" fill="#C0870B"/>
+    <rect x="42" y="67" width="3" height="3" rx="0" fill="#C0870B"/>
+    <rect x="46" y="70" width="3" height="3" rx="0" fill="#C0870B"/>
+    <!-- tablet POS -->
+    <rect x="75" y="52" width="40" height="28" rx="4" fill="#1a2a14" stroke="#4ac98a" stroke-width="1"/>
+    <text x="95" y="65" text-anchor="middle" fill="#4ac98a" font-size="7.5" font-family="sans-serif" font-weight="bold">AI POS</text>
+    <text x="95" y="75" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="6.5" font-family="sans-serif">¥2,480/月</text>
+    <rect x="148" y="8" width="264" height="98" fill="rgba(0,0,0,.28)" rx="6"/>
+    <text x="280" y="28" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="11" font-family="Georgia,serif" font-weight="bold">飲食・小売DX 中小企業版</text>
+    <text x="280" y="46" text-anchor="middle" fill="#C0870B" font-size="9.5" font-family="sans-serif">POSデータ活用で廃棄ロス</text>
+    <text x="280" y="66" text-anchor="middle" fill="#C0870B" font-size="22" font-family="Georgia,serif" font-weight="bold">▲32%</text>
+    <text x="280" y="82" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">セルフオーダー導入で回転率 +18%</text>
+    <text x="280" y="97" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif" font-weight="bold">補助金活用でPOS・自動精算機 実質¥0導入</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-j">J-04</span><span class="smb-badge">◎ 中小企業</span></div>
+  <div class="tc-body">
+    <div class="tc-title">飲食・小売の中小DX<br>POSデータで廃棄▲32%・回転率+18%</div>
+    <div class="tc-prose">AIクラウドPOSの普及により、中小飲食店でも<strong>廃棄ロス▲32%・売上+14%</strong>という数字が現実のものとなっている。セルフオーダーシステム（タブレット・QRコード注文）の導入でホール担当者を1〜2人削減した分を厨房・接客品質向上に振り向けた事例が急増中だ。Uレジ（ユニット）・スマレジ・Square・AirレジPOSが月額¥2,000〜¥5,000で在庫管理・売上分析・シフト管理を一体化している。IT導入補助金（¥450万上限）でPOSシステム・自動精算機・電子レシートシステムを実質無償で揃えられるケースも多く、「まず1年間無料で使ってみる」という試験導入が普及のハードルを下げている。</div>
+    <div class="stat-row"><span class="stat-chip sc-gold">廃棄ロス ▲32%</span><span class="stat-chip sc-jade">回転率 +18%</span></div>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">食材費・光熱費・人件費の三重値上がりが飲食・小売の利益率を圧迫し、「値上げか廃業か」の崖っぷちに追い込まれた中小事業者がDXに活路を見出している転換期。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">スマレジ・Square・Airレジが中小POS市場をリード。デリバリー連携ではUber Eats・出前館の注文を自動取り込みするSaaSが浸透。食品ロス削減AIではフードロスゼロ・TABETEが活躍。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">60〜70代の店主・オーナーがシステム操作を習得する時間と意欲の不足が最大の壁。また「顧客データを取られる」という漠然とした不安感も一部に残っており、操作研修・サポート体制の充実が普及のカギ。</div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="topic-grid">
+<!-- J-05 WIDE -->
+<div class="topic-card wide">
+  <svg viewBox="0 0 860 128" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="860" height="128" fill="#060c18"/>
+    <!-- rising sun flag style -->
+    <circle cx="120" cy="64" r="50" fill="#ff2222" opacity=".08"/>
+    <circle cx="120" cy="64" r="35" fill="#ff2222" opacity=".12"/>
+    <circle cx="120" cy="64" r="20" fill="#ff2222" opacity=".2"/>
+    <!-- AI nodes -->
+    <circle cx="60" cy="40" r="6" fill="#6050ff" opacity=".7"/>
+    <circle cx="80" cy="80" r="6" fill="#C0870B" opacity=".7"/>
+    <circle cx="120" cy="30" r="6" fill="#4ac98a" opacity=".7"/>
+    <circle cx="150" cy="75" r="6" fill="#00c8ff" opacity=".7"/>
+    <circle cx="170" cy="45" r="6" fill="#6050ff" opacity=".65"/>
+    <line x1="60" y1="40" x2="120" y2="30" stroke="#6050ff" stroke-width=".8" opacity=".4"/>
+    <line x1="120" y1="30" x2="170" y2="45" stroke="#4ac98a" stroke-width=".8" opacity=".4"/>
+    <line x1="80" y1="80" x2="150" y2="75" stroke="#C0870B" stroke-width=".8" opacity=".4"/>
+    <line x1="60" y1="40" x2="80" y2="80" stroke="#6050ff" stroke-width=".8" opacity=".35"/>
+    <!-- info panel -->
+    <rect x="218" y="8" width="634" height="115" fill="rgba(0,0,0,.32)" rx="8"/>
+    <text x="535" y="30" text-anchor="middle" fill="rgba(255,255,255,.95)" font-size="13" font-family="Georgia,serif" font-weight="bold">日本AI国家戦略・G7連携と人材育成政策</text>
+    <rect x="234" y="40" width="95" height="36" rx="5" fill="rgba(96,80,255,.18)" stroke="#6050ff" stroke-width="1"/>
+    <text x="281" y="54" text-anchor="middle" fill="#a090ff" font-size="8" font-family="sans-serif" font-weight="bold">AI予算（2026年度）</text>
+    <text x="281" y="72" text-anchor="middle" fill="#a090ff" font-size="20" font-family="Georgia,serif" font-weight="bold">¥1.2兆</text>
+    <rect x="337" y="40" width="95" height="36" rx="5" fill="rgba(74,201,138,.14)" stroke="#4ac98a" stroke-width="1"/>
+    <text x="384" y="54" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif" font-weight="bold">AI人材育成目標</text>
+    <text x="384" y="72" text-anchor="middle" fill="#4ac98a" font-size="20" font-family="Georgia,serif" font-weight="bold">25万人/年</text>
+    <rect x="440" y="40" width="95" height="36" rx="5" fill="rgba(192,135,11,.18)" stroke="#C0870B" stroke-width="1"/>
+    <text x="487" y="54" text-anchor="middle" fill="#C0870B" font-size="8" font-family="sans-serif" font-weight="bold">国産LLM開発</text>
+    <text x="487" y="72" text-anchor="middle" fill="#C0870B" font-size="20" font-family="Georgia,serif" font-weight="bold">3プロジェクト</text>
+    <rect x="543" y="40" width="95" height="36" rx="5" fill="rgba(0,200,255,.1)" stroke="rgba(0,200,255,.45)" stroke-width="1"/>
+    <text x="590" y="54" text-anchor="middle" fill="#00c8ff" font-size="8" font-family="sans-serif" font-weight="bold">G7 AI行動規範</text>
+    <text x="590" y="72" text-anchor="middle" fill="#00c8ff" font-size="20" font-family="Georgia,serif" font-weight="bold">合意済</text>
+    <rect x="646" y="40" width="192" height="36" rx="5" fill="rgba(255,100,100,.1)" stroke="rgba(200,50,50,.4)" stroke-width="1"/>
+    <text x="742" y="54" text-anchor="middle" fill="#ff7a7a" font-size="8" font-family="sans-serif" font-weight="bold">中国AI特許件数比較</text>
+    <text x="742" y="72" text-anchor="middle" fill="#ff7a7a" font-size="20" font-family="Georgia,serif" font-weight="bold">中国 3倍超</text>
+    <text x="535" y="95" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="8.5" font-family="sans-serif">🧠 NTT・富士通・Preferred Networksが国産LLM3プロジェクト ／ 大学・高専への生成AI必修化（2027年度）</text>
+    <text x="535" y="110" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="8.5" font-family="sans-serif">🌐 G7広島AIプロセス→「信頼できるAI」の国際枠組み合意 ／ AIセーフティーサミットで日本が議長国（2027年）</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-j">J-05</span><span class="tc-theme-tag" style="background:#F0E8FF;color:#5a30a0">AI国家戦略</span></div>
+  <div class="tc-body">
+    <div class="tc-title">日本のAI国家戦略・G7連携<br>¥1.2兆投資と人材育成25万人計画</div>
+    <div class="tc-prose">日本政府は2026年度のAI関連予算を<strong>¥1.2兆</strong>に拡大し、年間25万人のAI人材育成・国産LLM3プロジェクト・算力（AI計算能力）の国内整備を三本柱とする戦略を推進する。NTTのtsuzumiモデル・富士通のFujitsu AI・Preferred Networksが国産LLMの競争を展開し、日本語・日本文化に特化した強みを訴求している。G7広島AIプロセスを発展させた「信頼できるAIの国際枠組み」が合意され、日本は2027年のAIセーフティーサミット議長国として国際ルール形成を主導する立場にある。課題は中国のAI特許件数が日本の3倍超という「AIの量的格差」で、民間投資の規模感が米中に比べてまだ1桁小さいことが構造的な弱点として残る。</div>
+    <div class="stat-row"><span class="stat-chip sc-navy">AI予算 ¥1.2兆</span><span class="stat-chip sc-gold">人材 25万人/年</span><span class="stat-chip sc-red">特許 中国比3倍差</span></div>
+    <div class="analysis-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">ChatGPT登場から3年で「AIが産業競争力を決定する」という認識が国家レベルで確定した。米中がAI覇権競争を展開する中、日本の「出遅れ」への危機感が政策規模を急拡大させた。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">政府（内閣AI戦略室）・NTT・富士通・PFNが国産AIの旗手。大学（東大・京大・理研）が基礎研究を担う。民間ではソフトバンク・楽天・メルカリが生成AI活用を商業化する先頭集団。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">計算資源（GPU）の調達と国内整備コストの高さ・AIエンジニアの絶対数不足・政府調達の遅さと民間スピード感のギャップ・リスク回避的な組織文化による実装の遅れが日本固有の課題。</div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+</main>
+<footer class="site-footer"><span class="footer-brand">TYLER MORNING BRIEF</span><span>Vol.060 ／ 2026年8月28日（金曜日）／ 世界5本 ＋ 日本5本</span></footer>
+</body>
+</html>
