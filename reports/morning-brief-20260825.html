@@ -16,8 +16,6 @@
 }
 body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-size:15px;line-height:1.7}
 a{color:inherit;text-decoration:none}
-
-/* ── HEADER ── */
 .site-header{background:var(--navy);color:#fff;padding:0;border-bottom:4px solid var(--gold);display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch}
 .hd-left{padding:.9rem 1.5rem;display:flex;flex-direction:column;justify-content:center}
 .hd-tagline{font-size:.58rem;letter-spacing:.14em;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:.2rem}
@@ -28,34 +26,28 @@ a{color:inherit;text-decoration:none}
 .hd-right{padding:.9rem 1.5rem;display:flex;flex-direction:column;justify-content:center;align-items:flex-end}
 .hd-date-big{font-family:var(--f-serif);font-size:1.4rem;font-weight:700;color:#fff;line-height:1}
 .hd-weekday{font-size:.63rem;color:rgba(255,255,255,.55);margin-top:.2rem;text-align:right}
-
-/* ── KICKER ── */
 .kicker-strip{background:var(--ink);color:#fff;padding:.35rem 1.5rem;font-size:.62rem;letter-spacing:.07em;display:flex;gap:2rem;align-items:center;overflow-x:auto;border-bottom:2px solid var(--gold)}
 .kicker-item{white-space:nowrap;opacity:.8}
 .kicker-item strong{color:var(--gold);opacity:1}
-
-/* ── LAYOUT ── */
 .main{max-width:900px;margin:0 auto;padding:2rem 1.5rem 4rem}
-
-/* ── SECTION BANNER ── */
 .section-banner{display:flex;align-items:center;gap:.8rem;margin-bottom:1.5rem}
 .section-banner-icon{font-size:1.3rem}
 .section-banner-label{font-size:.65rem;font-weight:700;letter-spacing:.2em;color:var(--gold);border-bottom:2px solid var(--gold);padding-bottom:.12rem}
 .section-banner-rule{flex:1;height:1px;background:var(--rule)}
 
-/* ── LEAD CARD ── */
+/* LEAD */
 .lead-card{background:#fff;border:2px solid var(--gold);border-radius:8px;margin-bottom:2rem;overflow:hidden;box-shadow:0 6px 24px rgba(192,135,11,.13)}
 .lead-card-top{background:linear-gradient(135deg,#0f2540 0%,var(--navy) 60%,#2a4f7a 100%);padding:1.4rem 1.8rem;display:grid;grid-template-columns:1fr auto;gap:1.2rem;align-items:start}
 .lead-kicker{font-size:.58rem;font-weight:700;letter-spacing:.18em;color:var(--gold);margin-bottom:.4rem}
 .lead-title{font-family:var(--f-serif);font-size:1.45rem;font-weight:700;color:#fff;line-height:1.22}
-.lead-sub{font-size:.7rem;color:rgba(255,255,255,.62);margin-top:.45rem;line-height:1.55}
+.lead-sub{font-size:.7rem;color:rgba(255,255,255,.62);margin-top:.45rem;line-height:1.6}
 .lead-stat-box{background:var(--gold);border-radius:8px;padding:.9rem 1.1rem;text-align:center;min-width:110px;flex-shrink:0}
 .lead-stat-label{font-size:.52rem;font-weight:700;letter-spacing:.1em;color:rgba(11,31,53,.75);margin-bottom:.25rem}
 .lead-stat-num{font-family:var(--f-serif);font-size:1.55rem;font-weight:700;color:var(--ink);line-height:1}
 .lead-stat-sub{font-size:.58rem;color:rgba(11,31,53,.65);margin-top:.15rem}
 .lead-body{padding:1.4rem 1.8rem}
 
-/* ── CHART ── */
+/* CHART */
 .chart-wrap{margin-bottom:1.2rem}
 .chart-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.7rem}
 .chart-title{font-size:.58rem;font-weight:700;letter-spacing:.08em;color:var(--navy)}
@@ -66,37 +58,31 @@ a{color:inherit;text-decoration:none}
 .chart-bar-fill{height:100%;border-radius:3px}
 .chart-val{font-size:.58rem;font-weight:700;color:var(--ink);width:3.2rem;flex-shrink:0}
 
-/* ── ANALYSIS GRID ── */
-.analysis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin-top:.5rem}
-.analysis-cell{background:var(--muted);border-radius:6px;padding:.85rem 1rem;border-left:3px solid var(--gold)}
-.analysis-label{font-size:.62rem;font-weight:700;color:var(--gold);margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem}
-.analysis-sublabel{font-size:.55rem;color:var(--caption);font-weight:400;margin-left:.1rem}
-.analysis-body{font-size:.71rem;line-height:1.65}
+/* ANALYSIS GRID — shared by LEAD and all topic cards */
+.analysis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;margin-top:.75rem}
+.analysis-cell{background:var(--muted);border-radius:6px;padding:.78rem .9rem;border-left:3px solid var(--gold)}
+.analysis-label{font-size:.6rem;font-weight:700;color:var(--gold);margin-bottom:.3rem;display:flex;align-items:baseline;gap:.3rem}
+.analysis-sublabel{font-size:.52rem;color:var(--caption);font-weight:400}
+.analysis-body{font-size:.69rem;line-height:1.65}
 
-/* ── TOPIC GRID ── */
+/* TOPIC GRID */
 .topic-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-bottom:2rem}
 .topic-card{background:#fff;border:1px solid var(--rule);border-radius:8px;overflow:hidden;transition:box-shadow .15s}
 .topic-card:hover{box-shadow:0 4px 18px rgba(11,31,53,.1)}
 .topic-card.smb{border-top:3px solid var(--gold)}
 .topic-card.wide{grid-column:1/-1}
-
-/* ── CARD META ── */
-.tc-meta{padding:.75rem 1.1rem .5rem;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
+.tc-meta{padding:.7rem 1.05rem .45rem;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
 .tc-tag{font-size:.52rem;font-weight:700;letter-spacing:.1em;padding:.1rem .5rem;border-radius:20px}
 .tag-w{background:#E8EEF8;color:var(--navy)}
 .tag-j{background:#FEF5E4;color:#8A5C00}
 .smb-badge{font-size:.52rem;font-weight:700;color:var(--gold);background:var(--gold-lt);border:1px solid var(--gold);padding:.1rem .45rem;border-radius:20px}
 .tc-theme-tag{font-size:.52rem;font-weight:700;padding:.1rem .5rem;border-radius:20px}
-
-/* ── CARD BODY ── */
-.tc-body{padding:.85rem 1.1rem 1rem}
-.tc-title{font-family:var(--f-serif);font-size:.95rem;font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:.5rem}
-.tc-lead{font-size:.73rem;line-height:1.68;margin-bottom:.65rem;color:var(--ink)}
-.tc-lead strong{color:var(--navy)}
-
-/* ── STAT ROW ── */
-.stat-row{display:flex;gap:.45rem;margin-bottom:.7rem;flex-wrap:wrap}
-.stat-chip{border-radius:6px;padding:.25rem .6rem;font-size:.6rem;font-weight:700;line-height:1.3;flex-shrink:0}
+.tc-body{padding:.82rem 1.05rem .95rem}
+.tc-title{font-family:var(--f-serif);font-size:.93rem;font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:.5rem}
+.tc-prose{font-size:.72rem;line-height:1.7;color:var(--ink);margin-bottom:.65rem}
+.tc-prose strong{color:var(--navy)}
+.stat-row{display:flex;gap:.4rem;margin-bottom:.65rem;flex-wrap:wrap}
+.stat-chip{border-radius:6px;padding:.22rem .55rem;font-size:.59rem;font-weight:700;line-height:1.3;flex-shrink:0}
 .sc-gold{background:var(--gold-lt);color:var(--gold);border:1px solid rgba(192,135,11,.3)}
 .sc-navy{background:#EAF0FB;color:var(--navy);border:1px solid rgba(30,58,95,.2)}
 .sc-jade{background:var(--jade-lt);color:var(--jade);border:1px solid rgba(26,122,94,.2)}
@@ -104,23 +90,23 @@ a{color:inherit;text-decoration:none}
 .sc-amber{background:#FEF5E4;color:#8A5C00;border:1px solid rgba(138,92,0,.2)}
 .sc-red{background:#FAEAEA;color:#B83232;border:1px solid rgba(184,50,50,.2)}
 
-/* ── TOPIC POINTS (key:detail format) ── */
-.tc-points{display:flex;flex-direction:column}
-.tp{font-size:.72rem;line-height:1.65;padding:.3rem 0;border-bottom:1px dotted rgba(214,208,200,.6);color:var(--ink)}
-.tp:last-child{border-bottom:none}
-.tp-k{font-weight:700;color:var(--navy);margin-right:.35rem}
-.tp-k::after{content:"　"}
+/* narrow-card analysis grid: slightly tighter */
+.tc-body .analysis-grid{gap:.5rem;margin-top:.65rem}
+.tc-body .analysis-cell{padding:.65rem .78rem}
+.tc-body .analysis-label{font-size:.56rem;margin-bottom:.25rem}
+.tc-body .analysis-sublabel{font-size:.49rem}
+.tc-body .analysis-body{font-size:.66rem;line-height:1.62}
 
-/* ── WIDE CARD ── */
-.tc-wide-cols{display:grid;grid-template-columns:1fr 1fr;gap:0 1.2rem}
+/* WIDE CARD 2-col prose */
+.wide-prose-grid{display:grid;grid-template-columns:1fr 1fr;gap:.4rem 1.2rem}
+.wide-prose-grid .analysis-grid{grid-column:1/-1;grid-template-columns:repeat(3,1fr)}
 
-/* ── SECTION DIVIDER ── */
+/* DIVIDER */
 .section-divider{display:flex;align-items:center;gap:1rem;margin:2rem 0 1.75rem}
 .sdl{flex:1;height:2px;background:linear-gradient(90deg,transparent,var(--rule))}
 .sdr{flex:1;height:2px;background:linear-gradient(90deg,var(--rule),transparent)}
 .sd-badge{background:var(--navy);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.14em;padding:.32rem 1.1rem;border-radius:20px;display:flex;align-items:center;gap:.4rem}
 
-/* ── FOOTER ── */
 .site-footer{background:var(--navy);color:rgba(255,255,255,.65);padding:.9rem 2rem;font-size:.63rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
 .footer-brand{font-family:var(--f-serif);color:var(--gold);font-weight:700;letter-spacing:.1em}
 
@@ -129,10 +115,10 @@ a{color:inherit;text-decoration:none}
   .hd-left,.hd-right{display:none}
   .topic-grid{grid-template-columns:1fr}
   .topic-card.wide{grid-column:1}
-  .analysis-grid{grid-template-columns:1fr}
+  .analysis-grid,.tc-body .analysis-grid,.wide-prose-grid .analysis-grid{grid-template-columns:1fr}
   .main{padding:1.2rem 1rem 2rem}
   .lead-card-top{grid-template-columns:1fr}
-  .tc-wide-cols{grid-template-columns:1fr}
+  .wide-prose-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -161,7 +147,6 @@ a{color:inherit;text-decoration:none}
 
 <main class="main">
 
-<!-- ═══ WORLD ═══ -->
 <div class="section-banner">
   <span class="section-banner-icon">🌐</span>
   <span class="section-banner-label">W O R L D</span>
@@ -170,44 +155,24 @@ a{color:inherit;text-decoration:none}
 
 <!-- ── W-01 LEAD ── -->
 <div class="lead-card">
-
-  <!-- SVG: Digital Twin illustration -->
   <svg viewBox="0 0 860 155" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
     <defs>
-      <linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#0a1830"/><stop offset="100%" stop-color="#152c52"/>
-      </linearGradient>
-      <linearGradient id="g-stream" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0%" stop-color="#00c8ff" stop-opacity="0"/>
-        <stop offset="50%" stop-color="#00c8ff" stop-opacity=".5"/>
-        <stop offset="100%" stop-color="#00c8ff" stop-opacity="0"/>
-      </linearGradient>
+      <linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0a1830"/><stop offset="100%" stop-color="#152c52"/></linearGradient>
+      <linearGradient id="g-stream" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#00c8ff" stop-opacity="0"/><stop offset="50%" stop-color="#00c8ff" stop-opacity=".5"/><stop offset="100%" stop-color="#00c8ff" stop-opacity="0"/></linearGradient>
     </defs>
     <rect width="860" height="155" fill="url(#g-sky)"/>
-    <!-- Stars -->
-    <circle cx="50" cy="20" r="1" fill="white" opacity=".4"/><circle cx="120" cy="12" r="1.2" fill="white" opacity=".3"/>
-    <circle cx="200" cy="30" r="1" fill="white" opacity=".5"/><circle cx="700" cy="18" r="1" fill="white" opacity=".4"/>
-    <circle cx="790" cy="10" r="1.2" fill="white" opacity=".3"/><circle cx="830" cy="35" r="1" fill="white" opacity=".5"/>
-    <!-- Ground line -->
+    <circle cx="50" cy="20" r="1" fill="white" opacity=".4"/><circle cx="120" cy="12" r="1.2" fill="white" opacity=".3"/><circle cx="200" cy="30" r="1" fill="white" opacity=".5"/>
+    <circle cx="700" cy="18" r="1" fill="white" opacity=".4"/><circle cx="790" cy="10" r="1.2" fill="white" opacity=".3"/><circle cx="830" cy="35" r="1" fill="white" opacity=".5"/>
     <line x1="0" y1="125" x2="860" y2="125" stroke="#1a3a6a" stroke-width="1"/>
-    <!-- Stream glow -->
     <rect x="100" y="120" width="260" height="4" rx="2" fill="url(#g-stream)" opacity=".5"/>
     <rect x="500" y="120" width="260" height="4" rx="2" fill="url(#g-stream)" opacity=".4"/>
-    <!-- Real factory -->
     <rect x="100" y="68" width="120" height="57" fill="#1E3A5F" rx="2"/>
-    <rect x="115" y="38" width="18" height="38" fill="#2a5080" rx="2"/>
-    <rect x="148" y="48" width="15" height="28" fill="#2a5080" rx="2"/>
-    <rect x="178" y="43" width="14" height="33" fill="#2a5080" rx="2"/>
-    <ellipse cx="124" cy="34" rx="9" ry="7" fill="#2a4060" opacity=".55"/>
-    <ellipse cx="155" cy="43" rx="7" ry="6" fill="#2a4060" opacity=".45"/>
-    <ellipse cx="185" cy="38" rx="6" ry="5" fill="#2a4060" opacity=".45"/>
-    <rect x="112" y="82" width="14" height="10" fill="#F5B800" rx="1" opacity=".85"/>
-    <rect x="133" y="82" width="14" height="10" fill="#F5B800" rx="1" opacity=".75"/>
-    <rect x="154" y="82" width="14" height="10" fill="#F5B800" rx="1" opacity=".9"/>
-    <rect x="175" y="82" width="14" height="10" fill="#F5B800" rx="1" opacity=".7"/>
+    <rect x="115" y="38" width="18" height="38" fill="#2a5080" rx="2"/><rect x="148" y="48" width="15" height="28" fill="#2a5080" rx="2"/><rect x="178" y="43" width="14" height="33" fill="#2a5080" rx="2"/>
+    <ellipse cx="124" cy="34" rx="9" ry="7" fill="#2a4060" opacity=".55"/><ellipse cx="155" cy="43" rx="7" ry="6" fill="#2a4060" opacity=".45"/><ellipse cx="185" cy="38" rx="6" ry="5" fill="#2a4060" opacity=".45"/>
+    <rect x="112" y="82" width="14" height="10" fill="#F5B800" rx="1" opacity=".85"/><rect x="133" y="82" width="14" height="10" fill="#F5B800" rx="1" opacity=".75"/>
+    <rect x="154" y="82" width="14" height="10" fill="#F5B800" rx="1" opacity=".9"/><rect x="175" y="82" width="14" height="10" fill="#F5B800" rx="1" opacity=".7"/>
     <rect x="100" y="65" width="120" height="5" fill="#2a5080" rx="1"/>
-    <text x="160" y="143" text-anchor="middle" fill="rgba(255,255,255,.45)" font-size="9" font-family="sans-serif" letter-spacing="1">REAL FACTORY</text>
-    <!-- Data stream -->
+    <text x="160" y="143" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="9" font-family="sans-serif" letter-spacing="1">REAL FACTORY</text>
     <line x1="228" y1="97" x2="390" y2="97" stroke="#C0870B" stroke-width="1.5" stroke-dasharray="8,5"/>
     <line x1="228" y1="89" x2="390" y2="89" stroke="#00c8ff" stroke-width="1" stroke-dasharray="6,7" opacity=".55"/>
     <line x1="228" y1="105" x2="390" y2="105" stroke="#00c8ff" stroke-width="1" stroke-dasharray="5,9" opacity=".4"/>
@@ -216,21 +181,16 @@ a{color:inherit;text-decoration:none}
     <text x="310" y="96" text-anchor="middle" fill="rgba(255,255,255,.55)" font-size="6.5" font-family="sans-serif">リアルタイム同期</text>
     <polygon points="392,93 392,101 400,97" fill="#C0870B"/>
     <polygon points="228,93 228,101 220,97" fill="#00c8ff" opacity=".65"/>
-    <!-- Digital twin -->
     <rect x="408" y="68" width="120" height="57" fill="none" stroke="#00c8ff" stroke-width="1.5" stroke-dasharray="5,3" rx="2" opacity=".85"/>
     <rect x="423" y="38" width="18" height="38" fill="rgba(0,200,255,.07)" stroke="#00c8ff" stroke-width="1" stroke-dasharray="4,3" rx="2" opacity=".8"/>
     <rect x="456" y="48" width="15" height="28" fill="rgba(0,200,255,.07)" stroke="#00c8ff" stroke-width="1" stroke-dasharray="4,3" rx="2" opacity=".7"/>
     <rect x="486" y="43" width="14" height="33" fill="rgba(0,200,255,.07)" stroke="#00c8ff" stroke-width="1" stroke-dasharray="4,3" rx="2" opacity=".75"/>
-    <rect x="420" y="82" width="14" height="10" fill="rgba(0,200,255,.22)" stroke="#00c8ff" stroke-width=".8" rx="1"/>
-    <rect x="441" y="82" width="14" height="10" fill="rgba(0,200,255,.22)" stroke="#00c8ff" stroke-width=".8" rx="1"/>
-    <rect x="462" y="82" width="14" height="10" fill="rgba(0,200,255,.22)" stroke="#00c8ff" stroke-width=".8" rx="1"/>
-    <rect x="483" y="82" width="14" height="10" fill="rgba(0,200,255,.22)" stroke="#00c8ff" stroke-width=".8" rx="1"/>
+    <rect x="420" y="82" width="14" height="10" fill="rgba(0,200,255,.22)" stroke="#00c8ff" stroke-width=".8" rx="1"/><rect x="441" y="82" width="14" height="10" fill="rgba(0,200,255,.22)" stroke="#00c8ff" stroke-width=".8" rx="1"/>
+    <rect x="462" y="82" width="14" height="10" fill="rgba(0,200,255,.22)" stroke="#00c8ff" stroke-width=".8" rx="1"/><rect x="483" y="82" width="14" height="10" fill="rgba(0,200,255,.22)" stroke="#00c8ff" stroke-width=".8" rx="1"/>
     <rect x="406" y="66" width="124" height="61" fill="none" stroke="#00c8ff" stroke-width="4" rx="4" opacity=".06"/>
     <circle cx="418" cy="60" r="3" fill="#00c8ff" opacity=".65"/><circle cx="435" cy="55" r="2" fill="#00c8ff" opacity=".5"/>
-    <circle cx="468" cy="52" r="2.5" fill="#00c8ff" opacity=".6"/><circle cx="503" cy="57" r="2" fill="#00c8ff" opacity=".5"/>
-    <circle cx="520" cy="62" r="3" fill="#00c8ff" opacity=".6"/>
+    <circle cx="468" cy="52" r="2.5" fill="#00c8ff" opacity=".6"/><circle cx="503" cy="57" r="2" fill="#00c8ff" opacity=".5"/><circle cx="520" cy="62" r="3" fill="#00c8ff" opacity=".6"/>
     <text x="468" y="143" text-anchor="middle" fill="#00c8ff" font-size="9" font-family="sans-serif" letter-spacing="1" opacity=".8">DIGITAL TWIN</text>
-    <!-- Right title -->
     <text x="680" y="55" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="14" font-family="Georgia,serif" font-weight="bold">デジタルツイン・産業メタバース</text>
     <text x="680" y="80" text-anchor="middle" fill="#C0870B" font-size="26" font-family="Georgia,serif" font-weight="bold">$10B → $82B</text>
     <text x="680" y="97" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="9" font-family="sans-serif">CAGR 52% ／ 2021–2026</text>
@@ -239,12 +199,11 @@ a{color:inherit;text-decoration:none}
     <rect x="700" y="108" width="90" height="20" rx="10" fill="rgba(0,200,255,.1)" stroke="#00c8ff" stroke-width="1" opacity=".85"/>
     <text x="745" y="121" text-anchor="middle" fill="#00c8ff" font-size="8.5" font-family="sans-serif" font-weight="bold" opacity=".9">ダウンタイム ▲35%</text>
   </svg>
-
   <div class="lead-card-top">
     <div>
       <div class="lead-kicker">W-01 ／ LEAD STORY</div>
       <div class="lead-title">「工場の仮想コピー」が製造業を再定義する</div>
-      <div class="lead-sub">デジタルツインとは実物の工場・都市・航空機をリアルタイムでコピーした仮想モデル。AIと融合することで設計から保全まで全工程の意思決定を変革し、グローバル市場は2021年の$10Bから2026年には$82B（CAGR 52%）へと急拡大した。</div>
+      <div class="lead-sub">デジタルツインとは実物の工場・都市・航空機をリアルタイムでコピーした仮想モデルであり、AIと組み合わせることで設計から保全まで全工程の意思決定を変革する。グローバル市場は2021年の$10Bから2026年には$82B（CAGR 52%）へと急拡大した。</div>
     </div>
     <div class="lead-stat-box">
       <div class="lead-stat-label">2026年市場規模</div>
@@ -252,7 +211,6 @@ a{color:inherit;text-decoration:none}
       <div class="lead-stat-sub">CAGR 52%</div>
     </div>
   </div>
-
   <div class="lead-body">
     <div class="chart-wrap">
       <div class="chart-head">
@@ -266,19 +224,18 @@ a{color:inherit;text-decoration:none}
       <div class="chart-row"><span class="chart-year">2025</span><div class="chart-bar-track"><div class="chart-bar-fill" style="width:146px;background:#EAE6DE"></div></div><span class="chart-val">$57B</span></div>
       <div class="chart-row"><span class="chart-year">2026</span><div class="chart-bar-track"><div class="chart-bar-fill" style="width:210px;background:var(--gold)"></div></div><span class="chart-val" style="color:var(--gold);font-weight:800">$82B</span></div>
     </div>
-
     <div class="analysis-grid">
       <div class="analysis-cell">
-        <div class="analysis-label">📌 なぜ今？<span class="analysis-sublabel">— このテーマが急浮上した理由</span></div>
-        <div class="analysis-body">工場・都市・航空機・電力網の「デジタルコピー」をリアルタイム同期し、AIが異常を予測・修正する仕組みが実用域に達した。ダウンタイム▲35%・設計コスト▲20%という具体的ROIが出始め、製造業トップが一斉に投資を決断。「作って壊れたら直す」から「壊れる前に直す」へのパラダイム転換が始まっている。</div>
+        <div class="analysis-label">📌 なぜ今？<span class="analysis-sublabel">— 急浮上の背景</span></div>
+        <div class="analysis-body">AIとIoTセンサーの融合により「異常検知精度95%超・ダウンタイム▲35%」という具体的なROIが証明され、製造業トップが一斉投資に踏み切った。「壊れたら直す」から「壊れる前に直す」へのパラダイム転換が始まっている。</div>
       </div>
       <div class="analysis-cell">
-        <div class="analysis-label">🏆 誰が動く？<span class="analysis-sublabel">— 主要プレイヤーと戦略</span></div>
-        <div class="analysis-body">Siemens Xcelerator・PTC Vuforia・NVIDIA Omniverseがプラットフォーム争いをリード。Boeing・Airbus・BMWが全工場のツイン化を完了し先行優位を確立。シンガポール・東京はスマートシティ実装で都市規模の実証が進む。日本では三菱重工・日立が「社会インフラのデジタルツイン」で独自ポジションを形成中。</div>
+        <div class="analysis-label">🏆 誰が動く？<span class="analysis-sublabel">— 主要プレイヤー</span></div>
+        <div class="analysis-body">Siemens Xcelerator・PTC Vuforia・NVIDIA Omniverseがプラットフォーム争いをリード。Boeing・Airbus・BMWは全工場のツイン化を完了済みで先行優位を確立。日本では三菱重工・日立が「社会インフラのデジタルツイン」で独自ポジションを狙う。</div>
       </div>
       <div class="analysis-cell">
-        <div class="analysis-label">⚠️ 何が壁？<span class="analysis-sublabel">— 普及を妨げる課題</span></div>
-        <div class="analysis-body">IoTセンサーとの統合コスト・レガシー設備のデータ化・専門人材不足が中堅・中小の導入障壁。異なるベンダー間のデータ標準が未統一のため産業横断展開が難しく、単一ベンダーへのロックインリスクも大きい。投資対効果の「見える化」に時間がかかり、経営承認を得づらい点も課題。</div>
+        <div class="analysis-label">⚠️ 何が壁？<span class="analysis-sublabel">— 普及の課題</span></div>
+        <div class="analysis-body">IoT統合コスト・レガシー設備のデータ化・専門人材不足が中堅・中小の参入障壁。異なるベンダー間のデータ標準が未統一で産業横断展開が難しく、単一ベンダーへのロックインリスクも大きい。</div>
       </div>
     </div>
   </div>
@@ -287,43 +244,38 @@ a{color:inherit;text-decoration:none}
 <!-- ── WORLD TOPIC GRID ── -->
 <div class="topic-grid">
 
-<!-- W-02 VC -->
+<!-- W-02 -->
 <div class="topic-card">
-  <svg viewBox="0 0 420 128" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
-    <rect width="420" height="128" fill="#0f1e36"/>
-    <circle cx="30" cy="20" r="1" fill="white" opacity=".5"/><circle cx="90" cy="12" r="1.2" fill="white" opacity=".4"/>
-    <circle cx="160" cy="25" r="1" fill="white" opacity=".3"/><circle cx="350" cy="18" r="1" fill="white" opacity=".5"/>
-    <circle cx="400" cy="30" r="1.2" fill="white" opacity=".4"/>
-    <!-- Bar chart -->
-    <rect x="200" y="18" width="205" height="100" fill="rgba(255,255,255,.025)" rx="4"/>
-    <rect x="215" y="93" width="22" height="20" fill="#3D526A" rx="2"/>
-    <rect x="245" y="83" width="22" height="30" fill="#6B7A8D" rx="2"/>
-    <rect x="275" y="70" width="22" height="43" fill="#9EA8B8" rx="2"/>
-    <rect x="305" y="53" width="22" height="60" fill="#CDD4DC" rx="2"/>
-    <rect x="335" y="36" width="22" height="77" fill="#C0870B" rx="2"/>
-    <text x="346" y="31" text-anchor="middle" fill="#C0870B" font-size="8" font-family="sans-serif" font-weight="bold">$185B</text>
-    <text x="226" y="120" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="7" font-family="sans-serif">22</text>
-    <text x="256" y="120" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="7" font-family="sans-serif">23</text>
-    <text x="286" y="120" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="7" font-family="sans-serif">24</text>
-    <text x="316" y="120" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="7" font-family="sans-serif">25</text>
-    <text x="346" y="120" text-anchor="middle" fill="#C0870B" font-size="7" font-family="sans-serif" font-weight="bold">26H1</text>
-    <!-- Rocket -->
-    <g transform="translate(50,5) rotate(25 40 65)">
+  <svg viewBox="0 0 420 120" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="420" height="120" fill="#0f1e36"/>
+    <circle cx="30" cy="20" r="1" fill="white" opacity=".5"/><circle cx="90" cy="12" r="1.2" fill="white" opacity=".4"/><circle cx="160" cy="25" r="1" fill="white" opacity=".3"/><circle cx="350" cy="18" r="1" fill="white" opacity=".5"/>
+    <rect x="200" y="15" width="205" height="96" fill="rgba(255,255,255,.025)" rx="4"/>
+    <rect x="215" y="88" width="22" height="20" fill="#3D526A" rx="2"/>
+    <rect x="245" y="78" width="22" height="30" fill="#6B7A8D" rx="2"/>
+    <rect x="275" y="65" width="22" height="43" fill="#9EA8B8" rx="2"/>
+    <rect x="305" y="48" width="22" height="60" fill="#CDD4DC" rx="2"/>
+    <rect x="335" y="30" width="22" height="78" fill="#C0870B" rx="2"/>
+    <text x="346" y="25" text-anchor="middle" fill="#C0870B" font-size="8" font-family="sans-serif" font-weight="bold">$185B</text>
+    <text x="226" y="115" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="7" font-family="sans-serif">22</text>
+    <text x="256" y="115" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="7" font-family="sans-serif">23</text>
+    <text x="286" y="115" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="7" font-family="sans-serif">24</text>
+    <text x="316" y="115" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="7" font-family="sans-serif">25</text>
+    <text x="346" y="115" text-anchor="middle" fill="#C0870B" font-size="7" font-family="sans-serif" font-weight="bold">26H1</text>
+    <g transform="translate(45,5) rotate(22 40 65)">
       <ellipse cx="40" cy="65" rx="12" ry="28" fill="#C0870B"/>
       <polygon points="40,30 28,60 52,60" fill="#E8A020"/>
       <circle cx="40" cy="58" r="6" fill="#0f1e36" stroke="#E8A020" stroke-width="1.5"/>
       <circle cx="40" cy="58" r="3" fill="#00c8ff" opacity=".7"/>
-      <polygon points="28,80 20,100 35,85" fill="#9A6A00"/>
-      <polygon points="52,80 60,100 45,85" fill="#9A6A00"/>
+      <polygon points="28,80 20,100 35,85" fill="#9A6A00"/><polygon points="52,80 60,100 45,85" fill="#9A6A00"/>
       <ellipse cx="40" cy="97" rx="8" ry="12" fill="#ff6600" opacity=".8"/>
       <ellipse cx="40" cy="100" rx="5" ry="9" fill="#ffcc00" opacity=".85"/>
       <ellipse cx="40" cy="103" rx="3" ry="6" fill="#fff" opacity=".65"/>
     </g>
-    <text x="35" y="42" fill="#C0870B" font-size="14" font-family="sans-serif" opacity=".65">$</text>
-    <text x="15" y="68" fill="#C0870B" font-size="10" font-family="sans-serif" opacity=".5">$</text>
-    <text x="140" y="72" fill="rgba(255,255,255,.85)" font-size="13" font-family="Georgia,serif" font-weight="bold">VC・スタートアップ</text>
-    <text x="140" y="90" fill="#C0870B" font-size="11" font-family="sans-serif" font-weight="bold">上半期 $185B</text>
-    <text x="140" y="106" fill="rgba(255,255,255,.42)" font-size="9" font-family="sans-serif">AI特化が55%を独占</text>
+    <text x="30" y="38" fill="#C0870B" font-size="14" font-family="sans-serif" opacity=".6">$</text>
+    <text x="12" y="62" fill="#C0870B" font-size="10" font-family="sans-serif" opacity=".45">$</text>
+    <text x="130" y="65" fill="rgba(255,255,255,.85)" font-size="12" font-family="Georgia,serif" font-weight="bold">VC・スタートアップ</text>
+    <text x="130" y="82" fill="#C0870B" font-size="11" font-family="sans-serif" font-weight="bold">上半期 $185B</text>
+    <text x="130" y="97" fill="rgba(255,255,255,.4)" font-size="9" font-family="sans-serif">AI特化が55%を独占</text>
   </svg>
   <div class="tc-meta">
     <span class="tc-tag tag-w">W-02</span>
@@ -331,74 +283,61 @@ a{color:inherit;text-decoration:none}
   </div>
   <div class="tc-body">
     <div class="tc-title">グローバルVC・スタートアップ<br>2026年上半期の投資動向</div>
-    <div class="tc-lead">2026年上半期のグローバルVC調達額は<strong>$185B</strong>に達し、そのうち55%がAI関連。$500M超のメガラウンドは42件（前年比+68%）と過去最多を更新した。</div>
+    <div class="tc-prose">2026年上半期のグローバルVC調達額は<strong>$185B</strong>に達し、そのうち55%がAI関連に集中した。$500M超のメガラウンドは42件（前年比+68%）と過去最多を更新し、OpenAI・Anthropic・xAIが市場を牽引している。地域別ではSF 38%・NY 18%と米国が過半数を占めるが、東京は3%ながらAPAC最速の成長率を示しており、日本のユニコーン累計は32社に達した。セクター別では、AIインフラ・ヘルステックAI・気候テック・防衛テック・スペーステックの順に資金が集まり、旧来型SaaSへの投資比率は3年連続で低下している。</div>
     <div class="stat-row">
       <span class="stat-chip sc-gold">$185B 上半期</span>
       <span class="stat-chip sc-navy">メガラウンド 42件</span>
       <span class="stat-chip sc-jade">新規ユニコーン 42社</span>
     </div>
-    <div class="tc-points">
-      <div class="tp"><span class="tp-k">AI独走</span>生成AI・AIエージェント・AI半導体が調達の55%・平均バリュエーションは5年で8倍に膨張</div>
-      <div class="tp"><span class="tp-k">メガラウンド</span>$500M超が42件（+68%）・OpenAI・Anthropic・xAIが相場を牽引し1兆円超の調達も複数</div>
-      <div class="tp"><span class="tp-k">地域別</span>SF 38%・NY 18%・ロンドン 9%・東京 3%——成長率はアジア最速で日本が急浮上</div>
-      <div class="tp"><span class="tp-k">ユニコーン</span>新規42社（上半期）・累計世界1,580社・日本累計32社でAPAC 3位</div>
-      <div class="tp"><span class="tp-k">注目セクター</span>AIインフラ・ヘルステックAI・気候テック・防衛テック・スペーステックの順に資金が集中</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">📌 なぜ今？</div>
+        <div class="analysis-body">ChatGPT登場以来の生成AI実用化が加速し、企業がAI投資を「コスト」でなく「競争力」と捉え始めた。バリュエーションは過熱気味だが、実ユーザー数・ARRが伴うスタートアップへの選別投資が進んでいる。</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">🏆 誰が動く？</div>
+        <div class="analysis-body">a16z・Sequoia・Tiger Globalが大型ファンドを積み上げる一方、SoftBank Vision Fund 3が東南アジア・日本のAIスタートアップへの投資を再加速。国内ではDCM・グローバル・ブレインが存在感を増す。</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">⚠️ 何が壁？</div>
+        <div class="analysis-body">バリュエーション過熱によるダウンラウンドリスクと出口（IPO・M&A）の縮小が懸念材料。米国金利が高止まりすれば機関投資家のVC向けアロケーションが絞られ、中後期ステージへの影響が大きい。</div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- W-03 Middle East -->
+<!-- W-03 -->
 <div class="topic-card">
-  <svg viewBox="0 0 420 128" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
-    <defs>
-      <linearGradient id="g-desert" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#1a0a00"/><stop offset="100%" stop-color="#3d1f00"/>
-      </linearGradient>
-    </defs>
-    <rect width="420" height="128" fill="url(#g-desert)"/>
-    <circle cx="370" cy="25" r="18" fill="#ffd080"/>
-    <circle cx="381" cy="19" r="15" fill="#3d1f00"/>
-    <circle cx="50" cy="18" r="1.2" fill="white" opacity=".6"/>
-    <circle cx="110" cy="10" r="1" fill="white" opacity=".5"/>
-    <circle cx="200" cy="22" r="1" fill="white" opacity=".4"/>
-    <circle cx="320" cy="15" r="1.2" fill="white" opacity=".6"/>
-    <ellipse cx="80" cy="132" rx="120" ry="28" fill="#6b4f0a" opacity=".55"/>
-    <ellipse cx="340" cy="135" rx="100" ry="22" fill="#6b4f0a" opacity=".45"/>
-    <!-- Buildings -->
-    <rect x="60" y="40" width="22" height="83" fill="#2a1a00" rx="2"/>
-    <polygon points="71,32 64,50 78,50" fill="#3a2500"/>
-    <rect x="63" y="55" width="6" height="5" fill="rgba(255,200,50,.5)" rx="1"/>
-    <rect x="73" y="55" width="6" height="5" fill="rgba(255,200,50,.6)" rx="1"/>
-    <rect x="63" y="67" width="6" height="5" fill="rgba(255,200,50,.4)" rx="1"/>
-    <rect x="73" y="67" width="6" height="5" fill="rgba(255,200,50,.7)" rx="1"/>
-    <rect x="63" y="79" width="6" height="5" fill="rgba(255,200,50,.5)" rx="1"/>
-    <rect x="92" y="55" width="40" height="68" fill="#1f1200" rx="2"/>
-    <rect x="96" y="63" width="7" height="7" fill="rgba(255,180,50,.55)" rx="1"/>
-    <rect x="108" y="63" width="7" height="7" fill="rgba(255,180,50,.6)" rx="1"/>
-    <rect x="120" y="63" width="7" height="7" fill="rgba(255,180,50,.4)" rx="1"/>
-    <rect x="96" y="76" width="7" height="7" fill="rgba(255,180,50,.7)" rx="1"/>
-    <rect x="108" y="76" width="7" height="7" fill="rgba(255,180,50,.5)" rx="1"/>
-    <rect x="120" y="76" width="7" height="7" fill="rgba(255,180,50,.6)" rx="1"/>
-    <rect x="96" y="89" width="7" height="7" fill="rgba(255,180,50,.4)" rx="1"/>
-    <rect x="145" y="70" width="8" height="53" fill="#2d1800" rx="1"/>
-    <rect x="160" y="58" width="8" height="65" fill="#2d1800" rx="1"/>
-    <rect x="175" y="48" width="8" height="75" fill="#3a2000" rx="1"/>
-    <rect x="190" y="63" width="8" height="60" fill="#2d1800" rx="1"/>
-    <!-- Mosque -->
-    <rect x="25" y="76" width="28" height="47" fill="#2a1500" rx="2"/>
-    <ellipse cx="39" cy="76" rx="14" ry="12" fill="#3a2200"/>
-    <line x1="39" y1="60" x2="39" y2="53" stroke="#C0870B" stroke-width="1.5"/>
-    <circle cx="39" cy="52" r="4" fill="#C0870B"/>
-    <circle cx="41" cy="50" r="3" fill="#3d1f00"/>
-    <!-- Label panel -->
-    <rect x="228" y="18" width="182" height="94" fill="rgba(0,0,0,.32)" rx="6"/>
-    <text x="319" y="40" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="13" font-family="Georgia,serif" font-weight="bold">中東・Saudi Vision</text>
-    <text x="319" y="60" text-anchor="middle" fill="#C0870B" font-size="20" font-family="Georgia,serif" font-weight="bold">2030</text>
-    <text x="319" y="76" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="8.5" font-family="sans-serif">AI投資 $100B ／ NEOM第1工区</text>
-    <rect x="243" y="84" width="72" height="18" rx="9" fill="rgba(192,135,11,.28)" stroke="#C0870B" stroke-width="1"/>
-    <text x="279" y="96" text-anchor="middle" fill="#C0870B" font-size="8" font-family="sans-serif" font-weight="bold">脱石油戦略加速</text>
-    <rect x="325" y="84" width="72" height="18" rx="9" fill="rgba(0,200,255,.1)" stroke="rgba(0,200,255,.5)" stroke-width="1"/>
-    <text x="361" y="96" text-anchor="middle" fill="rgba(0,200,255,.85)" font-size="8" font-family="sans-serif" font-weight="bold">日系企業が受注拡大</text>
+  <svg viewBox="0 0 420 120" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <defs><linearGradient id="g-desert" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a0a00"/><stop offset="100%" stop-color="#3d1f00"/></linearGradient></defs>
+    <rect width="420" height="120" fill="url(#g-desert)"/>
+    <circle cx="370" cy="24" r="18" fill="#ffd080"/><circle cx="381" cy="18" r="15" fill="#3d1f00"/>
+    <circle cx="50" cy="18" r="1.2" fill="white" opacity=".6"/><circle cx="110" cy="10" r="1" fill="white" opacity=".5"/><circle cx="200" cy="22" r="1" fill="white" opacity=".4"/><circle cx="320" cy="15" r="1.2" fill="white" opacity=".6"/>
+    <ellipse cx="80" cy="124" rx="120" ry="26" fill="#6b4f0a" opacity=".5"/>
+    <ellipse cx="340" cy="127" rx="100" ry="22" fill="#6b4f0a" opacity=".42"/>
+    <rect x="60" y="38" width="22" height="78" fill="#2a1a00" rx="2"/>
+    <polygon points="71,30 64,48 78,48" fill="#3a2500"/>
+    <rect x="63" y="53" width="6" height="5" fill="rgba(255,200,50,.5)" rx="1"/><rect x="73" y="53" width="6" height="5" fill="rgba(255,200,50,.6)" rx="1"/>
+    <rect x="63" y="65" width="6" height="5" fill="rgba(255,200,50,.4)" rx="1"/><rect x="73" y="65" width="6" height="5" fill="rgba(255,200,50,.7)" rx="1"/>
+    <rect x="92" y="52" width="40" height="64" fill="#1f1200" rx="2"/>
+    <rect x="96" y="60" width="7" height="7" fill="rgba(255,180,50,.55)" rx="1"/><rect x="108" y="60" width="7" height="7" fill="rgba(255,180,50,.6)" rx="1"/><rect x="120" y="60" width="7" height="7" fill="rgba(255,180,50,.4)" rx="1"/>
+    <rect x="96" y="73" width="7" height="7" fill="rgba(255,180,50,.7)" rx="1"/><rect x="108" y="73" width="7" height="7" fill="rgba(255,180,50,.5)" rx="1"/><rect x="120" y="73" width="7" height="7" fill="rgba(255,180,50,.6)" rx="1"/>
+    <rect x="145" y="67" width="8" height="49" fill="#2d1800" rx="1"/>
+    <rect x="160" y="55" width="8" height="61" fill="#2d1800" rx="1"/>
+    <rect x="175" y="45" width="8" height="71" fill="#3a2000" rx="1"/>
+    <rect x="190" y="60" width="8" height="56" fill="#2d1800" rx="1"/>
+    <rect x="25" y="73" width="28" height="43" fill="#2a1500" rx="2"/>
+    <ellipse cx="39" cy="73" rx="14" ry="12" fill="#3a2200"/>
+    <line x1="39" y1="57" x2="39" y2="50" stroke="#C0870B" stroke-width="1.5"/>
+    <circle cx="39" cy="49" r="4" fill="#C0870B"/><circle cx="41" cy="47" r="3" fill="#3d1f00"/>
+    <rect x="225" y="16" width="186" height="92" fill="rgba(0,0,0,.32)" rx="6"/>
+    <text x="318" y="38" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="13" font-family="Georgia,serif" font-weight="bold">中東・Saudi Vision</text>
+    <text x="318" y="58" text-anchor="middle" fill="#C0870B" font-size="20" font-family="Georgia,serif" font-weight="bold">2030</text>
+    <text x="318" y="73" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="8.5" font-family="sans-serif">AI投資 $100B ／ NEOM第1工区</text>
+    <rect x="240" y="82" width="72" height="18" rx="9" fill="rgba(192,135,11,.28)" stroke="#C0870B" stroke-width="1"/>
+    <text x="276" y="94" text-anchor="middle" fill="#C0870B" font-size="8" font-family="sans-serif" font-weight="bold">脱石油戦略加速</text>
+    <rect x="322" y="82" width="72" height="18" rx="9" fill="rgba(0,200,255,.1)" stroke="rgba(0,200,255,.5)" stroke-width="1"/>
+    <text x="358" y="94" text-anchor="middle" fill="rgba(0,200,255,.85)" font-size="8" font-family="sans-serif" font-weight="bold">日系企業が受注拡大</text>
   </svg>
   <div class="tc-meta">
     <span class="tc-tag tag-w">W-03</span>
@@ -406,68 +345,61 @@ a{color:inherit;text-decoration:none}
   </div>
   <div class="tc-body">
     <div class="tc-title">中東・サウジVision 2030<br>AI・観光・脱石油投資の全貌</div>
-    <div class="tc-lead">ソフトバンクとの共同$100BファンドでAI・半導体・データセンターへの投資が本格化。直線都市「ザ・ライン」第1工区が2026年末に一部開業し、<strong>日本の建設・インフラ企業が大型受注</strong>を継続している。</div>
+    <div class="tc-prose">ソフトバンクとの共同$100BファンドでAI・半導体・データセンターへの投資が本格化し、直線都市「ザ・ライン」第1工区が2026年末に一部開業する見通しだ。アラムコはAI最適化でオペコスト▲15%を達成しつつ、グリーン・ブルー水素の世界的製造拠点への転換を進めている。日本からは三菱・住友商事が再エネ・水素・スマートシティ分野で存在感を高めており、<strong>F1サウジGP・LIVゴルフ・Netflix制作拠点</strong>の誘致によるエンタメ産業育成も「石油依存脱却」の柱のひとつとなっている。</div>
     <div class="stat-row">
       <span class="stat-chip sc-amber">AI投資 $100B</span>
       <span class="stat-chip sc-gold">NEOM ¥20兆規模</span>
     </div>
-    <div class="tc-points">
-      <div class="tp"><span class="tp-k">AI戦略</span>ソフトバンク共同$100BファンドでAI・半導体・データセンター投資が本格化、サウジはAI国家宣言を発動</div>
-      <div class="tp"><span class="tp-k">NEOM</span>直線都市「ザ・ライン」第1工区が2026年末一部開業・竹中工務店・鹿島など日本勢が工区受注</div>
-      <div class="tp"><span class="tp-k">石油化学DX</span>アラムコがAI最適化でオペコスト▲15%・グリーン/ブルー水素製造の世界的拠点として転換中</div>
-      <div class="tp"><span class="tp-k">観光・エンタメ</span>F1サウジGP・LIVゴルフ・Netflixコンテンツ制作拠点誘致で「石油依存脱却」を観光収益で補う</div>
-      <div class="tp"><span class="tp-k">日本×中東</span>三菱・住友商事が再エネ・水素・スマートシティで受注拡大、二国間インフラ協定も締結</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">📌 なぜ今？</div>
+        <div class="analysis-body">原油価格の高止まりで積み上がったオイルマネー（PIF資産$900B超）を次世代産業に転換するタイムリミットが近づいており、2030年という期限が投資スピードを加速させている。</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">🏆 誰が動く？</div>
+        <div class="analysis-body">PIF（公共投資ファンド）とアラムコが資金源。建設はBechtel・Jacobs、AIはMicrosoft・Google・Oracleが受注。日系では竹中工務店・鹿島がNEOM工区を確保している。</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">⚠️ 何が壁？</div>
+        <div class="analysis-body">NEOM実施能力の限界（砂漠に都市を建てる前例のなさ）・人権問題による欧米企業の参画リスク・観光・エンタメが計画通りに収益化できるかという不確実性が残る。</div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- W-04 Cyber SMB -->
+<!-- W-04 SMB -->
 <div class="topic-card smb">
-  <svg viewBox="0 0 420 128" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
-    <defs>
-      <radialGradient id="g-cyber" cx="50%" cy="50%" r="60%">
-        <stop offset="0%" stop-color="#0a1528"/><stop offset="100%" stop-color="#08101e"/>
-      </radialGradient>
-    </defs>
-    <rect width="420" height="128" fill="url(#g-cyber)"/>
-    <line x1="0" y1="30" x2="420" y2="30" stroke="#112240" stroke-width=".8"/>
-    <line x1="0" y1="65" x2="420" y2="65" stroke="#112240" stroke-width=".8"/>
-    <line x1="0" y1="100" x2="420" y2="100" stroke="#112240" stroke-width=".8"/>
-    <line x1="60" y1="0" x2="60" y2="128" stroke="#112240" stroke-width=".8"/>
-    <line x1="120" y1="0" x2="120" y2="128" stroke="#112240" stroke-width=".8"/>
-    <line x1="180" y1="0" x2="180" y2="128" stroke="#112240" stroke-width=".8"/>
-    <!-- Threats -->
-    <circle cx="30" cy="20" r="5" fill="rgba(200,30,30,.2)" stroke="#cc2222" stroke-width="1"/>
-    <text x="30" y="24" text-anchor="middle" fill="#cc3333" font-size="7" font-family="sans-serif" font-weight="bold">!</text>
-    <circle cx="100" cy="50" r="5" fill="rgba(200,30,30,.18)" stroke="#cc2222" stroke-width="1"/>
-    <text x="100" y="54" text-anchor="middle" fill="#cc3333" font-size="7" font-family="sans-serif" font-weight="bold">!</text>
-    <circle cx="30" cy="90" r="5" fill="rgba(200,30,30,.18)" stroke="#cc2222" stroke-width="1"/>
-    <text x="30" y="94" text-anchor="middle" fill="#cc3333" font-size="7" font-family="sans-serif" font-weight="bold">!</text>
-    <circle cx="150" cy="108" r="5" fill="rgba(200,30,30,.22)" stroke="#cc2222" stroke-width="1"/>
-    <text x="150" y="112" text-anchor="middle" fill="#cc3333" font-size="7" font-family="sans-serif" font-weight="bold">!</text>
-    <line x1="30" y1="20" x2="185" y2="64" stroke="#cc2222" stroke-width="1" stroke-dasharray="4,3" opacity=".38"/>
-    <line x1="100" y1="50" x2="185" y2="64" stroke="#cc2222" stroke-width="1" stroke-dasharray="4,3" opacity=".32"/>
-    <line x1="30" y1="90" x2="185" y2="64" stroke="#cc2222" stroke-width="1" stroke-dasharray="4,3" opacity=".38"/>
-    <line x1="150" y1="108" x2="185" y2="64" stroke="#cc2222" stroke-width="1" stroke-dasharray="4,3" opacity=".32"/>
-    <!-- Shield -->
-    <path d="M185,24 L230,24 L230,74 Q230,99 185,114 Q140,99 140,74 L140,24 Z" fill="rgba(26,95,138,.28)" stroke="#1A5F8A" stroke-width="2"/>
-    <path d="M185,31 L224,31 L224,72 Q224,94 185,107 Q146,94 146,72 L146,31 Z" fill="rgba(26,95,138,.18)" stroke="#1A5F8A" stroke-width="1" opacity=".7"/>
-    <rect x="173" y="55" width="24" height="20" rx="3" fill="#1A5F8A"/>
-    <path d="M178,55 L178,50 Q185,44 192,50 L192,55" fill="none" stroke="#1A5F8A" stroke-width="2.5"/>
-    <circle cx="185" cy="64" r="3" fill="white" opacity=".9"/>
-    <line x1="185" y1="67" x2="185" y2="71" stroke="white" stroke-width="2" opacity=".9"/>
-    <!-- Blocked indicators -->
-    <circle cx="30" cy="20" r="8" fill="rgba(26,122,94,.14)" stroke="#1A7A5E" stroke-width="1" opacity=".8"/>
-    <path d="M26,20 L29,23 L35,17" stroke="#1A7A5E" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".8"/>
-    <circle cx="100" cy="50" r="8" fill="rgba(26,122,94,.14)" stroke="#1A7A5E" stroke-width="1" opacity=".7"/>
-    <path d="M96,50 L99,53 L105,47" stroke="#1A7A5E" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".7"/>
-    <!-- Right panel -->
-    <text x="290" y="36" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="13" font-family="Georgia,serif" font-weight="bold">サイバー攻撃対策</text>
-    <text x="290" y="55" text-anchor="middle" fill="#cc3333" font-size="10" font-family="sans-serif">🚨 中小被害額 平均</text>
-    <text x="290" y="74" text-anchor="middle" fill="#cc3333" font-size="18" font-family="Georgia,serif" font-weight="bold">¥2,400万/件</text>
-    <text x="290" y="89" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8.5" font-family="sans-serif">ターゲットの73%が中小企業</text>
-    <rect x="243" y="97" width="94" height="18" rx="9" fill="rgba(26,122,94,.22)" stroke="#1A7A5E" stroke-width="1"/>
-    <text x="290" y="109" text-anchor="middle" fill="#4ac49a" font-size="8" font-family="sans-serif" font-weight="bold">MFA導入で不正ログイン▲99.9%</text>
+  <svg viewBox="0 0 420 120" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <defs><radialGradient id="g-cyber" cx="50%" cy="50%" r="60%"><stop offset="0%" stop-color="#0a1528"/><stop offset="100%" stop-color="#08101e"/></radialGradient></defs>
+    <rect width="420" height="120" fill="url(#g-cyber)"/>
+    <line x1="0" y1="30" x2="420" y2="30" stroke="#112240" stroke-width=".8"/><line x1="0" y1="60" x2="420" y2="60" stroke="#112240" stroke-width=".8"/><line x1="0" y1="90" x2="420" y2="90" stroke="#112240" stroke-width=".8"/>
+    <line x1="60" y1="0" x2="60" y2="120" stroke="#112240" stroke-width=".8"/><line x1="120" y1="0" x2="120" y2="120" stroke="#112240" stroke-width=".8"/><line x1="180" y1="0" x2="180" y2="120" stroke="#112240" stroke-width=".8"/>
+    <circle cx="30" cy="18" r="5" fill="rgba(200,30,30,.2)" stroke="#cc2222" stroke-width="1"/>
+    <text x="30" y="22" text-anchor="middle" fill="#cc3333" font-size="7" font-family="sans-serif" font-weight="bold">!</text>
+    <circle cx="100" cy="48" r="5" fill="rgba(200,30,30,.18)" stroke="#cc2222" stroke-width="1"/>
+    <text x="100" y="52" text-anchor="middle" fill="#cc3333" font-size="7" font-family="sans-serif" font-weight="bold">!</text>
+    <circle cx="30" cy="88" r="5" fill="rgba(200,30,30,.18)" stroke="#cc2222" stroke-width="1"/>
+    <text x="30" y="92" text-anchor="middle" fill="#cc3333" font-size="7" font-family="sans-serif" font-weight="bold">!</text>
+    <circle cx="150" cy="106" r="5" fill="rgba(200,30,30,.22)" stroke="#cc2222" stroke-width="1"/>
+    <text x="150" y="110" text-anchor="middle" fill="#cc3333" font-size="7" font-family="sans-serif" font-weight="bold">!</text>
+    <line x1="30" y1="18" x2="185" y2="62" stroke="#cc2222" stroke-width="1" stroke-dasharray="4,3" opacity=".38"/>
+    <line x1="100" y1="48" x2="185" y2="62" stroke="#cc2222" stroke-width="1" stroke-dasharray="4,3" opacity=".32"/>
+    <line x1="30" y1="88" x2="185" y2="62" stroke="#cc2222" stroke-width="1" stroke-dasharray="4,3" opacity=".38"/>
+    <line x1="150" y1="106" x2="185" y2="62" stroke="#cc2222" stroke-width="1" stroke-dasharray="4,3" opacity=".32"/>
+    <path d="M185,22 L230,22 L230,72 Q230,97 185,112 Q140,97 140,72 L140,22 Z" fill="rgba(26,95,138,.28)" stroke="#1A5F8A" stroke-width="2"/>
+    <path d="M185,29 L224,29 L224,70 Q224,92 185,105 Q146,92 146,70 L146,29 Z" fill="rgba(26,95,138,.18)" stroke="#1A5F8A" stroke-width="1" opacity=".7"/>
+    <rect x="173" y="53" width="24" height="20" rx="3" fill="#1A5F8A"/>
+    <path d="M178,53 L178,48 Q185,42 192,48 L192,53" fill="none" stroke="#1A5F8A" stroke-width="2.5"/>
+    <circle cx="185" cy="62" r="3" fill="white" opacity=".9"/>
+    <line x1="185" y1="65" x2="185" y2="69" stroke="white" stroke-width="2" opacity=".9"/>
+    <circle cx="30" cy="18" r="8" fill="rgba(26,122,94,.14)" stroke="#1A7A5E" stroke-width="1" opacity=".8"/>
+    <path d="M26,18 L29,21 L35,15" stroke="#1A7A5E" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".8"/>
+    <text x="295" y="35" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="12" font-family="Georgia,serif" font-weight="bold">サイバー攻撃対策</text>
+    <text x="295" y="53" text-anchor="middle" fill="#cc3333" font-size="9.5" font-family="sans-serif">中小被害額 平均</text>
+    <text x="295" y="72" text-anchor="middle" fill="#cc3333" font-size="18" font-family="Georgia,serif" font-weight="bold">¥2,400万/件</text>
+    <text x="295" y="86" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8.5" font-family="sans-serif">ターゲットの73%が中小企業</text>
+    <rect x="248" y="95" width="95" height="17" rx="8" fill="rgba(26,122,94,.22)" stroke="#1A7A5E" stroke-width="1"/>
+    <text x="295" y="107" text-anchor="middle" fill="#4ac49a" font-size="8" font-family="sans-serif" font-weight="bold">MFA導入で不正ログイン▲99.9%</text>
   </svg>
   <div class="tc-meta">
     <span class="tc-tag tag-w">W-04</span>
@@ -475,60 +407,58 @@ a{color:inherit;text-decoration:none}
   </div>
   <div class="tc-body">
     <div class="tc-title">サイバー攻撃対策<br>フィッシング・ランサムウェア最前線</div>
-    <div class="tc-lead">ランサムウェア被害の<strong>73%が中小企業</strong>を標的とし、平均被害額は¥2,400万/件。生成AIで精巧化したフィッシングと音声クローン詐欺が急増しており、対策の遅れが命取りになっている。</div>
+    <div class="tc-prose">ランサムウェア被害の<strong>73%が中小企業を標的</strong>とし、平均被害額は¥2,400万/件に上っている。生成AIの普及で精巧なフィッシングメールや音声クローン詐欺の作成コストが激減し、攻撃が量産化されている。最も費用対効果が高い対策はMFA（多要素認証）の導入で、Google/Microsoft Authenticatorを使えば不正ログインを▲99.9%削減できる。また月1回の疑似フィッシング訓練でクリック率を15%から2%に削減した中小事例も多く、技術的対策と人的教育の両輪が不可欠だ。</div>
     <div class="stat-row">
       <span class="stat-chip sc-navy">MFA導入で▲99.9%</span>
       <span class="stat-chip sc-gold">EDR月¥800/台〜</span>
     </div>
-    <div class="tc-points">
-      <div class="tp"><span class="tp-k">最新攻撃</span>生成AIで個人情報を組み込んだ精巧なフィッシングメール・音声クローン詐欺が急増、見分けが困難</div>
-      <div class="tp"><span class="tp-k">ランサムウェア</span>中小が標的の73%・身代金平均$285,000・バックアップ3-2-1ルール（3コピー・2媒体・1オフサイト）が必須</div>
-      <div class="tp"><span class="tp-k">MFA</span>Google/Microsoft Authenticator導入で不正ログイン▲99.9%・無料で即日実施できる最優先施策</div>
-      <div class="tp"><span class="tp-k">訓練</span>月1回の疑似フィッシング訓練でクリック率15%→2%に削減した中小事例・社員教育が対策の要</div>
-      <div class="tp"><span class="tp-k">EDRツール</span>CrowdStrike・SentinelOne・ESET（月¥800/台〜）で端末レベル検知・即応体制の構築を</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">📌 なぜ今？</div>
+        <div class="analysis-body">生成AIにより攻撃者のコストが劇的に低下し、個人情報を組み込んだ精巧な標的型攻撃が「量産」されるようになった。防御側だけが高コストという非対称な状況が続いている。</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">🏆 誰が動く？</div>
+        <div class="analysis-body">CrowdStrike・SentinelOneのEDRが市場をリード。Microsoft Defenderが中小向けに低価格提供。国内ではIPA（情報処理推進機構）が無料の診断ツールと対策ガイドを提供している。</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">⚠️ 何が壁？</div>
+        <div class="analysis-body">中小企業のIT専任担当者不足・セキュリティ予算の制約・経営者の危機意識の低さが三重苦。被害が出て初めて動く「事後対応型」から抜け出せない企業が依然として多い。</div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- W-05 Climate -->
+<!-- W-05 -->
 <div class="topic-card">
-  <svg viewBox="0 0 420 128" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+  <svg viewBox="0 0 420 120" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
     <defs>
-      <linearGradient id="g-earth" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#0d2010"/><stop offset="100%" stop-color="#1a3a1f"/>
-      </linearGradient>
-      <marker id="arr-g" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-        <path d="M0,0 L6,3 L0,6 Z" fill="#4ac98a"/>
-      </marker>
+      <linearGradient id="g-earth" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0d2010"/><stop offset="100%" stop-color="#1a3a1f"/></linearGradient>
+      <marker id="arr-g" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#4ac98a"/></marker>
     </defs>
-    <rect width="420" height="128" fill="url(#g-earth)"/>
-    <rect x="0" y="100" width="420" height="28" fill="#1a2d0a"/>
-    <rect x="20" y="107" width="180" height="21" fill="#0d1a06" rx="3"/>
-    <text x="110" y="121" text-anchor="middle" fill="#4a9a2a" font-size="8" font-family="sans-serif" font-weight="bold">🪨 地中CO₂貯留層</text>
-    <!-- Factory -->
-    <rect x="40" y="55" width="50" height="45" fill="#1a2d10" rx="2"/>
-    <rect x="50" y="30" width="12" height="30" fill="#253d15" rx="1"/>
-    <rect x="68" y="38" width="12" height="22" fill="#253d15" rx="1"/>
-    <ellipse cx="56" cy="26" rx="10" ry="8" fill="#8B6914" opacity=".4"/>
-    <ellipse cx="62" cy="18" rx="8" ry="7" fill="#8B6914" opacity=".3"/>
-    <!-- DAC -->
-    <rect x="95" y="65" width="35" height="35" fill="#1f4a28" rx="3" stroke="#2a7a35" stroke-width="1"/>
-    <text x="112" y="85" text-anchor="middle" fill="#4ac98a" font-size="7" font-family="sans-serif" font-weight="bold">DAC</text>
-    <text x="112" y="95" text-anchor="middle" fill="#4ac98a" font-size="6" font-family="sans-serif">Direct Air</text>
-    <path d="M74,30 Q100,50 112,65" stroke="#4ac98a" stroke-width="2" fill="none" stroke-dasharray="5,3" marker-end="url(#arr-g)"/>
-    <line x1="112" y1="100" x2="112" y2="110" stroke="#4ac98a" stroke-width="2"/>
-    <circle cx="80" cy="35" r="12" fill="rgba(200,30,30,.14)" stroke="#cc3333" stroke-width="1"/>
-    <text x="80" y="39" text-anchor="middle" fill="#cc4444" font-size="8" font-family="sans-serif" font-weight="bold">CO₂</text>
-    <!-- Right panel -->
-    <rect x="152" y="18" width="258" height="95" fill="rgba(0,0,0,.22)" rx="6"/>
-    <text x="281" y="40" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="13" font-family="Georgia,serif" font-weight="bold">気候テック・CCUS</text>
-    <text x="281" y="57" text-anchor="middle" fill="#4ac98a" font-size="10" font-family="sans-serif">市場規模 $5B → </text>
-    <text x="281" y="76" text-anchor="middle" fill="#4ac98a" font-size="20" font-family="Georgia,serif" font-weight="bold">$32B</text>
-    <text x="195" y="94" fill="rgba(255,255,255,.5)" font-size="8" font-family="sans-serif">DAC除去コスト：</text>
-    <text x="195" y="106" fill="#cc4444" font-size="9" font-family="sans-serif" font-weight="bold">$600/t</text>
-    <text x="243" y="106" fill="rgba(255,255,255,.45)" font-size="9" font-family="sans-serif">→</text>
-    <text x="258" y="106" fill="#4ac98a" font-size="9" font-family="sans-serif" font-weight="bold">$350/t</text>
-    <text x="303" y="106" fill="rgba(255,255,255,.38)" font-size="8" font-family="sans-serif">（目標$150）</text>
+    <rect width="420" height="120" fill="url(#g-earth)"/>
+    <rect x="0" y="97" width="420" height="23" fill="#1a2d0a"/>
+    <rect x="20" y="104" width="180" height="16" fill="#0d1a06" rx="3"/>
+    <text x="110" y="115" text-anchor="middle" fill="#4a9a2a" font-size="8" font-family="sans-serif" font-weight="bold">🪨 地中CO₂貯留層</text>
+    <rect x="40" y="52" width="50" height="45" fill="#1a2d10" rx="2"/>
+    <rect x="50" y="27" width="12" height="30" fill="#253d15" rx="1"/><rect x="68" y="35" width="12" height="22" fill="#253d15" rx="1"/>
+    <ellipse cx="56" cy="23" rx="10" ry="8" fill="#8B6914" opacity=".38"/><ellipse cx="62" cy="15" rx="8" ry="7" fill="#8B6914" opacity=".28"/>
+    <rect x="95" y="62" width="35" height="35" fill="#1f4a28" rx="3" stroke="#2a7a35" stroke-width="1"/>
+    <text x="112" y="82" text-anchor="middle" fill="#4ac98a" font-size="7" font-family="sans-serif" font-weight="bold">DAC</text>
+    <text x="112" y="92" text-anchor="middle" fill="#4ac98a" font-size="6" font-family="sans-serif">Direct Air</text>
+    <path d="M74,27 Q100,47 112,62" stroke="#4ac98a" stroke-width="2" fill="none" stroke-dasharray="5,3" marker-end="url(#arr-g)"/>
+    <line x1="112" y1="97" x2="112" y2="107" stroke="#4ac98a" stroke-width="2"/>
+    <circle cx="80" cy="32" r="12" fill="rgba(200,30,30,.14)" stroke="#cc3333" stroke-width="1"/>
+    <text x="80" y="36" text-anchor="middle" fill="#cc4444" font-size="8" font-family="sans-serif" font-weight="bold">CO₂</text>
+    <rect x="148" y="15" width="262" height="93" fill="rgba(0,0,0,.22)" rx="6"/>
+    <text x="279" y="37" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="12" font-family="Georgia,serif" font-weight="bold">気候テック・CCUS</text>
+    <text x="279" y="55" text-anchor="middle" fill="#4ac98a" font-size="10" font-family="sans-serif">市場規模 $5B → </text>
+    <text x="279" y="74" text-anchor="middle" fill="#4ac98a" font-size="20" font-family="Georgia,serif" font-weight="bold">$32B</text>
+    <text x="195" y="91" fill="rgba(255,255,255,.48)" font-size="8" font-family="sans-serif">DACコスト：</text>
+    <text x="195" y="103" fill="#cc4444" font-size="9" font-family="sans-serif" font-weight="bold">$600/t</text>
+    <text x="240" y="103" fill="rgba(255,255,255,.42)" font-size="9" font-family="sans-serif">→</text>
+    <text x="253" y="103" fill="#4ac98a" font-size="9" font-family="sans-serif" font-weight="bold">$350/t</text>
+    <text x="297" y="103" fill="rgba(255,255,255,.36)" font-size="8" font-family="sans-serif">（目標$150）</text>
   </svg>
   <div class="tc-meta">
     <span class="tc-tag tag-w">W-05</span>
@@ -536,22 +466,29 @@ a{color:inherit;text-decoration:none}
   </div>
   <div class="tc-body">
     <div class="tc-title">グローバル気候テック<br>カーボン除去・CCSのコスト革命</div>
-    <div class="tc-lead">Climeworks・Carbon Engineeringが商業DACプラントを稼働させ、年50万tのCO₂を大気から直接除去する時代が始まった。除去コストは$600から$350/tに低下し、<strong>2030年の$150/t目標</strong>が現実味を帯びている。</div>
+    <div class="tc-prose">Climeworks・Carbon Engineeringが商業DACプラントを稼働させ、大気から年50万tのCO₂を直接除去する時代が始まった。除去コストは$600から$350/tまで低下し、<strong>2030年の$150/t目標</strong>が現実味を帯びている。一方、北海・メキシコ湾ではShell・Equinor・ExxonMobilが地中貯留（CCS）を拡大し、炭素クレジット市場は$2Bから$7B（2030年）に成長する見通しだ。日本では苫小牧CCSが年30万t稼働を開始し、JOGMECが海底貯留調査を主導している。</div>
     <div class="stat-row">
       <span class="stat-chip sc-jade">市場 $5B→$32B</span>
       <span class="stat-chip sc-navy">年50万tCO₂除去</span>
     </div>
-    <div class="tc-points">
-      <div class="tp"><span class="tp-k">DAC</span>Climeworks・Carbon Engineering・1PointFiveが商業プラント稼働・大気から年50万tCO₂を直接除去</div>
-      <div class="tp"><span class="tp-k">CCS</span>北海・メキシコ湾の地中貯留拡大・Shell・Equinor・ExxonMobilが主導し北米・欧州でパイプライン網整備</div>
-      <div class="tp"><span class="tp-k">コスト低下</span>DAC除去コスト $600→$350/t・2030年$150/t目標に向け規模拡大が継続中</div>
-      <div class="tp"><span class="tp-k">炭素市場</span>クレジット市場が$2B→$7B（2030年予測）・Gold Standard・Verraの品質認証が市場の信頼確立に不可欠</div>
-      <div class="tp"><span class="tp-k">日本</span>苫小牧CCSが年30万t稼働・JOGMEC主導で海底貯留調査・官民連携のカーボンリサイクルロードマップ策定中</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">📌 なぜ今？</div>
+        <div class="analysis-body">米IRA（インフレ抑制法）の$180/tCO₂税額控除が呼び水となり、民間投資が加速。2030年のネットゼロ目標に向けて「削減だけでは間に合わない」という共通認識が産業界に広がった。</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">🏆 誰が動く？</div>
+        <div class="analysis-body">Climeworks（スイス）・1PointFive（Occidental子会社）・Carbon Engineering（カナダ）がDAC市場をリード。Microsoft・Airbus・Stripeが長期購入契約でスケールアップを後押しする。</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">⚠️ 何が壁？</div>
+        <div class="analysis-body">DACの大量電力消費（再エネが不可欠）・規模拡大に必要な巨額資本・炭素クレジットの品質認証問題が三大障壁。「購入者が支払うコストを誰が正当化するか」という需要側の課題も大きい。</div>
+      </div>
     </div>
   </div>
 </div>
 
-</div><!-- /world topic-grid -->
+</div><!-- /world grid -->
 
 <!-- ═══ JAPAN ═══ -->
 <div class="section-divider">
@@ -562,55 +499,36 @@ a{color:inherit;text-decoration:none}
 
 <div class="topic-grid">
 
-<!-- J-01 TSE -->
+<!-- J-01 -->
 <div class="topic-card">
-  <svg viewBox="0 0 420 128" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
-    <defs>
-      <linearGradient id="g-mkt" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#0a1828"/><stop offset="100%" stop-color="#0f2038"/>
-      </linearGradient>
-    </defs>
-    <rect width="420" height="128" fill="url(#g-mkt)"/>
-    <line x1="0" y1="40" x2="420" y2="40" stroke="#1a3050" stroke-width=".7"/>
-    <line x1="0" y1="70" x2="420" y2="70" stroke="#1a3050" stroke-width=".7"/>
-    <line x1="0" y1="100" x2="420" y2="100" stroke="#1a3050" stroke-width=".7"/>
-    <!-- Candlesticks -->
-    <line x1="30" y1="95" x2="30" y2="82" stroke="#4ac98a" stroke-width="1"/>
-    <rect x="26" y="85" width="8" height="8" fill="#4ac98a" rx="1"/>
-    <line x1="50" y1="90" x2="50" y2="78" stroke="#4ac98a" stroke-width="1"/>
-    <rect x="46" y="80" width="8" height="9" fill="#4ac98a" rx="1"/>
-    <line x1="70" y1="82" x2="70" y2="68" stroke="#4ac98a" stroke-width="1"/>
-    <rect x="66" y="72" width="8" height="9" fill="#4ac98a" rx="1"/>
-    <line x1="90" y1="75" x2="90" y2="63" stroke="#4ac98a" stroke-width="1"/>
-    <rect x="86" y="65" width="8" height="9" fill="#4ac98a" rx="1"/>
-    <line x1="110" y1="68" x2="110" y2="55" stroke="#C0870B" stroke-width="1"/>
-    <rect x="106" y="57" width="8" height="10" fill="#C0870B" rx="1"/>
-    <line x1="130" y1="60" x2="130" y2="48" stroke="#C0870B" stroke-width="1"/>
-    <rect x="126" y="50" width="8" height="9" fill="#C0870B" rx="1"/>
-    <line x1="150" y1="52" x2="150" y2="38" stroke="#C0870B" stroke-width="1"/>
-    <rect x="146" y="42" width="8" height="9" fill="#C0870B" rx="1"/>
-    <polyline points="30,89 50,84 70,76 90,69 110,62 130,54 150,46" stroke="#4ac98a" stroke-width="1.5" fill="none" stroke-dasharray="5,3" opacity=".55"/>
-    <!-- Bull -->
-    <g transform="translate(155,43)" opacity=".75">
+  <svg viewBox="0 0 420 120" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <defs><linearGradient id="g-mkt" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0a1828"/><stop offset="100%" stop-color="#0f2038"/></linearGradient></defs>
+    <rect width="420" height="120" fill="url(#g-mkt)"/>
+    <line x1="0" y1="38" x2="420" y2="38" stroke="#1a3050" stroke-width=".7"/><line x1="0" y1="68" x2="420" y2="68" stroke="#1a3050" stroke-width=".7"/><line x1="0" y1="98" x2="420" y2="98" stroke="#1a3050" stroke-width=".7"/>
+    <line x1="30" y1="93" x2="30" y2="80" stroke="#4ac98a" stroke-width="1"/><rect x="26" y="83" width="8" height="8" fill="#4ac98a" rx="1"/>
+    <line x1="50" y1="88" x2="50" y2="76" stroke="#4ac98a" stroke-width="1"/><rect x="46" y="78" width="8" height="9" fill="#4ac98a" rx="1"/>
+    <line x1="70" y1="80" x2="70" y2="66" stroke="#4ac98a" stroke-width="1"/><rect x="66" y="70" width="8" height="9" fill="#4ac98a" rx="1"/>
+    <line x1="90" y1="73" x2="90" y2="61" stroke="#4ac98a" stroke-width="1"/><rect x="86" y="63" width="8" height="9" fill="#4ac98a" rx="1"/>
+    <line x1="110" y1="66" x2="110" y2="53" stroke="#C0870B" stroke-width="1"/><rect x="106" y="55" width="8" height="10" fill="#C0870B" rx="1"/>
+    <line x1="130" y1="58" x2="130" y2="46" stroke="#C0870B" stroke-width="1"/><rect x="126" y="48" width="8" height="9" fill="#C0870B" rx="1"/>
+    <line x1="150" y1="50" x2="150" y2="36" stroke="#C0870B" stroke-width="1"/><rect x="146" y="40" width="8" height="9" fill="#C0870B" rx="1"/>
+    <polyline points="30,87 50,82 70,74 90,67 110,60 130,52 150,44" stroke="#4ac98a" stroke-width="1.5" fill="none" stroke-dasharray="5,3" opacity=".55"/>
+    <g transform="translate(155,41)" opacity=".75">
       <ellipse cx="20" cy="35" rx="25" ry="18" fill="#C0870B" opacity=".85"/>
       <circle cx="42" cy="25" r="14" fill="#C0870B" opacity=".85"/>
       <path d="M35,14 Q28,2 20,8" stroke="#C0870B" stroke-width="3" fill="none"/>
       <path d="M46,14 Q50,2 56,8" stroke="#C0870B" stroke-width="3" fill="none"/>
-      <rect x="4" y="50" width="7" height="18" fill="#9A6A00" rx="2"/>
-      <rect x="16" y="50" width="7" height="18" fill="#9A6A00" rx="2"/>
-      <rect x="27" y="50" width="7" height="18" fill="#9A6A00" rx="2"/>
-      <rect x="39" y="50" width="7" height="18" fill="#9A6A00" rx="2"/>
+      <rect x="4" y="50" width="7" height="18" fill="#9A6A00" rx="2"/><rect x="16" y="50" width="7" height="18" fill="#9A6A00" rx="2"/>
+      <rect x="27" y="50" width="7" height="18" fill="#9A6A00" rx="2"/><rect x="39" y="50" width="7" height="18" fill="#9A6A00" rx="2"/>
       <circle cx="50" cy="27" r="3" fill="none" stroke="#F5B800" stroke-width="1.5"/>
-      <circle cx="44" cy="22" r="2" fill="white"/>
-      <circle cx="44.5" cy="22" r="1" fill="#0a1828"/>
+      <circle cx="44" cy="22" r="2" fill="white"/><circle cx="44.5" cy="22" r="1" fill="#0a1828"/>
     </g>
-    <!-- Right panel -->
-    <rect x="248" y="14" width="162" height="100" fill="rgba(0,0,0,.25)" rx="6"/>
-    <text x="329" y="36" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="12" font-family="Georgia,serif" font-weight="bold">東証PBR改革</text>
-    <text x="329" y="53" text-anchor="middle" fill="#4ac98a" font-size="9.5" font-family="sans-serif">自社株買い</text>
-    <text x="329" y="72" text-anchor="middle" fill="#4ac98a" font-size="22" font-family="Georgia,serif" font-weight="bold">¥12兆</text>
-    <text x="329" y="86" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">上半期（前年比 +42%）</text>
-    <text x="329" y="102" text-anchor="middle" fill="#C0870B" font-size="8.5" font-family="sans-serif">PBR1倍割れ ▲25%改善</text>
+    <rect x="248" y="12" width="162" height="98" fill="rgba(0,0,0,.25)" rx="6"/>
+    <text x="329" y="34" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="12" font-family="Georgia,serif" font-weight="bold">東証PBR改革</text>
+    <text x="329" y="51" text-anchor="middle" fill="#4ac98a" font-size="9.5" font-family="sans-serif">自社株買い</text>
+    <text x="329" y="70" text-anchor="middle" fill="#4ac98a" font-size="22" font-family="Georgia,serif" font-weight="bold">¥12兆</text>
+    <text x="329" y="84" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">上半期（前年比 +42%）</text>
+    <text x="329" y="100" text-anchor="middle" fill="#C0870B" font-size="8.5" font-family="sans-serif">PBR1倍割れ ▲25%改善</text>
   </svg>
   <div class="tc-meta">
     <span class="tc-tag tag-j">J-01</span>
@@ -618,66 +536,50 @@ a{color:inherit;text-decoration:none}
   </div>
   <div class="tc-body">
     <div class="tc-title">東証PBR改革・株主還元<br>コーポレートガバナンス2026</div>
-    <div class="tc-lead">東証のPBR改善要請を受け、2026年上半期の自社株買いは<strong>¥12兆（+42%）</strong>と過去最高を更新。PBR1倍割れ企業は2023年比▲25%改善し、回答企業がプライム市場の78%に達した。</div>
+    <div class="tc-prose">東証の「資本コスト・株価を意識した経営」要請を受け、2026年上半期の自社株買いは<strong>¥12兆（+42%）</strong>と過去最高を更新した。PBR1倍割れ企業は2023年比▲25%改善し、回答企業がプライム市場の78%に達している。大手銀行は2028年までに政策保有株を全解消すると宣言しており、解放される数兆円規模の再投資先（M&A・成長事業）が次の注目点だ。独立社外取締役が過半数を占める企業は全体の60%に達したが、「形式的なガバナンス」から「実質的な変革」への移行が問われている。</div>
     <div class="stat-row">
       <span class="stat-chip sc-jade">自社株買い ¥12兆</span>
       <span class="stat-chip sc-navy">独立取締役 過半数 60%</span>
     </div>
-    <div class="tc-points">
-      <div class="tp"><span class="tp-k">PBR改革</span>1倍割れ企業が33%に改善（2023年比▲25%）・回答企業がプライム市場の78%に到達</div>
-      <div class="tp"><span class="tp-k">自社株買い</span>¥12兆（+42%）・三菱UFJ・トヨタ・ソニーが大型買いで株価下支え、投資家からの圧力が奏功</div>
-      <div class="tp"><span class="tp-k">政策保有株解消</span>大手銀行が2028年までに全解消宣言・解放資金の再投資先（M&A・成長事業）が次の焦点</div>
-      <div class="tp"><span class="tp-k">社外取締役</span>独立社外取締役が過半数の企業がプライム市場の60%・実質的な機能強化が問われる段階へ</div>
-      <div class="tp"><span class="tp-k">アクティビスト</span>エリオット・ValueAct・オアシスの日本エンゲージメントが強化、提案受容率が上昇傾向</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">📌 なぜ今？</div>
+        <div class="analysis-body">東証プライム上場基準の厳格化と「PBR1倍未満は経営失格」という市場からの圧力が高まり、経営者が株価を意識せざるを得なくなった。外国人持株比率上昇もプレッシャーを強める。</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">🏆 誰が動く？</div>
+        <div class="analysis-body">三菱UFJ・トヨタ・ソニーが大型還元を主導。エリオット・ValueAct・オアシスなどアクティビストが日本企業へのエンゲージメントを加速させており、提案の受容率が上昇傾向にある。</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">⚠️ 何が壁？</div>
+        <div class="analysis-body">自社株買い・増配という「一過性の還元」で終わるリスクと、本来必要な事業ポートフォリオ改革や成長投資との両立が課題。「形式ガバナンス」と「実質変革」のギャップは依然大きい。</div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- J-02 Digital Gov -->
+<!-- J-02 -->
 <div class="topic-card">
-  <svg viewBox="0 0 420 128" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
-    <defs>
-      <linearGradient id="g-gov" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#1a1a2e"/><stop offset="100%" stop-color="#16213e"/>
-      </linearGradient>
-    </defs>
-    <rect width="420" height="128" fill="url(#g-gov)"/>
-    <line x1="0" y1="25" x2="200" y2="25" stroke="#1e3a6a" stroke-width=".6"/>
-    <line x1="0" y1="50" x2="200" y2="50" stroke="#1e3a6a" stroke-width=".6"/>
-    <line x1="0" y1="75" x2="200" y2="75" stroke="#1e3a6a" stroke-width=".6"/>
-    <line x1="0" y1="100" x2="200" y2="100" stroke="#1e3a6a" stroke-width=".6"/>
-    <line x1="30" y1="0" x2="30" y2="128" stroke="#1e3a6a" stroke-width=".6"/>
-    <line x1="65" y1="0" x2="65" y2="128" stroke="#1e3a6a" stroke-width=".6"/>
-    <line x1="100" y1="0" x2="100" y2="128" stroke="#1e3a6a" stroke-width=".6"/>
-    <line x1="135" y1="0" x2="135" y2="128" stroke="#1e3a6a" stroke-width=".6"/>
-    <line x1="170" y1="0" x2="170" y2="128" stroke="#1e3a6a" stroke-width=".6"/>
-    <!-- Columns -->
-    <rect x="25" y="55" width="8" height="45" fill="#2a3a5a" rx="1"/>
-    <rect x="45" y="55" width="8" height="45" fill="#2a3a5a" rx="1"/>
-    <rect x="65" y="55" width="8" height="45" fill="#2a3a5a" rx="1"/>
-    <rect x="85" y="55" width="8" height="45" fill="#2a3a5a" rx="1"/>
-    <rect x="105" y="55" width="8" height="45" fill="#2a3a5a" rx="1"/>
-    <rect x="125" y="55" width="8" height="45" fill="#2a3a5a" rx="1"/>
-    <rect x="145" y="55" width="8" height="45" fill="#2a3a5a" rx="1"/>
-    <rect x="18" y="48" width="145" height="10" fill="#3a4a6a" rx="1"/>
-    <polygon points="18,48 91,22 163,48" fill="#3a4a6a"/>
-    <rect x="15" y="100" width="155" height="8" fill="#3a4a6a"/>
-    <!-- Glow dots -->
-    <circle cx="30" cy="52" r="2" fill="#00c8ff" opacity=".6"/>
-    <circle cx="50" cy="52" r="2" fill="#00c8ff" opacity=".7"/>
-    <circle cx="70" cy="52" r="2" fill="#00c8ff" opacity=".5"/>
-    <circle cx="91" cy="28" r="2" fill="#C0870B" opacity=".8"/>
-    <circle cx="130" cy="52" r="2" fill="#00c8ff" opacity=".6"/>
-    <circle cx="155" cy="52" r="2" fill="#00c8ff" opacity=".7"/>
-    <path d="M165,75 Q200,65 218,55" stroke="#00c8ff" stroke-width="1" fill="none" stroke-dasharray="4,3" opacity=".5"/>
-    <path d="M165,85 Q200,80 218,75" stroke="#00c8ff" stroke-width="1" fill="none" stroke-dasharray="4,3" opacity=".4"/>
-    <!-- Right panel -->
-    <rect x="213" y="14" width="197" height="100" fill="rgba(0,0,0,.28)" rx="6"/>
-    <text x="311" y="36" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="12" font-family="Georgia,serif" font-weight="bold">デジタル庁・行政DX</text>
-    <text x="311" y="53" text-anchor="middle" fill="#00c8ff" font-size="9.5" font-family="sans-serif">手続きオンライン化率</text>
-    <text x="311" y="73" text-anchor="middle" fill="#00c8ff" font-size="24" font-family="Georgia,serif" font-weight="bold">71%</text>
-    <text x="311" y="87" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">マイナ保険証・免許証統合完了</text>
-    <text x="311" y="102" text-anchor="middle" fill="#C0870B" font-size="8.5" font-family="sans-serif">AI審査で残業代 ¥280億削減</text>
+  <svg viewBox="0 0 420 120" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <defs><linearGradient id="g-gov" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a1a2e"/><stop offset="100%" stop-color="#16213e"/></linearGradient></defs>
+    <rect width="420" height="120" fill="url(#g-gov)"/>
+    <line x1="0" y1="25" x2="200" y2="25" stroke="#1e3a6a" stroke-width=".6"/><line x1="0" y1="50" x2="200" y2="50" stroke="#1e3a6a" stroke-width=".6"/><line x1="0" y1="75" x2="200" y2="75" stroke="#1e3a6a" stroke-width=".6"/><line x1="0" y1="100" x2="200" y2="100" stroke="#1e3a6a" stroke-width=".6"/>
+    <line x1="30" y1="0" x2="30" y2="120" stroke="#1e3a6a" stroke-width=".6"/><line x1="65" y1="0" x2="65" y2="120" stroke="#1e3a6a" stroke-width=".6"/><line x1="100" y1="0" x2="100" y2="120" stroke="#1e3a6a" stroke-width=".6"/><line x1="135" y1="0" x2="135" y2="120" stroke="#1e3a6a" stroke-width=".6"/><line x1="170" y1="0" x2="170" y2="120" stroke="#1e3a6a" stroke-width=".6"/>
+    <rect x="25" y="52" width="8" height="44" fill="#2a3a5a" rx="1"/><rect x="45" y="52" width="8" height="44" fill="#2a3a5a" rx="1"/><rect x="65" y="52" width="8" height="44" fill="#2a3a5a" rx="1"/>
+    <rect x="85" y="52" width="8" height="44" fill="#2a3a5a" rx="1"/><rect x="105" y="52" width="8" height="44" fill="#2a3a5a" rx="1"/><rect x="125" y="52" width="8" height="44" fill="#2a3a5a" rx="1"/>
+    <rect x="18" y="45" width="125" height="10" fill="#3a4a6a" rx="1"/>
+    <polygon points="18,45 80,20 143,45" fill="#3a4a6a"/>
+    <rect x="15" y="96" width="135" height="8" fill="#3a4a6a"/>
+    <circle cx="30" cy="49" r="2" fill="#00c8ff" opacity=".6"/><circle cx="50" cy="49" r="2" fill="#00c8ff" opacity=".7"/><circle cx="70" cy="49" r="2" fill="#00c8ff" opacity=".5"/>
+    <circle cx="80" cy="25" r="2" fill="#C0870B" opacity=".8"/><circle cx="130" cy="49" r="2" fill="#00c8ff" opacity=".6"/>
+    <path d="M155,72 Q190,62 210,52" stroke="#00c8ff" stroke-width="1" fill="none" stroke-dasharray="4,3" opacity=".5"/>
+    <path d="M155,82 Q190,77 210,72" stroke="#00c8ff" stroke-width="1" fill="none" stroke-dasharray="4,3" opacity=".4"/>
+    <rect x="208" y="12" width="202" height="98" fill="rgba(0,0,0,.28)" rx="6"/>
+    <text x="309" y="34" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="12" font-family="Georgia,serif" font-weight="bold">デジタル庁・行政DX</text>
+    <text x="309" y="51" text-anchor="middle" fill="#00c8ff" font-size="9.5" font-family="sans-serif">手続きオンライン化率</text>
+    <text x="309" y="72" text-anchor="middle" fill="#00c8ff" font-size="24" font-family="Georgia,serif" font-weight="bold">71%</text>
+    <text x="309" y="85" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">マイナ保険証・免許証統合完了</text>
+    <text x="309" y="100" text-anchor="middle" fill="#C0870B" font-size="8.5" font-family="sans-serif">AI審査で残業代 ¥280億削減</text>
   </svg>
   <div class="tc-meta">
     <span class="tc-tag tag-j">J-02</span>
@@ -685,85 +587,73 @@ a{color:inherit;text-decoration:none}
   </div>
   <div class="tc-body">
     <div class="tc-title">デジタル庁・行政DX<br>2026年の進捗と残された課題</div>
-    <div class="tc-lead">保険証・免許証・在留カードのマイナ統合が完了し、手続きオンライン化率は<strong>71%</strong>に達した。AI自動審査・OCR・チャットボットで単純作業▲30%を実現し、<strong>残業代¥280億の削減効果</strong>が出ている。</div>
+    <div class="tc-prose">保険証・免許証・在留カードのマイナンバーカード統合が完了し、手続きオンライン化率は<strong>71%</strong>に達した。AI自動審査・OCR・チャットボットの導入で単純作業を▲30%削減し、残業代にして<strong>¥280億の削減効果</strong>を記録している。AWS・Google・さくらインターネットによるガバメントクラウドが本番稼働し、1,700自治体のシステム統一化が本格始動した。一方、120都市が実装段階にあるデジタル田園都市構想では、ベンダーロックインとレガシー移行コスト、セキュリティ体制の不足が地方ほど深刻な課題として残る。</div>
     <div class="stat-row">
       <span class="stat-chip sc-sky">オンライン化率 71%</span>
       <span class="stat-chip sc-navy">残業削減 ¥280億</span>
     </div>
-    <div class="tc-points">
-      <div class="tp"><span class="tp-k">マイナ活用</span>保険証・免許証・在留カードの統合完了・次は国家資格・印鑑証明・戸籍への拡大が予定</div>
-      <div class="tp"><span class="tp-k">ガバメントクラウド</span>AWS・Google・さくらの3社が本番稼働・1,700自治体のシステム統一化が本格進行</div>
-      <div class="tp"><span class="tp-k">AI行政</span>自動審査・AIチャットボット・書類OCRで単純作業▲30%・残業代¥280億削減効果を記録</div>
-      <div class="tp"><span class="tp-k">デジタル田園都市</span>120都市が実装段階・デジタル人材の地方派遣制度が新設され地域格差解消を狙う</div>
-      <div class="tp"><span class="tp-k">課題</span>ベンダーロックイン・レガシー移行コスト・セキュリティ対応体制の不足が地方ほど深刻</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">📌 なぜ今？</div>
+        <div class="analysis-body">コロナ禍での給付金遅延がデジタル化の遅れを国民に可視化し、デジタル庁設立（2021年）を機に改革が加速。インボイス制度・電子帳簿保存法対応が民間のDX投資を促し、官民両輪の変革が進む。</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">🏆 誰が動く？</div>
+        <div class="analysis-body">デジタル庁が旗振り役、AWS・Google・さくらが三頭体制でガバメントクラウドを支える。富士通・NTTデータが自治体向けシステム移行を担い、デジタル人材の地方派遣制度も始動した。</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">⚠️ 何が壁？</div>
+        <div class="analysis-body">1,700自治体それぞれの移行コスト・スケジュール管理の複雑さ、ベンダーロックインによる競争阻害、そしてマイナカード情報漏洩リスクへの国民不信感が払拭できていない。</div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- J-03 Agriculture -->
+<!-- J-03 -->
 <div class="topic-card">
-  <svg viewBox="0 0 420 128" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+  <svg viewBox="0 0 420 120" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
     <defs>
-      <linearGradient id="g-agri" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#0a2015"/><stop offset="100%" stop-color="#143020"/>
-      </linearGradient>
-      <linearGradient id="g-field" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#1a5a20"/><stop offset="100%" stop-color="#0e3210"/>
-      </linearGradient>
+      <linearGradient id="g-agri" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0a2015"/><stop offset="100%" stop-color="#143020"/></linearGradient>
+      <linearGradient id="g-field" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a5a20"/><stop offset="100%" stop-color="#0e3210"/></linearGradient>
     </defs>
-    <rect width="420" height="128" fill="url(#g-agri)"/>
-    <circle cx="50" cy="28" r="18" fill="#ffd080" opacity=".65"/>
-    <polygon points="0,80 50,40 100,75 150,50 200,78" fill="#0d2a10" opacity=".75"/>
-    <rect x="0" y="78" width="420" height="50" fill="url(#g-field)"/>
-    <line x1="0" y1="88" x2="420" y2="88" stroke="#0e3a10" stroke-width="1.5"/>
-    <line x1="0" y1="100" x2="420" y2="100" stroke="#0e3a10" stroke-width="1.5"/>
-    <line x1="0" y1="112" x2="420" y2="112" stroke="#0e3a10" stroke-width="1.5"/>
-    <!-- Rice stalks -->
+    <rect width="420" height="120" fill="url(#g-agri)"/>
+    <circle cx="50" cy="26" r="16" fill="#ffd080" opacity=".65"/>
+    <polygon points="0,78 50,38 100,73 150,48 200,76" fill="#0d2a10" opacity=".75"/>
+    <rect x="0" y="76" width="420" height="44" fill="url(#g-field)"/>
+    <line x1="0" y1="86" x2="420" y2="86" stroke="#0e3a10" stroke-width="1.5"/>
+    <line x1="0" y1="98" x2="420" y2="98" stroke="#0e3a10" stroke-width="1.5"/>
+    <line x1="0" y1="110" x2="420" y2="110" stroke="#0e3a10" stroke-width="1.5"/>
     <g fill="#2aaa30" opacity=".7">
-      <line x1="20" y1="88" x2="20" y2="78" stroke="#2aaa30" stroke-width="1.5"/>
-      <circle cx="20" cy="76" r="3"/>
-      <line x1="40" y1="88" x2="40" y2="79" stroke="#2aaa30" stroke-width="1.5"/>
-      <circle cx="40" cy="77" r="3"/>
-      <line x1="60" y1="88" x2="60" y2="78" stroke="#2aaa30" stroke-width="1.5"/>
-      <circle cx="60" cy="76" r="3"/>
-      <line x1="80" y1="88" x2="80" y2="80" stroke="#2aaa30" stroke-width="1.5"/>
-      <circle cx="80" cy="78" r="3"/>
-      <line x1="100" y1="88" x2="100" y2="78" stroke="#2aaa30" stroke-width="1.5"/>
-      <circle cx="100" cy="76" r="3"/>
-      <line x1="120" y1="88" x2="120" y2="79" stroke="#2aaa30" stroke-width="1.5"/>
-      <circle cx="120" cy="77" r="3"/>
-      <line x1="140" y1="88" x2="140" y2="78" stroke="#2aaa30" stroke-width="1.5"/>
-      <circle cx="140" cy="76" r="3"/>
-      <line x1="160" y1="88" x2="160" y2="80" stroke="#2aaa30" stroke-width="1.5"/>
-      <circle cx="160" cy="78" r="3"/>
+      <line x1="20" y1="86" x2="20" y2="76" stroke="#2aaa30" stroke-width="1.5"/><circle cx="20" cy="74" r="3"/>
+      <line x1="40" y1="86" x2="40" y2="77" stroke="#2aaa30" stroke-width="1.5"/><circle cx="40" cy="75" r="3"/>
+      <line x1="60" y1="86" x2="60" y2="76" stroke="#2aaa30" stroke-width="1.5"/><circle cx="60" cy="74" r="3"/>
+      <line x1="80" y1="86" x2="80" y2="78" stroke="#2aaa30" stroke-width="1.5"/><circle cx="80" cy="76" r="3"/>
+      <line x1="100" y1="86" x2="100" y2="76" stroke="#2aaa30" stroke-width="1.5"/><circle cx="100" cy="74" r="3"/>
+      <line x1="120" y1="86" x2="120" y2="77" stroke="#2aaa30" stroke-width="1.5"/><circle cx="120" cy="75" r="3"/>
+      <line x1="140" y1="86" x2="140" y2="76" stroke="#2aaa30" stroke-width="1.5"/><circle cx="140" cy="74" r="3"/>
+      <line x1="160" y1="86" x2="160" y2="78" stroke="#2aaa30" stroke-width="1.5"/><circle cx="160" cy="76" r="3"/>
     </g>
-    <!-- Drone -->
-    <g transform="translate(138,36)">
+    <g transform="translate(138,34)">
       <rect x="0" y="8" width="30" height="12" fill="#2a3a5a" rx="3"/>
       <line x1="-10" y1="12" x2="40" y2="12" stroke="#3a4a6a" stroke-width="2"/>
       <line x1="15" y1="0" x2="15" y2="22" stroke="#3a4a6a" stroke-width="2"/>
-      <ellipse cx="-10" cy="12" rx="10" ry="3" fill="rgba(0,200,255,.48)"/>
-      <ellipse cx="40" cy="12" rx="10" ry="3" fill="rgba(0,200,255,.48)"/>
-      <ellipse cx="15" cy="0" rx="3" ry="10" fill="rgba(0,200,255,.48)"/>
-      <ellipse cx="15" cy="22" rx="3" ry="10" fill="rgba(0,200,255,.48)"/>
-      <circle cx="-10" cy="12" r="2" fill="#00c8ff" opacity=".8"/>
-      <circle cx="40" cy="12" r="2" fill="#00c8ff" opacity=".8"/>
-      <circle cx="15" cy="0" r="2" fill="#00c8ff" opacity=".8"/>
-      <circle cx="15" cy="22" r="2" fill="#00c8ff" opacity=".8"/>
+      <ellipse cx="-10" cy="12" rx="10" ry="3" fill="rgba(0,200,255,.48)"/><ellipse cx="40" cy="12" rx="10" ry="3" fill="rgba(0,200,255,.48)"/>
+      <ellipse cx="15" cy="0" rx="3" ry="10" fill="rgba(0,200,255,.48)"/><ellipse cx="15" cy="22" rx="3" ry="10" fill="rgba(0,200,255,.48)"/>
+      <circle cx="-10" cy="12" r="2" fill="#00c8ff" opacity=".8"/><circle cx="40" cy="12" r="2" fill="#00c8ff" opacity=".8"/>
+      <circle cx="15" cy="0" r="2" fill="#00c8ff" opacity=".8"/><circle cx="15" cy="22" r="2" fill="#00c8ff" opacity=".8"/>
       <line x1="15" y1="22" x2="15" y2="32" stroke="#5aaa6a" stroke-width="1.5"/>
       <line x1="15" y1="32" x2="8" y2="42" stroke="#5aaa6a" stroke-width="1" opacity=".6" stroke-dasharray="2,2"/>
       <line x1="15" y1="32" x2="15" y2="43" stroke="#5aaa6a" stroke-width="1" opacity=".7" stroke-dasharray="2,2"/>
       <line x1="15" y1="32" x2="22" y2="42" stroke="#5aaa6a" stroke-width="1" opacity=".6" stroke-dasharray="2,2"/>
     </g>
-    <!-- Right panel -->
-    <rect x="208" y="10" width="202" height="108" fill="rgba(0,0,0,.32)" rx="6"/>
-    <text x="309" y="32" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="12" font-family="Georgia,serif" font-weight="bold">農業・スマート農業</text>
-    <text x="309" y="50" text-anchor="middle" fill="#4ac98a" font-size="9.5" font-family="sans-serif">農産物輸出</text>
-    <text x="309" y="70" text-anchor="middle" fill="#4ac98a" font-size="22" font-family="Georgia,serif" font-weight="bold">¥1.6兆</text>
-    <text x="309" y="83" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">+22%（和牛・コメ・日本酒が人気）</text>
-    <line x1="223" y1="90" x2="395" y2="90" stroke="#1a4a20" stroke-width=".7"/>
-    <text x="263" y="103" fill="rgba(255,255,255,.52)" font-size="8.5" font-family="sans-serif">🚜 自動運転で作業時間▲40%</text>
-    <text x="263" y="116" fill="rgba(255,255,255,.52)" font-size="8.5" font-family="sans-serif">🛸 ドローン農地の18%で実用化</text>
+    <rect x="208" y="8" width="202" height="108" fill="rgba(0,0,0,.32)" rx="6"/>
+    <text x="309" y="30" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="12" font-family="Georgia,serif" font-weight="bold">農業・スマート農業</text>
+    <text x="309" y="48" text-anchor="middle" fill="#4ac98a" font-size="9.5" font-family="sans-serif">農産物輸出</text>
+    <text x="309" y="68" text-anchor="middle" fill="#4ac98a" font-size="22" font-family="Georgia,serif" font-weight="bold">¥1.6兆</text>
+    <text x="309" y="82" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">+22%（和牛・コメ・日本酒が人気）</text>
+    <line x1="223" y1="89" x2="396" y2="89" stroke="#1a4a20" stroke-width=".7"/>
+    <text x="263" y="101" fill="rgba(255,255,255,.52)" font-size="8.5" font-family="sans-serif">🚜 自動運転で作業時間▲40%</text>
+    <text x="263" y="114" fill="rgba(255,255,255,.52)" font-size="8.5" font-family="sans-serif">🛸 ドローン農地の18%で実用化</text>
   </svg>
   <div class="tc-meta">
     <span class="tc-tag tag-j">J-03</span>
@@ -771,63 +661,58 @@ a{color:inherit;text-decoration:none}
   </div>
   <div class="tc-body">
     <div class="tc-title">農業・食料安全保障<br>スマート農業の現在地2026</div>
-    <div class="tc-lead">クボタ・ヤンマーの自動運転トラクターが普及し作業時間▲40%を実現。全農地の18%でドローン散布が実用化され、農産物輸出は<strong>¥1.6兆（+22%）</strong>と過去最高を更新した。</div>
+    <div class="tc-prose">クボタ・ヤンマーの自動運転トラクターが普及し農作業時間を▲40%削減。全農地の18%でドローン散布が実用化され農薬使用量も▲25%を実現した。AI気象データと生育センサーを組み合わせた収量予測の精度は92%に達し、廃棄ロスの削減と出荷計画の最適化に寄与している。農産物輸出は<strong>¥1.6兆（+22%）</strong>と過去最高を更新し、和牛・コメ・いちご・日本酒がアジア・中東富裕層に浸透しつつある。10ha以上を経営する農業法人は4.8万経営体に拡大し、農地集積と機械化の相乗効果が生産性向上を後押しする。</div>
     <div class="stat-row">
       <span class="stat-chip sc-jade">輸出 ¥1.6兆 +22%</span>
-      <span class="stat-chip sc-navy">AI収穫予測精度 92%</span>
+      <span class="stat-chip sc-navy">AI予測精度 92%</span>
     </div>
-    <div class="tc-points">
-      <div class="tp"><span class="tp-k">スマート農機</span>クボタ・ヤンマーの自動運転トラクターが普及・作業時間▲40%で担い手不足の切り札に</div>
-      <div class="tp"><span class="tp-k">ドローン散布</span>全農地の18%で実用化・農薬使用量▲25%・整備コスト低下でさらなる普及が加速</div>
-      <div class="tp"><span class="tp-k">AI収穫予測</span>気象データ×生育センサーで収量予測精度92%・廃棄ロス削減と出荷計画の最適化を実現</div>
-      <div class="tp"><span class="tp-k">農地集積</span>担い手農家への集積加速・10ha以上経営の農業法人が4.8万経営体に拡大</div>
-      <div class="tp"><span class="tp-k">輸出</span>和牛・コメ・いちご・日本酒がアジア・中東富裕層に浸透・¥1.6兆（+22%）で過去最高更新</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">📌 なぜ今？</div>
+        <div class="analysis-body">農業就業者の平均年齢が68歳を超え、担い手不足が限界点に達した。同時に輸出拡大の追い風と政府の「農業強靱化」政策が重なり、スマート農業への投資が一気に加速している。</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">🏆 誰が動く？</div>
+        <div class="analysis-body">クボタ・ヤンマー・イセキが自動化農機を展開し、NTT・ソフトバンクが農業IoTプラットフォームを提供。全農（JA全農）がドローン散布の全国展開を主導している。</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">⚠️ 何が壁？</div>
+        <div class="analysis-body">スマート農機の高い初期投資コスト・高齢農家へのデジタルリテラシー普及・農村地域の通信インフラ格差が普及を制約。補助金を活用しても運用面でのサポート体制が不十分な地域も多い。</div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- J-04 SMB Subsidies -->
+<!-- J-04 SMB -->
 <div class="topic-card smb">
-  <svg viewBox="0 0 420 128" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
-    <defs>
-      <radialGradient id="g-coin" cx="40%" cy="60%" r="55%">
-        <stop offset="0%" stop-color="#C0870B" stop-opacity=".28"/>
-        <stop offset="100%" stop-color="#C0870B" stop-opacity="0"/>
-      </radialGradient>
-    </defs>
-    <rect width="420" height="128" fill="#0f1a08"/>
-    <ellipse cx="130" cy="80" rx="100" ry="60" fill="url(#g-coin)"/>
-    <!-- Coin stacks -->
-    <ellipse cx="60" cy="105" rx="35" ry="10" fill="#7a5500"/>
-    <rect x="25" y="60" width="70" height="45" fill="#9A6A00"/>
-    <ellipse cx="60" cy="60" rx="35" ry="10" fill="#C0870B"/>
-    <text x="60" y="64" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="11" font-family="sans-serif" font-weight="bold">¥</text>
-    <ellipse cx="140" cy="110" rx="30" ry="9" fill="#7a5500"/>
-    <rect x="110" y="72" width="60" height="38" fill="#9A6A00"/>
-    <ellipse cx="140" cy="72" rx="30" ry="9" fill="#C0870B"/>
-    <text x="140" y="76" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="9" font-family="sans-serif" font-weight="bold">¥</text>
-    <ellipse cx="205" cy="115" rx="25" ry="8" fill="#7a5500"/>
-    <rect x="180" y="85" width="50" height="30" fill="#9A6A00"/>
-    <ellipse cx="205" cy="85" rx="25" ry="8" fill="#C0870B"/>
-    <text x="205" y="89" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="8" font-family="sans-serif" font-weight="bold">¥</text>
-    <path d="M60,55 Q130,30 210,80" stroke="#4ac98a" stroke-width="2.5" fill="none" opacity=".65"/>
-    <polygon points="206,73 214,82 202,84" fill="#4ac98a" opacity=".65"/>
-    <!-- Calendar -->
-    <rect x="238" y="15" width="80" height="80" fill="#1a2a10" rx="5" stroke="#2a4a18" stroke-width="1"/>
-    <rect x="238" y="15" width="80" height="20" fill="#C0870B" rx="5"/>
-    <rect x="238" y="25" width="80" height="10" fill="#C0870B"/>
-    <text x="278" y="30" text-anchor="middle" fill="white" font-size="9" font-family="sans-serif" font-weight="bold">2026 AUTUMN</text>
-    <text x="278" y="55" text-anchor="middle" fill="rgba(255,255,255,.8)" font-size="24" font-family="Georgia,serif" font-weight="bold">秋</text>
-    <text x="278" y="72" text-anchor="middle" fill="#4ac98a" font-size="9" font-family="sans-serif" font-weight="bold">補助金申請シーズン</text>
-    <!-- Right -->
-    <rect x="328" y="15" width="82" height="100" fill="rgba(0,0,0,.2)" rx="4"/>
-    <text x="369" y="33" text-anchor="middle" fill="rgba(255,255,255,.75)" font-size="8" font-family="sans-serif" font-weight="bold">補助金総額</text>
-    <text x="369" y="52" text-anchor="middle" fill="#C0870B" font-size="17" font-family="Georgia,serif" font-weight="bold">¥3.8兆</text>
-    <line x1="333" y1="58" x2="406" y2="58" stroke="#2a3a18" stroke-width=".8"/>
-    <text x="369" y="70" text-anchor="middle" fill="rgba(255,255,255,.52)" font-size="7.5" font-family="sans-serif">ものづくり ¥1,250万</text>
-    <text x="369" y="82" text-anchor="middle" fill="rgba(255,255,255,.52)" font-size="7.5" font-family="sans-serif">IT導入 ¥450万</text>
-    <text x="369" y="94" text-anchor="middle" fill="rgba(255,255,255,.52)" font-size="7.5" font-family="sans-serif">再構築 ¥1,500万</text>
-    <text x="369" y="106" text-anchor="middle" fill="#4ac98a" font-size="7.5" font-family="sans-serif" font-weight="bold">AI申請 採択率1.8倍</text>
+  <svg viewBox="0 0 420 120" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <defs><radialGradient id="g-coin" cx="40%" cy="60%" r="55%"><stop offset="0%" stop-color="#C0870B" stop-opacity=".28"/><stop offset="100%" stop-color="#C0870B" stop-opacity="0"/></radialGradient></defs>
+    <rect width="420" height="120" fill="#0f1a08"/>
+    <ellipse cx="130" cy="80" rx="100" ry="55" fill="url(#g-coin)"/>
+    <ellipse cx="60" cy="102" rx="35" ry="10" fill="#7a5500"/><rect x="25" y="58" width="70" height="44" fill="#9A6A00"/>
+    <ellipse cx="60" cy="58" rx="35" ry="10" fill="#C0870B"/>
+    <text x="60" y="62" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="11" font-family="sans-serif" font-weight="bold">¥</text>
+    <ellipse cx="140" cy="108" rx="30" ry="9" fill="#7a5500"/><rect x="110" y="70" width="60" height="38" fill="#9A6A00"/>
+    <ellipse cx="140" cy="70" rx="30" ry="9" fill="#C0870B"/>
+    <text x="140" y="74" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="9" font-family="sans-serif" font-weight="bold">¥</text>
+    <ellipse cx="205" cy="113" rx="25" ry="8" fill="#7a5500"/><rect x="180" y="83" width="50" height="30" fill="#9A6A00"/>
+    <ellipse cx="205" cy="83" rx="25" ry="8" fill="#C0870B"/>
+    <text x="205" y="87" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="8" font-family="sans-serif" font-weight="bold">¥</text>
+    <path d="M60,53 Q130,28 210,78" stroke="#4ac98a" stroke-width="2.5" fill="none" opacity=".65"/>
+    <polygon points="206,71 214,80 202,82" fill="#4ac98a" opacity=".65"/>
+    <rect x="238" y="13" width="80" height="78" fill="#1a2a10" rx="5" stroke="#2a4a18" stroke-width="1"/>
+    <rect x="238" y="13" width="80" height="20" fill="#C0870B" rx="5"/><rect x="238" y="23" width="80" height="10" fill="#C0870B"/>
+    <text x="278" y="28" text-anchor="middle" fill="white" font-size="9" font-family="sans-serif" font-weight="bold">2026 AUTUMN</text>
+    <text x="278" y="53" text-anchor="middle" fill="rgba(255,255,255,.8)" font-size="24" font-family="Georgia,serif" font-weight="bold">秋</text>
+    <text x="278" y="70" text-anchor="middle" fill="#4ac98a" font-size="9" font-family="sans-serif" font-weight="bold">補助金申請シーズン</text>
+    <rect x="328" y="13" width="82" height="98" fill="rgba(0,0,0,.2)" rx="4"/>
+    <text x="369" y="31" text-anchor="middle" fill="rgba(255,255,255,.75)" font-size="8" font-family="sans-serif" font-weight="bold">補助金総額</text>
+    <text x="369" y="50" text-anchor="middle" fill="#C0870B" font-size="17" font-family="Georgia,serif" font-weight="bold">¥3.8兆</text>
+    <line x1="333" y1="56" x2="406" y2="56" stroke="#2a3a18" stroke-width=".8"/>
+    <text x="369" y="68" text-anchor="middle" fill="rgba(255,255,255,.52)" font-size="7.5" font-family="sans-serif">ものづくり ¥1,250万</text>
+    <text x="369" y="80" text-anchor="middle" fill="rgba(255,255,255,.52)" font-size="7.5" font-family="sans-serif">IT導入 ¥450万</text>
+    <text x="369" y="92" text-anchor="middle" fill="rgba(255,255,255,.52)" font-size="7.5" font-family="sans-serif">再構築 ¥1,500万</text>
+    <text x="369" y="104" text-anchor="middle" fill="#4ac98a" font-size="7.5" font-family="sans-serif" font-weight="bold">AI申請 採択率1.8倍</text>
   </svg>
   <div class="tc-meta">
     <span class="tc-tag tag-j">J-04</span>
@@ -835,119 +720,89 @@ a{color:inherit;text-decoration:none}
   </div>
   <div class="tc-body">
     <div class="tc-title">秋の補助金・助成金<br>申請シーズン攻略2026</div>
-    <div class="tc-lead">ものづくり・IT導入・事業再構築・省エネと主要補助金の秋公募が出そろった。AIツールと中小企業診断士の組合せで<strong>採択率1.8倍・申請工数▲65%</strong>の実績事例が増加している。</div>
+    <div class="tc-prose">ものづくり（最大¥1,250万）・IT導入（¥450万）・事業再構築（¥1,500万）・省エネ（¥1,500万）と主要補助金の秋公募が出そろった。AIツールと中小企業診断士を組み合わせた申請支援が普及し、<strong>採択率は最大1.8倍・申請工数▲65%</strong>という実績が積み上がっている。省エネ補助金では空調・照明・冷凍機の更新が対象となり、電気代削減量の定量的な実績提示が採否を大きく左右する。事業再構築補助金（採択率42%）は「新分野展開・業態転換」の具体性と市場調査の深さが審査委員に刺さる要素で、早期着手が採択率を上げる最大のポイントだ。</div>
     <div class="stat-row">
       <span class="stat-chip sc-gold">ものづくり ¥1,250万</span>
       <span class="stat-chip sc-amber">IT導入 ¥450万</span>
     </div>
-    <div class="tc-points">
-      <div class="tp"><span class="tp-k">ものづくり補助金（秋）</span>設備投資・IT導入に最大¥1,250万・省エネ設備への加点あり・電力費削減実績の数値化が鍵</div>
-      <div class="tp"><span class="tp-k">IT導入補助金</span>ERP・セキュリティ・MAに最大¥450万・インボイス対応枠は通年受付で申請しやすい</div>
-      <div class="tp"><span class="tp-k">事業再構築補助金</span>新分野展開・業態転換に最大¥1,500万・採択率42%・市場調査の具体性が採否を分ける</div>
-      <div class="tp"><span class="tp-k">省エネ補助金</span>空調・照明・冷凍機更新に最大¥1,500万・電気代削減量の定量的実績提示が採択率を上げる</div>
-      <div class="tp"><span class="tp-k">AI活用申請</span>採択率1.8倍・申請工数▲65%・診断士＋AIツールの組合せが実績多数、早期着手が必須</div>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">📌 なぜ今？</div>
+        <div class="analysis-body">インフレ・賃上げ圧力・デジタル化要請・脱炭素規制が中小企業に同時に迫る「四重苦」の時代。補助金は設備更新の初期負担を下げる最有効手段であり、活用しない選択肢はない。</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">🏆 誰が動く？</div>
+        <div class="analysis-body">中小企業庁・経済産業省が旗振り役。申請支援では中小企業診断士・税理士・ITベンダーが連携し、AIツールを使った申請書自動生成サービスが急成長している。</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">⚠️ 何が壁？</div>
+        <div class="analysis-body">申請書類の複雑さ・採択後の実行体制（見積り・発注・報告書作成）の負荷・補助金依存による自立経営の阻害リスクが課題。「補助金ありき」の設備導入は費用対効果を見誤る可能性がある。</div>
+      </div>
     </div>
   </div>
 </div>
 
-</div><!-- /japan topic-grid -->
+</div><!-- /japan grid -->
 
 <!-- J-05 WIDE -->
 <div class="topic-grid">
 <div class="topic-card wide">
-  <!-- SVG: Energy mix panorama -->
-  <svg viewBox="0 0 860 138" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+  <svg viewBox="0 0 860 132" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
     <defs>
-      <linearGradient id="g-ensky" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#08101e"/><stop offset="100%" stop-color="#0f1e32"/>
-      </linearGradient>
-      <linearGradient id="g-sea" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#0a2a4a"/><stop offset="100%" stop-color="#061525"/>
-      </linearGradient>
+      <linearGradient id="g-ensky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#08101e"/><stop offset="100%" stop-color="#0f1e32"/></linearGradient>
+      <linearGradient id="g-sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0a2a4a"/><stop offset="100%" stop-color="#061525"/></linearGradient>
     </defs>
-    <rect width="860" height="138" fill="url(#g-ensky)"/>
-    <rect x="0" y="103" width="860" height="35" fill="url(#g-sea)"/>
-    <line x1="0" y1="103" x2="860" y2="103" stroke="#1a4a7a" stroke-width="1"/>
-    <path d="M0,110 Q40,107 80,110 T160,110 T240,110 T320,110 T400,110 T480,110 T560,110 T640,110 T720,110 T800,110 T860,110" fill="none" stroke="#1a5a8a" stroke-width=".8" opacity=".45"/>
+    <rect width="860" height="132" fill="url(#g-ensky)"/>
+    <rect x="0" y="100" width="860" height="32" fill="url(#g-sea)"/>
+    <line x1="0" y1="100" x2="860" y2="100" stroke="#1a4a7a" stroke-width="1"/>
     <!-- Nuclear -->
-    <rect x="30" y="65" width="70" height="38" fill="#1E3A5F" rx="2"/>
-    <ellipse cx="65" cy="65" rx="35" ry="20" fill="#2a5080"/>
-    <rect x="48" y="22" width="10" height="52" fill="#2a5080" rx="1"/>
-    <rect x="72" y="27" width="10" height="47" fill="#2a5080" rx="1"/>
-    <ellipse cx="53" cy="18" rx="9" ry="7" fill="#3a5a80" opacity=".48"/>
-    <ellipse cx="77" cy="23" rx="8" ry="6" fill="#3a5a80" opacity=".42"/>
-    <circle cx="65" cy="75" r="8" fill="none" stroke="#C0870B" stroke-width="1.5"/>
-    <ellipse cx="65" cy="75" rx="16" ry="5" fill="none" stroke="#C0870B" stroke-width="1" transform="rotate(30 65 75)"/>
-    <ellipse cx="65" cy="75" rx="16" ry="5" fill="none" stroke="#C0870B" stroke-width="1" transform="rotate(-30 65 75)"/>
-    <circle cx="65" cy="75" r="2.5" fill="#C0870B"/>
-    <text x="65" y="118" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="8" font-family="sans-serif">⚛ 原子力 17基</text>
-    <!-- Wind turbines -->
-    <g transform="translate(160,30)">
-      <line x1="20" y1="20" x2="20" y2="73" stroke="#2a4a7a" stroke-width="3"/>
-      <line x1="20" y1="20" x2="20" y2="-10" stroke="#3a6a9a" stroke-width="2" stroke-linecap="round"/>
-      <line x1="20" y1="20" x2="46" y2="37" stroke="#3a6a9a" stroke-width="2" stroke-linecap="round"/>
-      <line x1="20" y1="20" x2="-6" y2="37" stroke="#3a6a9a" stroke-width="2" stroke-linecap="round"/>
-      <circle cx="20" cy="20" r="3" fill="#4a8aba"/>
-    </g>
-    <g transform="translate(200,40)">
-      <line x1="15" y1="15" x2="15" y2="63" stroke="#2a4a7a" stroke-width="2.5"/>
-      <line x1="15" y1="15" x2="15" y2="-8" stroke="#3a6a9a" stroke-width="1.8" stroke-linecap="round"/>
-      <line x1="15" y1="15" x2="38" y2="29" stroke="#3a6a9a" stroke-width="1.8" stroke-linecap="round"/>
-      <line x1="15" y1="15" x2="-8" y2="29" stroke="#3a6a9a" stroke-width="1.8" stroke-linecap="round"/>
-      <circle cx="15" cy="15" r="2.5" fill="#4a8aba"/>
-    </g>
-    <g transform="translate(238,47)">
-      <line x1="12" y1="12" x2="12" y2="56" stroke="#2a4a7a" stroke-width="2"/>
-      <line x1="12" y1="12" x2="12" y2="-6" stroke="#3a6a9a" stroke-width="1.5" stroke-linecap="round"/>
-      <line x1="12" y1="12" x2="30" y2="22" stroke="#3a6a9a" stroke-width="1.5" stroke-linecap="round"/>
-      <line x1="12" y1="12" x2="-5" y2="22" stroke="#3a6a9a" stroke-width="1.5" stroke-linecap="round"/>
-      <circle cx="12" cy="12" r="2" fill="#4a8aba"/>
-    </g>
-    <text x="205" y="118" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="8" font-family="sans-serif">💨 洋上風力 30GW</text>
-    <!-- Solar panels -->
-    <g transform="translate(298,68)">
+    <rect x="30" y="63" width="70" height="37" fill="#1E3A5F" rx="2"/>
+    <ellipse cx="65" cy="63" rx="35" ry="20" fill="#2a5080"/>
+    <rect x="48" y="20" width="10" height="52" fill="#2a5080" rx="1"/><rect x="72" y="25" width="10" height="47" fill="#2a5080" rx="1"/>
+    <ellipse cx="53" cy="16" rx="9" ry="7" fill="#3a5a80" opacity=".45"/><ellipse cx="77" cy="21" rx="8" ry="6" fill="#3a5a80" opacity=".4"/>
+    <circle cx="65" cy="73" r="8" fill="none" stroke="#C0870B" stroke-width="1.5"/>
+    <ellipse cx="65" cy="73" rx="16" ry="5" fill="none" stroke="#C0870B" stroke-width="1" transform="rotate(30 65 73)"/>
+    <ellipse cx="65" cy="73" rx="16" ry="5" fill="none" stroke="#C0870B" stroke-width="1" transform="rotate(-30 65 73)"/>
+    <circle cx="65" cy="73" r="2.5" fill="#C0870B"/>
+    <text x="65" y="115" text-anchor="middle" fill="rgba(255,255,255,.48)" font-size="8" font-family="sans-serif">⚛ 原子力 17基</text>
+    <!-- Wind -->
+    <g transform="translate(160,28)"><line x1="20" y1="20" x2="20" y2="72" stroke="#2a4a7a" stroke-width="3"/><line x1="20" y1="20" x2="20" y2="-10" stroke="#3a6a9a" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="20" x2="46" y2="37" stroke="#3a6a9a" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="20" x2="-6" y2="37" stroke="#3a6a9a" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="20" r="3" fill="#4a8aba"/></g>
+    <g transform="translate(200,38)"><line x1="15" y1="15" x2="15" y2="62" stroke="#2a4a7a" stroke-width="2.5"/><line x1="15" y1="15" x2="15" y2="-8" stroke="#3a6a9a" stroke-width="1.8" stroke-linecap="round"/><line x1="15" y1="15" x2="38" y2="29" stroke="#3a6a9a" stroke-width="1.8" stroke-linecap="round"/><line x1="15" y1="15" x2="-8" y2="29" stroke="#3a6a9a" stroke-width="1.8" stroke-linecap="round"/><circle cx="15" cy="15" r="2.5" fill="#4a8aba"/></g>
+    <g transform="translate(238,46)"><line x1="12" y1="12" x2="12" y2="54" stroke="#2a4a7a" stroke-width="2"/><line x1="12" y1="12" x2="12" y2="-6" stroke="#3a6a9a" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="12" x2="30" y2="22" stroke="#3a6a9a" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="12" x2="-5" y2="22" stroke="#3a6a9a" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="2" fill="#4a8aba"/></g>
+    <text x="205" y="115" text-anchor="middle" fill="rgba(255,255,255,.48)" font-size="8" font-family="sans-serif">💨 洋上風力 30GW</text>
+    <!-- Solar -->
+    <g transform="translate(298,66)">
       <rect x="0" y="0" width="35" height="22" fill="#1a3a5a" stroke="#2a6a9a" stroke-width="1" rx="1"/>
-      <line x1="11" y1="0" x2="11" y2="22" stroke="#2a6a9a" stroke-width=".8"/>
-      <line x1="22" y1="0" x2="22" y2="22" stroke="#2a6a9a" stroke-width=".8"/>
-      <line x1="0" y1="7" x2="35" y2="7" stroke="#2a6a9a" stroke-width=".8"/>
-      <line x1="0" y1="14" x2="35" y2="14" stroke="#2a6a9a" stroke-width=".8"/>
+      <line x1="11" y1="0" x2="11" y2="22" stroke="#2a6a9a" stroke-width=".8"/><line x1="22" y1="0" x2="22" y2="22" stroke="#2a6a9a" stroke-width=".8"/>
+      <line x1="0" y1="7" x2="35" y2="7" stroke="#2a6a9a" stroke-width=".8"/><line x1="0" y1="14" x2="35" y2="14" stroke="#2a6a9a" stroke-width=".8"/>
       <rect x="40" y="5" width="35" height="22" fill="#1a3a5a" stroke="#2a6a9a" stroke-width="1" rx="1"/>
-      <line x1="51" y1="5" x2="51" y2="27" stroke="#2a6a9a" stroke-width=".8"/>
-      <line x1="62" y1="5" x2="62" y2="27" stroke="#2a6a9a" stroke-width=".8"/>
-      <line x1="40" y1="12" x2="75" y2="12" stroke="#2a6a9a" stroke-width=".8"/>
-      <line x1="40" y1="19" x2="75" y2="19" stroke="#2a6a9a" stroke-width=".8"/>
+      <line x1="51" y1="5" x2="51" y2="27" stroke="#2a6a9a" stroke-width=".8"/><line x1="62" y1="5" x2="62" y2="27" stroke="#2a6a9a" stroke-width=".8"/>
+      <line x1="40" y1="12" x2="75" y2="12" stroke="#2a6a9a" stroke-width=".8"/><line x1="40" y1="19" x2="75" y2="19" stroke="#2a6a9a" stroke-width=".8"/>
       <rect x="0" y="28" width="35" height="22" fill="#1a3a5a" stroke="#2a6a9a" stroke-width="1" rx="1"/>
       <rect x="40" y="33" width="35" height="22" fill="#1a3a5a" stroke="#2a6a9a" stroke-width="1" rx="1"/>
     </g>
-    <circle cx="333" cy="35" r="15" fill="#ffd080" opacity=".58"/>
-    <line x1="333" y1="15" x2="333" y2="9" stroke="#ffd080" stroke-width="1.5" opacity=".5"/>
-    <line x1="352" y1="20" x2="356" y2="16" stroke="#ffd080" stroke-width="1.5" opacity=".5"/>
-    <line x1="356" y1="34" x2="362" y2="34" stroke="#ffd080" stroke-width="1.5" opacity=".5"/>
-    <line x1="318" y1="20" x2="313" y2="16" stroke="#ffd080" stroke-width="1.5" opacity=".5"/>
-    <text x="335" y="118" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="8" font-family="sans-serif">☀ 太陽光 90GW</text>
-    <!-- Power line -->
-    <path d="M100,80 L160,70 L260,70 L300,88 L380,80" stroke="#C0870B" stroke-width="1.5" fill="none" stroke-dasharray="6,4" opacity=".45"/>
-    <line x1="390" y1="58" x2="390" y2="103" stroke="#3a4a6a" stroke-width="2"/>
-    <line x1="375" y1="66" x2="405" y2="66" stroke="#3a4a6a" stroke-width="1.5"/>
-    <line x1="378" y1="76" x2="402" y2="76" stroke="#3a4a6a" stroke-width="1.5"/>
-    <!-- Info panel right -->
-    <rect x="438" y="12" width="408" height="115" fill="rgba(0,0,0,.28)" rx="8"/>
-    <text x="642" y="35" text-anchor="middle" fill="rgba(255,255,255,.95)" font-size="13" font-family="Georgia,serif" font-weight="bold">日本エネルギー安全保障・原子力再稼働</text>
-    <!-- Stat boxes -->
-    <rect x="452" y="44" width="82" height="34" fill="rgba(192,135,11,.2)" stroke="#C0870B" stroke-width="1" rx="4"/>
-    <text x="493" y="57" text-anchor="middle" fill="#C0870B" font-size="7.5" font-family="sans-serif" font-weight="bold">原発稼働</text>
-    <text x="493" y="72" text-anchor="middle" fill="#C0870B" font-size="16" font-family="Georgia,serif" font-weight="bold">17基</text>
-    <rect x="542" y="44" width="82" height="34" fill="rgba(74,201,138,.14)" stroke="#4ac98a" stroke-width="1" rx="4"/>
-    <text x="583" y="57" text-anchor="middle" fill="#4ac98a" font-size="7.5" font-family="sans-serif" font-weight="bold">再エネ比率</text>
-    <text x="583" y="72" text-anchor="middle" fill="#4ac98a" font-size="16" font-family="Georgia,serif" font-weight="bold">43%</text>
-    <rect x="632" y="44" width="82" height="34" fill="rgba(0,200,255,.1)" stroke="rgba(0,200,255,.45)" stroke-width="1" rx="4"/>
-    <text x="673" y="57" text-anchor="middle" fill="#00c8ff" font-size="7.5" font-family="sans-serif" font-weight="bold">需要増予測</text>
-    <text x="673" y="72" text-anchor="middle" fill="#00c8ff" font-size="16" font-family="Georgia,serif" font-weight="bold">+15%</text>
-    <rect x="722" y="44" width="110" height="34" fill="rgba(255,100,100,.1)" stroke="rgba(200,50,50,.45)" stroke-width="1" rx="4"/>
-    <text x="777" y="57" text-anchor="middle" fill="#ff7a7a" font-size="7.5" font-family="sans-serif" font-weight="bold">電気料金上昇</text>
-    <text x="777" y="72" text-anchor="middle" fill="#ff7a7a" font-size="16" font-family="Georgia,serif" font-weight="bold">+18%</text>
-    <text x="452" y="98" fill="rgba(255,255,255,.52)" font-size="8.5" font-family="sans-serif">⚛ 老朽炉60年延長法制化・次世代炉建設決定　🔋 蓄電池定置型 +85%急拡大</text>
-    <text x="452" y="113" fill="rgba(255,255,255,.52)" font-size="8.5" font-family="sans-serif">🤖 AI/DC電力需要で2030年+15%増　⛽ LNG豪州・米・カタールと長期契約維持</text>
+    <circle cx="335" cy="33" r="15" fill="#ffd080" opacity=".55"/>
+    <text x="335" y="115" text-anchor="middle" fill="rgba(255,255,255,.48)" font-size="8" font-family="sans-serif">☀ 太陽光 90GW</text>
+    <path d="M100,78 L160,68 L260,68 L300,86 L380,78" stroke="#C0870B" stroke-width="1.5" fill="none" stroke-dasharray="6,4" opacity=".42"/>
+    <line x1="390" y1="56" x2="390" y2="100" stroke="#3a4a6a" stroke-width="2"/>
+    <line x1="375" y1="64" x2="405" y2="64" stroke="#3a4a6a" stroke-width="1.5"/><line x1="378" y1="74" x2="402" y2="74" stroke="#3a4a6a" stroke-width="1.5"/>
+    <!-- Info panel -->
+    <rect x="438" y="10" width="408" height="112" fill="rgba(0,0,0,.28)" rx="8"/>
+    <text x="642" y="32" text-anchor="middle" fill="rgba(255,255,255,.95)" font-size="13" font-family="Georgia,serif" font-weight="bold">日本エネルギー安全保障・原子力再稼働</text>
+    <rect x="452" y="42" width="82" height="32" fill="rgba(192,135,11,.2)" stroke="#C0870B" stroke-width="1" rx="4"/>
+    <text x="493" y="55" text-anchor="middle" fill="#C0870B" font-size="7.5" font-family="sans-serif" font-weight="bold">原発稼働</text>
+    <text x="493" y="70" text-anchor="middle" fill="#C0870B" font-size="16" font-family="Georgia,serif" font-weight="bold">17基</text>
+    <rect x="542" y="42" width="82" height="32" fill="rgba(74,201,138,.14)" stroke="#4ac98a" stroke-width="1" rx="4"/>
+    <text x="583" y="55" text-anchor="middle" fill="#4ac98a" font-size="7.5" font-family="sans-serif" font-weight="bold">再エネ比率</text>
+    <text x="583" y="70" text-anchor="middle" fill="#4ac98a" font-size="16" font-family="Georgia,serif" font-weight="bold">43%</text>
+    <rect x="632" y="42" width="82" height="32" fill="rgba(0,200,255,.1)" stroke="rgba(0,200,255,.45)" stroke-width="1" rx="4"/>
+    <text x="673" y="55" text-anchor="middle" fill="#00c8ff" font-size="7.5" font-family="sans-serif" font-weight="bold">需要増予測</text>
+    <text x="673" y="70" text-anchor="middle" fill="#00c8ff" font-size="16" font-family="Georgia,serif" font-weight="bold">+15%</text>
+    <rect x="722" y="42" width="110" height="32" fill="rgba(255,100,100,.1)" stroke="rgba(200,50,50,.45)" stroke-width="1" rx="4"/>
+    <text x="777" y="55" text-anchor="middle" fill="#ff7a7a" font-size="7.5" font-family="sans-serif" font-weight="bold">電気料金上昇</text>
+    <text x="777" y="70" text-anchor="middle" fill="#ff7a7a" font-size="16" font-family="Georgia,serif" font-weight="bold">+18%</text>
+    <text x="452" y="96" fill="rgba(255,255,255,.5)" font-size="8.5" font-family="sans-serif">⚛ 老朽炉60年延長法制化・次世代炉建設決定　🔋 蓄電池定置型 +85%急拡大</text>
+    <text x="452" y="111" fill="rgba(255,255,255,.5)" font-size="8.5" font-family="sans-serif">🤖 AI/DC電力需要で2030年+15%増　⛽ LNG豪州・米・カタールと長期契約維持</text>
   </svg>
   <div class="tc-meta">
     <span class="tc-tag tag-j">J-05</span>
@@ -955,23 +810,25 @@ a{color:inherit;text-decoration:none}
   </div>
   <div class="tc-body">
     <div class="tc-title">エネルギー安全保障・原子力再稼働<br>2030年目標に向けた中間点検</div>
-    <div class="tc-lead">原子力17基が稼働し再エネ比率43%まで上昇した一方、AI・データセンター・EVで2030年の電力需要は<strong>現在比+15%増</strong>が見込まれる。老朽炉60年延長と次世代炉建設が決定されたが、電気代は+18%上昇し消費者の不満が蓄積している。</div>
+    <div class="tc-prose">原子力17基が稼働し再エネ比率43%まで上昇した一方で、AI・データセンター・EVの急拡大により2030年の電力需要は<strong>現在比+15%増</strong>が見込まれる。老朽炉の60年延長法制化と次世代炉建設が閣議決定され、蓄電池（定置型）市場は+85%の急拡大を示している。LNGは豪州・米国・カタールとの長期契約を維持しているが、ロシア・サハリンLNGの継続問題が対米外交の難題として残る。電力自由化後遺症で新電力撤退による旧一電回帰が続き、電気代は+18%上昇して消費者の不満が積み上がっている。系統制約の解消と洋上風力・蓄電池によるVPP（仮想発電所）普及が、エネルギー安保の要となる。</div>
     <div class="stat-row">
-      <span class="stat-chip sc-gold">原発 17基稼働（審査通過26基）</span>
+      <span class="stat-chip sc-gold">原発 17基稼働</span>
       <span class="stat-chip sc-jade">再エネ 43%</span>
       <span class="stat-chip sc-sky">蓄電池 +85%</span>
       <span class="stat-chip sc-red">電気代 +18%</span>
     </div>
-    <div class="tc-wide-cols">
-      <div class="tc-points">
-        <div class="tp"><span class="tp-k">原発再稼働</span>17基稼働（審査通過済み26基）・老朽炉60年延長法制化・次世代炉建設が閣議決定</div>
-        <div class="tp"><span class="tp-k">再エネ拡大</span>太陽光累計90GW・洋上風力30GWの入札完了・系統制約が最大ボトルネックで送電線増強が急務</div>
-        <div class="tp"><span class="tp-k">蓄電池</span>定置型が+85%急拡大・系統安定化・VPP（仮想発電所）普及・夜間余剰電力の有効活用が課題</div>
+    <div class="analysis-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="analysis-cell">
+        <div class="analysis-label">📌 なぜ今？</div>
+        <div class="analysis-body">AI・データセンターの電力需要急増と2050年カーボンニュートラル目標の両立という矛盾が顕在化。「電力が足りない経済成長」という前例のない課題に直面し、エネルギー計画の抜本的見直し論が浮上している。</div>
       </div>
-      <div class="tc-points">
-        <div class="tp"><span class="tp-k">LNG調達</span>豪州・米国・カタールの長期契約維持・ロシアサハリンLNG継続問題が対米外交の難題として残存</div>
-        <div class="tp"><span class="tp-k">電力需要増</span>AI・データセンター・EV充電で2030年に現在比+15%の需要増を予測・「電力が足りない成長」が顕在化</div>
-        <div class="tp"><span class="tp-k">電力自由化後遺症</span>新電力撤退で旧一電回帰続く・電気代+18%に消費者不満が蓄積、料金設計の抜本的見直し論が浮上</div>
+      <div class="analysis-cell">
+        <div class="analysis-label">🏆 誰が動く？</div>
+        <div class="analysis-body">東京電力・関西電力・中部電力が原発再稼働をリード。三菱重工が次世代炉（高温ガス炉）開発を主導し、住友商事・丸紅が洋上風力事業を拡大。蓄電池では三菱電機・パナソニックが定置型市場を争う。</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">⚠️ 何が壁？</div>
+        <div class="analysis-body">原発再稼働への地元同意の困難さ・系統送電線の増強コストと時間・LNG依存からの脱却スピード・電力小売市場の不安定さが複合的な壁となっており、どれか一つを解決すれば済む問題ではない。</div>
       </div>
     </div>
   </div>
@@ -984,6 +841,5 @@ a{color:inherit;text-decoration:none}
   <span class="footer-brand">TYLER MORNING BRIEF</span>
   <span>Vol.057 ／ 2026年8月25日（火曜日）／ 世界5本 ＋ 日本5本</span>
 </footer>
-
 </body>
 </html>
