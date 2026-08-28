@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TYLER MORNING BRIEF Vol.059 — 2026年8月27日</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0B1F35;--paper:#F8F5EF;--gold:#C0870B;--navy:#1E3A5F;--muted:#EBE8E2;--rule:#D6D0C8;--caption:#7A7368;--jade:#1A7A5E;--sky:#1A5F8A;--gold-lt:#FDF3DC;--jade-lt:#E8F5F0;--sky-lt:#E0EEF8;--f-serif:Georgia,'Times New Roman',serif;--f-sans:'Hiragino Sans','Hiragino Kaku Gothic ProN','Meiryo',sans-serif}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-size:15px;line-height:1.7}
+.site-header{background:var(--navy);color:#fff;padding:0;border-bottom:4px solid var(--gold);display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch}
+.hd-left{padding:.9rem 1.5rem;display:flex;flex-direction:column;justify-content:center}
+.hd-tagline{font-size:.58rem;letter-spacing:.14em;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:.2rem}
+.hd-edition{font-size:.66rem;color:rgba(255,255,255,.65)}
+.hd-center{background:rgba(0,0,0,.22);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.8rem 2rem;border-left:1px solid rgba(255,255,255,.1);border-right:1px solid rgba(255,255,255,.1)}
+.hd-logo{font-family:var(--f-serif);font-size:1.5rem;font-weight:700;letter-spacing:.14em;color:var(--gold);line-height:1}
+.hd-vol{font-size:.58rem;letter-spacing:.22em;color:rgba(255,255,255,.55);margin-top:.25rem}
+.hd-right{padding:.9rem 1.5rem;display:flex;flex-direction:column;justify-content:center;align-items:flex-end}
+.hd-date-big{font-family:var(--f-serif);font-size:1.4rem;font-weight:700;color:#fff;line-height:1}
+.hd-weekday{font-size:.63rem;color:rgba(255,255,255,.55);margin-top:.2rem;text-align:right}
+.kicker-strip{background:var(--ink);color:#fff;padding:.35rem 1.5rem;font-size:.62rem;letter-spacing:.07em;display:flex;gap:2rem;align-items:center;overflow-x:auto;border-bottom:2px solid var(--gold)}
+.kicker-item{white-space:nowrap;opacity:.8}
+.kicker-item strong{color:var(--gold);opacity:1}
+.main{max-width:900px;margin:0 auto;padding:2rem 1.5rem 4rem}
+.section-banner{display:flex;align-items:center;gap:.8rem;margin-bottom:1.5rem}
+.section-banner-icon{font-size:1.3rem}
+.section-banner-label{font-size:.65rem;font-weight:700;letter-spacing:.2em;color:var(--gold);border-bottom:2px solid var(--gold);padding-bottom:.12rem}
+.section-banner-rule{flex:1;height:1px;background:var(--rule)}
+.lead-card{background:#fff;border:2px solid var(--gold);border-radius:8px;margin-bottom:2rem;overflow:hidden;box-shadow:0 6px 24px rgba(192,135,11,.13)}
+.lead-card-top{background:linear-gradient(135deg,#0f2540 0%,var(--navy) 60%,#2a4f7a 100%);padding:1.4rem 1.8rem;display:grid;grid-template-columns:1fr auto;gap:1.2rem;align-items:start}
+.lead-kicker{font-size:.58rem;font-weight:700;letter-spacing:.18em;color:var(--gold);margin-bottom:.4rem}
+.lead-title{font-family:var(--f-serif);font-size:1.45rem;font-weight:700;color:#fff;line-height:1.22}
+.lead-sub{font-size:.7rem;color:rgba(255,255,255,.62);margin-top:.45rem;line-height:1.6}
+.lead-stat-box{background:var(--gold);border-radius:8px;padding:.9rem 1.1rem;text-align:center;min-width:110px;flex-shrink:0}
+.lead-stat-label{font-size:.52rem;font-weight:700;letter-spacing:.1em;color:rgba(11,31,53,.75);margin-bottom:.25rem}
+.lead-stat-num{font-family:var(--f-serif);font-size:1.55rem;font-weight:700;color:var(--ink);line-height:1}
+.lead-stat-sub{font-size:.58rem;color:rgba(11,31,53,.65);margin-top:.15rem}
+.lead-body{padding:1.4rem 1.8rem}
+.analysis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;margin-top:.75rem}
+.analysis-cell{background:var(--muted);border-radius:6px;padding:.78rem .9rem;border-left:3px solid var(--gold)}
+.analysis-label{font-size:.6rem;font-weight:700;color:var(--gold);margin-bottom:.3rem;display:flex;align-items:baseline;gap:.3rem}
+.analysis-sublabel{font-size:.52rem;color:var(--caption);font-weight:400}
+.analysis-body{font-size:.69rem;line-height:1.65}
+.topic-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-bottom:2rem}
+.topic-card{background:#fff;border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.topic-card.smb{border-top:3px solid var(--gold)}
+.topic-card.wide{grid-column:1/-1}
+.tc-meta{padding:.7rem 1.05rem .45rem;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.tc-tag{font-size:.52rem;font-weight:700;letter-spacing:.1em;padding:.1rem .5rem;border-radius:20px}
+.tag-w{background:#E8EEF8;color:var(--navy)}
+.tag-j{background:#FEF5E4;color:#8A5C00}
+.smb-badge{font-size:.52rem;font-weight:700;color:var(--gold);background:var(--gold-lt);border:1px solid var(--gold);padding:.1rem .45rem;border-radius:20px}
+.tc-theme-tag{font-size:.52rem;font-weight:700;padding:.1rem .5rem;border-radius:20px}
+.tc-body{padding:.82rem 1.05rem .95rem}
+.tc-title{font-family:var(--f-serif);font-size:.93rem;font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:.5rem}
+.tc-prose{font-size:.72rem;line-height:1.7;color:var(--ink);margin-bottom:.65rem}
+.tc-prose strong{color:var(--navy)}
+.stat-row{display:flex;gap:.4rem;margin-bottom:.65rem;flex-wrap:wrap}
+.stat-chip{border-radius:6px;padding:.22rem .55rem;font-size:.59rem;font-weight:700;line-height:1.3;flex-shrink:0}
+.sc-gold{background:var(--gold-lt);color:var(--gold);border:1px solid rgba(192,135,11,.3)}
+.sc-navy{background:#EAF0FB;color:var(--navy);border:1px solid rgba(30,58,95,.2)}
+.sc-jade{background:var(--jade-lt);color:var(--jade);border:1px solid rgba(26,122,94,.2)}
+.sc-sky{background:var(--sky-lt);color:var(--sky);border:1px solid rgba(26,95,138,.2)}
+.sc-amber{background:#FEF5E4;color:#8A5C00;border:1px solid rgba(138,92,0,.2)}
+.sc-red{background:#FAEAEA;color:#B83232;border:1px solid rgba(184,50,50,.2)}
+.tc-body .analysis-grid{gap:.5rem;margin-top:.65rem}
+.tc-body .analysis-cell{padding:.65rem .78rem}
+.tc-body .analysis-label{font-size:.56rem;margin-bottom:.25rem}
+.tc-body .analysis-sublabel{font-size:.49rem}
+.tc-body .analysis-body{font-size:.66rem;line-height:1.62}
+.section-divider{display:flex;align-items:center;gap:1rem;margin:2rem 0 1.75rem}
+.sdl{flex:1;height:2px;background:linear-gradient(90deg,transparent,var(--rule))}
+.sdr{flex:1;height:2px;background:linear-gradient(90deg,var(--rule),transparent)}
+.sd-badge{background:var(--navy);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.14em;padding:.32rem 1.1rem;border-radius:20px;display:flex;align-items:center;gap:.4rem}
+.site-footer{background:var(--navy);color:rgba(255,255,255,.65);padding:.9rem 2rem;font-size:.63rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.footer-brand{font-family:var(--f-serif);color:var(--gold);font-weight:700;letter-spacing:.1em}
+@media(max-width:640px){.site-header{grid-template-columns:1fr}.hd-left,.hd-right{display:none}.topic-grid{grid-template-columns:1fr}.topic-card.wide{grid-column:1}.analysis-grid,.tc-body .analysis-grid{grid-template-columns:1fr}.main{padding:1.2rem 1rem 2rem}.lead-card-top{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="hd-left"><div class="hd-tagline">World Business Intelligence</div><div class="hd-edition">毎朝定期発行 ／ 世界5本 ＋ 日本5本</div></div>
+  <div class="hd-center"><div class="hd-logo">TYLER MORNING BRIEF</div><div class="hd-vol">V O L . 0 5 9</div></div>
+  <div class="hd-right"><div class="hd-date-big">AUG 27</div><div class="hd-weekday">2026年8月27日（木曜日）</div></div>
+</header>
+<div class="kicker-strip">
+  <span class="kicker-item">🌐 <strong>WORLD</strong> 自動運転商業化／量子コンピュータ／アフリカFintech／脆弱性対応／海洋経済</span>
+  <span class="kicker-item">🗾 <strong>JAPAN</strong> 日銀政策金利／ラピダス進捗／スタートアップ政策／建設DX／防衛産業</span>
+  <span class="kicker-item">🏷 <strong>◎SMB</strong> 脆弱性パッチ管理・建設DX</span>
+</div>
+<main class="main">
+
+<div class="section-banner"><span class="section-banner-icon">🌐</span><span class="section-banner-label">W O R L D</span><span class="section-banner-rule"></span></div>
+
+<!-- W-01 LEAD -->
+<div class="lead-card">
+  <svg viewBox="0 0 860 155" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <defs>
+      <linearGradient id="g-road" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0a1220"/><stop offset="100%" stop-color="#0f1c30"/></linearGradient>
+    </defs>
+    <rect width="860" height="155" fill="url(#g-road)"/>
+    <!-- road -->
+    <path d="M0,155 L300,80 L560,80 L860,155" fill="#1a2535"/>
+    <path d="M100,155 L340,88 L520,88 L760,155" fill="#131e2e"/>
+    <!-- lane markings -->
+    <line x1="0" y1="155" x2="430" y2="80" stroke="rgba(255,200,50,.4)" stroke-width="2" stroke-dasharray="20,15"/>
+    <line x1="860" y1="155" x2="430" y2="80" stroke="rgba(255,200,50,.4)" stroke-width="2" stroke-dasharray="20,15"/>
+    <!-- AV car 1 -->
+    <g transform="translate(155,90)">
+      <rect x="-30" y="-12" width="60" height="22" rx="5" fill="#1a3a6a"/>
+      <rect x="-22" y="-20" width="44" height="18" rx="4" fill="#2a5080"/>
+      <circle cx="-18" cy="11" r="7" fill="#0a1525" stroke="#4a8aaa" stroke-width="1.5"/>
+      <circle cx="18" cy="11" r="7" fill="#0a1525" stroke="#4a8aaa" stroke-width="1.5"/>
+      <!-- lidar sweep -->
+      <line x1="0" y1="-20" x2="-40" y2="-50" stroke="#00c8ff" stroke-width=".8" opacity=".5"/>
+      <line x1="0" y1="-20" x2="0" y2="-58" stroke="#00c8ff" stroke-width=".8" opacity=".5"/>
+      <line x1="0" y1="-20" x2="40" y2="-50" stroke="#00c8ff" stroke-width=".8" opacity=".5"/>
+      <circle cx="0" cy="-20" r="4" fill="#00c8ff" opacity=".8"/>
+      <!-- sensor dots -->
+      <circle cx="-28" cy="-2" r="2" fill="#4ac98a" opacity=".9"/>
+      <circle cx="28" cy="-2" r="2" fill="#4ac98a" opacity=".9"/>
+    </g>
+    <!-- AV car 2 -->
+    <g transform="translate(680,90)">
+      <rect x="-26" y="-10" width="52" height="20" rx="5" fill="#1a3a1a"/>
+      <rect x="-18" y="-18" width="36" height="16" rx="4" fill="#2a5a2a"/>
+      <circle cx="-16" cy="11" r="6" fill="#0a1525" stroke="#4a8aaa" stroke-width="1.5"/>
+      <circle cx="16" cy="11" r="6" fill="#0a1525" stroke="#4a8aaa" stroke-width="1.5"/>
+      <circle cx="0" cy="-18" r="3" fill="#C0870B" opacity=".8"/>
+      <line x1="0" y1="-18" x2="-30" y2="-42" stroke="#C0870B" stroke-width=".7" opacity=".5"/>
+      <line x1="0" y1="-18" x2="30" y2="-42" stroke="#C0870B" stroke-width=".7" opacity=".5"/>
+    </g>
+    <!-- city silhouette -->
+    <rect x="360" y="18" width="18" height="62" fill="#1E3A5F"/><rect x="382" y="30" width="14" height="50" fill="#2a4a7a"/><rect x="400" y="10" width="22" height="70" fill="#1E3A5F"/><rect x="426" y="24" width="16" height="56" fill="#2a4a7a"/><rect x="446" y="35" width="14" height="45" fill="#1a3a5a"/>
+    <rect x="368" y="32" width="4" height="4" rx="1" fill="#C0870B" opacity=".7"/><rect x="376" y="32" width="4" height="4" rx="1" fill="#C0870B" opacity=".6"/>
+    <rect x="404" y="22" width="4" height="4" rx="1" fill="#4ac98a" opacity=".8"/><rect x="412" y="22" width="4" height="4" rx="1" fill="#4ac98a" opacity=".6"/>
+    <!-- stats panel -->
+    <rect x="0" y="8" width="310" height="60" fill="rgba(0,0,0,.3)" rx="6"/>
+    <text x="155" y="26" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="13" font-family="Georgia,serif" font-weight="bold">自動運転・Level 4商業展開</text>
+    <text x="155" y="44" text-anchor="middle" fill="#00c8ff" font-size="10" font-family="sans-serif">世界稼働台数（2026年8月）</text>
+    <text x="155" y="62" text-anchor="middle" fill="#00c8ff" font-size="22" font-family="Georgia,serif" font-weight="bold">12万台超</text>
+    <rect x="548" y="8" width="305" height="60" fill="rgba(0,0,0,.3)" rx="6"/>
+    <text x="700" y="26" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="13" font-family="Georgia,serif" font-weight="bold">事故率（人間ドライバー比）</text>
+    <text x="700" y="44" text-anchor="middle" fill="#4ac98a" font-size="10" font-family="sans-serif">AV Level 4の安全記録</text>
+    <text x="700" y="62" text-anchor="middle" fill="#4ac98a" font-size="22" font-family="Georgia,serif" font-weight="bold">▲85%</text>
+    <!-- lower bar -->
+    <rect x="0" y="118" width="860" height="37" fill="rgba(0,0,0,.35)"/>
+    <text x="430" y="133" text-anchor="middle" fill="rgba(255,255,255,.65)" font-size="8.5" font-family="sans-serif">Waymo One：米15都市 ／ 百度Apollo：中20都市 ／ Cruise・Zoox復活 ／ トヨタ「Woven City」自動運転ゾーン開業</text>
+    <text x="430" y="148" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="8.5" font-family="sans-serif">コスト：¥800/km（人間タクシー比 ▲40%）　AV専用レーン：東京・名古屋・大阪で整備開始</text>
+  </svg>
+  <div class="lead-card-top">
+    <div>
+      <div class="lead-kicker">W-01 ／ LEAD STORY</div>
+      <div class="lead-title">自動運転Level 4が都市交通を変える<br>世界12万台稼働の現実</div>
+      <div class="lead-sub">「いつか来る未来」だった自動運転は2026年、世界12万台超のLevel 4車両が都市部を走る「現在」になった。人間ドライバー比▲85%の事故率と¥800/kmのコスト（人間タクシー比▲40%）が証明する安全性と経済合理性が、規制緩和を後押しする好循環を生み出している。</div>
+    </div>
+    <div class="lead-stat-box"><div class="lead-stat-label">事故率削減</div><div class="lead-stat-num">▲85%</div><div class="lead-stat-sub">vs 人間ドライバー</div></div>
+  </div>
+  <div class="lead-body">
+    <p class="tc-prose">Waymo Oneが米国15都市で商業サービスを展開し、累計走行距離は5,000万kmを超えた。中国では百度Apolloが20都市・3万台を運用し、Waymoとの技術競争が激化している。一時撤退したCruise（GM傘下）とZoox（Amazon傘下）も安全基準を再整備して市場復帰を果たした。日本ではトヨタが静岡「Woven City」の自動運転ゾーンを開業し、東京・名古屋・大阪でAV専用レーン整備が始まった。タクシー・物流への応用が加速する一方、<strong>既存のドライバー職の代替</strong>という社会課題も現実のものとなっており、労働組合との対話が政策の焦点になっている。</p>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？<span class="analysis-sublabel">— 急浮上の背景</span></div><div class="analysis-body">センサーコスト（LiDAR）の激減と機械学習の精度向上が臨界点を突破。規制当局が「実績データ」を根拠に安全性を認め始め、許可エリアの拡大が加速した。タクシー・トラック人手不足も導入圧力になっている。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？<span class="analysis-sublabel">— 主要プレイヤー</span></div><div class="analysis-body">Waymo（Google）・Cruise（GM）・Zoox（Amazon）が米国を、百度・滴滴が中国をリード。日本勢はトヨタ・ホンダが自社都市での実験先行。ソフトウェアではMobileye・NVIDIAがプラットフォームを独占気味に供給している。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？<span class="analysis-sublabel">— 課題と障壁</span></div><div class="analysis-body">悪天候・工事区間・予測不能な歩行者への対応という「エッジケース」は依然として難題。自動運転車の事故における法的責任の所在、保険制度の未整備、そしてドライバー雇用への影響をめぐる社会的合意形成が遅れている。</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="topic-grid">
+<!-- W-02 -->
+<div class="topic-card">
+  <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="420" height="110" fill="#060a18"/>
+    <!-- quantum circuit -->
+    <line x1="20" y1="35" x2="130" y2="35" stroke="#8050ff" stroke-width="1.5"/>
+    <line x1="20" y1="55" x2="130" y2="55" stroke="#8050ff" stroke-width="1.5"/>
+    <line x1="20" y1="75" x2="130" y2="75" stroke="#8050ff" stroke-width="1.5"/>
+    <!-- gates -->
+    <rect x="40" y="27" width="16" height="16" rx="2" fill="#1a0f3a" stroke="#8050ff" stroke-width="1.5"/>
+    <text x="48" y="38" text-anchor="middle" fill="#a080ff" font-size="8" font-family="sans-serif" font-weight="bold">H</text>
+    <line x1="55" y1="35" x2="58" y2="35" stroke="#8050ff" stroke-width="1"/><line x1="58" y1="35" x2="58" y2="55" stroke="#8050ff" stroke-width="1"/><circle cx="58" cy="55" r="3" fill="#8050ff"/>
+    <rect x="70" y="47" width="16" height="16" rx="2" fill="#1a0f3a" stroke="#C0870B" stroke-width="1.5"/>
+    <text x="78" y="58" text-anchor="middle" fill="#C0870B" font-size="8" font-family="sans-serif" font-weight="bold">X</text>
+    <rect x="100" y="67" width="16" height="16" rx="2" fill="#1a0f3a" stroke="#4ac98a" stroke-width="1.5"/>
+    <text x="108" y="78" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif" font-weight="bold">M</text>
+    <circle cx="48" cy="94" r="8" fill="none" stroke="#8050ff" stroke-width="1.5"/>
+    <text x="48" y="98" text-anchor="middle" fill="#a080ff" font-size="6" font-family="sans-serif">Q-bit</text>
+    <rect x="148" y="8" width="262" height="98" fill="rgba(0,0,0,.3)" rx="6"/>
+    <text x="279" y="28" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="11" font-family="Georgia,serif" font-weight="bold">量子コンピュータ商用化</text>
+    <text x="279" y="46" text-anchor="middle" fill="#a080ff" font-size="9.5" font-family="sans-serif">IBM Quantum Eagle</text>
+    <text x="279" y="66" text-anchor="middle" fill="#a080ff" font-size="22" font-family="Georgia,serif" font-weight="bold">1,000+ Qubits</text>
+    <text x="279" y="82" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">RSA-2048の解読 10年以内が現実味</text>
+    <text x="279" y="97" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif">「耐量子暗号」移行が世界的急務に</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-w">W-02</span><span class="tc-theme-tag" style="background:#F0E8FF;color:#5a30a0">量子技術</span></div>
+  <div class="tc-body">
+    <div class="tc-title">量子コンピュータ商用化<br>暗号システムへの脅威と対策</div>
+    <div class="tc-prose">IBM Quantum Eagleが<strong>1,000量子ビット</strong>を超え、Googleが「量子超越性」の実用演算領域への到達を宣言した。金融・製薬・材料科学での量子アルゴリズム活用が商用フェーズに入り、JPMorgan・BMW・三菱ケミカルが実証実験を本格稼働させている。深刻なのは現在の暗号インフラへの影響だ。RSA-2048の解読が「10年以内に現実になりうる」という試算が出ており、NIST（米国立標準技術研究所）は耐量子暗号（PQC）の標準規格を2026年に確定した。政府・金融・インフラ事業者による移行作業は「後回しにできないタイムラインの問題」として認識され始めた。</div>
+    <div class="stat-row"><span class="stat-chip sc-navy">1,000+ Qubits</span><span class="stat-chip sc-red">RSA解読 10年以内</span></div>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">ハードウェアのQubits数が「ノイズに勝てる」閾値に近づき、実用的な量子誤り訂正が見えてきた。NIST標準確定が「耐量子化の起点」となり、企業の準備を促している。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">IBM・Google・IonQ・Quantinuumがハードウェア競争をリード。耐量子暗号では米NIST・欧ETSI・日本のNICTが標準化を主導。金融・防衛分野が最初の大口顧客となる見込み。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">現在の量子コンピュータはまだ「エラー率が高い」実験段階で、実用的な量子優位性は特定問題に限定される。耐量子暗号への移行コスト・期間の長さが中小・地方自治体の対応を遅らせている。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- W-03 -->
+<div class="topic-card">
+  <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="420" height="110" fill="#0a1208"/>
+    <!-- africa map simplified -->
+    <path d="M20,15 Q35,10 55,18 Q75,12 90,25 Q105,18 115,30 Q120,55 112,80 Q100,105 80,108 Q55,112 40,98 Q18,85 15,60 Q10,40 20,15 Z" fill="#1a3a18" stroke="#2a5a28" stroke-width="1"/>
+    <circle cx="60" cy="45" r="4" fill="#C0870B" opacity=".8"/>
+    <circle cx="80" cy="65" r="3" fill="#C0870B" opacity=".7"/>
+    <circle cx="45" cy="70" r="3.5" fill="#C0870B" opacity=".75"/>
+    <circle cx="95" cy="50" r="3" fill="#C0870B" opacity=".65"/>
+    <line x1="60" y1="45" x2="80" y2="65" stroke="#C0870B" stroke-width=".8" opacity=".5"/>
+    <line x1="80" y1="65" x2="45" y2="70" stroke="#C0870B" stroke-width=".8" opacity=".5"/>
+    <line x1="80" y1="65" x2="95" y2="50" stroke="#C0870B" stroke-width=".8" opacity=".5"/>
+    <!-- phone icon -->
+    <rect x="55" y="40" width="10" height="16" rx="2" fill="#0a1208" stroke="#4ac98a" stroke-width="1"/>
+    <circle cx="60" cy="54" r="1.5" fill="#4ac98a"/>
+    <rect x="148" y="8" width="263" height="98" fill="rgba(0,0,0,.3)" rx="6"/>
+    <text x="279" y="28" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="11" font-family="Georgia,serif" font-weight="bold">アフリカ・Fintech革命</text>
+    <text x="279" y="46" text-anchor="middle" fill="#C0870B" font-size="9.5" font-family="sans-serif">モバイル決済ユーザー数</text>
+    <text x="279" y="66" text-anchor="middle" fill="#C0870B" font-size="24" font-family="Georgia,serif" font-weight="bold">8.5億人</text>
+    <text x="279" y="82" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">VC投資 $6.8B（前年比+52%）</text>
+    <text x="279" y="97" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif">M-Pesa 30か国・GDPの45%が決済通過</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-w">W-03</span><span class="tc-theme-tag" style="background:#FEF5E4;color:#8A5C00">新興市場・Fintech</span></div>
+  <div class="tc-body">
+    <div class="tc-title">アフリカFintech革命<br>8.5億人のモバイル決済経済</div>
+    <div class="tc-prose">アフリカのモバイル決済ユーザーは<strong>8.5億人</strong>に達し、M-Pesa（ケニア）は30か国に拡大してGDPの45%が同プラットフォームを経由する経済圏を形成した。銀行口座を持たない人々が「スマートフォン経由で金融サービスへ直アクセスする」という世界初のモデルが確立し、保険・融資・証券投資まで携帯一台で完結する生態系が育っている。VC投資は$6.8B（+52%）と急増し、ナイジェリア・エジプト・ケニア・南アのビッグ4がスタートアップハブとして機能する。日本ではソフトバンク・三井物産・住友商事がアフリカDX市場への投資を加速させている。</div>
+    <div class="stat-row"><span class="stat-chip sc-gold">8.5億ユーザー</span><span class="stat-chip sc-jade">VC投資 $6.8B</span></div>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">銀行インフラなしにスマートフォンで金融へアクセスできるレイヤーが成熟し、爆発的な中産階級の拡大（年1,500万人増）がFintech需要を押し上げている。「銀行口座のない人」が最大の成長市場。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">Safaricom（M-Pesa）・Flutterwave・Paystack（Stripe傘下）が牽引。グローバルからはVisa・Mastercardがインフラ整備を支援。中国AlipayとWeChatPayも東・西アフリカでの足場固めを急いでいる。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">通貨リスク（インフレ・急落）・各国の異なる規制・サイバーセキュリティインフラの脆弱さ・デジタルリテラシーの格差が普及の天井を作っている。外資の利益送金規制も投資の阻害要因となる。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- W-04 SMB -->
+<div class="topic-card smb">
+  <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="420" height="110" fill="#080f18"/>
+    <!-- patch/update metaphor -->
+    <rect x="22" y="20" width="100" height="78" rx="5" fill="#1a2535" stroke="#2a4a6a" stroke-width="1"/>
+    <rect x="30" y="32" width="84" height="8" rx="2" fill="#cc3333" opacity=".8"/>
+    <text x="72" y="39" text-anchor="middle" fill="white" font-size="7" font-family="sans-serif" font-weight="bold">CVE-2026-XXXX</text>
+    <rect x="30" y="46" width="84" height="8" rx="2" fill="#cc6622" opacity=".8"/>
+    <text x="72" y="53" text-anchor="middle" fill="white" font-size="7" font-family="sans-serif" font-weight="bold">CRITICAL: 9.8</text>
+    <rect x="30" y="60" width="84" height="22" rx="3" fill="#1a4a2a" stroke="#4ac98a" stroke-width="1"/>
+    <text x="72" y="73" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif" font-weight="bold">PATCH READY</text>
+    <text x="72" y="84" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="6.5" font-family="sans-serif">→ UPDATE NOW</text>
+    <rect x="148" y="8" width="264" height="98" fill="rgba(0,0,0,.28)" rx="6"/>
+    <text x="280" y="28" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="11" font-family="Georgia,serif" font-weight="bold">ゼロデイ脆弱性・パッチ管理</text>
+    <text x="280" y="46" text-anchor="middle" fill="#cc3333" font-size="9.5" font-family="sans-serif">未パッチ被害の発生割合</text>
+    <text x="280" y="66" text-anchor="middle" fill="#cc3333" font-size="22" font-family="Georgia,serif" font-weight="bold">60%</text>
+    <text x="280" y="82" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">パッチ適用まで平均18日 → 0日が理想</text>
+    <text x="280" y="97" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif" font-weight="bold">自動パッチ管理ツールで適用率 99%へ</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-w">W-04</span><span class="smb-badge">◎ 中小企業</span></div>
+  <div class="tc-body">
+    <div class="tc-title">ゼロデイ脆弱性・パッチ管理<br>未適用が招くサイバー被害の実態</div>
+    <div class="tc-prose">サイバー攻撃被害の<strong>60%は既知の脆弱性への未パッチ適用</strong>が原因であることがIPA調査で明らかになった。パッチ公開から適用まで中小企業では平均18日かかっており、この「空白期間」に攻撃者が侵入するケースが急増している。対策の核心は「自動パッチ管理」の導入で、Microsoft Intune・Jamf・PDQDeployなどのツールを使えば適用率を99%まで高め、管理工数をほぼゼロにできる。VPNアプライアンス・メールサーバー・NASなど「外向きデバイス」の脆弱性は特に緊急度が高く、まず優先的に自動更新を設定することが中小企業の現実的な第一歩だ。</div>
+    <div class="stat-row"><span class="stat-chip sc-red">未パッチ起因 60%</span><span class="stat-chip sc-jade">自動化で適用率 99%</span></div>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">攻撃者がCVE公開後72時間以内にスキャン・攻撃を開始するスピードが常態化し、「業務停止を避けるため後回し」という慣行が致命的リスクになった。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">Microsoft・Jamf・Ivanti・PDQが自動パッチ管理市場をリード。IPA「中小企業のためのセキュリティガイドライン」が無料で公開されており、優先的に参照すべき資料。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">自動適用による「業務システムの突然の動作変化」への恐れから、手動管理を続ける企業が多い。パッチ適用前の動作確認テスト環境の整備が中小には荷が重いのも現実。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- W-05 -->
+<div class="topic-card">
+  <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <defs><linearGradient id="g-ocean" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#050e1a"/><stop offset="100%" stop-color="#0a1e30"/></linearGradient></defs>
+    <rect width="420" height="110" fill="url(#g-ocean)"/>
+    <!-- waves -->
+    <path d="M0,75 Q30,65 60,75 Q90,85 120,75 Q150,65 180,75 Q210,85 240,75" fill="none" stroke="#1a4a8a" stroke-width="1.5" opacity=".6"/>
+    <path d="M0,85 Q30,75 60,85 Q90,95 120,85 Q150,75 180,85 Q210,95 240,85" fill="none" stroke="#1a4a8a" stroke-width="1" opacity=".4"/>
+    <!-- wind turbine in ocean -->
+    <line x1="70" y1="72" x2="70" y2="25" stroke="#2a5a8a" stroke-width="3"/>
+    <line x1="70" y1="25" x2="70" y2="5" stroke="#3a7aaa" stroke-width="2" stroke-linecap="round"/>
+    <line x1="70" y1="25" x2="95" y2="38" stroke="#3a7aaa" stroke-width="2" stroke-linecap="round"/>
+    <line x1="70" y1="25" x2="45" y2="38" stroke="#3a7aaa" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="70" cy="25" r="4" fill="#4a8aaa"/>
+    <!-- fish -->
+    <path d="M30,95 Q40,90 50,95 Q40,100 30,95 Z" fill="#2a8a8a" opacity=".6"/>
+    <path d="M15,88 Q25,83 35,88 Q25,93 15,88 Z" fill="#2a8a8a" opacity=".5"/>
+    <rect x="148" y="8" width="263" height="98" fill="rgba(0,0,0,.3)" rx="6"/>
+    <text x="279" y="28" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="11" font-family="Georgia,serif" font-weight="bold">海洋経済・ブルーエコノミー</text>
+    <text x="279" y="47" text-anchor="middle" fill="#4a8aff" font-size="9.5" font-family="sans-serif">洋上風力世界市場規模</text>
+    <text x="279" y="67" text-anchor="middle" fill="#4a8aff" font-size="24" font-family="Georgia,serif" font-weight="bold">$190B</text>
+    <text x="279" y="82" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">深海鉱物資源開発・藻類バイオ燃料も急拡大</text>
+    <text x="279" y="97" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif">日本EEZ 世界6位 / 経済的活用が本格化</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-w">W-05</span><span class="tc-theme-tag" style="background:#E0EEF8;color:#1A5F8A">海洋・ブルーエコノミー</span></div>
+  <div class="tc-body">
+    <div class="tc-title">海洋経済・ブルーエコノミー<br>洋上風力・深海資源の開拓最前線</div>
+    <div class="tc-prose">洋上風力の世界市場は<strong>$190B</strong>に達し、欧州に加え米東海岸・日本・台湾が本格的な設置競争に入った。Ørsted・Vestas・三菱重工がタービン供給をリードし、浮体式洋上風力が水深60m以上の海域を新たな発電フロンティアとして開拓している。深海では太平洋のマンガン団塊・コバルトリッチクラストへの採掘申請が急増し、JAMSTEC（日本海洋研究開発機構）が世界最先端の調査技術を持つプレイヤーとして注目される。日本のEEZは世界第6位の広さを誇り、再エネ・鉱物・水産資源の複合的な海洋活用が国家戦略に格上げされた。</div>
+    <div class="stat-row"><span class="stat-chip sc-sky">洋上風力 $190B</span><span class="stat-chip sc-navy">日本EEZ 世界6位</span></div>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">陸上再エネが立地制約に当たり「海が次のフロンティア」となった。EV・半導体向けのコバルト・マンガン需要爆発が深海採掘の経済性を押し上げ、資源安保の観点からも注目が集まる。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">Ørsted・Equinor・三菱商事が洋上風力開発をリード。深海採掘ではDeep Sea Mining（カナダ）・GSR（ベルギー）が競争。JAMSTECと日本の商社がコンソーシアムを組み挑戦体制を構築中。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">深海採掘の生態系への影響が不明確なため環境NGOの反対が強く、国際海底機構（ISA）の規制が未確定。洋上風力は漁業権・景観問題・強風への設備耐久性が日本固有の課題。</div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="section-divider"><div class="sdl"></div><div class="sd-badge">🗾 &nbsp;J A P A N</div><div class="sdr"></div></div>
+
+<div class="topic-grid">
+<!-- J-01 -->
+<div class="topic-card">
+  <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="420" height="110" fill="#06101a"/>
+    <!-- yen/rate chart -->
+    <polyline points="20,85 45,80 70,72 95,78 120,68 130,60" fill="none" stroke="#C0870B" stroke-width="2"/>
+    <polyline points="20,85 45,80 70,72 95,78 120,68 130,60" fill="rgba(192,135,11,.1)"/>
+    <line x1="20" y1="60" x2="140" y2="60" stroke="#2a4a6a" stroke-width=".6" stroke-dasharray="4,3"/>
+    <text x="75" y="57" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="7" font-family="sans-serif">金利ライン</text>
+    <text x="130" y="56" text-anchor="middle" fill="#C0870B" font-size="8" font-family="sans-serif" font-weight="bold">0.75%</text>
+    <rect x="148" y="8" width="264" height="98" fill="rgba(0,0,0,.3)" rx="6"/>
+    <text x="280" y="28" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="12" font-family="Georgia,serif" font-weight="bold">日銀・政策金利</text>
+    <text x="280" y="47" text-anchor="middle" fill="#C0870B" font-size="9.5" font-family="sans-serif">2026年8月現在</text>
+    <text x="280" y="67" text-anchor="middle" fill="#C0870B" font-size="24" font-family="Georgia,serif" font-weight="bold">0.75%</text>
+    <text x="280" y="83" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">円相場：¥142/$ ／ 次回利上げは12月？</text>
+    <text x="280" y="97" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif">住宅ローン変動金利 平均1.25%に上昇</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-j">J-01</span><span class="tc-theme-tag" style="background:#E0EEF8;color:#1A5F8A">金融・金利</span></div>
+  <div class="tc-body">
+    <div class="tc-title">日銀・政策金利動向<br>正常化の道筋と円相場の行方</div>
+    <div class="tc-prose">日銀は政策金利を<strong>0.75%</strong>（2026年8月現在）に引き上げ、27年ぶりの金利上昇局面が続いている。円相場は¥142/$前後で推移し、マーケットは年内0.25%の追加利上げを6割の確率で織り込んでいる。変動型住宅ローン利用者の金利は平均1.25%に上昇し、借り換え相談件数が急増している。一方で植田総裁は「物価目標の持続的な達成を確認しながら慎重に」と繰り返しており、急速な引き上げへの警戒感を示す。米国の利下げサイクルと日本の利上げサイクルが交差する「歴史的なターニングポイント」として市場が注目する局面が続く。</div>
+    <div class="stat-row"><span class="stat-chip sc-gold">政策金利 0.75%</span><span class="stat-chip sc-navy">円 ¥142/$</span></div>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">CPI+3%超が続き「インフレ定着」の証拠が積み上がった。アベノミクス時代のゼロ金利・マイナス金利の完全終幕であり、日本経済が「金利のある世界」に戻る歴史的局面。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">日銀政策委員会が舵取りを担い、三菱UFJFGなど銀行株が利上げ恩恵で上昇。不動産・住宅ローン利用者は影響を直接受ける。円の対ドル動向がヘッジファンドの主要ターゲット。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">金利上昇が中小企業の借入コスト増大を招き、設備投資意欲を冷やすリスク。住宅ローン変動金利の急上昇が個人消費を抑制する「金利ショック」の懸念が浮上している。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- J-02 -->
+<div class="topic-card">
+  <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="420" height="110" fill="#060a14"/>
+    <!-- chip wafer for Rapidus -->
+    <circle cx="75" cy="55" r="45" fill="none" stroke="#2a4a7a" stroke-width="1"/>
+    <circle cx="75" cy="55" r="35" fill="#0a1a2a" stroke="#1a3a5a" stroke-width=".8"/>
+    <rect x="52" y="32" width="14" height="14" rx="2" fill="#C0870B" opacity=".9"/>
+    <rect x="70" y="32" width="14" height="14" rx="2" fill="#2a5a9a" opacity=".8"/>
+    <rect x="88" y="32" width="14" height="14" rx="2" fill="#C0870B" opacity=".75"/>
+    <rect x="52" y="50" width="14" height="14" rx="2" fill="#2a5a9a" opacity=".85"/>
+    <rect x="70" y="50" width="14" height="14" rx="2" fill="#C0870B" opacity=".9"/>
+    <rect x="88" y="50" width="14" height="14" rx="2" fill="#2a5a9a" opacity=".8"/>
+    <rect x="52" y="68" width="14" height="14" rx="2" fill="#2a5a9a" opacity=".7"/>
+    <rect x="70" y="68" width="14" height="14" rx="2" fill="#2a5a9a" opacity=".85"/>
+    <rect x="88" y="68" width="14" height="14" rx="2" fill="#C0870B" opacity=".85"/>
+    <text x="75" y="108" text-anchor="middle" fill="#C0870B" font-size="8.5" font-family="sans-serif" font-weight="bold">RAPIDUS 2nm</text>
+    <rect x="148" y="8" width="263" height="98" fill="rgba(0,0,0,.3)" rx="6"/>
+    <text x="279" y="28" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="12" font-family="Georgia,serif" font-weight="bold">ラピダス最新進捗</text>
+    <text x="279" y="47" text-anchor="middle" fill="#C0870B" font-size="9" font-family="sans-serif">試作ライン稼働（千歳）</text>
+    <text x="279" y="66" text-anchor="middle" fill="#C0870B" font-size="22" font-family="Georgia,serif" font-weight="bold">2026 Q3</text>
+    <text x="279" y="82" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">国家累計投資 ¥3.3兆 / IBM技術提携深化</text>
+    <text x="279" y="97" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif">量産（2028年）向け顧客交渉が本格化</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-j">J-02</span><span class="tc-theme-tag" style="background:#E8EEF8;color:var(--navy)">半導体・ラピダス</span></div>
+  <div class="tc-body">
+    <div class="tc-title">ラピダス最新進捗<br>千歳2nm試作ライン稼働の意義</div>
+    <div class="tc-prose">ラピダスが北海道千歳の試作ライン（IIM-1）を<strong>2026年Q3に稼働</strong>させ、2nmプロセスの製造技術検証が開始された。国家累計投資は¥3.3兆に達し、IBMの最先端EUV技術ライセンスを核に日本独自の設計・製造エコシステム構築を目指す。量産ライン（IIM-2）の稼働は2028年を目標としており、AI向けロジックチップを主要製品として国内外の顧客交渉が本格化している。課題は収益化までの時間と資金調達で、2028年以降の黒字化シナリオには国際的な顧客確保が不可欠だ。NTT・ソフトバンク・トヨタなど国内企業の戦略的発注がラピダスの命運を左右する。</div>
+    <div class="stat-row"><span class="stat-chip sc-gold">試作ライン Q3稼働</span><span class="stat-chip sc-navy">国家投資 ¥3.3兆</span></div>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">半導体の地政学的重要性が高まる中、「日本に最先端製造拠点を」という国策が後押し。台湾TSMC依存からの脱却という安保上の動機と、経済成長の種まきが重なる。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">ラピダス（トヨタ・Sony等8社出資）とIBMが技術の要。経産省が補助金で背後を支え、北海道が工場用地・電力・人材で官民協力体制を構築。TSMCとの協調関係も模索中。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">エンジニア人材の慢性的不足（2nm開発経験者は世界でも希少）、TSMC・Samsungとの価格・技術力での競争、そして2028年量産まで追加で必要な数兆円規模の資金調達が最大のリスク。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- J-03 -->
+<div class="topic-card">
+  <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="420" height="110" fill="#08100a"/>
+    <!-- startup rocket -->
+    <g transform="translate(65,60) rotate(-45)">
+      <rect x="-8" y="-30" width="16" height="40" rx="8" fill="#C0870B"/>
+      <polygon points="-8,10 8,10 0,22" fill="#9A6A00"/>
+      <polygon points="-10,-30 0,-44 10,-30" fill="#E8A020"/>
+      <rect x="-4" y="-5" width="8" height="8" rx="1" fill="#0a1525" opacity=".7"/>
+      <ellipse cx="0" cy="15" rx="5" ry="10" fill="#ff6600" opacity=".85"/>
+      <ellipse cx="0" cy="18" rx="3" ry="7" fill="#ffcc00" opacity=".9"/>
+    </g>
+    <circle cx="30" cy="25" r="3" fill="#C0870B" opacity=".5"/>
+    <circle cx="45" cy="18" r="2" fill="#C0870B" opacity=".4"/>
+    <circle cx="100" cy="20" r="2.5" fill="#C0870B" opacity=".5"/>
+    <rect x="148" y="8" width="263" height="98" fill="rgba(0,0,0,.3)" rx="6"/>
+    <text x="279" y="28" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="12" font-family="Georgia,serif" font-weight="bold">スタートアップ育成政策</text>
+    <text x="279" y="47" text-anchor="middle" fill="#C0870B" font-size="9.5" font-family="sans-serif">累計ユニコーン数（2026年）</text>
+    <text x="279" y="67" text-anchor="middle" fill="#C0870B" font-size="24" font-family="Georgia,serif" font-weight="bold">32社</text>
+    <text x="279" y="83" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">政府目標100社（2027年）達成可能性は？</text>
+    <text x="279" y="97" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif">J-Startup / SBIルーキーズが輩出加速</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-j">J-03</span><span class="tc-theme-tag" style="background:#FDF3DC;color:var(--gold)">スタートアップ</span></div>
+  <div class="tc-body">
+    <div class="tc-title">スタートアップ・ユニコーン育成<br>政府目標100社への道のり</div>
+    <div class="tc-prose">日本の累計ユニコーン数は<strong>32社</strong>（2026年8月現在）に達し、政府が掲げた「2027年100社」目標の実現可能性に注目が集まる。AIヘルスケア・ロボット・深海・宇宙・フードテックの5分野が次世代ユニコーン候補を多く抱える。スタートアップ育成5ヶ年計画（2022〜2027年）の後半に入り、VC投資額は¥1.7兆を突破。J-Startup選定企業が官民の支援を集中的に受ける一方、出口戦略（IPO・M&A）の多様化が急務で、大企業によるM&A受け入れ文化の醸成が課題として残る。ストックオプション税制の改革により、優秀な人材がスタートアップに挑戦するインセンティブは着実に強化されている。</div>
+    <div class="stat-row"><span class="stat-chip sc-gold">ユニコーン 32社</span><span class="stat-chip sc-jade">VC投資 ¥1.7兆</span></div>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">岸田政権が「スタートアップ立国」を掲げて以来、税制・規制・資金支援が集中整備された。大企業からの転職・副業解禁・ストックオプション課税改正が人材の流動化を促している。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">SBIホールディングス・JAFCO・グロービスがVC主導。経産省のJ-Startup・NEDOが選定企業への集中支援。大企業ではソニー・NTT・住友商事が社内起業制度とCVCを強化している。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">目標100社のうち達成確度が見えているのは50社程度とも試算される。大企業のM&A文化の未成熟・グローバル展開能力の不足・英語で闘えるアントレプレナー人材の絶対数不足が壁。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- J-04 SMB -->
+<div class="topic-card smb">
+  <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="420" height="110" fill="#080c06"/>
+    <!-- construction crane -->
+    <line x1="60" y1="108" x2="60" y2="18" stroke="#3a4a2a" stroke-width="4"/>
+    <line x1="60" y1="18" x2="120" y2="18" stroke="#3a4a2a" stroke-width="3"/>
+    <line x1="120" y1="18" x2="120" y2="50" stroke="#5a6a4a" stroke-width="2"/>
+    <line x1="120" y1="50" x2="95" y2="70" stroke="#4a5a3a" stroke-width="1.5"/>
+    <!-- building under construction -->
+    <rect x="20" y="68" width="32" height="40" fill="#1a2a14" rx="1"/>
+    <rect x="22" y="72" width="6" height="6" rx="1" fill="#C0870B" opacity=".6"/>
+    <rect x="32" y="72" width="6" height="6" rx="1" fill="#C0870B" opacity=".5"/>
+    <rect x="22" y="82" width="6" height="6" rx="1" fill="#C0870B" opacity=".7"/>
+    <rect x="32" y="82" width="6" height="6" rx="1" fill="#C0870B" opacity=".6"/>
+    <!-- tablet/BIM -->
+    <rect x="82" y="60" width="55" height="35" rx="4" fill="#1a2a14" stroke="#4ac98a" stroke-width="1.5"/>
+    <rect x="86" y="64" width="47" height="24" rx="2" fill="#0a1508"/>
+    <rect x="88" y="66" width="20" height="10" rx="1" fill="#2a4a1a"/>
+    <rect x="110" y="66" width="20" height="10" rx="1" fill="#2a4a1a"/>
+    <rect x="88" y="78" width="42" height="8" rx="1" fill="#1a3a10"/>
+    <text x="109" y="71" text-anchor="middle" fill="#4ac98a" font-size="6" font-family="sans-serif" font-weight="bold">BIM 3D</text>
+    <rect x="148" y="8" width="263" height="98" fill="rgba(0,0,0,.28)" rx="6"/>
+    <text x="279" y="28" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="11" font-family="Georgia,serif" font-weight="bold">建設・不動産DX</span></text>
+    <text x="279" y="46" text-anchor="middle" fill="#C0870B" font-size="9.5" font-family="sans-serif">BIM/CIM導入率（建設業）</text>
+    <text x="279" y="66" text-anchor="middle" fill="#C0870B" font-size="22" font-family="Georgia,serif" font-weight="bold">68%</text>
+    <text x="279" y="82" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">工期短縮▲20% / 廃棄物▲30%削減</text>
+    <text x="279" y="97" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif" font-weight="bold">補助金 ¥500万上限 / AI積算ツール急拡大</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-j">J-04</span><span class="smb-badge">◎ 中小企業</span></div>
+  <div class="tc-body">
+    <div class="tc-title">建設・不動産DX<br>BIM/CIM義務化と中小工務店の対応</div>
+    <div class="tc-prose">国土交通省の公共工事でBIM/CIMが事実上義務化され、建設業のデジタル化率は<strong>68%</strong>まで上昇した。3DモデルによるBIM設計は工期を▲20%・廃棄物を▲30%削減した実績が積み上がり、大手ゼネコンではもはや標準ツールとなっている。中小工務店・設計事務所では「BIMソフト（Revit・Archicad）の習熟コスト」と「初期導入費」が壁だったが、AI積算ツール（クラウド型・月額制）の普及で参入障壁が大幅に下がった。建設DXの補助金（上限¥500万）を活用したBIM導入支援事業が各地で始まり、「DXしなければ公共工事から排除される」という危機意識が中小の背中を押している。</div>
+    <div class="stat-row"><span class="stat-chip sc-gold">BIM導入率 68%</span><span class="stat-chip sc-jade">工期 ▲20%</span></div>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">国交省の「建設DX推進政策」と2024年問題（残業規制）が建設業の生産性革命を強制した。義務化の波は中小工務店・専門工事業者にも確実に到達しており、待ったなしの状況。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">大林組・鹿島・清水建設がBIM・AIドローン測量・自動施工を先行実装。Autodesk・グラフィソフトがソフトウェアを提供し、Kenchiku（国内）がクラウド型AI積算で中小市場を狙う。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">熟練大工・職人の高齢化とデジタルスキルのギャップ、BIMモデル作成に必要な時間・人員の確保が中小の壁。「BIM担当者がいない」という人材問題が最も頻繁に挙げられる課題。</div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="topic-grid">
+<!-- J-05 WIDE -->
+<div class="topic-card wide">
+  <svg viewBox="0 0 860 128" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="860" height="128" fill="#060c14"/>
+    <!-- fighter jet -->
+    <g transform="translate(100,64)">
+      <polygon points="0,-8 80,0 0,8 10,0" fill="#2a3a5a"/>
+      <polygon points="0,-8 -20,-20 -10,-4" fill="#3a4a6a"/>
+      <polygon points="0,8 -20,20 -10,4" fill="#3a4a6a"/>
+      <polygon points="-10,-4 -30,-4 -25,0 -30,4 -10,4" fill="#1a2a4a"/>
+      <circle cx="70" cy="0" r="4" fill="#0a1525"/>
+      <ellipse cx="-28" cy="0" rx="6" ry="4" fill="#ff6600" opacity=".8"/>
+      <ellipse cx="-32" cy="0" rx="4" ry="3" fill="#ffcc00" opacity=".85"/>
+    </g>
+    <!-- shield -->
+    <path d="M210,28 L260,28 L260,76 Q260,95 235,108 Q210,95 210,76 Z" fill="rgba(30,58,95,.5)" stroke="#1E3A5F" stroke-width="2"/>
+    <text x="235" y="68" text-anchor="middle" fill="#C0870B" font-size="20" font-family="sans-serif">🛡</text>
+    <!-- info panel -->
+    <rect x="280" y="8" width="572" height="115" fill="rgba(0,0,0,.32)" rx="8"/>
+    <text x="566" y="30" text-anchor="middle" fill="rgba(255,255,255,.95)" font-size="13" font-family="Georgia,serif" font-weight="bold">防衛費増額と防衛産業・安全保障の新局面</text>
+    <rect x="296" y="40" width="88" height="36" rx="5" fill="rgba(192,135,11,.2)" stroke="#C0870B" stroke-width="1"/>
+    <text x="340" y="54" text-anchor="middle" fill="#C0870B" font-size="8" font-family="sans-serif" font-weight="bold">防衛費（2026年度）</text>
+    <text x="340" y="72" text-anchor="middle" fill="#C0870B" font-size="20" font-family="Georgia,serif" font-weight="bold">¥8.1兆</text>
+    <rect x="392" y="40" width="88" height="36" rx="5" fill="rgba(74,201,138,.14)" stroke="#4ac98a" stroke-width="1"/>
+    <text x="436" y="54" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif" font-weight="bold">対GDP比</text>
+    <text x="436" y="72" text-anchor="middle" fill="#4ac98a" font-size="20" font-family="Georgia,serif" font-weight="bold">1.4%</text>
+    <rect x="488" y="40" width="88" height="36" rx="5" fill="rgba(0,200,255,.1)" stroke="rgba(0,200,255,.45)" stroke-width="1"/>
+    <text x="532" y="54" text-anchor="middle" fill="#00c8ff" font-size="8" font-family="sans-serif" font-weight="bold">装備品国産化率</text>
+    <text x="532" y="72" text-anchor="middle" fill="#00c8ff" font-size="20" font-family="Georgia,serif" font-weight="bold">62%</text>
+    <rect x="584" y="40" width="88" height="36" rx="5" fill="rgba(192,135,11,.18)" stroke="#C0870B" stroke-width="1"/>
+    <text x="628" y="54" text-anchor="middle" fill="#C0870B" font-size="8" font-family="sans-serif" font-weight="bold">防衛テックVC投資</text>
+    <text x="628" y="72" text-anchor="middle" fill="#C0870B" font-size="20" font-family="Georgia,serif" font-weight="bold">¥4,800億</text>
+    <rect x="680" y="40" width="160" height="36" rx="5" fill="rgba(255,100,100,.1)" stroke="rgba(200,50,50,.4)" stroke-width="1"/>
+    <text x="760" y="54" text-anchor="middle" fill="#ff7a7a" font-size="8" font-family="sans-serif" font-weight="bold">2027年目標（NATO基準）</text>
+    <text x="760" y="72" text-anchor="middle" fill="#ff7a7a" font-size="20" font-family="Georgia,serif" font-weight="bold">GDP比2%</text>
+    <text x="566" y="95" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="8.5" font-family="sans-serif">🚀 三菱重工が次世代戦闘機（GCAP）主契約 ／ 川崎重工・富士重工が潜水艦・ミサイル受注急増</text>
+    <text x="566" y="110" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="8.5" font-family="sans-serif">🛡 サイバー防衛隊を3,000人体制へ倍増 ／ 防衛スタートアップへのDeep Tech補助金新設</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-j">J-05</span><span class="tc-theme-tag" style="background:#E8EEF8;color:var(--navy)">防衛・安保</span></div>
+  <div class="tc-body">
+    <div class="tc-title">防衛費増額と防衛産業の変容<br>「防衛産業立国」へ向けた転換</div>
+    <div class="tc-prose">2026年度防衛費は<strong>¥8.1兆（GDP比1.4%）</strong>に達し、2027年の「GDP比2%」目標（NATO水準）に向けた増額が続く。三菱重工が英伊との次世代戦闘機GCAP（Global Combat Air Programme）の主契約を確定させ、川崎重工・富士重工・IHIが潜水艦・ミサイル・エンジン分野で受注を急拡大している。装備品国産化率は62%に上昇し、「防衛産業が稼ぐ産業」へ転換する国策が本格化した。サイバー防衛隊の3,000人倍増とAI・ドローン・量子暗号などのDeep Tech防衛スタートアップへの補助金新設が新たな産業育成軸として機能し始めている。防衛産業への民間参入障壁の撤廃が、日本版「防衛テックエコシステム」構築の鍵となる。</div>
+    <div class="stat-row"><span class="stat-chip sc-gold">防衛費 ¥8.1兆</span><span class="stat-chip sc-navy">GCAP主契約確定</span><span class="stat-chip sc-sky">国産化率 62%</span></div>
+    <div class="analysis-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">北朝鮮のミサイル発射・中国の台湾海峡圧力・ロシアのウクライナ戦争長期化が安保環境を根本的に変えた。防衛産業を「コスト」でなく「産業政策」として捉え直す転換が政府・産業界に浸透した。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">三菱重工・川崎重工・IHI・富士重工が防衛大手。ドローン・サイバー・AIでは防衛スタートアップが政府調達の新規参入先として急台頭。防衛省の「防衛装備庁」が仲介機能を強化している。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">防衛費増額を支える財源（増税・国債）への国民理解の不足、大学・研究機関の軍事研究参加への抵抗、輸出管理規制の複雑さが民間企業の参入を阻む構造的な課題として残る。</div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+</main>
+<footer class="site-footer"><span class="footer-brand">TYLER MORNING BRIEF</span><span>Vol.059 ／ 2026年8月27日（木曜日）／ 世界5本 ＋ 日本5本</span></footer>
+</body>
+</html>
