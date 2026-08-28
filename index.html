@@ -5,68 +5,109 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>TYLER MORNING BRIEF — バックナンバー</title>
 <style>
-:root {
+:root{
   --ink:#0B1F35;--paper:#F8F5EF;--gold:#C0870B;--navy:#1E3A5F;
+  --jade:#1A7A5E;--sky:#1A5F8A;
   --rule:#DDD8CE;--muted:#EAE6DE;--caption:#7A7368;
   --f-serif:Georgia,"Times New Roman","Hiragino Mincho ProN","MS Mincho",serif;
   --f-sans:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Meiryo",system-ui,sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-size:15px;line-height:1.65;max-width:1060px;margin:0 auto;padding:2rem 1.5rem 4rem}
+
+/* ── MASTHEAD ── */
 .masthead{border-top:4px solid var(--ink);border-bottom:1px solid var(--ink);padding:.85rem 0 .7rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem}
 .masthead-meta{font-size:.67rem;text-transform:uppercase;letter-spacing:.1em;color:var(--caption);line-height:1.65}
 .masthead-meta.right{text-align:right}
 .masthead-title{font-family:var(--f-serif);font-size:2.4rem;font-weight:700;letter-spacing:-.02em;line-height:1;white-space:nowrap}
-.kicker-bar{border-bottom:1px solid var(--rule);padding:.45rem 0;margin-bottom:2rem;display:flex;justify-content:space-between;align-items:center}
-.kicker-text{font-size:.68rem;text-transform:uppercase;letter-spacing:.09em;color:var(--caption)}
-.page-layout{display:grid;grid-template-columns:228px 1fr;gap:2.5rem;align-items:start}
+
+/* ── STATS BAR ── */
+.stats-bar{border-bottom:1px solid var(--rule);padding:.55rem 0 .6rem;margin-bottom:1.75rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.stats-pills{display:flex;align-items:center;gap:1.2rem}
+.stat-pill{display:flex;align-items:center;gap:.45rem}
+.stat-num{font-family:var(--f-serif);font-size:1.15rem;font-weight:700;color:var(--navy);line-height:1}
+.stat-label{font-size:.59rem;color:var(--caption);letter-spacing:.04em;line-height:1.4}
+.stat-sep{width:1px;height:1.5rem;background:var(--rule);flex-shrink:0}
+.stats-live{font-size:.63rem;color:var(--caption);letter-spacing:.04em;display:flex;align-items:center;gap:.42rem;white-space:nowrap}
+.live-dot{width:.42rem;height:.42rem;background:#27AE60;border-radius:50%;display:inline-block;flex-shrink:0;animation:blink 2.4s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+
+/* ── LAYOUT ── */
+.page-layout{display:grid;grid-template-columns:218px 1fr;gap:2.5rem;align-items:start}
+
+/* ── SIDEBAR ── */
 .sidebar{position:sticky;top:1.5rem}
 .sidebar-head{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.17em;background:var(--ink);color:var(--paper);padding:.3rem .75rem;display:block}
 .sidebar-month{font-size:.58rem;font-weight:700;letter-spacing:.1em;color:rgba(248,245,239,.88);background:var(--navy);padding:.22rem .75rem;display:block;margin-top:.5rem}
 .sidebar-list{list-style:none;border:1px solid var(--rule);border-top:none}
-.sidebar-item a{display:block;padding:.5rem .75rem;border-bottom:1px solid var(--rule);text-decoration:none;color:inherit;transition:background .1s}
+.sidebar-item a{display:block;padding:.48rem .72rem .44rem .55rem;border-bottom:1px solid var(--rule);text-decoration:none;color:inherit;transition:background .12s;border-left:3px solid var(--rule)}
+.sidebar-item:first-child a{border-left-color:var(--gold)}
+.sidebar-item a:hover{background:var(--muted);border-left-color:var(--navy)}
 .sidebar-item:last-child a{border-bottom:none}
-.sidebar-item a:hover{background:var(--muted)}
 .si-top{display:flex;align-items:baseline;gap:.45rem;margin-bottom:.18rem}
 .si-vol{font-size:.56rem;font-weight:700;color:var(--caption);letter-spacing:.1em;white-space:nowrap}
 .si-date{font-size:.67rem;font-weight:700;color:var(--ink)}
-.si-title{font-size:.66rem;color:var(--caption);line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.si-title{font-size:.64rem;color:var(--caption);line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .sidebar-extra{display:none}
 .sidebar-extra.open{display:block}
 .sidebar-toggle{display:block;width:100%;padding:.38rem .75rem;background:var(--muted);border:none;border-top:1px solid var(--rule);font-size:.62rem;color:var(--navy);font-weight:700;text-align:center;cursor:pointer;font-family:var(--f-sans);letter-spacing:.04em}
 .sidebar-toggle:hover{background:var(--rule)}
-.section-head{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
+
+/* ── SECTION HEADER ── */
+.section-head{display:flex;align-items:center;gap:.75rem;margin-bottom:1.1rem}
 .section-tag{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.17em;background:var(--ink);color:var(--paper);padding:.28rem .75rem;white-space:nowrap}
 .section-line{flex:1;height:1px;background:var(--rule)}
-.report-card.featured{border:2px solid var(--gold);background:#fff;display:grid;grid-template-columns:200px 1fr;text-decoration:none;color:inherit;position:relative;transition:box-shadow .15s ease;margin-bottom:1.5rem}
-.report-card.featured:hover{box-shadow:0 6px 28px rgba(11,31,53,.14)}
-.report-card.featured .card-header{background:var(--ink);padding:1.5rem 1.3rem;display:flex;flex-direction:column;justify-content:center;gap:.4rem}
-.report-card.featured .card-date{font-size:1.45rem}
-.report-card.featured .card-body{padding:1.1rem 1.5rem .9rem;display:flex;flex-direction:column;gap:.5rem}
-.report-card.featured .card-topics{display:grid;grid-template-columns:1fr 1fr;gap:.2rem 1.4rem;flex:1}
-.report-card.featured .card-footer{border-top:1px solid var(--rule);padding:.6rem 1.5rem;display:flex;justify-content:space-between;align-items:center}
-.recent-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.15rem}
-.report-card{border:1px solid var(--rule);background:#fff;display:flex;flex-direction:column;transition:box-shadow .15s ease;position:relative;text-decoration:none;color:inherit}
-.report-card:hover{box-shadow:0 4px 18px rgba(11,31,53,.12)}
-.report-card:focus{outline:2px solid var(--gold);outline-offset:2px}
-.card-header{background:var(--ink);padding:.9rem 1.1rem .8rem}
-.card-vol{font-size:.6rem;text-transform:uppercase;letter-spacing:.15em;color:rgba(248,245,239,.6);margin-bottom:.2rem}
-.card-date{font-family:var(--f-serif);font-size:1.2rem;font-weight:700;color:#F8F5EF;line-height:1}
-.card-day{font-size:.68rem;color:rgba(248,245,239,.55);margin-top:.2rem}
-.badge-prev{position:absolute;top:.75rem;right:.75rem;font-size:.56rem;font-weight:700;letter-spacing:.1em;background:var(--navy);color:#fff;padding:.15rem .45rem}
-.card-body{padding:.85rem 1.1rem .9rem;flex:1;display:flex;flex-direction:column;gap:.45rem}
-.card-format{font-size:.63rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);font-weight:700}
-.card-headline{font-family:var(--f-serif);font-size:.92rem;font-weight:700;line-height:1.3;color:var(--ink)}
-.card-topics{list-style:none;display:flex;flex-direction:column;gap:.2rem;margin-top:.18rem;flex:1}
-.card-topics li{font-size:.74rem;color:var(--caption);line-height:1.4;padding-left:.85rem;position:relative}
-.card-topics li::before{content:"—";position:absolute;left:0;color:var(--rule)}
-.card-topics li.smb{color:var(--ink)}
-.card-topics li.smb::before{content:"◎";color:var(--gold);font-size:.65rem;top:.1rem}
-.card-footer{padding:.55rem 1.1rem;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center}
-.card-cta{font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--navy)}
-.card-count{font-size:.65rem;color:var(--caption)}
+
+/* ── HERO CARD (最新号) ── */
+.hero-card{display:grid;grid-template-columns:200px 1fr;background:var(--ink);text-decoration:none;color:inherit;overflow:hidden;margin-bottom:1.5rem;transition:box-shadow .18s}
+.hero-card:hover{box-shadow:0 8px 36px rgba(11,31,53,.32)}
+.hero-left{padding:1.5rem 1.3rem 1.3rem;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;border-right:1px solid rgba(255,255,255,.1)}
+.hero-badge{font-size:.57rem;font-weight:700;letter-spacing:.18em;color:var(--gold);text-transform:uppercase;margin-bottom:.52rem}
+.hero-date{font-family:var(--f-serif);font-size:2.5rem;font-weight:700;color:#F8F5EF;line-height:.9;letter-spacing:-.02em}
+.hero-day{font-size:.74rem;color:rgba(248,245,239,.5);margin-top:.3rem;letter-spacing:.06em}
+.hero-fmt{font-size:.58rem;color:rgba(248,245,239,.38);text-transform:uppercase;letter-spacing:.08em;margin-top:.68rem}
+.hero-btn{display:inline-block;background:var(--gold);color:#fff;font-size:.64rem;font-weight:700;letter-spacing:.08em;padding:.42rem 1rem;text-transform:uppercase;margin-top:1.05rem;align-self:flex-start}
+.hero-deco{position:absolute;bottom:-18px;right:-8px;opacity:.13;pointer-events:none}
+.hero-right{padding:1.3rem 1.4rem;display:flex;flex-direction:column;gap:.68rem}
+.hero-hl{font-family:var(--f-serif);font-size:.92rem;font-weight:700;color:#F8F5EF;line-height:1.42}
+.hero-chips{display:flex;flex-direction:column;gap:.48rem;flex:1;justify-content:center}
+.chip-row{display:flex;align-items:flex-start;gap:.32rem;flex-wrap:wrap}
+.chip-icon{font-size:.78rem;flex-shrink:0;line-height:1.55;margin-top:-.02rem}
+.chip{display:inline-block;font-size:.6rem;font-weight:700;padding:.18rem .52rem;border-radius:2px;white-space:nowrap;line-height:1.45}
+.chip-w{background:var(--sky);color:#fff}
+.chip-j{background:var(--jade);color:#fff}
+.chip-s{background:var(--gold);color:#fff}
+
+/* ── RECENT VOL CARDS ── */
+.recent-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.vol-card{background:#fff;border:1px solid var(--rule);display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:box-shadow .15s;overflow:hidden}
+.vol-card:hover{box-shadow:0 5px 22px rgba(11,31,53,.14)}
+.vc-head{background:linear-gradient(135deg,#0B1F35 0%,#1E3A5F 100%);padding:.78rem 1rem .7rem;display:flex;align-items:flex-end;justify-content:space-between}
+.vc-date{font-family:var(--f-serif);font-size:1.6rem;font-weight:700;color:#F8F5EF;line-height:.95;letter-spacing:-.01em}
+.vc-right{text-align:right}
+.vc-icon{font-size:1.25rem;display:block;margin-bottom:.18rem;text-align:right;line-height:1}
+.vc-vol{font-size:.6rem;font-weight:700;letter-spacing:.12em;color:var(--gold);text-transform:uppercase}
+.vc-day{font-size:.6rem;color:rgba(248,245,239,.5);margin-top:.12rem}
+.vc-body{padding:.78rem 1rem;flex:1;display:flex;flex-direction:column;gap:.52rem}
+.vc-hl{font-family:var(--f-serif);font-size:.83rem;font-weight:700;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;color:var(--ink)}
+.vc-stat{display:flex;align-items:baseline;gap:.38rem}
+.vc-stat-num{font-family:var(--f-serif);font-size:1.52rem;font-weight:700;color:var(--navy);line-height:1}
+.vc-stat-label{font-size:.6rem;color:var(--caption);line-height:1.35}
+.vc-chips{display:flex;flex-direction:column;gap:.34rem}
+.vc-chip-row{display:flex;align-items:flex-start;gap:.3rem;flex-wrap:wrap}
+.vc-chip-icon{font-size:.72rem;flex-shrink:0;line-height:1.5}
+.vchip{display:inline-block;font-size:.57rem;font-weight:700;padding:.14rem .46rem;border-radius:2px;white-space:nowrap;line-height:1.4}
+.vchip-w{background:var(--navy);color:#fff}
+.vchip-j{background:var(--jade);color:#fff}
+.vchip-s{background:var(--gold);color:#fff}
+.vc-foot{padding:.5rem 1rem;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;background:var(--muted)}
+.vc-cta{font-size:.65rem;font-weight:700;color:var(--navy);letter-spacing:.06em}
+.vc-count{font-size:.62rem;color:var(--caption)}
+
+/* ── FOOTER ── */
 .footer{margin-top:2rem;border-top:1px solid var(--rule);padding-top:.85rem;display:flex;justify-content:space-between}
 .footer-text{font-size:.63rem;color:var(--caption);line-height:1.65}
+
 @media(max-width:820px){
   .masthead{grid-template-columns:1fr;text-align:center}
   .masthead-meta{display:none}
@@ -74,9 +115,10 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-siz
   .page-layout{grid-template-columns:1fr}
   .sidebar{position:static}
   .sidebar-list{display:grid;grid-template-columns:repeat(2,1fr)}
-  .report-card.featured{grid-template-columns:1fr}
-  .report-card.featured .card-topics{grid-template-columns:1fr}
+  .hero-card{grid-template-columns:1fr}
+  .hero-left{border-right:none;border-bottom:1px solid rgba(255,255,255,.1)}
   .recent-grid{grid-template-columns:1fr}
+  .stats-bar{flex-wrap:wrap;gap:.65rem}
 }
 </style>
 </head>
@@ -88,9 +130,29 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-siz
   <div class="masthead-meta right">Archives<br>全号閲覧</div>
 </header>
 
-<div class="kicker-bar">
-  <span class="kicker-text">発行済み全号 ／ 最新号は毎朝更新 ／ ◎ = 中小企業向けトピック含む</span>
-  <span class="kicker-text">Vol.001 〜 Vol.057 掲載中</span>
+<div class="stats-bar">
+  <div class="stats-pills">
+    <div class="stat-pill">
+      <div class="stat-num">060</div>
+      <div class="stat-label">発行号数</div>
+    </div>
+    <div class="stat-sep"></div>
+    <div class="stat-pill">
+      <div class="stat-num">600+</div>
+      <div class="stat-label">累計トピックス</div>
+    </div>
+    <div class="stat-sep"></div>
+    <div class="stat-pill">
+      <div class="stat-num">5+5</div>
+      <div class="stat-label">世界+日本 / 号</div>
+    </div>
+    <div class="stat-sep"></div>
+    <div class="stat-pill">
+      <div class="stat-num">◎</div>
+      <div class="stat-label">中小企業向け毎号掲載</div>
+    </div>
+  </div>
+  <div class="stats-live"><span class="live-dot"></span> 毎朝定期更新 ／ Vol.001〜060 全号掲載</div>
 </div>
 
 <div class="page-layout">
@@ -489,32 +551,56 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-siz
       <div class="section-line"></div>
     </div>
 
-    <!-- Vol.060 FEATURED -->
-    <a class="report-card featured" href="reports/morning-brief-20260828.html" target="_blank" rel="noopener">
-      <div class="card-header">
-        <div class="card-vol">Vol. 060</div>
-        <div class="card-date">2026.08.28</div>
-        <div class="card-day">金曜日</div>
+    <!-- Vol.060 HERO -->
+    <a class="hero-card" href="reports/morning-brief-20260828.html" target="_blank" rel="noopener">
+      <div class="hero-left">
+        <div>
+          <div class="hero-badge">Vol. 060 ／ Latest Issue</div>
+          <div class="hero-date">2026.08.28</div>
+          <div class="hero-day">金曜日</div>
+          <div class="hero-fmt">世界5本 ＋ 日本5本</div>
+        </div>
+        <span class="hero-btn">→ 最新号を読む</span>
+        <svg class="hero-deco" width="185" height="170" viewBox="0 0 185 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 16 C28 2 55 30 78 16 C101 2 128 30 151 16 C174 2 185 22 200 16" stroke="#F8F5EF" stroke-width="2.5" fill="none"/>
+          <path d="M5 40 C28 26 55 54 78 40 C101 26 128 54 151 40 C174 26 185 46 200 40" stroke="#C0870B" stroke-width="2.5" fill="none"/>
+          <line x1="24" y1="20" x2="24" y2="37" stroke="#F8F5EF" stroke-width="1.5" opacity=".8"/>
+          <line x1="50" y1="26" x2="50" y2="43" stroke="#F8F5EF" stroke-width="1.5" opacity=".8"/>
+          <line x1="76" y1="20" x2="76" y2="37" stroke="#F8F5EF" stroke-width="1.5" opacity=".8"/>
+          <line x1="102" y1="23" x2="102" y2="40" stroke="#F8F5EF" stroke-width="1.5" opacity=".8"/>
+          <line x1="128" y1="26" x2="128" y2="43" stroke="#F8F5EF" stroke-width="1.5" opacity=".8"/>
+          <line x1="154" y1="20" x2="154" y2="37" stroke="#F8F5EF" stroke-width="1.5" opacity=".8"/>
+          <circle cx="100" cy="108" r="30" stroke="#C0870B" stroke-width="2" fill="none"/>
+          <circle cx="100" cy="108" r="12" fill="#C0870B" opacity=".3"/>
+          <circle cx="148" cy="85" r="17" stroke="#F8F5EF" stroke-width="1.5" fill="none"/>
+          <circle cx="65" cy="145" r="13" stroke="#1A5F8A" stroke-width="1.5" fill="none"/>
+          <line x1="118" y1="96" x2="131" y2="90" stroke="#F8F5EF" stroke-width="1" stroke-dasharray="3 2" opacity=".7"/>
+          <line x1="90" y1="130" x2="73" y2="140" stroke="#F8F5EF" stroke-width="1" stroke-dasharray="3 2" opacity=".7"/>
+          <circle cx="52" cy="80" r="6" fill="#1A7A5E" opacity=".6"/>
+          <circle cx="72" cy="98" r="4" fill="#C0870B" opacity=".6"/>
+          <line x1="52" y1="80" x2="72" y2="98" stroke="#F8F5EF" stroke-width="1" opacity=".4"/>
+        </svg>
       </div>
-      <div class="card-body">
-        <div class="card-format">世界5本 ＋ 日本5本</div>
-        <div class="card-headline">ヘルスケアAI・AlphaFold世代の創薬革命▲60%・宇宙産業商業化2400基・ASEAN GDP5.8%成長・SMBゼロトラストID・フードテック代替タンパク$28B、円相場¥142・デジタル給与・物流DX・飲食DX・AI国家戦略¥1.2兆</div>
-        <ul class="card-topics">
-          <li>ヘルスケアAI・創薬：AlphaFold3・創薬期間▲60%・コスト▲40%・市場$68B・AI承認新薬38品目</li>
-          <li>宇宙産業：商業衛星2,400基/年・Starlink 8,000基全域カバー・市場$1.2T（2040年）</li>
-          <li>ASEAN経済：GDP成長5.8%・日本の直接投資¥6.4兆過去最高・ベトナム・インドネシア・タイ</li>
-          <li class="smb">◎ ゼロトラスト・ID管理：インシデント83%がID窃取起因・月¥600/ユーザーから導入可</li>
-          <li>フードテック・代替タンパク：市場$28B・培養肉$15/kg・昆虫タンパク・精密発酵</li>
-          <li>円相場・日米金利差：¥142/$・日銀0.75%・FRB利下げ交差・年内¥135〜¥148コンセンサス</li>
-          <li>デジタル給与・FinTech：導入12,800社・PayPay/LINE Pay給与受取・証券保険規制緩和</li>
-          <li>物流DX：ドライバー不足28%・AI積載効率+22%・無人配送ロボット実用化・共同配送基盤</li>
-          <li class="smb">◎ 飲食・小売DX：POSデータ廃棄▲32%・セルフオーダー回転率+18%・補助金活用</li>
-          <li>AI国家戦略：予算¥1.2兆・25万人/年育成・国産LLM3プロジェクト・G7AI行動規範合意</li>
-        </ul>
-      </div>
-      <div class="card-footer">
-        <span class="card-cta">→ 読む</span>
-        <span class="card-count">10トピックス</span>
+      <div class="hero-right">
+        <div class="hero-hl">ヘルスケアAI・AlphaFold世代の創薬革命▲60%・宇宙産業$1.2T・ASEAN GDP5.8%・円相場¥142・AI国家戦略¥1.2兆</div>
+        <div class="hero-chips">
+          <div class="chip-row">
+            <span class="chip-icon">🌍</span>
+            <span class="chip chip-w">ヘルスケアAI $68B</span>
+            <span class="chip chip-w">宇宙産業 $1.2T</span>
+            <span class="chip chip-w">ASEAN 5.8%</span>
+            <span class="chip chip-s">ゼロトラストID</span>
+            <span class="chip chip-w">フードテック $28B</span>
+          </div>
+          <div class="chip-row">
+            <span class="chip-icon">🗾</span>
+            <span class="chip chip-j">円相場 ¥142</span>
+            <span class="chip chip-j">デジタル給与</span>
+            <span class="chip chip-j">物流DX</span>
+            <span class="chip chip-s">飲食DX</span>
+            <span class="chip chip-j">AI国家戦略 ¥1.2兆</span>
+          </div>
+        </div>
       </div>
     </a>
 
@@ -525,122 +611,166 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-siz
     <div class="recent-grid">
 
       <!-- Vol.059 -->
-      <a class="report-card" href="reports/morning-brief-20260827.html" target="_blank" rel="noopener">
-        <span class="badge-prev">前号</span>
-        <div class="card-header">
-          <div class="card-vol">Vol. 059</div>
-          <div class="card-date">2026.08.27</div>
-          <div class="card-day">木曜日</div>
+      <a class="vol-card" href="reports/morning-brief-20260827.html" target="_blank" rel="noopener">
+        <div class="vc-head">
+          <div class="vc-date">2026.08.27</div>
+          <div class="vc-right">
+            <span class="vc-icon">🚗</span>
+            <div class="vc-vol">Vol. 059</div>
+            <div class="vc-day">木曜日</div>
+          </div>
         </div>
-        <div class="card-body">
-          <div class="card-format">世界5本 ＋ 日本5本</div>
-          <div class="card-headline">自動運転Level4商業展開12万台・量子コンピュータ1,000Qubits・アフリカFintech8.5億人・SMB脆弱性パッチ管理・海洋経済$190B、日銀政策金利0.75%・ラピダス試作稼働・スタートアップ32社・建設DX・防衛費¥8.1兆</div>
-          <ul class="card-topics">
-            <li>自動運転Level 4：世界12万台・事故▲85%・¥800/km・Waymo15都市・百度20都市</li>
-            <li>量子コンピュータ：1,000Qubits突破・RSA解読10年以内・耐量子暗号NIST標準確定</li>
-            <li>アフリカFintech：M-Pesa30か国・8.5億ユーザー・VC$6.8B・ナイジェリア・ケニアハブ化</li>
-            <li class="smb">◎ 脆弱性パッチ管理：未パッチ起因60%・平均適用18日・自動化ツールで適用率99%</li>
-            <li>海洋経済：洋上風力$190B・深海鉱物採掘申請急増・日本EEZ世界6位・JAMSTEC</li>
-            <li>日銀政策金利：0.75%・円¥142/$・年内追加利上げ60%・変動ローン平均1.25%上昇</li>
-            <li>ラピダス：千歳試作ライン2026Q3稼働・国家投資¥3.3兆・IBM技術提携・2028年量産</li>
-            <li>スタートアップ育成：累計32社・VC¥1.7兆・J-Startup・SOストック税制改革</li>
-            <li class="smb">◎ 建設DX：BIM/CIM義務化・導入率68%・工期▲20%・補助金¥500万・AI積算</li>
-            <li>防衛産業：防衛費¥8.1兆・GCAP主契約・国産化率62%・サイバー防衛隊3,000人倍増</li>
-          </ul>
+        <div class="vc-body">
+          <div class="vc-hl">自動運転Level4・12万台展開・量子コンピュータ1,000Qubits・アフリカFintech・防衛費¥8.1兆</div>
+          <div class="vc-stat">
+            <div class="vc-stat-num">12万台</div>
+            <div class="vc-stat-label">自動運転 Level 4<br>世界商業展開規模</div>
+          </div>
+          <div class="vc-chips">
+            <div class="vc-chip-row">
+              <span class="vc-chip-icon">🌍</span>
+              <span class="vchip vchip-w">自動運転 L4</span>
+              <span class="vchip vchip-w">量子コンピュータ</span>
+              <span class="vchip vchip-w">アフリカFintech</span>
+              <span class="vchip vchip-s">脆弱性パッチ管理</span>
+              <span class="vchip vchip-w">海洋経済 $190B</span>
+            </div>
+            <div class="vc-chip-row">
+              <span class="vc-chip-icon">🗾</span>
+              <span class="vchip vchip-j">日銀 0.75%</span>
+              <span class="vchip vchip-j">ラピダス試作稼働</span>
+              <span class="vchip vchip-j">スタートアップ</span>
+              <span class="vchip vchip-s">建設DX</span>
+              <span class="vchip vchip-j">防衛費 ¥8.1兆</span>
+            </div>
+          </div>
         </div>
-        <div class="card-footer">
-          <span class="card-cta">→ 読む</span>
-          <span class="card-count">10トピックス</span>
+        <div class="vc-foot">
+          <span class="vc-cta">→ 読む</span>
+          <span class="vc-count">10トピックス</span>
         </div>
       </a>
 
       <!-- Vol.058 -->
-      <a class="report-card" href="reports/morning-brief-20260826.html" target="_blank" rel="noopener">
-        <span class="badge-prev">前号</span>
-        <div class="card-header">
-          <div class="card-vol">Vol. 058</div>
-          <div class="card-date">2026.08.26</div>
-          <div class="card-day">水曜日</div>
+      <a class="vol-card" href="reports/morning-brief-20260826.html" target="_blank" rel="noopener">
+        <div class="vc-head">
+          <div class="vc-date">2026.08.26</div>
+          <div class="vc-right">
+            <span class="vc-icon">🤖</span>
+            <div class="vc-vol">Vol. 058</div>
+            <div class="vc-day">水曜日</div>
+          </div>
         </div>
-        <div class="card-body">
-          <div class="card-format">世界5本 ＋ 日本5本</div>
-          <div class="card-headline">エージェントAI企業導入68%・ROI74%・半導体CHIPS Act米国生産+185%・インドGDP成長率8.4%・SMB BECメール詐欺¥820万・グリーン水素$3.2/kg、賃上げ+5.1%・インバウンド4200万人・EV比率28%・HR Tech・国際金融都市GFCI5位</div>
-          <ul class="card-topics">
-            <li>エージェントAI：企業導入68%・ROI74%・業務効率▲35%・市場$47B・OpenAI/Anthropic競争</li>
-            <li>半導体地政学：CHIPS Act$527B・TSMC Arizona 2nm量産・対中輸出規制第3弾</li>
-            <li>インド製造業：GDP成長8.4%・iPhone25%インド製・Make in India 2.0・日本商社</li>
-            <li class="smb">◎ BECメール詐欺：被害¥820万/件・前年+145%・DMARC導入で▲95%ブロック</li>
-            <li>グリーン水素：$8.5→$3.2/kg（▲62%）・EU$100B・豪州中東チリ輸出ハブ・トヨタFC</li>
-            <li>賃上げ経済効果：春闘+5.1%（33年ぶり）・最低賃金¥1,172・実質賃金3ヶ月連続プラス</li>
-            <li>インバウンド：4,200万人・消費¥10.5兆・オーバーツーリズム対策・地方第2観光圏</li>
-            <li>EV普及：新車比率28%・充電器3.8万基・トヨタ全固体2028年量産・BYD日本攻略</li>
-            <li class="smb">◎ HR Tech・人手不足：不足72%・AI採用でリードタイム42→18日・SmartHR月¥5,000〜</li>
-            <li>国際金融都市：GFCI東京5位・誘致+48社・資産¥8.5兆・税率格差香港比▲12pt</li>
-          </ul>
+        <div class="vc-body">
+          <div class="vc-hl">エージェントAI企業導入68%・CHIPS Act+185%・インド製造業・EV28%・国際金融都市</div>
+          <div class="vc-stat">
+            <div class="vc-stat-num">68%</div>
+            <div class="vc-stat-label">エージェントAI<br>企業導入率 ROI 74%</div>
+          </div>
+          <div class="vc-chips">
+            <div class="vc-chip-row">
+              <span class="vc-chip-icon">🌍</span>
+              <span class="vchip vchip-w">エージェントAI</span>
+              <span class="vchip vchip-w">CHIPS Act</span>
+              <span class="vchip vchip-w">インド製造業 8.4%</span>
+              <span class="vchip vchip-s">BECメール詐欺</span>
+              <span class="vchip vchip-w">グリーン水素</span>
+            </div>
+            <div class="vc-chip-row">
+              <span class="vc-chip-icon">🗾</span>
+              <span class="vchip vchip-j">賃上げ +5.1%</span>
+              <span class="vchip vchip-j">インバウンド 4200万</span>
+              <span class="vchip vchip-j">EV 28%</span>
+              <span class="vchip vchip-s">HR Tech</span>
+              <span class="vchip vchip-j">国際金融都市</span>
+            </div>
+          </div>
         </div>
-        <div class="card-footer">
-          <span class="card-cta">→ 読む</span>
-          <span class="card-count">10トピックス</span>
+        <div class="vc-foot">
+          <span class="vc-cta">→ 読む</span>
+          <span class="vc-count">10トピックス</span>
         </div>
       </a>
 
       <!-- Vol.057 -->
-      <a class="report-card" href="reports/morning-brief-20260825.html" target="_blank" rel="noopener">
-        <span class="badge-prev">前号</span>
-        <div class="card-header">
-          <div class="card-vol">Vol. 057</div>
-          <div class="card-date">2026.08.25</div>
-          <div class="card-day">火曜日</div>
+      <a class="vol-card" href="reports/morning-brief-20260825.html" target="_blank" rel="noopener">
+        <div class="vc-head">
+          <div class="vc-date">2026.08.25</div>
+          <div class="vc-right">
+            <span class="vc-icon">🏭</span>
+            <div class="vc-vol">Vol. 057</div>
+            <div class="vc-day">火曜日</div>
+          </div>
         </div>
-        <div class="card-body">
-          <div class="card-format">世界5本 ＋ 日本5本</div>
-          <div class="card-headline">デジタルツイン・産業メタバース$10B→$82B・グローバルVC$185B・中東サウジVision2030・SMBサイバー対策・気候テックCCUS、東証PBR改革・デジタル庁行政DX・スマート農業・秋補助金・エネルギー安保</div>
-          <ul class="card-topics">
-            <li>デジタルツイン：$10B→$82B・CAGR 52%・Siemens・NVIDIA Omniverse・予知保全▲35%</li>
-            <li>グローバルVC：上半期$185B・AI特化55%・メガラウンド42件・ユニコーン累計1,580社</li>
-            <li>中東・サウジVision2030：AI$100B・NEOM開業・アラムコDX・LIVゴルフ・日本商社受注</li>
-            <li class="smb">◎ サイバー攻撃対策：被害額¥2,400万・AIフィッシング急増・MFA・EDR・疑似訓練</li>
-            <li>気候テック・CCUS：$5B→$32B・DAC年50万t・炭素クレジット市場$7B・苫小牧CCS</li>
-            <li>東証PBR改革：1倍割れ33%改善・自社株買い¥12兆・政策保有株解消・アクティビスト強化</li>
-            <li>デジタル庁・行政DX：手続きオンライン71%・ガバメントクラウド本番・AI行政▲30%単純作業</li>
-            <li>スマート農業：自動運転農機12%・ドローン散布18%・輸出¥1.6兆（+22%）・集積65%</li>
-            <li class="smb">◎ 秋の補助金攻略：ものづくり¥1,250万・IT導入¥450万・AI申請で採択率1.8倍</li>
-            <li>エネルギー安保：原発17基稼働・蓄電池+85%・2030年電力需要+15%・電気代+18%</li>
-          </ul>
+        <div class="vc-body">
+          <div class="vc-hl">デジタルツイン $82B・グローバルVC $185B・東証PBR改革・スマート農業・エネルギー安保</div>
+          <div class="vc-stat">
+            <div class="vc-stat-num">$82B</div>
+            <div class="vc-stat-label">デジタルツイン<br>産業メタバース市場規模</div>
+          </div>
+          <div class="vc-chips">
+            <div class="vc-chip-row">
+              <span class="vc-chip-icon">🌍</span>
+              <span class="vchip vchip-w">デジタルツイン</span>
+              <span class="vchip vchip-w">グローバルVC $185B</span>
+              <span class="vchip vchip-w">中東Vision2030</span>
+              <span class="vchip vchip-s">サイバー対策</span>
+              <span class="vchip vchip-w">CCUS気候テック</span>
+            </div>
+            <div class="vc-chip-row">
+              <span class="vc-chip-icon">🗾</span>
+              <span class="vchip vchip-j">東証PBR改革</span>
+              <span class="vchip vchip-j">デジタル庁DX</span>
+              <span class="vchip vchip-j">スマート農業</span>
+              <span class="vchip vchip-s">秋補助金攻略</span>
+              <span class="vchip vchip-j">エネルギー安保</span>
+            </div>
+          </div>
         </div>
-        <div class="card-footer">
-          <span class="card-cta">→ 読む</span>
-          <span class="card-count">10トピックス</span>
+        <div class="vc-foot">
+          <span class="vc-cta">→ 読む</span>
+          <span class="vc-count">10トピックス</span>
         </div>
       </a>
 
       <!-- Vol.056 -->
-      <a class="report-card" href="reports/morning-brief-20260824.html" target="_blank" rel="noopener">
-        <span class="badge-prev">前号</span>
-        <div class="card-header">
-          <div class="card-vol">Vol. 056</div>
-          <div class="card-date">2026.08.24</div>
-          <div class="card-day">月曜日</div>
+      <a class="vol-card" href="reports/morning-brief-20260824.html" target="_blank" rel="noopener">
+        <div class="vc-head">
+          <div class="vc-date">2026.08.24</div>
+          <div class="vc-right">
+            <span class="vc-icon">🚙</span>
+            <div class="vc-vol">Vol. 056</div>
+            <div class="vc-day">月曜日</div>
+          </div>
         </div>
-        <div class="card-body">
-          <div class="card-format">世界5本 ＋ 日本5本</div>
-          <div class="card-headline">コネクテッドカー・SDV $65B→$192B・データエコノミー$3.4兆・グローバル決済インフラ・BtoB EC受発注DX・欧州GX産業競争力危機、ジャクソンホール週・EV転換・建設不動産・テレワーク最適化・外国人材</div>
-          <ul class="card-topics">
-            <li>コネクテッドカー・SDV：$65B→$192B・CAGR 24%・OTA課金・5G V2X・Nvidia Drive・WP.29規制</li>
-            <li>データエコノミー：$3.4兆・ADPPA規制・クッキーレス移行・ゼロパーティデータ・クリーンルーム</li>
-            <li>グローバル決済：$3.3兆・FedNow・UPI・Ripple・Swift GPI・クロスボーダー手数料▲90%</li>
-            <li class="smb">◎ BtoB EC・受発注DX：¥430兆市場・AI自動見積もり・Peppol・顧客ポータル化</li>
-            <li>欧州グリーンディール：ドラギレポート€800B・CBAM本格化・EV義務化後退・電力コスト課題</li>
-            <li>ジャクソンホール展望：8/28〜30・パウエル講演・9月利下げ確実視・円高リスクシナリオ</li>
-            <li>日本の自動車産業：EV比率4.8%・トヨタSDV¥5兆・Honda×日産統合・BYD250店舗</li>
-            <li>建設・不動産：都心マンション¥1.35億・リノベ¥8.5兆・DCリート争奪・固定ローン+42%</li>
-            <li class="smb">◎ テレワークコスト：オフィス縮小▲30〜50%・シェアオフィス活用・通信費▲20〜30%</li>
-            <li>外国人材・育成就労：234万人・高度人材+35%・インド・バングラデシュ急増・定着支援が競争力</li>
-          </ul>
+        <div class="vc-body">
+          <div class="vc-hl">コネクテッドカー SDV $192B・データエコノミー $3.4兆・欧州GX再編・外国人材育成就労</div>
+          <div class="vc-stat">
+            <div class="vc-stat-num">$192B</div>
+            <div class="vc-stat-label">SDV市場規模<br>コネクテッドカー</div>
+          </div>
+          <div class="vc-chips">
+            <div class="vc-chip-row">
+              <span class="vc-chip-icon">🌍</span>
+              <span class="vchip vchip-w">SDV $192B</span>
+              <span class="vchip vchip-w">データエコノミー</span>
+              <span class="vchip vchip-w">グローバル決済</span>
+              <span class="vchip vchip-s">BtoB EC DX</span>
+              <span class="vchip vchip-w">欧州GX再編</span>
+            </div>
+            <div class="vc-chip-row">
+              <span class="vc-chip-icon">🗾</span>
+              <span class="vchip vchip-j">ジャクソンホール</span>
+              <span class="vchip vchip-j">自動車EV</span>
+              <span class="vchip vchip-j">建設不動産</span>
+              <span class="vchip vchip-s">テレワークコスト</span>
+              <span class="vchip vchip-j">外国人材</span>
+            </div>
+          </div>
         </div>
-        <div class="card-footer">
-          <span class="card-cta">→ 読む</span>
-          <span class="card-count">10トピックス</span>
+        <div class="vc-foot">
+          <span class="vc-cta">→ 読む</span>
+          <span class="vc-count">10トピックス</span>
         </div>
       </a>
 
