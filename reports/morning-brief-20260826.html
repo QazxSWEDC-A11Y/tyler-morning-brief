@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TYLER MORNING BRIEF Vol.058 — 2026年8月26日</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0B1F35;--paper:#F8F5EF;--gold:#C0870B;--navy:#1E3A5F;--muted:#EBE8E2;--rule:#D6D0C8;--caption:#7A7368;--jade:#1A7A5E;--sky:#1A5F8A;--gold-lt:#FDF3DC;--jade-lt:#E8F5F0;--sky-lt:#E0EEF8;--f-serif:Georgia,'Times New Roman',serif;--f-sans:'Hiragino Sans','Hiragino Kaku Gothic ProN','Meiryo',sans-serif}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-size:15px;line-height:1.7}
+.site-header{background:var(--navy);color:#fff;padding:0;border-bottom:4px solid var(--gold);display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch}
+.hd-left{padding:.9rem 1.5rem;display:flex;flex-direction:column;justify-content:center}
+.hd-tagline{font-size:.58rem;letter-spacing:.14em;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:.2rem}
+.hd-edition{font-size:.66rem;color:rgba(255,255,255,.65)}
+.hd-center{background:rgba(0,0,0,.22);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.8rem 2rem;border-left:1px solid rgba(255,255,255,.1);border-right:1px solid rgba(255,255,255,.1)}
+.hd-logo{font-family:var(--f-serif);font-size:1.5rem;font-weight:700;letter-spacing:.14em;color:var(--gold);line-height:1}
+.hd-vol{font-size:.58rem;letter-spacing:.22em;color:rgba(255,255,255,.55);margin-top:.25rem}
+.hd-right{padding:.9rem 1.5rem;display:flex;flex-direction:column;justify-content:center;align-items:flex-end}
+.hd-date-big{font-family:var(--f-serif);font-size:1.4rem;font-weight:700;color:#fff;line-height:1}
+.hd-weekday{font-size:.63rem;color:rgba(255,255,255,.55);margin-top:.2rem;text-align:right}
+.kicker-strip{background:var(--ink);color:#fff;padding:.35rem 1.5rem;font-size:.62rem;letter-spacing:.07em;display:flex;gap:2rem;align-items:center;overflow-x:auto;border-bottom:2px solid var(--gold)}
+.kicker-item{white-space:nowrap;opacity:.8}
+.kicker-item strong{color:var(--gold);opacity:1}
+.main{max-width:900px;margin:0 auto;padding:2rem 1.5rem 4rem}
+.section-banner{display:flex;align-items:center;gap:.8rem;margin-bottom:1.5rem}
+.section-banner-icon{font-size:1.3rem}
+.section-banner-label{font-size:.65rem;font-weight:700;letter-spacing:.2em;color:var(--gold);border-bottom:2px solid var(--gold);padding-bottom:.12rem}
+.section-banner-rule{flex:1;height:1px;background:var(--rule)}
+.lead-card{background:#fff;border:2px solid var(--gold);border-radius:8px;margin-bottom:2rem;overflow:hidden;box-shadow:0 6px 24px rgba(192,135,11,.13)}
+.lead-card-top{background:linear-gradient(135deg,#0f2540 0%,var(--navy) 60%,#2a4f7a 100%);padding:1.4rem 1.8rem;display:grid;grid-template-columns:1fr auto;gap:1.2rem;align-items:start}
+.lead-kicker{font-size:.58rem;font-weight:700;letter-spacing:.18em;color:var(--gold);margin-bottom:.4rem}
+.lead-title{font-family:var(--f-serif);font-size:1.45rem;font-weight:700;color:#fff;line-height:1.22}
+.lead-sub{font-size:.7rem;color:rgba(255,255,255,.62);margin-top:.45rem;line-height:1.6}
+.lead-stat-box{background:var(--gold);border-radius:8px;padding:.9rem 1.1rem;text-align:center;min-width:110px;flex-shrink:0}
+.lead-stat-label{font-size:.52rem;font-weight:700;letter-spacing:.1em;color:rgba(11,31,53,.75);margin-bottom:.25rem}
+.lead-stat-num{font-family:var(--f-serif);font-size:1.55rem;font-weight:700;color:var(--ink);line-height:1}
+.lead-stat-sub{font-size:.58rem;color:rgba(11,31,53,.65);margin-top:.15rem}
+.lead-body{padding:1.4rem 1.8rem}
+.analysis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;margin-top:.75rem}
+.analysis-cell{background:var(--muted);border-radius:6px;padding:.78rem .9rem;border-left:3px solid var(--gold)}
+.analysis-label{font-size:.6rem;font-weight:700;color:var(--gold);margin-bottom:.3rem;display:flex;align-items:baseline;gap:.3rem}
+.analysis-sublabel{font-size:.52rem;color:var(--caption);font-weight:400}
+.analysis-body{font-size:.69rem;line-height:1.65}
+.topic-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-bottom:2rem}
+.topic-card{background:#fff;border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.topic-card.smb{border-top:3px solid var(--gold)}
+.topic-card.wide{grid-column:1/-1}
+.tc-meta{padding:.7rem 1.05rem .45rem;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.tc-tag{font-size:.52rem;font-weight:700;letter-spacing:.1em;padding:.1rem .5rem;border-radius:20px}
+.tag-w{background:#E8EEF8;color:var(--navy)}
+.tag-j{background:#FEF5E4;color:#8A5C00}
+.smb-badge{font-size:.52rem;font-weight:700;color:var(--gold);background:var(--gold-lt);border:1px solid var(--gold);padding:.1rem .45rem;border-radius:20px}
+.tc-theme-tag{font-size:.52rem;font-weight:700;padding:.1rem .5rem;border-radius:20px}
+.tc-body{padding:.82rem 1.05rem .95rem}
+.tc-title{font-family:var(--f-serif);font-size:.93rem;font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:.5rem}
+.tc-prose{font-size:.72rem;line-height:1.7;color:var(--ink);margin-bottom:.65rem}
+.tc-prose strong{color:var(--navy)}
+.stat-row{display:flex;gap:.4rem;margin-bottom:.65rem;flex-wrap:wrap}
+.stat-chip{border-radius:6px;padding:.22rem .55rem;font-size:.59rem;font-weight:700;line-height:1.3;flex-shrink:0}
+.sc-gold{background:var(--gold-lt);color:var(--gold);border:1px solid rgba(192,135,11,.3)}
+.sc-navy{background:#EAF0FB;color:var(--navy);border:1px solid rgba(30,58,95,.2)}
+.sc-jade{background:var(--jade-lt);color:var(--jade);border:1px solid rgba(26,122,94,.2)}
+.sc-sky{background:var(--sky-lt);color:var(--sky);border:1px solid rgba(26,95,138,.2)}
+.sc-amber{background:#FEF5E4;color:#8A5C00;border:1px solid rgba(138,92,0,.2)}
+.sc-red{background:#FAEAEA;color:#B83232;border:1px solid rgba(184,50,50,.2)}
+.tc-body .analysis-grid{gap:.5rem;margin-top:.65rem}
+.tc-body .analysis-cell{padding:.65rem .78rem}
+.tc-body .analysis-label{font-size:.56rem;margin-bottom:.25rem}
+.tc-body .analysis-sublabel{font-size:.49rem}
+.tc-body .analysis-body{font-size:.66rem;line-height:1.62}
+.section-divider{display:flex;align-items:center;gap:1rem;margin:2rem 0 1.75rem}
+.sdl{flex:1;height:2px;background:linear-gradient(90deg,transparent,var(--rule))}
+.sdr{flex:1;height:2px;background:linear-gradient(90deg,var(--rule),transparent)}
+.sd-badge{background:var(--navy);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.14em;padding:.32rem 1.1rem;border-radius:20px;display:flex;align-items:center;gap:.4rem}
+.site-footer{background:var(--navy);color:rgba(255,255,255,.65);padding:.9rem 2rem;font-size:.63rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.footer-brand{font-family:var(--f-serif);color:var(--gold);font-weight:700;letter-spacing:.1em}
+@media(max-width:640px){.site-header{grid-template-columns:1fr}.hd-left,.hd-right{display:none}.topic-grid{grid-template-columns:1fr}.topic-card.wide{grid-column:1}.analysis-grid,.tc-body .analysis-grid{grid-template-columns:1fr}.main{padding:1.2rem 1rem 2rem}.lead-card-top{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="hd-left"><div class="hd-tagline">World Business Intelligence</div><div class="hd-edition">毎朝定期発行 ／ 世界5本 ＋ 日本5本</div></div>
+  <div class="hd-center"><div class="hd-logo">TYLER MORNING BRIEF</div><div class="hd-vol">V O L . 0 5 8</div></div>
+  <div class="hd-right"><div class="hd-date-big">AUG 26</div><div class="hd-weekday">2026年8月26日（水曜日）</div></div>
+</header>
+<div class="kicker-strip">
+  <span class="kicker-item">🌐 <strong>WORLD</strong> エージェントAI／半導体地政学／インド台頭／BEC詐欺／グリーン水素</span>
+  <span class="kicker-item">🗾 <strong>JAPAN</strong> 賃上げ経済効果／インバウンド／EV普及／HR Tech／国際金融都市</span>
+  <span class="kicker-item">🏷 <strong>◎SMB</strong> BECメール詐欺防衛・HR Tech活用</span>
+</div>
+<main class="main">
+
+<div class="section-banner"><span class="section-banner-icon">🌐</span><span class="section-banner-label">W O R L D</span><span class="section-banner-rule"></span></div>
+
+<!-- W-01 LEAD -->
+<div class="lead-card">
+  <svg viewBox="0 0 860 155" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <defs>
+      <linearGradient id="g-ai" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#080f20"/><stop offset="100%" stop-color="#0d1a35"/></linearGradient>
+      <radialGradient id="g-glow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#6050ff" stop-opacity=".35"/><stop offset="100%" stop-color="#6050ff" stop-opacity="0"/></radialGradient>
+    </defs>
+    <rect width="860" height="155" fill="url(#g-ai)"/>
+    <circle cx="430" cy="78" r="90" fill="url(#g-glow)"/>
+    <!-- neural net nodes -->
+    <circle cx="100" cy="50" r="6" fill="#6050ff" opacity=".7"/><circle cx="100" cy="78" r="6" fill="#6050ff" opacity=".7"/><circle cx="100" cy="106" r="6" fill="#6050ff" opacity=".7"/>
+    <circle cx="200" cy="36" r="6" fill="#8070ff" opacity=".6"/><circle cx="200" cy="64" r="6" fill="#8070ff" opacity=".6"/><circle cx="200" cy="92" r="6" fill="#8070ff" opacity=".6"/><circle cx="200" cy="120" r="6" fill="#8070ff" opacity=".6"/>
+    <circle cx="300" cy="50" r="8" fill="#C0870B" opacity=".85"/><circle cx="300" cy="78" r="8" fill="#C0870B" opacity=".85"/><circle cx="300" cy="106" r="8" fill="#C0870B" opacity=".85"/>
+    <!-- connections -->
+    <line x1="106" y1="50" x2="194" y2="36" stroke="#6050ff" stroke-width=".8" opacity=".4"/>
+    <line x1="106" y1="50" x2="194" y2="64" stroke="#6050ff" stroke-width=".8" opacity=".4"/>
+    <line x1="106" y1="78" x2="194" y2="64" stroke="#6050ff" stroke-width=".8" opacity=".4"/>
+    <line x1="106" y1="78" x2="194" y2="92" stroke="#6050ff" stroke-width=".8" opacity=".4"/>
+    <line x1="106" y1="106" x2="194" y2="92" stroke="#6050ff" stroke-width=".8" opacity=".4"/>
+    <line x1="106" y1="106" x2="194" y2="120" stroke="#6050ff" stroke-width=".8" opacity=".4"/>
+    <line x1="206" y1="36" x2="292" y2="50" stroke="#C0870B" stroke-width="1" opacity=".5"/>
+    <line x1="206" y1="64" x2="292" y2="50" stroke="#C0870B" stroke-width="1" opacity=".5"/>
+    <line x1="206" y1="64" x2="292" y2="78" stroke="#C0870B" stroke-width="1" opacity=".5"/>
+    <line x1="206" y1="92" x2="292" y2="78" stroke="#C0870B" stroke-width="1" opacity=".5"/>
+    <line x1="206" y1="92" x2="292" y2="106" stroke="#C0870B" stroke-width="1" opacity=".5"/>
+    <line x1="206" y1="120" x2="292" y2="106" stroke="#C0870B" stroke-width="1" opacity=".5"/>
+    <!-- agent icons -->
+    <rect x="330" y="42" width="55" height="36" rx="6" fill="#1a2a50" stroke="#6050ff" stroke-width="1.5"/>
+    <text x="357" y="55" text-anchor="middle" fill="#6050ff" font-size="8" font-family="sans-serif" font-weight="bold">AGENT</text>
+    <text x="357" y="69" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="6.5" font-family="sans-serif">Planning</text>
+    <rect x="330" y="88" width="55" height="36" rx="6" fill="#1a2a50" stroke="#C0870B" stroke-width="1.5"/>
+    <text x="357" y="101" text-anchor="middle" fill="#C0870B" font-size="8" font-family="sans-serif" font-weight="bold">AGENT</text>
+    <text x="357" y="115" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="6.5" font-family="sans-serif">Execution</text>
+    <line x1="308" y1="50" x2="330" y2="60" stroke="#C0870B" stroke-width="1" stroke-dasharray="4,3" opacity=".6"/>
+    <line x1="308" y1="78" x2="330" y2="78" stroke="#C0870B" stroke-width="1" stroke-dasharray="4,3" opacity=".6"/>
+    <line x1="308" y1="106" x2="330" y2="105" stroke="#C0870B" stroke-width="1" stroke-dasharray="4,3" opacity=".6"/>
+    <!-- tools -->
+    <rect x="402" y="30" width="42" height="18" rx="4" fill="#1a3a2a" stroke="#4ac98a" stroke-width="1"/>
+    <text x="423" y="42" text-anchor="middle" fill="#4ac98a" font-size="7" font-family="sans-serif">Web Search</text>
+    <rect x="402" y="55" width="42" height="18" rx="4" fill="#1a3a2a" stroke="#4ac98a" stroke-width="1"/>
+    <text x="423" y="67" text-anchor="middle" fill="#4ac98a" font-size="7" font-family="sans-serif">Code Exec</text>
+    <rect x="402" y="80" width="42" height="18" rx="4" fill="#1a3a2a" stroke="#4ac98a" stroke-width="1"/>
+    <text x="423" y="92" text-anchor="middle" fill="#4ac98a" font-size="7" font-family="sans-serif">API Calls</text>
+    <rect x="402" y="105" width="42" height="18" rx="4" fill="#1a3a2a" stroke="#4ac98a" stroke-width="1"/>
+    <text x="423" y="117" text-anchor="middle" fill="#4ac98a" font-size="7" font-family="sans-serif">Memory</text>
+    <line x1="385" y1="60" x2="402" y2="39" stroke="#4ac98a" stroke-width=".8" opacity=".55"/>
+    <line x1="385" y1="60" x2="402" y2="64" stroke="#4ac98a" stroke-width=".8" opacity=".55"/>
+    <line x1="385" y1="105" x2="402" y2="89" stroke="#4ac98a" stroke-width=".8" opacity=".55"/>
+    <line x1="385" y1="105" x2="402" y2="114" stroke="#4ac98a" stroke-width=".8" opacity=".55"/>
+    <!-- stats -->
+    <rect x="468" y="18" width="374" height="120" fill="rgba(0,0,0,.3)" rx="8"/>
+    <text x="655" y="42" text-anchor="middle" fill="rgba(255,255,255,.95)" font-size="13" font-family="Georgia,serif" font-weight="bold">エージェントAI・企業導入の臨界点</text>
+    <text x="655" y="60" text-anchor="middle" fill="rgba(255,255,255,.55)" font-size="9" font-family="sans-serif">AI Agents Deployed in Enterprise — 2024→2026</text>
+    <rect x="482" y="70" width="78" height="38" rx="5" fill="rgba(96,80,255,.22)" stroke="#6050ff" stroke-width="1"/>
+    <text x="521" y="84" text-anchor="middle" fill="#a090ff" font-size="7.5" font-family="sans-serif" font-weight="bold">企業導入率</text>
+    <text x="521" y="102" text-anchor="middle" fill="#a090ff" font-size="20" font-family="Georgia,serif" font-weight="bold">68%</text>
+    <rect x="568" y="70" width="78" height="38" rx="5" fill="rgba(192,135,11,.22)" stroke="#C0870B" stroke-width="1"/>
+    <text x="607" y="84" text-anchor="middle" fill="#C0870B" font-size="7.5" font-family="sans-serif" font-weight="bold">ROI達成企業</text>
+    <text x="607" y="102" text-anchor="middle" fill="#C0870B" font-size="20" font-family="Georgia,serif" font-weight="bold">74%</text>
+    <rect x="654" y="70" width="78" height="38" rx="5" fill="rgba(74,201,138,.18)" stroke="#4ac98a" stroke-width="1"/>
+    <text x="693" y="84" text-anchor="middle" fill="#4ac98a" font-size="7.5" font-family="sans-serif" font-weight="bold">業務効率化</text>
+    <text x="693" y="102" text-anchor="middle" fill="#4ac98a" font-size="20" font-family="Georgia,serif" font-weight="bold">▲35%</text>
+    <rect x="740" y="70" width="88" height="38" rx="5" fill="rgba(0,200,255,.12)" stroke="rgba(0,200,255,.5)" stroke-width="1"/>
+    <text x="784" y="84" text-anchor="middle" fill="#00c8ff" font-size="7.5" font-family="sans-serif" font-weight="bold">市場規模(26)</text>
+    <text x="784" y="102" text-anchor="middle" fill="#00c8ff" font-size="20" font-family="Georgia,serif" font-weight="bold">$47B</text>
+    <text x="655" y="125" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8.5" font-family="sans-serif">GPT-4o・Claude 3.7・Gemini Ultra搭載エージェントが業務フロー全体を自律執行する時代へ</text>
+  </svg>
+  <div class="lead-card-top">
+    <div>
+      <div class="lead-kicker">W-01 ／ LEAD STORY</div>
+      <div class="lead-title">エージェントAIが「道具」から「同僚」へ変わる転換点</div>
+      <div class="lead-sub">単なる質問応答を超え、計画・実行・検索・コード実行までを自律的に行う「AIエージェント」の企業導入率が68%に達した。人間が指示を出す→AIが全工程を遂行するというパラダイムシフトが各業界で同時多発的に起きている。</div>
+    </div>
+    <div class="lead-stat-box"><div class="lead-stat-label">企業ROI達成率</div><div class="lead-stat-num">74%</div><div class="lead-stat-sub">導入企業中</div></div>
+  </div>
+  <div class="lead-body">
+    <p class="tc-prose">2026年のエージェントAI市場は<strong>$47B</strong>に達し、2024年比で3.2倍の急拡大となった。企業導入率68%・ROI達成率74%という数字が示すように、「使えるか使えないか」から「どこまで任せるか」という議論へと焦点が移っている。法律・会計・コード開発・カスタマーサポートの各分野では、エージェントが人間の監督下で全工程の35%以上を自律処理する事例が標準化しつつある。OpenAI Operator・Anthropic Claude Computer Use・Google Project Maristonが三つ巴でエンタープライズ市場を争い、Microsoft Copilotが既存業務フローへの組み込みで先行優位を築いている。</p>
+    <div class="analysis-grid">
+      <div class="analysis-cell">
+        <div class="analysis-label">📌 なぜ今？<span class="analysis-sublabel">— 急浮上の背景</span></div>
+        <div class="analysis-body">ツール呼び出し・長期記憶・マルチモーダル能力が2025年後半から急速に成熟し「動くエージェント」が実用レベルに達した。企業が個別ChatBotではなく業務フロー全体の自動化を狙い始めた段階。</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">🏆 誰が動く？<span class="analysis-sublabel">— 主要プレイヤー</span></div>
+        <div class="analysis-body">OpenAI・Anthropic・Googleがモデル競争をリードし、Salesforce AgentForce・ServiceNow・WorkdayがSaaS組み込みで追う。国内ではNTTデータ・富士通・SoftBankが大手企業向けエージェント実装を受注拡大中。</div>
+      </div>
+      <div class="analysis-cell">
+        <div class="analysis-label">⚠️ 何が壁？<span class="analysis-sublabel">— 課題と障壁</span></div>
+        <div class="analysis-body">「幻覚（ハルシネーション）」による業務ミスのリスク、エージェントの行動に対する責任所在の曖昧さ、セキュリティ境界の再定義が未解決。労働者の仕事喪失懸念への対応も社会的課題として浮上している。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="topic-grid">
+<!-- W-02 -->
+<div class="topic-card">
+  <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="420" height="110" fill="#0a1020"/>
+    <!-- chip wafer -->
+    <rect x="30" y="20" width="80" height="80" rx="5" fill="#1a2540" stroke="#2a4a8a" stroke-width="1.5"/>
+    <line x1="30" y1="40" x2="110" y2="40" stroke="#2a4a8a" stroke-width=".6"/><line x1="30" y1="60" x2="110" y2="60" stroke="#2a4a8a" stroke-width=".6"/><line x1="30" y1="80" x2="110" y2="80" stroke="#2a4a8a" stroke-width=".6"/>
+    <line x1="50" y1="20" x2="50" y2="100" stroke="#2a4a8a" stroke-width=".6"/><line x1="70" y1="20" x2="70" y2="100" stroke="#2a4a8a" stroke-width=".6"/><line x1="90" y1="20" x2="90" y2="100" stroke="#2a4a8a" stroke-width=".6"/>
+    <rect x="34" y="24" width="16" height="16" rx="2" fill="#C0870B" opacity=".85"/>
+    <rect x="54" y="24" width="16" height="16" rx="2" fill="#C0870B" opacity=".7"/>
+    <rect x="74" y="24" width="16" height="16" rx="2" fill="#1a3a6a" opacity=".9"/>
+    <rect x="94" y="24" width="12" height="16" rx="2" fill="#1a3a6a" opacity=".9"/>
+    <rect x="34" y="44" width="16" height="16" rx="2" fill="#1a3a6a" opacity=".9"/>
+    <rect x="54" y="44" width="16" height="16" rx="2" fill="#C0870B" opacity=".9"/>
+    <text x="62" y="55" text-anchor="middle" fill="rgba(255,255,255,.65)" font-size="7" font-family="sans-serif" font-weight="bold">2nm</text>
+    <text x="30" y="11" fill="rgba(255,255,255,.5)" font-size="8" font-family="sans-serif">🇹🇼 TSMC</text>
+    <!-- map arrows -->
+    <rect x="155" y="8" width="255" height="98" fill="rgba(0,0,0,.28)" rx="6"/>
+    <text x="282" y="28" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="12" font-family="Georgia,serif" font-weight="bold">半導体地政学・CHIPS Act</text>
+    <text x="282" y="48" text-anchor="middle" fill="#C0870B" font-size="10" font-family="sans-serif">米国生産能力 2024→2026</text>
+    <text x="282" y="68" text-anchor="middle" fill="#C0870B" font-size="22" font-family="Georgia,serif" font-weight="bold">+185%</text>
+    <text x="282" y="84" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">対中輸出規制 強化第3弾施行</text>
+    <text x="282" y="98" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif">TSMC Arizona・Samsung Texas 量産開始</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-w">W-02</span><span class="tc-theme-tag" style="background:#E8EEF8;color:var(--navy)">半導体・地政学</span></div>
+  <div class="tc-body">
+    <div class="tc-title">半導体サプライチェーン再編<br>CHIPS Act・対中規制の新局面</div>
+    <div class="tc-prose">米国CHIPS法による補助金$527Bが本格執行され、TSMC Arizona 2nmラインとSamsung Texasが量産を開始した。米国内の半導体生産能力は<strong>2024年比+185%</strong>に拡大し、「地政学リスクの内部化」が現実となっている。対中輸出規制の第3弾として先端AIチップ（A100以上相当）のほぼ全品目が規制対象に追加され、中国のHuawei・SMICは国産7nmへの完全移行を急いでいる。日本のラピダス（2nmターゲット）はIBMとの技術提携を深化させており、Rapidus-TSMC協定が量産ロードマップの焦点となる。</div>
+    <div class="stat-row"><span class="stat-chip sc-gold">米国生産 +185%</span><span class="stat-chip sc-navy">補助金 $527B</span></div>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">台湾有事リスクの高まりと中国の軍用AI開発懸念が重なり、「チョークポイント」としての先端半導体の戦略価値が急上昇。製造の地政学的分散は安保の最優先課題となった。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">TSMC・Samsung・Intelの三者が米国工場を整備する一方、NVIDIAはソフトウェアエコシステムで差別化。日本では経産省がラピダスへ1.9兆円を追加支援している。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">製造コストが台湾比2〜3倍高い米国工場の競争力、熟練エンジニアの人材確保、そして対中規制の「穴埋め」として中国の自給自足が加速するという逆説的リスクが残る。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- W-03 -->
+<div class="topic-card">
+  <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="420" height="110" fill="#0a1508"/>
+    <circle cx="60" cy="30" r="22" fill="#ff9933" opacity=".7"/>
+    <circle cx="76" cy="22" r="18" fill="#0a1508"/>
+    <!-- factory silhouette -->
+    <rect x="18" y="60" width="100" height="50" fill="#1a2a10"/>
+    <rect x="25" y="45" width="10" height="20" fill="#2a3a18"/><rect x="45" y="38" width="10" height="27" fill="#2a3a18"/><rect x="65" y="50" width="10" height="15" fill="#2a3a18"/>
+    <ellipse cx="30" cy="42" rx="7" ry="5" fill="#8B6914" opacity=".4"/><ellipse cx="50" cy="35" rx="7" ry="5" fill="#8B6914" opacity=".35"/>
+    <rect x="22" y="72" width="15" height="14" fill="#4ac98a" opacity=".55" rx="1"/>
+    <rect x="42" y="72" width="15" height="14" fill="#4ac98a" opacity=".45" rx="1"/>
+    <rect x="62" y="72" width="15" height="14" fill="#4ac98a" opacity=".6" rx="1"/>
+    <rect x="82" y="72" width="15" height="14" fill="#4ac98a" opacity=".5" rx="1"/>
+    <rect x="148" y="10" width="262" height="98" fill="rgba(0,0,0,.3)" rx="6"/>
+    <text x="279" y="30" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="12" font-family="Georgia,serif" font-weight="bold">インド製造業台頭</text>
+    <text x="279" y="50" text-anchor="middle" fill="#ff9933" font-size="10" font-family="sans-serif">GDP成長率</text>
+    <text x="279" y="72" text-anchor="middle" fill="#ff9933" font-size="24" font-family="Georgia,serif" font-weight="bold">8.4%</text>
+    <text x="279" y="86" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">Apple・Samsung・Foxconnが工場移設</text>
+    <text x="279" y="100" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif">2030年：世界3位経済大国へ</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-w">W-03</span><span class="tc-theme-tag" style="background:#FEF5E4;color:#8A5C00">新興国・製造業</span></div>
+  <div class="tc-body">
+    <div class="tc-title">インド製造業台頭<br>「China+1」戦略の本命に</div>
+    <div class="tc-prose">インドのGDP成長率は<strong>8.4%</strong>（2026年Q2）を記録し、2027年には日本を抜いて世界4位経済大国となる見通しだ。Apple・Samsung・Foxconnが中国からインドへの生産移管を加速し、iPhoneの25%はすでにインド製となっている。モディ政権の「Make in India 2.0」は製造業比率をGDP比25%まで引き上げる目標を掲げており、タタ・エレクトロニクスとリライアンス・インダストリーズが国内のエコシステム形成を主導する。日本からはスズキ・ホンダ・ヤマハが二輪・四輪でシェアを拡大しており、インフラ整備に住友商事・伊藤忠が積極的に参画している。</div>
+    <div class="stat-row"><span class="stat-chip sc-amber">GDP成長 8.4%</span><span class="stat-chip sc-jade">iPhone 25%インド製</span></div>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">14億の人口と旺盛な内需・豊富な若年労働力・英語ビジネス環境という三拍子が揃い、地政学リスクを避けたい企業の「China+1」先として世界的評価が確定した局面。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">タタ・グループとリライアンス・インダストリーズが国内の旗手。外資ではApple・Tesla・ABBが先行投資。日本からはスズキ・ホンダが二輪市場で50%超のシェアを保持する。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">インフラの脆弱さ（停電・物流）・複雑な規制環境・州ごとの法制度差異・スキル人材の不均一分布が外資参入の摩擦コストとなっており、中国ほどのサプライチェーン完結性には遠い。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- W-04 SMB -->
+<div class="topic-card smb">
+  <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="420" height="110" fill="#0f0a1a"/>
+    <!-- email envelope -->
+    <rect x="22" y="30" width="110" height="70" rx="5" fill="#1a0f2a" stroke="#8050cc" stroke-width="1.5"/>
+    <polyline points="22,30 77,68 132,30" fill="none" stroke="#cc3333" stroke-width="2"/>
+    <line x1="22" y1="100" x2="60" y2="68" stroke="#8050cc" stroke-width=".8" opacity=".5"/>
+    <line x1="132" y1="100" x2="95" y2="68" stroke="#8050cc" stroke-width=".8" opacity=".5"/>
+    <!-- skull/warning -->
+    <circle cx="77" cy="58" r="12" fill="#cc2222" opacity=".85"/>
+    <text x="77" y="63" text-anchor="middle" fill="white" font-size="12" font-family="sans-serif">☠</text>
+    <!-- arrows -->
+    <line x1="140" y1="60" x2="175" y2="60" stroke="#cc3333" stroke-width="2" stroke-dasharray="5,3"/>
+    <polygon points="173,55 180,60 173,65" fill="#cc3333"/>
+    <!-- shield -->
+    <path d="M190,30 L240,30 L240,72 Q240,90 215,100 Q190,90 190,72 Z" fill="rgba(74,201,138,.15)" stroke="#4ac98a" stroke-width="2"/>
+    <text x="215" y="66" text-anchor="middle" fill="#4ac98a" font-size="18" font-family="sans-serif">🛡</text>
+    <rect x="260" y="8" width="152" height="98" fill="rgba(0,0,0,.25)" rx="6"/>
+    <text x="336" y="28" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="11" font-family="Georgia,serif" font-weight="bold">BECメール詐欺</text>
+    <text x="336" y="46" text-anchor="middle" fill="#cc3333" font-size="9.5" font-family="sans-serif">中小被害額 平均</text>
+    <text x="336" y="68" text-anchor="middle" fill="#cc3333" font-size="22" font-family="Georgia,serif" font-weight="bold">¥820万</text>
+    <text x="336" y="82" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">AI生成偽メール 急増中</text>
+    <text x="336" y="97" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif" font-weight="bold">DMARC導入で95%ブロック</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-w">W-04</span><span class="smb-badge">◎ 中小企業</span></div>
+  <div class="tc-body">
+    <div class="tc-title">BECメール詐欺・ソーシャルエンジニアリング<br>AI生成偽メールが急増</div>
+    <div class="tc-prose">ビジネスメール詐欺（BEC）は中小企業の平均被害額が<strong>¥820万/件</strong>に上り、2026年上半期だけで国内報告件数が前年比+145%となった。生成AIによる「CEOなりすましメール」は文体・口調・署名まで精巧に模倣し、従来のフィッシング教育だけでは検知が困難になっている。対策の最重要ポイントはDMARC（ドメイン認証）の設定で、適切に設定するだけでなりすましメールの95%をブロックできる。加えて、送金・振込の変更依頼は必ず電話確認するルールを全社徹底することが現時点で最も実効性の高い人的対策だ。</div>
+    <div class="stat-row"><span class="stat-chip sc-red">被害額 ¥820万/件</span><span class="stat-chip sc-jade">DMARC導入で▲95%</span></div>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">生成AIによって精巧な偽メール・偽音声・偽動画の作成コストが激減した。「怪しいメールを見抜く」という従来の教育前提が崩れ始めており、技術的なフィルタリングが不可欠になった。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">Microsoft Defender・Proofpoint・Mimecastがメールセキュリティをリード。IPAが無料DMARC設定ガイドを公開中。国内ISPも送信ドメイン認証の強制化を段階的に進めている。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">DMARC設定の技術的複雑さ（DNSレコード設定）と、設定ミスによる正規メール届かない問題への恐れから、中小企業での普及率は40%にとどまっている。IT担当者の不在が最大の障壁。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- W-05 -->
+<div class="topic-card">
+  <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="420" height="110" fill="#080f18"/>
+    <!-- H2 molecule -->
+    <circle cx="55" cy="55" r="18" fill="#0a3a6a" stroke="#00c8ff" stroke-width="1.5"/>
+    <text x="55" y="59" text-anchor="middle" fill="#00c8ff" font-size="11" font-family="sans-serif" font-weight="bold">H</text>
+    <line x1="73" y1="55" x2="87" y2="55" stroke="#00c8ff" stroke-width="2.5"/>
+    <circle cx="105" cy="55" r="18" fill="#0a3a6a" stroke="#00c8ff" stroke-width="1.5"/>
+    <text x="105" y="59" text-anchor="middle" fill="#00c8ff" font-size="11" font-family="sans-serif" font-weight="bold">H</text>
+    <text x="80" y="38" text-anchor="middle" fill="#4ac98a" font-size="16" font-family="sans-serif">⚡</text>
+    <rect x="148" y="8" width="264" height="98" fill="rgba(0,0,0,.3)" rx="6"/>
+    <text x="280" y="28" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="12" font-family="Georgia,serif" font-weight="bold">グリーン水素商業化</text>
+    <text x="280" y="46" text-anchor="middle" fill="#00c8ff" font-size="9.5" font-family="sans-serif">製造コスト 2022→2026</text>
+    <text x="280" y="66" text-anchor="middle" fill="#00c8ff" font-size="22" font-family="Georgia,serif" font-weight="bold">$8.5→$3.2/kg</text>
+    <text x="280" y="82" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">2030年目標 $1/kg → コスト競争力確立へ</text>
+    <text x="280" y="97" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif">EU・日本・豪州が$250B超の生産投資</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-w">W-05</span><span class="tc-theme-tag" style="background:#E8F5F0;color:#1A7A5E">エネルギー転換</span></div>
+  <div class="tc-body">
+    <div class="tc-title">グリーン水素・燃料電池<br>コスト革命と商業化の現在地</div>
+    <div class="tc-prose">グリーン水素の製造コストは2022年の$8.5/kgから2026年に<strong>$3.2/kg</strong>まで低下し、化石燃料由来の「グレー水素」との差が急速に縮まっている。EU水素戦略が$100Bの投資を確定し、豪州・中東・チリが世界規模の輸出ハブ建設に着手した。燃料電池を搭載したバス・大型トラック・フォークリフトの商業展開が欧州と日本で本格化しており、トヨタFC・現代NEXO・ヴァルシャウアーが3強を形成している。日本はアンモニア・水素の国際輸送規格の標準化で主導的立場に立ち、九州・北海道が国内水素バレーとして整備を進める。</div>
+    <div class="stat-row"><span class="stat-chip sc-sky">$3.2/kg（▲62%）</span><span class="stat-chip sc-jade">投資 $250B超</span></div>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">再エネ電力価格の急落でグリーン水素の電解コストが下がり経済合理性が生まれた。EUのCBAM（炭素国境調整）が2026年から本格適用され、脱炭素水素への産業需要が爆発している。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">Shell・bp・TotalEnergiesが大型グリーン水素プロジェクトをリード。電解槽はNEL・ITM Powerが供給。日本では川崎重工が液化水素輸送船を商業運航し、IHI・三菱がアンモニア混焼技術を開発中。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">輸送・貯蔵コスト（液化・アンモニア変換）が製造コスト削減分を相殺するリスク、需要側インフラ（水素ステーション）の不足、そして「グリーン水素の定義」をめぐる国際規格の不統一が課題。</div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="section-divider"><div class="sdl"></div><div class="sd-badge">🗾 &nbsp;J A P A N</div><div class="sdr"></div></div>
+
+<div class="topic-grid">
+<!-- J-01 -->
+<div class="topic-card">
+  <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="420" height="110" fill="#08100a"/>
+    <rect x="20" y="25" width="120" height="85" fill="#0f1a10"/>
+    <!-- wage bars -->
+    <rect x="30" y="85" width="18" height="22" fill="#3a6a3a" rx="1"/>
+    <rect x="55" y="75" width="18" height="32" fill="#4a8a4a" rx="1"/>
+    <rect x="80" y="62" width="18" height="45" fill="#5aaa5a" rx="1"/>
+    <rect x="105" y="50" width="18" height="57" fill="#C0870B" rx="1"/>
+    <text x="114" y="46" text-anchor="middle" fill="#C0870B" font-size="7.5" font-family="sans-serif" font-weight="bold">+5.1%</text>
+    <text x="39" y="112" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="7" font-family="sans-serif">23</text>
+    <text x="64" y="112" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="7" font-family="sans-serif">24</text>
+    <text x="89" y="112" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="7" font-family="sans-serif">25</text>
+    <text x="114" y="112" text-anchor="middle" fill="#C0870B" font-size="7" font-family="sans-serif" font-weight="bold">26</text>
+    <rect x="155" y="8" width="255" height="98" fill="rgba(0,0,0,.3)" rx="6"/>
+    <text x="282" y="28" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="12" font-family="Georgia,serif" font-weight="bold">賃上げ・最低賃金改定</text>
+    <text x="282" y="47" text-anchor="middle" fill="#C0870B" font-size="9.5" font-family="sans-serif">春闘平均賃上げ率</text>
+    <text x="282" y="68" text-anchor="middle" fill="#C0870B" font-size="24" font-family="Georgia,serif" font-weight="bold">+5.1%</text>
+    <text x="282" y="83" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">33年ぶりの高水準 / 最低賃金¥1,172</text>
+    <text x="282" y="97" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif">実質賃金3ヶ月連続プラス</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-j">J-01</span><span class="tc-theme-tag" style="background:#E8F5F0;color:#1A7A5E">労働・賃金</span></div>
+  <div class="tc-body">
+    <div class="tc-title">賃上げ・最低賃金改定<br>33年ぶり高水準の経済効果</div>
+    <div class="tc-prose">春闘平均賃上げ率<strong>+5.1%</strong>（33年ぶり高水準）と最低賃金¥1,172（全国加重平均）の引き上げにより、実質賃金が3ヶ月連続でプラスに転じた。消費マインドの改善で個人消費は+2.3%増加し、百貨店・外食・旅行が4年ぶりに回復軌道に乗った。一方で中小企業の人件費負担は深刻化しており、賃上げを吸収できる価格転嫁力（適正な値上げ）の有無が企業の生存を分ける。政府は賃上げ税制を延長しつつ、サービス業の生産性向上を促す「生産性革命2026」を推進する。</div>
+    <div class="stat-row"><span class="stat-chip sc-gold">賃上げ +5.1%</span><span class="stat-chip sc-jade">実質賃金 3ヶ月連続＋</span></div>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">物価上昇（CPI+3.1%）が続く中「賃金が上がらなければ消費が死ぬ」という経済的必然と、政府の強い要請が重なり、企業が賃上げ競争に参入した転換点。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">大手製造業・メガバンクが先行し中小に波及しつつある。連合（労働組合）が交渉力を発揮し、パート・非正規への適用拡大が今後の焦点。ファーストリテイリング・サイゼリヤが中小の先行事例を作る。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">中小企業の価格転嫁力の差が「賃上げできる企業」と「できない企業」の二極化を生む。サービス業の生産性向上なき賃上げはコストプッシュインフレを悪化させるリスクも孕む。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- J-02 -->
+<div class="topic-card">
+  <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="420" height="110" fill="#0f0a04"/>
+    <!-- torii gate -->
+    <rect x="44" y="80" width="8" height="30" fill="#cc4422"/><rect x="88" y="80" width="8" height="30" fill="#cc4422"/>
+    <rect x="32" y="70" width="120" height="10" fill="#cc4422" rx="2"/>
+    <rect x="40" y="60" width="112" height="8" fill="#cc4422" rx="2"/>
+    <circle cx="96" cy="38" r="22" fill="#ff2222" opacity=".8"/><circle cx="96" cy="38" r="16" fill="#ff4444" opacity=".9"/>
+    <!-- mountain -->
+    <polygon points="0,110 60,42 80,60 96,110" fill="#1a2a18"/>
+    <polygon points="60,42 120,110 0,110" fill="#223318" opacity=".7"/>
+    <rect x="155" y="8" width="258" height="98" fill="rgba(0,0,0,.3)" rx="6"/>
+    <text x="284" y="28" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="12" font-family="Georgia,serif" font-weight="bold">インバウンド観光</text>
+    <text x="284" y="47" text-anchor="middle" fill="#C0870B" font-size="9.5" font-family="sans-serif">訪日外客数（2026見通し）</text>
+    <text x="284" y="68" text-anchor="middle" fill="#C0870B" font-size="24" font-family="Georgia,serif" font-weight="bold">4,200万人</text>
+    <text x="284" y="83" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">消費額 ¥10.5兆（過去最高）</text>
+    <text x="284" y="97" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif">オーバーツーリズム対策が急務</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-j">J-02</span><span class="tc-theme-tag" style="background:#FEF5E4;color:#8A5C00">観光・インバウンド</span></div>
+  <div class="tc-body">
+    <div class="tc-title">インバウンド観光<br>4,200万人・¥10.5兆の経済効果</div>
+    <div class="tc-prose">2026年の訪日外客数は<strong>4,200万人</strong>に達し、消費額は¥10.5兆と過去最高を更新する見通しだ。円安の追い風に加え、コンテンツ（アニメ・ゲーム・食文化）への世界的関心が押し上げ要因となっている。一方で京都・鎌倉・富士山周辺のオーバーツーリズムは深刻化し、混雑税・観光税の導入・登山者制限が広がっている。分散化の切り札として地方観光の底上げが急務となっており、岐阜・山形・長崎・宮崎の「第2観光圏」形成が国策として推進されている。DX化された観光体験（デジタル茶道・VR城下町）への需要も急拡大している。</div>
+    <div class="stat-row"><span class="stat-chip sc-gold">4,200万人</span><span class="stat-chip sc-amber">消費 ¥10.5兆</span></div>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">コロナ後の訪日需要爆発に円安・コンテンツ力・査証要件緩和が重なり、インバウンドが産業として「量より質」に移行するターニングポイント。地方分散が急務となっている。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">JTB・HISに加え、Airbnb・Expedia・Bookingが地方民泊を開拓。ルイ・ヴィトン・バカラが日本専用ハイエンドツアーを展開し、富裕層観光（消費単価¥100万超）が急成長している。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">交通・宿泊インフラのキャパシティ限界・地域住民との摩擦・観光業の人手不足（賃金低さが離職を促進）・円高転換時の需要急減リスクが複合的に存在する。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- J-03 -->
+<div class="topic-card">
+  <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="420" height="110" fill="#060e18"/>
+    <!-- EV car -->
+    <rect x="18" y="55" width="110" height="38" rx="8" fill="#1a3a5a"/>
+    <rect x="38" y="40" width="72" height="30" rx="6" fill="#2a5080"/>
+    <circle cx="40" cy="93" r="12" fill="#0f1e2e" stroke="#4a8aaa" stroke-width="2"/><circle cx="40" cy="93" r="6" fill="#2a5a8a"/>
+    <circle cx="106" cy="93" r="12" fill="#0f1e2e" stroke="#4a8aaa" stroke-width="2"/><circle cx="106" cy="93" r="6" fill="#2a5a8a"/>
+    <!-- battery indicator -->
+    <rect x="55" y="60" width="36" height="14" rx="2" fill="#0f2030" stroke="#4ac98a" stroke-width="1"/>
+    <rect x="91" y="63" width="4" height="8" rx="1" fill="#4ac98a"/>
+    <rect x="56" y="61" width="27" height="12" rx="1" fill="#4ac98a" opacity=".8"/>
+    <text x="70" y="70" text-anchor="middle" fill="white" font-size="7" font-family="sans-serif" font-weight="bold">75%</text>
+    <line x1="62" y1="48" x2="62" y2="40" stroke="#4ac98a" stroke-width="1.5"/>
+    <text x="62" y="36" text-anchor="middle" fill="#4ac98a" font-size="10" font-family="sans-serif">⚡</text>
+    <rect x="148" y="8" width="264" height="98" fill="rgba(0,0,0,.3)" rx="6"/>
+    <text x="280" y="28" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="12" font-family="Georgia,serif" font-weight="bold">EV・電動化普及</text>
+    <text x="280" y="47" text-anchor="middle" fill="#4ac98a" font-size="9.5" font-family="sans-serif">新車EV比率（2026）</text>
+    <text x="280" y="68" text-anchor="middle" fill="#4ac98a" font-size="24" font-family="Georgia,serif" font-weight="bold">28%</text>
+    <text x="280" y="83" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">急速充電器：全国3.8万基（+220%）</text>
+    <text x="280" y="97" text-anchor="middle" fill="#C0870B" font-size="8" font-family="sans-serif">トヨタ全固体電池 2028年量産確定</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-j">J-03</span><span class="tc-theme-tag" style="background:#E8F5F0;color:#1A7A5E">EV・モビリティ</span></div>
+  <div class="tc-body">
+    <div class="tc-title">EV・電動化普及<br>新車の28%がEVとなった日本市場</div>
+    <div class="tc-prose">日本の新車販売に占めるEV比率が<strong>28%</strong>（2026年上半期）に達し、急速充電器は全国3.8万基（+220%）まで拡充された。テスラModel Yと日産アリアが牽引役を担う一方、トヨタが全固体電池搭載EVの2028年量産を確定させたことで業界の注目が集中している。中国BYD・NIOの日本市場攻略が本格化し、低価格帯（¥250万以下）のEVセグメントでシェアを拡大しつつある。充電インフラの整備と電力需要への対応（V2H・V2G）が政府の優先課題となっており、再エネとEVの組み合わせを前提にした「移動する蓄電池」構想が具体化している。</div>
+    <div class="stat-row"><span class="stat-chip sc-jade">新車EV比率 28%</span><span class="stat-chip sc-sky">充電器 3.8万基</span></div>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">補助金拡充・充電インフラ整備・価格帯の下落という三要素が揃い、「航続距離不安」という最大の心理的障壁が薄れた。2030年のEU販売禁止も日本市場の転換を加速させる。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">トヨタが全固体電池で巻き返しを狙い、ホンダ・日産がEV専用プラットフォームで対抗。BYD・テスラが低・高価格帯を挟み撃ちにしており、三菱商事・伊藤忠が充電インフラ整備を拡大している。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">集合住宅への充電器設置の困難さ、夏冬の電力需要増への対応、バッテリー廃棄・リサイクル体制の未整備が普及の残課題。地方の充電インフラ密度は都市部と大きく格差がある。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- J-04 SMB -->
+<div class="topic-card smb">
+  <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="420" height="110" fill="#080f18"/>
+    <!-- people icons -->
+    <circle cx="35" cy="35" r="12" fill="#2a4a7a"/><rect x="22" y="48" width="26" height="22" rx="4" fill="#2a4a7a"/>
+    <circle cx="80" cy="35" r="12" fill="#3a5a9a"/><rect x="67" y="48" width="26" height="22" rx="4" fill="#3a5a9a"/>
+    <circle cx="125" cy="35" r="12" fill="#1a3a6a"/><rect x="112" y="48" width="26" height="22" rx="4" fill="#1a3a6a"/>
+    <!-- plus/arrows -->
+    <text x="55" y="42" text-anchor="middle" fill="#C0870B" font-size="14" font-family="sans-serif">+</text>
+    <text x="100" y="42" text-anchor="middle" fill="#C0870B" font-size="14" font-family="sans-serif">+</text>
+    <!-- laptop/app -->
+    <rect x="18" y="78" width="120" height="28" rx="4" fill="#1a2a3a" stroke="#2a4a6a" stroke-width="1"/>
+    <text x="78" y="96" text-anchor="middle" fill="#4ac98a" font-size="9" font-family="sans-serif" font-weight="bold">HR Tech Platform</text>
+    <rect x="155" y="8" width="258" height="98" fill="rgba(0,0,0,.28)" rx="6"/>
+    <text x="284" y="28" text-anchor="middle" fill="rgba(255,255,255,.9)" font-size="11" font-family="Georgia,serif" font-weight="bold">中小企業 人手不足 × HR Tech</text>
+    <text x="284" y="46" text-anchor="middle" fill="#C0870B" font-size="8.5" font-family="sans-serif">人手不足を訴える中小の割合</text>
+    <text x="284" y="66" text-anchor="middle" fill="#C0870B" font-size="22" font-family="Georgia,serif" font-weight="bold">72%</text>
+    <text x="284" y="82" text-anchor="middle" fill="rgba(255,255,255,.42)" font-size="8" font-family="sans-serif">AI採用・シフト管理で工数▲50%</text>
+    <text x="284" y="97" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif" font-weight="bold">月額¥5,000〜 のツールで即導入可</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-j">J-04</span><span class="smb-badge">◎ 中小企業</span></div>
+  <div class="tc-body">
+    <div class="tc-title">中小企業の人手不足対策<br>HR Techで採用・定着を変える</div>
+    <div class="tc-prose">中小企業の<strong>72%が人手不足</strong>を訴える中、AI採用ツール・シフト管理SaaS・給与計算の自動化によって工数を▲50%削減できる事例が急増している。AI採用（求人票自動生成・書類選考AI・面接スケジューリング自動化）を導入した企業では採用リードタイムが平均42日から18日に短縮した。SmartHR・freee人事・ジョブカンが月額¥5,000〜の低価格で機能を揃えており、「担当者がいなくてもクラウドで人事ができる」環境が整った。外国人材受け入れ・再雇用シニア活用・副業人材マッチングを組み合わせた多角的な人材獲得戦略が急務となっている。</div>
+    <div class="stat-row"><span class="stat-chip sc-gold">人手不足 72%</span><span class="stat-chip sc-jade">採用工数 ▲50%</span></div>
+    <div class="analysis-grid">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">少子化による労働力人口減少が「採用競争」から「労働力の絶対不足」へとフェーズが変わった。IT化による業務効率化なしには賃上げ原資も確保できないという二重の圧力が中小を直撃している。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">SmartHR・freee・弥生がクラウド人事をリード。Indeed・Wantedlyが中小向けAI採用ページ作成を提供。厚生労働省が「人材活用DX補助金」を設け、HR Techツール導入費用の最大2/3を補助している。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">IT担当者不在の企業ではクラウドHRツールのセットアップも困難な場合が多い。また採用強化によって採用できても「定着率」を上げない限り根本解決にならないという問題も残る。</div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="topic-grid">
+<!-- J-05 WIDE -->
+<div class="topic-card wide">
+  <svg viewBox="0 0 860 128" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+    <rect width="860" height="128" fill="#060c18"/>
+    <!-- city skyline -->
+    <rect x="20" y="70" width="30" height="58" fill="#1a2a40" rx="2"/>
+    <rect x="58" y="45" width="40" height="83" fill="#1E3A5F" rx="2"/>
+    <rect x="105" y="58" width="25" height="70" fill="#1a2a40" rx="2"/>
+    <rect x="137" y="30" width="50" height="98" fill="#2a4a7a" rx="2"/>
+    <rect x="195" y="50" width="35" height="78" fill="#1a3a6a" rx="2"/>
+    <!-- windows -->
+    <rect x="63" y="55" width="6" height="5" rx="1" fill="#C0870B" opacity=".8"/><rect x="75" y="55" width="6" height="5" rx="1" fill="#C0870B" opacity=".6"/>
+    <rect x="63" y="68" width="6" height="5" rx="1" fill="#C0870B" opacity=".7"/><rect x="75" y="68" width="6" height="5" rx="1" fill="#C0870B" opacity=".9"/>
+    <rect x="142" y="42" width="7" height="6" rx="1" fill="#4ac98a" opacity=".7"/><rect x="155" y="42" width="7" height="6" rx="1" fill="#4ac98a" opacity=".6"/><rect x="168" y="42" width="7" height="6" rx="1" fill="#4ac98a" opacity=".8"/>
+    <rect x="142" y="56" width="7" height="6" rx="1" fill="#4ac98a" opacity=".6"/><rect x="155" y="56" width="7" height="6" rx="1" fill="#4ac98a" opacity=".7"/>
+    <rect x="0" y="128" width="240" height="0" fill="none"/>
+    <!-- connection nodes -->
+    <circle cx="78" cy="40" r="5" fill="#C0870B" opacity=".8"/>
+    <circle cx="162" cy="25" r="5" fill="#4ac98a" opacity=".8"/>
+    <circle cx="215" cy="45" r="4" fill="#00c8ff" opacity=".7"/>
+    <line x1="78" y1="40" x2="162" y2="25" stroke="#C0870B" stroke-width="1" stroke-dasharray="4,3" opacity=".5"/>
+    <line x1="162" y1="25" x2="215" y2="45" stroke="#4ac98a" stroke-width="1" stroke-dasharray="4,3" opacity=".5"/>
+    <!-- info panel -->
+    <rect x="248" y="8" width="604" height="115" fill="rgba(0,0,0,.32)" rx="8"/>
+    <text x="550" y="30" text-anchor="middle" fill="rgba(255,255,255,.95)" font-size="13" font-family="Georgia,serif" font-weight="bold">国際金融都市・東京／大阪の挑戦</text>
+    <rect x="264" y="40" width="90" height="36" rx="5" fill="rgba(192,135,11,.2)" stroke="#C0870B" stroke-width="1"/>
+    <text x="309" y="54" text-anchor="middle" fill="#C0870B" font-size="8" font-family="sans-serif" font-weight="bold">海外金融機関誘致</text>
+    <text x="309" y="72" text-anchor="middle" fill="#C0870B" font-size="20" font-family="Georgia,serif" font-weight="bold">+48社</text>
+    <rect x="362" y="40" width="90" height="36" rx="5" fill="rgba(74,201,138,.14)" stroke="#4ac98a" stroke-width="1"/>
+    <text x="407" y="54" text-anchor="middle" fill="#4ac98a" font-size="8" font-family="sans-serif" font-weight="bold">運用資産流入</text>
+    <text x="407" y="72" text-anchor="middle" fill="#4ac98a" font-size="20" font-family="Georgia,serif" font-weight="bold">¥8.5兆</text>
+    <rect x="460" y="40" width="90" height="36" rx="5" fill="rgba(0,200,255,.1)" stroke="rgba(0,200,255,.45)" stroke-width="1"/>
+    <text x="505" y="54" text-anchor="middle" fill="#00c8ff" font-size="8" font-family="sans-serif" font-weight="bold">ファンドビザ発行</text>
+    <text x="505" y="72" text-anchor="middle" fill="#00c8ff" font-size="20" font-family="Georgia,serif" font-weight="bold">3,200件</text>
+    <rect x="558" y="40" width="90" height="36" rx="5" fill="rgba(192,135,11,.18)" stroke="#C0870B" stroke-width="1"/>
+    <text x="603" y="54" text-anchor="middle" fill="#C0870B" font-size="8" font-family="sans-serif" font-weight="bold">英語行政対応率</text>
+    <text x="603" y="72" text-anchor="middle" fill="#C0870B" font-size="20" font-family="Georgia,serif" font-weight="bold">92%</text>
+    <rect x="656" y="40" width="88" height="36" rx="5" fill="rgba(255,100,100,.1)" stroke="rgba(200,50,50,.4)" stroke-width="1"/>
+    <text x="700" y="54" text-anchor="middle" fill="#ff7a7a" font-size="8" font-family="sans-serif" font-weight="bold">税率格差(香港比)</text>
+    <text x="700" y="72" text-anchor="middle" fill="#ff7a7a" font-size="20" font-family="Georgia,serif" font-weight="bold">▲12pt</text>
+    <text x="550" y="95" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="8.5" font-family="sans-serif">🏛 FSA・JFSA英語対応完備 ／ GFCI東京ランキング 9位→5位に上昇</text>
+    <text x="550" y="110" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="8.5" font-family="sans-serif">🗼 大阪・関西万博後の金融特区構想が浮上 ／ 金融所得課税改革は2027年以降に先送り</text>
+  </svg>
+  <div class="tc-meta"><span class="tc-tag tag-j">J-05</span><span class="tc-theme-tag" style="background:#E0EEF8;color:#1A5F8A">国際金融</span></div>
+  <div class="tc-body">
+    <div class="tc-title">国際金融都市・東京／大阪の挑戦<br>アジア金融ハブを巡る競争</div>
+    <div class="tc-prose">海外金融機関の東京誘致が+48社（累計285社）に達し、GFCI（国際金融センター指数）で東京が9位から<strong>5位</strong>に上昇した。英語行政対応率92%・ファンドビザ3,200件発行・¥8.5兆の運用資産流入と指標は改善しているが、香港・シンガポールとの税率格差（▲12pt）が最大の弱点として残る。金融所得課税改革は政治的摩擦から2027年以降に先送りされており、「税制優遇なき金融ハブ」の限界を指摘する声もある。大阪・関西万博跡地を活用した「関西金融特区」構想が浮上しており、東京一極集中を避けた二極金融都市戦略が具体化しつつある。</div>
+    <div class="stat-row"><span class="stat-chip sc-sky">GFCI 9位→5位</span><span class="stat-chip sc-gold">資産流入 ¥8.5兆</span><span class="stat-chip sc-red">税率 香港比▲12pt</span></div>
+    <div class="analysis-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="analysis-cell"><div class="analysis-label">📌 なぜ今？</div><div class="analysis-body">香港の地政学リスク（中国リスク）と円安による参入コストの低下が重なり、アジアの資産運用拠点を移す機運が高まった。政府の「資産運用立国」宣言が官民の取り組みを加速させている。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">🏆 誰が動く？</div><div class="analysis-body">Goldman Sachs・UBS・BlackRockが東京オフィスを拡充。大和証券・野村が外資誘致の受け皿を整備。FSA（金融庁）が英語での業者登録・規制対応を大幅改善し、行政コストの引き下げを実現した。</div></div>
+      <div class="analysis-cell"><div class="analysis-label">⚠️ 何が壁？</div><div class="analysis-body">金融所得課税20%（シンガポール0%・香港0%と比較して圧倒的に高い）の改革が進まない限り、富裕層・ファンドマネージャーの居住先としての訴求力は限定的。高コストな生活費も課題。</div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+</main>
+<footer class="site-footer"><span class="footer-brand">TYLER MORNING BRIEF</span><span>Vol.058 ／ 2026年8月26日（水曜日）／ 世界5本 ＋ 日本5本</span></footer>
+</body>
+</html>
