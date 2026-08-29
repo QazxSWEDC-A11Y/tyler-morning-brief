@@ -801,5 +801,66 @@ document.querySelectorAll('.sidebar-toggle').forEach(function(btn) {
   });
 });
 </script>
+<script>
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var theme = params.get('theme');
+  if (!theme) return;
+
+  var kwMap = {
+    ai:    ['産業AI', 'マルチモーダルAI', 'ヘルスケアAI', 'AI $', 'AI国家', 'AI導入', 'DX', 'AlphaFold'],
+    wage:  ['賃金', '賃上げ', '実質賃金'],
+    space: ['宇宙'],
+    semi:  ['半導体', 'ラピダス', '2nm', 'nanosheet', 'TSMC']
+  };
+  var lbMap = {
+    ai: 'AI産業化', wage: '日本賃金革命', space: '宇宙経済', semi: '半導体競争'
+  };
+
+  var keywords = kwMap[theme] || [theme];
+  var label = lbMap[theme] || theme;
+
+  // フィルターバナーを recent-grid の直前に挿入
+  var grid = document.querySelector('.recent-grid');
+  if (grid) {
+    var banner = document.createElement('div');
+    banner.style.cssText = [
+      'background:rgba(26,95,138,.07)',
+      'border:1px solid rgba(26,95,138,.22)',
+      'border-left:3px solid #1A5F8A',
+      'padding:.55rem .9rem',
+      'margin-bottom:.85rem',
+      'display:flex',
+      'justify-content:space-between',
+      'align-items:center',
+      'font-size:.72rem',
+      'color:#0B1F35'
+    ].join(';');
+    banner.innerHTML = '🔍 テーマ「<strong style="color:#1A5F8A">' + label + '</strong>」を含む号を表示中'
+      + ' &nbsp;<a href="' + window.location.pathname + '" style="color:#7A7368;font-size:.62rem;text-decoration:none;border-bottom:1px solid currentColor">✕ 全号表示に戻る</a>';
+    grid.parentNode.insertBefore(banner, grid);
+  }
+
+  // vol-card をキーワードでフィルタ
+  var matched = 0;
+  document.querySelectorAll('.vol-card').forEach(function(card) {
+    var text = card.textContent;
+    var hit = keywords.some(function(kw) { return text.indexOf(kw) >= 0; });
+    if (hit) {
+      matched++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  // ヒットゼロのとき案内メッセージ
+  if (matched === 0 && grid) {
+    var msg = document.createElement('div');
+    msg.style.cssText = 'color:#7A7368;font-size:.75rem;padding:1.5rem 0;grid-column:1/-1;text-align:center';
+    msg.textContent = '「' + label + '」を扱った号はまだ登録されていません。';
+    grid.appendChild(msg);
+  }
+})();
+</script>
 </body>
 </html>
