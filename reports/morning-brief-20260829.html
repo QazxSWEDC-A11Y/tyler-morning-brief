@@ -71,17 +71,19 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);max-widt
   .topic-card.wide,.topic-card.lead{grid-column:1}
   .analysis-grid{grid-template-columns:1fr}
   .tc-anchor{flex-direction:column;gap:.2rem}
-  .tc-anchor-n{font-size:2rem}
+  .tc-anchor-n{font-size:1.7rem}
 }
 
 /* ── VISUAL ANCHOR ── */
 .tc-anchor{display:flex;align-items:baseline;gap:.55rem;padding:.55rem .85rem .48rem;background:rgba(11,31,53,.07);border-left:3px solid var(--gold);margin:.65rem 0 .55rem}
-.tc-anchor-n{font-family:var(--f-serif);font-size:2.5rem;font-weight:700;line-height:.9;color:var(--ink);letter-spacing:-.04em}
+.tc-anchor-n{font-family:var(--f-serif);font-size:2rem;font-weight:700;line-height:.9;color:var(--ink);letter-spacing:-.04em}
 .tc-anchor-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--caption);align-self:flex-end;padding-bottom:.12rem}
 
 /* ── SO WHAT ── */
-.so-what{margin-top:.75rem;padding:.5rem .75rem .46rem .85rem;border-left:2px solid var(--gold);background:rgba(192,135,11,.06);font-size:.73rem;line-height:1.62;color:var(--ink)}
-.so-what::before{content:"💡 あなたはどう動く";display:block;font-size:.68rem;font-weight:700;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin-bottom:.24rem}
+.so-what{margin-top:.75rem;padding:.5rem .75rem .46rem .85rem;border-left:2px solid var(--positive);background:rgba(26,122,94,.06);font-size:.73rem;line-height:1.62;color:var(--ink)}
+.topic-card.wide .so-what{columns:2;column-gap:1.8rem;border-left:none;border-top:2px solid var(--positive);padding:.6rem .85rem .52rem}
+.topic-card.wide .so-what::before{column-span:all;margin-bottom:.32rem}
+.so-what::before{content:"💡 あなたはどう動く";display:block;font-size:.68rem;font-weight:700;letter-spacing:.12em;color:var(--positive);text-transform:uppercase;margin-bottom:.24rem}
 </style>
 </head>
 <body>
@@ -612,7 +614,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);max-widt
   </div>
   <div style="font-size:.75rem;line-height:1.7;color:var(--ink);border-left:1px solid var(--rule);padding-left:1rem">
     <div style="font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--caption);margin-bottom:.35rem">バックナンバー</div>
-    Vol.001〜061 は<a href="../index.html" style="color:var(--navy);font-weight:700;">トップページ一覧</a>から全号閲覧できます。
+    Vol.001〜061 は<a href="../index.html" style="color:var(--navy);font-weight:700;padding:.1rem .3rem;background:rgba(30,58,95,.07);border-radius:2px;">トップページ一覧</a>から全号閲覧できます。
   </div>
   <div style="font-size:.75rem;line-height:1.7;color:var(--ink);border-left:1px solid var(--rule);padding-left:1rem">
     <div style="font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--caption);margin-bottom:.35rem">About</div>
