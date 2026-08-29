@@ -47,6 +47,9 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);max-widt
 .tc-title{font-family:var(--f-serif);font-size:1.08rem;font-weight:700;line-height:1.35;color:var(--ink)}
 .topic-card.lead .tc-title{font-size:1.28rem}
 .smb-badge{display:inline-flex;align-items:center;gap:.3rem;background:var(--gold);color:#fff;font-size:.54rem;font-weight:700;letter-spacing:.08em;padding:.18rem .52rem;margin-top:.35rem}
+.topic-card.featured{border-top:3px solid var(--sky)}
+.topic-card.featured .tc-header{background:linear-gradient(135deg,#E2ECF4 0%,#D0E2EF 100%)}
+.focus-badge{display:inline-flex;align-items:center;gap:.3rem;background:var(--sky);color:#fff;font-size:.54rem;font-weight:700;letter-spacing:.08em;padding:.18rem .52rem;margin-top:.35rem}
 .lead-visual{width:100%;background:var(--ink);overflow:hidden;line-height:0}
 .lead-visual svg{width:100%;height:auto;display:block}
 .tc-body{padding:.8rem .95rem;flex:1;display:flex;flex-direction:column;gap:.55rem}
@@ -229,10 +232,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);max-widt
   </div>
 
   <!-- W-02 -->
-  <div class="topic-card">
+  <div class="topic-card featured">
     <div class="tc-header">
       <span class="tc-kicker">W-02 ／ テクノロジー・産業AI</span>
       <h2 class="tc-title">マルチモーダルAI産業実装 — 工場・病院・建設現場へ $95B</h2>
+      <span class="focus-badge">◆ 今日の注目</span>
     </div>
     <div class="tc-body">
       <div class="tc-stat-row">
@@ -384,10 +388,63 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);max-widt
 
 <div class="topic-grid japan-grid">
 
-  <!-- J-01 -->
-  <div class="topic-card">
+  <!-- J-01 LEAD -->
+  <div class="topic-card lead">
+    <div class="lead-visual">
+      <svg viewBox="0 0 980 220" xmlns="http://www.w3.org/2000/svg">
+        <rect width="980" height="220" fill="#0B1F35"/>
+        <!-- LEFT: Bar chart panel -->
+        <rect x="28" y="15" width="320" height="185" fill="rgba(11,31,53,.75)" rx="4" stroke="rgba(192,135,11,.2)" stroke-width="1"/>
+        <text x="42" y="33" fill="rgba(192,135,11,.9)" font-size="8.5" font-family="Georgia" font-weight="bold" letter-spacing="1">実質賃金 前年比推移（%）</text>
+        <!-- Zero axis -->
+        <line x1="62" y1="135" x2="326" y2="135" stroke="rgba(248,245,239,.2)" stroke-width="1"/>
+        <text x="33" y="139" fill="rgba(248,245,239,.25)" font-size="6.5">0%</text>
+        <!-- 2022: -0.9% negative bar (DOWN from zero) -->
+        <rect x="72" y="135" width="24" height="36" fill="#B85C00" rx="1" opacity=".75"/>
+        <text x="74" y="150" fill="rgba(248,245,239,.82)" font-size="6.5" font-weight="bold">-0.9</text>
+        <text x="73" y="192" fill="rgba(248,245,239,.45)" font-size="6.5">2022</text>
+        <!-- 2023: -1.2% -->
+        <rect x="112" y="135" width="24" height="48" fill="#B85C00" rx="1" opacity=".82"/>
+        <text x="114" y="158" fill="rgba(248,245,239,.82)" font-size="6.5" font-weight="bold">-1.2</text>
+        <text x="113" y="192" fill="rgba(248,245,239,.45)" font-size="6.5">2023</text>
+        <!-- 2024: +0.3% positive bar (UP from zero) -->
+        <rect x="152" y="123" width="24" height="12" fill="#1A7A5E" rx="1" opacity=".75"/>
+        <text x="153" y="118" fill="#1A7A5E" font-size="6.5">+0.3</text>
+        <text x="153" y="192" fill="rgba(248,245,239,.45)" font-size="6.5">2024</text>
+        <!-- 2025: +0.8% -->
+        <rect x="192" y="103" width="24" height="32" fill="#1A7A5E" rx="1" opacity=".82"/>
+        <text x="193" y="98" fill="#1A7A5E" font-size="6.5">+0.8</text>
+        <text x="193" y="192" fill="rgba(248,245,239,.45)" font-size="6.5">2025</text>
+        <!-- 2026: +1.8% highlighted with gold outline -->
+        <rect x="232" y="63" width="24" height="72" fill="#1A7A5E" rx="1" opacity=".92" stroke="#C0870B" stroke-width="1.5"/>
+        <text x="234" y="82" fill="#F8F5EF" font-size="8" font-weight="bold">+1.8%</text>
+        <text x="234" y="98" fill="#C0870B" font-size="6.5" font-weight="bold">3ヶ月連続↑</text>
+        <text x="233" y="192" fill="rgba(248,245,239,.65)" font-size="6.5" font-weight="bold">2026</text>
+        <!-- RIGHT: Stats panel -->
+        <rect x="368" y="18" width="580" height="168" fill="rgba(11,31,53,.82)" rx="5" stroke="rgba(192,135,11,.3)" stroke-width="1.5"/>
+        <text x="386" y="38" fill="#C0870B" font-size="9" font-family="Georgia" font-weight="bold" letter-spacing="1.5">WAGE REVIVAL 2026  ／  33年ぶり賃金好循環</text>
+        <line x1="386" y1="46" x2="928" y2="46" stroke="rgba(192,135,11,.2)" stroke-width="1"/>
+        <!-- Row 1 -->
+        <text x="386" y="64" fill="rgba(248,245,239,.5)" font-size="8">実質賃金（前年比）</text>
+        <text x="386" y="90" fill="#F8F5EF" font-size="26" font-weight="bold" font-family="Georgia">+1.8%</text>
+        <text x="596" y="64" fill="rgba(248,245,239,.5)" font-size="8">個人消費（前年比）</text>
+        <text x="596" y="90" fill="#1A7A5E" font-size="26" font-weight="bold" font-family="Georgia">+2.8%</text>
+        <text x="796" y="64" fill="rgba(248,245,239,.5)" font-size="8">春闘賃上げ率</text>
+        <text x="796" y="90" fill="#C0870B" font-size="26" font-weight="bold" font-family="Georgia">+5.1%</text>
+        <line x1="386" y1="100" x2="928" y2="100" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
+        <!-- Row 2 -->
+        <text x="386" y="118" fill="rgba(248,245,239,.5)" font-size="8">消費者物価（CPI）</text>
+        <text x="386" y="140" fill="rgba(248,245,239,.8)" font-size="22" font-weight="bold" font-family="Georgia">2.3%</text>
+        <text x="596" y="118" fill="rgba(248,245,239,.5)" font-size="8">百貨店高額品売上</text>
+        <text x="596" y="140" fill="#1A7A5E" font-size="22" font-weight="bold" font-family="Georgia">+35%</text>
+        <text x="796" y="118" fill="rgba(248,245,239,.5)" font-size="8">最低賃金（全国平均）</text>
+        <text x="796" y="140" fill="rgba(248,245,239,.75)" font-size="22" font-weight="bold" font-family="Georgia">¥1,172</text>
+        <line x1="386" y1="150" x2="928" y2="150" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
+        <text x="386" y="162" fill="rgba(248,245,239,.38)" font-size="7.5">※ 厚生労働省 毎月勤労統計調査（2026年6月）／ 春闘33年ぶり高水準 ／ 個人消費2000年代以来最高水準</text>
+      </svg>
+    </div>
     <div class="tc-header">
-      <span class="tc-kicker">J-01 ／ マクロ経済・消費</span>
+      <span class="tc-kicker lk">J-01 ／ LEAD ／ マクロ経済・消費</span>
       <h2 class="tc-title">実質賃金3ヶ月連続プラス — デフレ脱却・消費好循環の臨界点</h2>
     </div>
     <div class="tc-body">
@@ -457,10 +514,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);max-widt
   </div>
 
   <!-- J-03 -->
-  <div class="topic-card">
+  <div class="topic-card featured">
     <div class="tc-header">
       <span class="tc-kicker">J-03 ／ 半導体・産業政策</span>
       <h2 class="tc-title">ラピダス2nm試作ライン稼働 — 国産半導体¥3.3兆投資の現在地と2028年量産への3つの壁</h2>
+      <span class="focus-badge">◆ 今日の注目</span>
     </div>
     <div class="tc-body">
       <div class="tc-stat-row">
