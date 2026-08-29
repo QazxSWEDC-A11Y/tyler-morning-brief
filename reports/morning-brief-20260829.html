@@ -8,6 +8,7 @@
 :root{
   --ink:#0B1F35;--paper:#F8F5EF;--gold:#C0870B;--navy:#1E3A5F;
   --jade:#1A7A5E;--sky:#1A5F8A;--muted:#EBE8E2;--rule:#D6D0C8;--caption:#7A7368;
+  --positive:#1A7A5E;--negative:#B85C00;
   --f-serif:Georgia,"Times New Roman","Hiragino Mincho ProN","MS Mincho",serif;
   --f-sans:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Meiryo",system-ui,sans-serif;
 }
@@ -25,17 +26,17 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);max-widt
 .sd-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;background:var(--ink);color:var(--paper);padding:.28rem .75rem;white-space:nowrap}
 .sd-line{flex:1;height:1px;background:var(--rule)}
 .sd-count{font-size:.6rem;color:var(--caption);letter-spacing:.08em;white-space:nowrap}
-.topic-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.topic-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
 .japan-grid{grid-template-columns:repeat(2,1fr)}
-.topic-card{background:#fff;border:1px solid var(--rule);display:flex;flex-direction:column;overflow:hidden}
+.topic-card{background:#fff;border:1px solid var(--rule);display:flex;flex-direction:column;overflow:hidden;box-shadow:0 2px 8px rgba(11,31,53,.08)}
 .topic-card.smb{border-top:3px solid var(--gold)}
 .topic-card.wide{grid-column:1/-1}
 .topic-card.lead{grid-column:1/-1}
-.tc-header{padding:.72rem .95rem .58rem;border-bottom:1px solid var(--rule);background:linear-gradient(135deg,#F8F5EF 0%,#EBE8E2 100%)}
-.tc-kicker{font-size:.56rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--gold);display:block;margin-bottom:.26rem}
+.tc-header{padding:.75rem .95rem .62rem;border-bottom:1px solid var(--rule);background:linear-gradient(135deg,#EBE8E2 0%,#D8D3CB 100%)}
+.tc-kicker{font-size:.64rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--navy);display:block;margin-bottom:.28rem}
 .tc-kicker.lk{color:var(--navy)}
-.tc-title{font-family:var(--f-serif);font-size:.95rem;font-weight:700;line-height:1.35;color:var(--ink)}
-.topic-card.lead .tc-title{font-size:1.06rem}
+.tc-title{font-family:var(--f-serif);font-size:1.08rem;font-weight:700;line-height:1.35;color:var(--ink)}
+.topic-card.lead .tc-title{font-size:1.28rem}
 .smb-badge{display:inline-flex;align-items:center;gap:.3rem;background:var(--gold);color:#fff;font-size:.54rem;font-weight:700;letter-spacing:.08em;padding:.18rem .52rem;margin-top:.35rem}
 .lead-visual{width:100%;background:var(--ink);overflow:hidden;line-height:0}
 .lead-visual svg{width:100%;height:auto;display:block}
@@ -178,8 +179,6 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);max-widt
       <h2 class="tc-title">ジャクソンホール2026 — パウエル「新均衡」宣言、9月利下げへのカウントダウンと円高リスク</h2>
     </div>
     <div class="tc-body">
-      <p class="tc-prose">毎年8月下旬、ワイオミング州ジャクソンホールに世界の中央銀行総裁・首席エコノミストが集結するカンザスシティ連銀主催シンポジウムは、金融政策の転換点を予告する場として機能してきた。2026年大会（8月28〜30日）では、ジェローム・パウエルFRB（米連邦準備制度理事会）議長が「インフレは完全に制御下に置かれ、米国経済は新たな均衡点に到達した」と宣言。<strong>9月FOMCでの0.25pt利下げ（FFR〔連邦資金金利〕4.50%→4.25%）はほぼ確実視され、市場は2027年末までに追加3回の利下げを織り込んだ。</strong></p>
-      <p class="tc-prose">ドル円は一時¥140.20まで円高が進行し、輸出企業の業績見通し修正が相次いでいる。一方、日銀の植田総裁は「日本はむしろ利上げ局面」との見解を維持し、日米金利差の縮小が円キャリートレード（低金利の円を借りて高金利通貨で運用する取引）の巻き戻しを加速させる可能性に市場は神経をとがらせる。<strong>ECB（欧州中央銀行）・BOE（英国中央銀行）も協調利下げ姿勢を示しており、2026年秋から2027年にかけてのグローバル金融緩和サイクルが本格始動する見通しだ。</strong></p>
       <div class="tc-stat-row">
         <span class="tc-stat">9月利下げ確率 <strong>92%</strong></span>
         <span class="tc-stat">FFR <strong>4.50%→4.25%</strong></span>
@@ -187,6 +186,8 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);max-widt
         <span class="tc-stat">日米金利差 <strong>▲2.75pt</strong></span>
         <span class="tc-stat">2027年末 追加利下げ <strong>3回織り込み</strong></span>
       </div>
+      <p class="tc-prose">毎年8月下旬、ワイオミング州ジャクソンホールに世界の中央銀行総裁・首席エコノミストが集結するカンザスシティ連銀主催シンポジウムは、金融政策の転換点を予告する場として機能してきた。2026年大会（8月28〜30日）では、ジェローム・パウエルFRB（米連邦準備制度理事会）議長が「インフレは完全に制御下に置かれ、米国経済は新たな均衡点に到達した」と宣言。<strong>9月FOMCでの0.25pt利下げ（FFR〔連邦資金金利〕4.50%→4.25%）はほぼ確実視され、市場は2027年末までに追加3回の利下げを織り込んだ。</strong></p>
+      <p class="tc-prose">ドル円は一時¥140.20まで円高が進行し、輸出企業の業績見通し修正が相次いでいる。一方、日銀の植田総裁は「日本はむしろ利上げ局面」との見解を維持し、日米金利差の縮小が円キャリートレード（低金利の円を借りて高金利通貨で運用する取引）の巻き戻しを加速させる可能性に市場は神経をとがらせる。<strong>ECB（欧州中央銀行）・BOE（英国中央銀行）も協調利下げ姿勢を示しており、2026年秋から2027年にかけてのグローバル金融緩和サイクルが本格始動する見通しだ。</strong></p>
       <div class="analysis-grid">
         <div class="analysis-cell">
           <span class="analysis-label">📌 なぜ今？（急浮上した理由）</span>
@@ -211,13 +212,13 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);max-widt
       <h2 class="tc-title">マルチモーダルAI産業実装 — 工場・病院・建設現場へ $95B</h2>
     </div>
     <div class="tc-body">
-      <p class="tc-prose">テキスト生成から始まったAI革命は今、製造ライン・手術室・建設現場に物理的に侵入している。NVIDIAのIndustrial AI Platform、GoogleのGemini Industrial、Anthropicのマルチモーダルエージェントが、カメラ映像・センサーデータ・図面を同時に処理して「目で見て判断する」AIとして機能する。<strong>自動車メーカーの塗装品質検査（不良率▲72%）、放射線科における画像読影補助（診断精度+38%）、建設現場の安全監視（事故▲55%）など実装事例が急増。</strong>産業AI市場は2026年時点で$95B（約¥13兆）、2030年には$380B（約¥53兆）に達する見込みだ。日本ではキーエンス・安川電機・富士通が産業AIプラットフォームの国内展開を加速させている。</p>
       <div class="tc-stat-row">
         <span class="tc-stat">市場規模 <strong>$95B</strong></span>
         <span class="tc-stat">製造不良率 <strong>▲72%</strong></span>
         <span class="tc-stat">診断精度 <strong>+38%</strong></span>
         <span class="tc-stat">建設事故 <strong>▲55%</strong></span>
       </div>
+      <p class="tc-prose">テキスト生成から始まったAI革命は今、製造ライン・手術室・建設現場に物理的に侵入している。NVIDIAのIndustrial AI Platform、GoogleのGemini Industrial、Anthropicのマルチモーダルエージェントが、カメラ映像・センサーデータ・図面を同時に処理して「目で見て判断する」AIとして機能する。<strong>自動車メーカーの塗装品質検査（不良率▲72%）、放射線科における画像読影補助（診断精度+38%）、建設現場の安全監視（事故▲55%）など実装事例が急増。</strong>産業AI市場は2026年時点で$95B（約¥13兆）、2030年には$380B（約¥53兆）に達する見込みだ。日本ではキーエンス・安川電機・富士通が産業AIプラットフォームの国内展開を加速させている。</p>
       <div class="analysis-grid">
         <div class="analysis-cell">
           <span class="analysis-label">📌 なぜ今？</span>
@@ -242,13 +243,13 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);max-widt
       <h2 class="tc-title">インドネシア資源包囲網 — ニッケル・レアアース戦略とEV電池再編</h2>
     </div>
     <div class="tc-body">
-      <p class="tc-prose">世界のニッケル埋蔵量22%を誇るインドネシアのプラボウォ政権が、EV電池サプライチェーンを巡る資源外交を加速させている。国内精製義務化（HPAL技術：高圧酸浸出法、ニッケルを電池材料グレードに精製する工程）の延長に加え、コバルト・マンガン・レアアースへと輸出制限品目を拡大。中国系企業が同国内の精製施設投資（$12B超、約¥1.7兆）を急速に進める一方、日本・韓国・EUはニッケル調達多角化（フィリピン・カナダ・豪州）に追われる。<strong>EV普及のボトルネックは「電池」から「電池材料」に移行しており、2030年EV1億台体制実現の鍵はインドネシアが握る。</strong>住友金属鉱山・三菱マテリアルが現地調達に注力している。</p>
       <div class="tc-stat-row">
         <span class="tc-stat">ニッケル埋蔵量 <strong>世界22%</strong></span>
         <span class="tc-stat">HPAL施設 <strong>28か所</strong></span>
         <span class="tc-stat">日本依存度 <strong>38%</strong></span>
         <span class="tc-stat">中国現地投資 <strong>$12B超</strong></span>
       </div>
+      <p class="tc-prose">世界のニッケル埋蔵量22%を誇るインドネシアのプラボウォ政権が、EV電池サプライチェーンを巡る資源外交を加速させている。国内精製義務化（HPAL技術：高圧酸浸出法、ニッケルを電池材料グレードに精製する工程）の延長に加え、コバルト・マンガン・レアアースへと輸出制限品目を拡大。中国系企業が同国内の精製施設投資（$12B超、約¥1.7兆）を急速に進める一方、日本・韓国・EUはニッケル調達多角化（フィリピン・カナダ・豪州）に追われる。<strong>EV普及のボトルネックは「電池」から「電池材料」に移行しており、2030年EV1億台体制実現の鍵はインドネシアが握る。</strong>住友金属鉱山・三菱マテリアルが現地調達に注力している。</p>
       <div class="analysis-grid">
         <div class="analysis-cell">
           <span class="analysis-label">📌 なぜ今？</span>
@@ -274,13 +275,13 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);max-widt
       <span class="smb-badge">◎ 中小企業</span>
     </div>
     <div class="tc-body">
-      <p class="tc-prose">生成AIを業務導入した中小企業の45%がセキュリティインシデントを経験している（IPA調査2026）。最大リスクはプロンプトインジェクション攻撃（外部の悪意あるテキストがAIを操作して情報を漏洩させる手法）と、従業員が無意識に顧客情報・社外秘をChatGPTなどに貼り付けるデータ漏洩だ。<strong>対策は①企業専用プライベートAI環境（Azure OpenAI Service等）、②AIポリシーの明文化（どのデータをAIに入力してよいか）、③従業員研修の3本柱。</strong>月額¥3,000〜から始められるMicrosoft Copilot for Business with Data Boundaryが中小向けに注目される。2026年改正不正競争防止法でAI経由の情報漏洩も規制対象となった。</p>
       <div class="tc-stat-row">
         <span class="tc-stat">インシデント率 <strong>45%</strong></span>
         <span class="tc-stat">平均被害額 <strong>¥380万</strong></span>
         <span class="tc-stat">研修実施率 <strong>28%</strong></span>
         <span class="tc-stat">Azure OpenAI <strong>¥3,000/月〜</strong></span>
       </div>
+      <p class="tc-prose">生成AIを業務導入した中小企業の45%がセキュリティインシデントを経験している（IPA調査2026）。最大リスクはプロンプトインジェクション攻撃（外部の悪意あるテキストがAIを操作して情報を漏洩させる手法）と、従業員が無意識に顧客情報・社外秘をChatGPTなどに貼り付けるデータ漏洩だ。<strong>対策は①企業専用プライベートAI環境（Azure OpenAI Service等）、②AIポリシーの明文化（どのデータをAIに入力してよいか）、③従業員研修の3本柱。</strong>月額¥3,000〜から始められるMicrosoft Copilot for Business with Data Boundaryが中小向けに注目される。2026年改正不正競争防止法でAI経由の情報漏洩も規制対象となった。</p>
       <div class="analysis-grid">
         <div class="analysis-cell">
           <span class="analysis-label">📌 なぜ今？</span>
@@ -305,13 +306,13 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);max-widt
       <h2 class="tc-title">民間宇宙インフラ商業化 — Starship・宇宙データセンター・2040年市場$1.8兆</h2>
     </div>
     <div class="tc-body">
-      <p class="tc-prose">SpaceXのStarship完全再使用打上げ成功（2026年3月、ペイロード150t）が商業宇宙経済に新章を開いた。<strong>衛星打上げコストは2020年比▲85%、低軌道（LEO：高度200〜2,000km）のデータ中継・地球観測・精密測位が月額数千円で利用可能になりつつある。</strong>さらにMicrosoft・Amazonが低軌道データセンター構想（熱問題回避・量子通信利用）を具体化。日本でもJAXA・スカパーJSAT・三菱電機が国産衛星通信網の整備を急ぐ。Starlinkは8,000基超のネットワークで全球カバーを達成し、航空・海事・農業DXの通信インフラとして普及が加速している。</p>
       <div class="tc-stat-row">
         <span class="tc-stat">Starshipペイロード <strong>150t</strong></span>
         <span class="tc-stat">打上コスト <strong>▲85%</strong></span>
         <span class="tc-stat">市場規模2040 <strong>$1.8兆</strong></span>
         <span class="tc-stat">Starlink衛星 <strong>8,000基超</strong></span>
       </div>
+      <p class="tc-prose">SpaceXのStarship完全再使用打上げ成功（2026年3月、ペイロード150t）が商業宇宙経済に新章を開いた。<strong>衛星打上げコストは2020年比▲85%、低軌道（LEO：高度200〜2,000km）のデータ中継・地球観測・精密測位が月額数千円で利用可能になりつつある。</strong>さらにMicrosoft・Amazonが低軌道データセンター構想（熱問題回避・量子通信利用）を具体化。日本でもJAXA・スカパーJSAT・三菱電機が国産衛星通信網の整備を急ぐ。Starlinkは8,000基超のネットワークで全球カバーを達成し、航空・海事・農業DXの通信インフラとして普及が加速している。</p>
       <div class="analysis-grid">
         <div class="analysis-cell">
           <span class="analysis-label">📌 なぜ今？</span>
@@ -347,13 +348,13 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);max-widt
       <h2 class="tc-title">実質賃金3ヶ月連続プラス — デフレ脱却・消費好循環の臨界点</h2>
     </div>
     <div class="tc-body">
-      <p class="tc-prose">厚生労働省が発表した6月の毎月勤労統計調査では、実質賃金が前年比+1.8%と3ヶ月連続のプラスを記録した。春闘+5.1%（33年ぶり高水準）が中小企業にも波及し、最低賃金¥1,172への引き上げ効果も加わる。<strong>消費者物価指数（CPI：物価の変動を示す指標）が2.3%で安定するなか、名目賃金の伸びが物価上昇を上回る構造が定着しつつある。</strong>個人消費は前年比+2.8%と2000年代以来最高水準。家電・外食・旅行の「三大消費」が回復し、百貨店の高額品売上は+35%を記録した。植田日銀が「30年のデフレ克服」を公言できる水準に近づいている一方、ジャクソンホール利下げによる円高進行が輸出企業収益に影を落とし始めている。</p>
       <div class="tc-stat-row">
         <span class="tc-stat">実質賃金 <strong>+1.8%</strong></span>
         <span class="tc-stat">個人消費 <strong>+2.8%</strong></span>
         <span class="tc-stat">CPI <strong>2.3%</strong></span>
         <span class="tc-stat">百貨店高額品 <strong>+35%</strong></span>
       </div>
+      <p class="tc-prose">厚生労働省が発表した6月の毎月勤労統計調査では、実質賃金が前年比+1.8%と3ヶ月連続のプラスを記録した。春闘+5.1%（33年ぶり高水準）が中小企業にも波及し、最低賃金¥1,172への引き上げ効果も加わる。<strong>消費者物価指数（CPI：物価の変動を示す指標）が2.3%で安定するなか、名目賃金の伸びが物価上昇を上回る構造が定着しつつある。</strong>個人消費は前年比+2.8%と2000年代以来最高水準。家電・外食・旅行の「三大消費」が回復し、百貨店の高額品売上は+35%を記録した。植田日銀が「30年のデフレ克服」を公言できる水準に近づいている一方、ジャクソンホール利下げによる円高進行が輸出企業収益に影を落とし始めている。</p>
       <div class="analysis-grid">
         <div class="analysis-cell">
           <span class="analysis-label">📌 なぜ今？</span>
@@ -378,13 +379,13 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);max-widt
       <h2 class="tc-title">大阪・関西万博2026 — 入場者1,600万人突破・後半戦の課題と遺産</h2>
     </div>
     <div class="tc-body">
-      <p class="tc-prose">2025年4月に開幕した大阪・関西万博は開幕から16ヶ月を経て、累計入場者数が1,600万人を突破（目標2,820万人）。アジア各国パビリオンの充実・夢洲会場の交通アクセス改善・デジタルチケットの普及（発券率78%）が来場者増に貢献した。<strong>経済波及効果は当初予測¥2兆を上回る¥2.8兆に上方修正。</strong>一方で夏の酷暑（最高気温39℃）によるヒートショック対策コスト・建設残業問題・外国人対応スタッフ不足が課題として残る。2027年3月の閉幕後、夢洲はIR（統合型リゾート）開業に向けた次フェーズへと移行する予定だ。</p>
       <div class="tc-stat-row">
         <span class="tc-stat">入場者数 <strong>1,600万人</strong></span>
         <span class="tc-stat">経済効果 <strong>¥2.8兆</strong></span>
         <span class="tc-stat">デジタル発券 <strong>78%</strong></span>
         <span class="tc-stat">IR開業目標 <strong>2029年</strong></span>
       </div>
+      <p class="tc-prose">2025年4月に開幕した大阪・関西万博は開幕から16ヶ月を経て、累計入場者数が1,600万人を突破（目標2,820万人）。アジア各国パビリオンの充実・夢洲会場の交通アクセス改善・デジタルチケットの普及（発券率78%）が来場者増に貢献した。<strong>経済波及効果は当初予測¥2兆を上回る¥2.8兆に上方修正。</strong>一方で夏の酷暑（最高気温39℃）によるヒートショック対策コスト・建設残業問題・外国人対応スタッフ不足が課題として残る。2027年3月の閉幕後、夢洲はIR（統合型リゾート）開業に向けた次フェーズへと移行する予定だ。</p>
       <div class="analysis-grid">
         <div class="analysis-cell">
           <span class="analysis-label">📌 なぜ今？</span>
@@ -409,13 +410,13 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);max-widt
       <h2 class="tc-title">ラピダス2nm試作ライン稼働 — 国産半導体¥3.3兆投資の現在地と2028年量産への3つの壁</h2>
     </div>
     <div class="tc-body">
-      <p class="tc-prose">日本政府が¥3.3兆を投じる次世代半導体プロジェクト「ラピダス」の千歳工場試作ラインが2026年8月に本格稼働を開始した。IBMのnanosheet技術（トランジスタをシート状に積層する最先端の微細化技術）を移転し、2nm世代のトランジスタ形成に成功。2028年の量産開始に向け、EUV（極端紫外線）リソグラフィ装置（ASML製、1台約¥500億）3台が追加搬入される予定だ。<strong>ただし量産には国内エンジニア確保（必要人材3,500人・現状1,200人）、材料・ガス・部品サプライヤーの北海道集積、歩留まり向上という3つの壁がある。</strong>経済産業省は「半導体人材育成¥500億」補正予算を計上し、海外エンジニア招聘・道内高専への寄付講座設置を急ぐ。</p>
       <div class="tc-stat-row">
         <span class="tc-stat">国家投資 <strong>¥3.3兆</strong></span>
         <span class="tc-stat">必要人材 <strong>3,500人（現1,200人）</strong></span>
         <span class="tc-stat">追加EUV <strong>3台</strong></span>
         <span class="tc-stat">歩留まり目標 <strong>85%</strong></span>
       </div>
+      <p class="tc-prose">日本政府が¥3.3兆を投じる次世代半導体プロジェクト「ラピダス」の千歳工場試作ラインが2026年8月に本格稼働を開始した。IBMのnanosheet技術（トランジスタをシート状に積層する最先端の微細化技術）を移転し、2nm世代のトランジスタ形成に成功。2028年の量産開始に向け、EUV（極端紫外線）リソグラフィ装置（ASML製、1台約¥500億）3台が追加搬入される予定だ。<strong>ただし量産には国内エンジニア確保（必要人材3,500人・現状1,200人）、材料・ガス・部品サプライヤーの北海道集積、歩留まり向上という3つの壁がある。</strong>経済産業省は「半導体人材育成¥500億」補正予算を計上し、海外エンジニア招聘・道内高専への寄付講座設置を急ぐ。</p>
       <div class="analysis-grid">
         <div class="analysis-cell">
           <span class="analysis-label">📌 なぜ今？</span>
@@ -441,13 +442,13 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);max-widt
       <span class="smb-badge">◎ 中小企業</span>
     </div>
     <div class="tc-body">
-      <p class="tc-prose">10月1日からの最低賃金改定（全国加重平均¥1,172）と年末商戦に向けたQ4準備が中小企業経営者の最優先課題だ。<strong>人件費の増加（月次で平均¥45万〜¥120万の追加負担）を価格転嫁できるかが収益を左右する。</strong>価格改定は「9月末告知・10月1日施行」のタイミングが業界標準となりつつあり、原価計算の精緻化と顧客への丁寧な説明が鍵となる。在庫管理では、クリスマス・年末需要の先行発注（製造リードタイム延長を考慮）が必要。AIを使った需要予測ツール（月¥3万〜）の導入が廃棄コスト▲25%の効果を生む事例が増えている。</p>
       <div class="tc-stat-row">
         <span class="tc-stat">最低賃金 <strong>¥1,172</strong></span>
         <span class="tc-stat">人件費増 <strong>¥45万〜120万/月</strong></span>
         <span class="tc-stat">価格転嫁率 <strong>62%</strong></span>
         <span class="tc-stat">AI需要予測 廃棄 <strong>▲25%</strong></span>
       </div>
+      <p class="tc-prose">10月1日からの最低賃金改定（全国加重平均¥1,172）と年末商戦に向けたQ4準備が中小企業経営者の最優先課題だ。<strong>人件費の増加（月次で平均¥45万〜¥120万の追加負担）を価格転嫁できるかが収益を左右する。</strong>価格改定は「9月末告知・10月1日施行」のタイミングが業界標準となりつつあり、原価計算の精緻化と顧客への丁寧な説明が鍵となる。在庫管理では、クリスマス・年末需要の先行発注（製造リードタイム延長を考慮）が必要。AIを使った需要予測ツール（月¥3万〜）の導入が廃棄コスト▲25%の効果を生む事例が増えている。</p>
       <div class="analysis-grid">
         <div class="analysis-cell">
           <span class="analysis-label">📌 なぜ今？</span>
@@ -474,14 +475,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);max-widt
     <div class="tc-body" style="display:flex;flex-direction:column;gap:.8rem">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem">
         <div>
-          <p class="tc-prose">厚生労働省が発表した2026年上半期の人口動態統計は、日本の社会構造転換を鮮明に示す。出生数は通年で68万人（過去最少更新・前年比▲3.2%）が見込まれる一方、外国人人口は339万人（前年比+18万人）と過去最高を更新した。育成就労制度（2024年新設）の本格稼働でベトナム・インドネシア・ネパール・インドからの労働者が急増し、建設・介護・農業・食品加工の「4大人手不足産業」の担い手となっている。</p>
-          <p class="tc-prose" style="margin-top:.55rem">「外国人との共生」インフラ（多言語行政・医療通訳・子弟教育）への投資は遅れており、地域社会での摩擦事例も報告される。<strong>少子化対策の「こども未来戦略」（¥3.6兆/年）の効果は2030年代まで出生数に反映されない見込みで、日本の労働力確保は「外国人共生」なくして成立しない段階に入った。</strong></p>
-          <div class="tc-stat-row" style="margin-top:.55rem">
+          <div class="tc-stat-row" style="margin-bottom:.55rem">
             <span class="tc-stat">出生数 <strong>68万人</strong></span>
             <span class="tc-stat">外国人人口 <strong>339万人</strong></span>
             <span class="tc-stat">育成就労増加 <strong>+22万人</strong></span>
             <span class="tc-stat">少子化対策 <strong>¥3.6兆/年</strong></span>
           </div>
+          <p class="tc-prose">厚生労働省が発表した2026年上半期の人口動態統計は、日本の社会構造転換を鮮明に示す。出生数は通年で68万人（過去最少更新・前年比▲3.2%）が見込まれる一方、外国人人口は339万人（前年比+18万人）と過去最高を更新した。育成就労制度（2024年新設）の本格稼働でベトナム・インドネシア・ネパール・インドからの労働者が急増し、建設・介護・農業・食品加工の「4大人手不足産業」の担い手となっている。</p>
+          <p class="tc-prose" style="margin-top:.55rem">「外国人との共生」インフラ（多言語行政・医療通訳・子弟教育）への投資は遅れており、地域社会での摩擦事例も報告される。<strong>少子化対策の「こども未来戦略」（¥3.6兆/年）の効果は2030年代まで出生数に反映されない見込みで、日本の労働力確保は「外国人共生」なくして成立しない段階に入った。</strong></p>
         </div>
         <div>
           <!-- Wide card SVG: population visualization -->
@@ -542,10 +543,34 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);max-widt
 
 </div><!-- /japan-grid -->
 
+<div style="border-top:2px solid var(--ink);margin-top:2.5rem;padding:1.25rem 0 .75rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem">
+  <div style="font-size:.75rem;line-height:1.7;color:var(--ink)">
+    <div style="font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--caption);margin-bottom:.35rem">次号予告</div>
+    Vol.062（月曜日）は月初経済指標ウィーク。米国雇用統計・日本PMI・ECB発言を一挙解説予定。
+  </div>
+  <div style="font-size:.75rem;line-height:1.7;color:var(--ink);border-left:1px solid var(--rule);padding-left:1rem">
+    <div style="font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--caption);margin-bottom:.35rem">バックナンバー</div>
+    Vol.001〜061 は<a href="../index.html" style="color:var(--navy);font-weight:700;">トップページ一覧</a>から全号閲覧できます。
+  </div>
+  <div style="font-size:.75rem;line-height:1.7;color:var(--ink);border-left:1px solid var(--rule);padding-left:1rem">
+    <div style="font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--caption);margin-bottom:.35rem">About</div>
+    本レポートは多角並列リサーチ＋ファクトチェック済み。◎ = 中小企業向けトピック。毎朝定期発行。
+  </div>
+</div>
 <footer class="brief-footer">
   <div>TYLER MORNING BRIEF Vol.061 ／ 2026年8月29日（土）／ 世界5本＋日本5本</div>
-  <div>本レポートは多角並列リサーチ＋ファクトチェック済み ／ ◎ = 中小企業向けトピック</div>
+  <div>© 2026 TYLER — All research multi-sourced and fact-checked</div>
 </footer>
 
+<script>
+document.querySelectorAll('.tc-stat strong').forEach(function(el) {
+  var t = el.textContent.trim();
+  if (/^[▲▼-]/.test(t)) {
+    el.style.color = '#B85C00';
+  } else if (/^\+/.test(t)) {
+    el.style.color = '#1A7A5E';
+  }
+});
+</script>
 </body>
 </html>
