@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>TYLER Vol.092</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap">
+<style>
+/* ── Design tokens ── */
+:root {
+  --ink: #0B1F35;
+  --paper: #F8F5EF;
+  --gold: #C0870B;
+  --navy: #1E3A5F;
+  --jade: #1A7A5E;
+  --sky: #1A5F8A;
+  --positive: #1A7A5E;
+  --negative: #B85C00;
+  --rule: #DDD8CE;
+  --muted: #EAE6DE;
+  --caption: #7A7368;
+  --f-serif: Georgia, "Times New Roman", "Hiragino Mincho ProN", "MS Mincho", serif;
+  --f-sans: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", system-ui, sans-serif;
+  --f-display: "Playfair Display", Georgia, serif;
+  --header-bg: linear-gradient(135deg, #EBE8E2 0%, #D8D3CB 100%);
+  --header-bg-featured: linear-gradient(135deg, #E2ECF4 0%, #D0E2EF 100%);
+  --header-bg-smb: linear-gradient(135deg, #F4ECD8 0%, #ECDBC0 100%);
+  --chart-bg: #EAE6DE;
+  --chart-axis: #DDD8CE;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #E2DDCF;
+    --paper: #0D1A27;
+    --gold: #D4A435;
+    --navy: #7BAED0;
+    --jade: #38A87A;
+    --sky: #5B99C0;
+    --positive: #38A87A;
+    --negative: #E08240;
+    --rule: #263547;
+    --muted: #152030;
+    --caption: #8B9BAA;
+    --header-bg: linear-gradient(135deg, #172232 0%, #1C2C40 100%);
+    --header-bg-featured: linear-gradient(135deg, #162537 0%, #1C3248 100%);
+    --header-bg-smb: linear-gradient(135deg, #26200E 0%, #322A12 100%);
+    --chart-bg: #152030;
+    --chart-axis: #263547;
+  }
+}
+
+:root[data-theme="dark"] {
+  --ink: #E2DDCF;
+  --paper: #0D1A27;
+  --gold: #D4A435;
+  --navy: #7BAED0;
+  --jade: #38A87A;
+  --sky: #5B99C0;
+  --positive: #38A87A;
+  --negative: #E08240;
+  --rule: #263547;
+  --muted: #152030;
+  --caption: #8B9BAA;
+  --header-bg: linear-gradient(135deg, #172232 0%, #1C2C40 100%);
+  --header-bg-featured: linear-gradient(135deg, #162537 0%, #1C3248 100%);
+  --header-bg-smb: linear-gradient(135deg, #26200E 0%, #322A12 100%);
+  --chart-bg: #152030;
+  --chart-axis: #263547;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-sans);
+  font-size: 14px;
+  line-height: 1.65;
+  padding-inline: 16px;
+  padding-block: env(safe-area-inset-top, 0px) env(safe-area-inset-bottom, 0px);
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; }
+
+/* ── Wrapper ── */
+.wrap { max-width: 864px; margin: 0 auto; }
+
+/* ── Masthead ── */
+.masthead {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: .6rem;
+  border-top: 3px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding-block: .78rem;
+  margin-block: 1.25rem .65rem;
+}
+
+.mast-side {
+  font-size: .57rem;
+  color: var(--caption);
+  letter-spacing: .02em;
+  line-height: 1.5;
+}
+
+.mast-side:last-child { text-align: right; }
+
+.mast-center { text-align: center; }
+
+.mast-brand {
+  font-family: var(--f-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: var(--ink);
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.mast-sub {
+  font-size: .53rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--caption);
+  margin-top: .2rem;
+}
+
+/* ── Vol-meta ── */
+.vol-meta {
+  margin-bottom: 1.2rem;
+  padding: .5rem .78rem;
+  background: var(--muted);
+  border-left: 2px solid var(--gold);
+}
+
+/* ── TYLER VIEW (top) ── */
+.tyler-view {
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding-block: .85rem .92rem;
+  margin-bottom: 1.5rem;
+}
+
+.tv-head {
+  font-size: .57rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  color: var(--ink);
+  margin-bottom: .42rem;
+}
+
+.tv-body {
+  font-size: .82rem;
+  line-height: 1.78;
+  color: var(--ink);
+}
+
+/* ── Section divider ── */
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin-block: 1.65rem 1.05rem;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+.section-label {
+  font-size: .57rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--caption);
+  white-space: nowrap;
+}
+
+/* ── Topic grid ── */
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+}
+
+/* ── Topic card base ── */
+.topic-card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  box-shadow: 0 2px 8px rgba(11,31,53,.07);
+  display: flex;
+  flex-direction: column;
+}
+
+.topic-card.lead,
+.topic-card.wide {
+  grid-column: 1 / -1;
+}
+
+/* ── Featured card ── */
+.topic-card.featured { border-top: 3px solid var(--sky); }
+.topic-card.featured .tc-header { background: var(--header-bg-featured); }
+
+/* ── SMB card ── */
+.topic-card.smb { border-top: 3px solid var(--gold); }
+.topic-card.smb .tc-header { background: var(--header-bg-smb); }
+
+/* ── tc-header ── */
+.tc-header {
+  background: var(--header-bg);
+  padding: .72rem .92rem .64rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.tc-kicker {
+  display: block;
+  font-size: .63rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: .18rem;
+}
+
+.tc-title {
+  font-size: 1.06rem;
+  font-family: var(--f-serif);
+  font-weight: 700;
+  line-height: 1.38;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.topic-card.lead .tc-title { font-size: 1.26rem; }
+
+/* ── Reader tag ── */
+.reader-tag {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .22rem;
+  margin-top: .34rem;
+}
+
+.rt-item {
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: .1rem .38rem;
+  background: rgba(30,58,95,.07);
+  border: 1px solid rgba(30,58,95,.14);
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+/* ── Zoku badge ── */
+.zoku-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .28rem;
+  background: rgba(26,122,94,.08);
+  border: 1px solid rgba(26,122,94,.22);
+  color: var(--jade);
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: .1rem .42rem;
+  margin-top: .28rem;
+  text-decoration: none;
+}
+
+.zoku-badge:hover { background: rgba(26,122,94,.16); }
+
+/* ── SMB badge ── */
+.smb-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(192,135,11,.1);
+  border: 1px solid rgba(192,135,11,.28);
+  color: var(--gold);
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: .1rem .42rem;
+  margin-top: .28rem;
+}
+
+/* ── Focus badge ── */
+.focus-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  background: var(--sky);
+  color: #fff;
+  font-size: .54rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  padding: .18rem .52rem;
+  margin-top: .35rem;
+}
+
+/* ── Lead visual (SVG wrapper) ── */
+.lead-visual {
+  width: 100%;
+  border-bottom: 1px solid var(--rule);
+  background: var(--chart-bg);
+  overflow: hidden;
+}
+
+.lead-visual svg { width: 100%; display: block; }
+
+/* ── tc-body ── */
+.tc-body {
+  padding: .82rem .92rem;
+  display: flex;
+  flex-direction: column;
+  gap: .68rem;
+  flex: 1;
+}
+
+/* ── Stat row ── */
+.tc-stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .85rem;
+}
+
+.tc-stat { font-size: .72rem; }
+.tc-stat strong { font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* ── Prose ── */
+.tc-prose {
+  font-size: .82rem;
+  line-height: 1.76;
+  color: var(--ink);
+}
+
+/* ── Inline card TYLER VIEW ── */
+.card-tyler-view {
+  background: rgba(11,31,53,.04);
+  border-left: 2px solid var(--ink);
+  padding: .5rem .68rem;
+}
+
+.ctv-head {
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--caption);
+  margin-bottom: .2rem;
+}
+
+.card-tyler-view p {
+  font-size: .72rem;
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+/* ── Analysis grid ── */
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .72rem;
+  border-top: 1px solid var(--rule);
+  padding-top: .68rem;
+}
+
+.analysis-label {
+  display: block;
+  font-size: .61rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: .05em;
+  margin-bottom: .2rem;
+}
+
+.analysis-body {
+  font-size: .72rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+/* ── Wide card internals ── */
+.wide-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+/* ── Change table ── */
+.table-scroll { overflow-x: auto; }
+
+.change-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .72rem;
+  min-width: 480px;
+}
+
+.change-table th {
+  font-size: .59rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-align: left;
+  color: var(--caption);
+  border-bottom: 1px solid var(--rule);
+  padding: .32rem .52rem;
+}
+
+.change-table td {
+  padding: .36rem .52rem;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  line-height: 1.45;
+  vertical-align: top;
+}
+
+.change-table tr:last-child td { border-bottom: none; }
+
+.urgency-tag {
+  display: inline-block;
+  font-size: .5rem;
+  font-weight: 700;
+  padding: .06rem .35rem;
+  background: rgba(184,92,0,.1);
+  color: var(--negative);
+  border: 1px solid rgba(184,92,0,.22);
+}
+
+/* ── Countdown chips ── */
+.countdown-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin-bottom: .45rem;
+}
+
+.cd-chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: .42rem .88rem;
+  border: 1px solid var(--rule);
+  background: var(--muted);
+  min-width: 100px;
+}
+
+.cd-chip.urgent { border-color: var(--negative); background: rgba(184,92,0,.06); }
+
+.cd-num {
+  font-size: 1.45rem;
+  font-weight: 700;
+  font-family: var(--f-serif);
+  font-variant-numeric: tabular-nums;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.cd-chip.urgent .cd-num { color: var(--negative); }
+
+.cd-label {
+  font-size: .51rem;
+  color: var(--caption);
+  margin-top: .1rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ── Action list ── */
+.action-col-head {
+  font-size: .59rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--caption);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: .32rem;
+  margin-bottom: .52rem;
+}
+
+.action-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+.action-list li {
+  font-size: .76rem;
+  line-height: 1.52;
+  padding-left: 1.1rem;
+  position: relative;
+  color: var(--ink);
+}
+
+.action-list li::before {
+  content: attr(data-mark);
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: var(--jade);
+}
+
+/* ── Theme archive ── */
+.theme-archive {
+  border-top: 1px solid var(--rule);
+  margin-top: 2.1rem;
+  padding-top: 1rem;
+  margin-bottom: .5rem;
+}
+
+.theme-archive-head {
+  font-size: .59rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--caption);
+  margin-bottom: .52rem;
+}
+
+.theme-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .38rem;
+}
+
+.theme-chip {
+  font-size: .63rem;
+  font-weight: 700;
+  padding: .22rem .68rem;
+  background: var(--muted);
+  border: 1px solid var(--rule);
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.theme-chip:hover { background: var(--ink); color: var(--paper); }
+
+/* ── Footer ── */
+.footer {
+  border-top: 2px solid var(--ink);
+  margin-top: 2.5rem;
+  padding: 1.25rem 0 .9rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.1rem;
+}
+
+.footer-head {
+  font-size: .59rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: .44rem;
+}
+
+.footer-body {
+  font-size: .68rem;
+  line-height: 1.65;
+  color: var(--caption);
+}
+
+.footer-body a { color: var(--navy); text-decoration: underline; text-decoration-thickness: 1px; }
+.footer-body a:hover { color: var(--ink); }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .masthead { grid-template-columns: 1fr; text-align: center; }
+  .mast-side:last-child { text-align: center; }
+  .topic-grid { grid-template-columns: 1fr; }
+  .analysis-grid { grid-template-columns: 1fr; }
+  .wide-inner { grid-template-columns: 1fr; }
+  .footer { grid-template-columns: 1fr; }
+  .mast-brand { font-size: 1.15rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ── MASTHEAD ── -->
+<header class="masthead">
+  <div class="mast-side">火曜日エディション — 最低賃金改定2日前★★（10/1）・四半期末前日</div>
+  <div class="mast-center">
+    <div class="mast-brand">TYLER MORNING BRIEF</div>
+    <div class="mast-sub">Daily Intelligence for Japanese Business</div>
+  </div>
+  <div class="mast-side">Tuesday Edition · Vol.001〜092 ／ 2026.09.29</div>
+</header>
+
+<!-- ── VOL-META ── -->
+<div class="vol-meta">
+  <span style="font-size:.75rem;color:var(--caption)">火曜日エディション — 最低賃金改定2日前★★（10/1） ／ 四半期末前日 ／ フリーランス法施行6日後 ／ 10/3雇用統計★ ／ USD/JPY ¥134.0 ／ 日経42,200円</span>
+</div>
+
+<!-- ── TYLER VIEW (top-level) ── -->
+<div class="tyler-view">
+  <div class="tv-head">◈ TYLER VIEW — 今号の編集視点</div>
+  <p class="tv-body">四半期末前日・雇用統計2日前・最低賃金改定2日前——三つの「前夜」が一日に重なる。グローバル資金のリバランスフローが本日ピークを迎える一方、日本の事業者は給与システム改定という実務の最終デッドラインを同時に抱えている。市場は来週も開くが、制度の期限は延びない。今号が優先するのは後者だ。</p>
+</div>
+
+<!-- ════════════ 世界セクション ════════════ -->
+<div class="section-divider">
+  <span class="section-label">World — グローバル</span>
+</div>
+
+<div class="topic-grid">
+
+  <!-- W-01: LEAD -->
+  <article class="topic-card lead">
+    <div class="tc-header">
+      <span class="tc-kicker">W-01 ／ LEAD ／ 市場・四半期末</span>
+      <h2 class="tc-title">四半期末前日★・Q3グローバル総括：米株+5.8%・日本株+8.2%・金+13%・ドル安-3.8%・明日10/3雇用統計★</h2>
+      <div class="reader-tag">
+        <span class="rt-item">外貨建て資産保有者</span>
+        <span class="rt-item">輸出企業経営者</span>
+        <span class="rt-item">四半期末処理担当者</span>
+      </div>
+      <a href="../reports/morning-brief-20260928.html" class="zoku-badge">📎 Vol.091 続報：Q3市場動向</a>
+    </div>
+    <div class="lead-visual">
+      <svg viewBox="0 0 700 195" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Q3年初来リターン比較チャート（2026年）">
+        <!-- bg -->
+        <rect width="700" height="195" fill="#EAE6DE"/>
+        <!-- chart title -->
+        <text x="22" y="22" font-family="Georgia,'Times New Roman',serif" font-size="10" font-weight="700" fill="#0B1F35" letter-spacing="1">Q3年初来リターン（2026.01.01→09.29 ／ 予想値）</text>
+        <!-- zero axis at x=245 -->
+        <line x1="245" y1="36" x2="245" y2="182" stroke="#DDD8CE" stroke-width="1.5"/>
+        <text x="245" y="191" font-family="Georgia,serif" font-size="8" fill="#7A7368" text-anchor="middle">0%</text>
+        <!-- scale guide: 1% ≈ 14.8px (for +13% max = 192px) -->
+        <!-- +5% tick at x=319 -->
+        <line x1="319" y1="36" x2="319" y2="182" stroke="#DDD8CE" stroke-width=".5" stroke-dasharray="3,3"/>
+        <text x="319" y="191" font-family="Georgia,serif" font-size="8" fill="#7A7368" text-anchor="middle">+5%</text>
+        <!-- +10% tick at x=393 -->
+        <line x1="393" y1="36" x2="393" y2="182" stroke="#DDD8CE" stroke-width=".5" stroke-dasharray="3,3"/>
+        <text x="393" y="191" font-family="Georgia,serif" font-size="8" fill="#7A7368" text-anchor="middle">+10%</text>
+        <!-- -5% tick at x=171 -->
+        <line x1="171" y1="36" x2="171" y2="182" stroke="#DDD8CE" stroke-width=".5" stroke-dasharray="3,3"/>
+        <text x="171" y="191" font-family="Georgia,serif" font-size="8" fill="#7A7368" text-anchor="middle">-5%</text>
+
+        <!-- row labels (right-aligned to x=240) -->
+        <text x="240" y="63" font-family="'Hiragino Kaku Gothic ProN','Hiragino Sans','Yu Gothic',sans-serif" font-size="9" fill="#0B1F35" text-anchor="end">米国株 (S&amp;P500)</text>
+        <text x="240" y="101" font-family="'Hiragino Kaku Gothic ProN','Hiragino Sans','Yu Gothic',sans-serif" font-size="9" fill="#0B1F35" text-anchor="end">日本株 (日経平均)</text>
+        <text x="240" y="139" font-family="'Hiragino Kaku Gothic ProN','Hiragino Sans','Yu Gothic',sans-serif" font-size="9" fill="#0B1F35" text-anchor="end">金 (Gold スポット)</text>
+        <text x="240" y="177" font-family="'Hiragino Kaku Gothic ProN','Hiragino Sans','Yu Gothic',sans-serif" font-size="9" fill="#0B1F35" text-anchor="end">USD/JPY (年初来)</text>
+
+        <!-- 米株 +5.8% → 5.8 × 14.8 = 85.8px right of 245 → end x=330.8 -->
+        <rect x="245" y="50" width="86" height="22" fill="#1A7A5E"/>
+        <text x="336" y="64" font-family="Georgia,serif" font-size="9" font-weight="700" fill="#1A7A5E">+5.8%</text>
+
+        <!-- 日本株 +8.2% → 8.2 × 14.8 = 121.4px → end x=366.4 -->
+        <rect x="245" y="88" width="121" height="22" fill="#1A7A5E"/>
+        <text x="371" y="102" font-family="Georgia,serif" font-size="9" font-weight="700" fill="#1A7A5E">+8.2%</text>
+
+        <!-- 金 +13% → 13 × 14.8 = 192.4px → end x=437.4 -->
+        <rect x="245" y="126" width="192" height="22" fill="#C0870B"/>
+        <text x="442" y="140" font-family="Georgia,serif" font-size="9" font-weight="700" fill="#C0870B">+13.0%</text>
+
+        <!-- USD/JPY -3.8% → 3.8 × 14.8 = 56.2px left of 245 → start x=188.8 -->
+        <rect x="189" y="164" width="56" height="22" fill="#B85C00"/>
+        <text x="184" y="178" font-family="Georgia,serif" font-size="9" font-weight="700" fill="#B85C00" text-anchor="end">-3.8%</text>
+      </svg>
+    </div>
+    <div class="tc-body">
+      <div class="tc-stat-row">
+        <div class="tc-stat">米国株 Q3<strong>+5.8%</strong></div>
+        <div class="tc-stat">日本株 Q3<strong>+8.2%</strong></div>
+        <div class="tc-stat">金 Q3<strong>+13.0%</strong></div>
+        <div class="tc-stat">USD/JPY年初来<strong>▼-3.8%</strong></div>
+        <div class="tc-stat">日経現値<strong>42,200円</strong></div>
+      </div>
+      <p class="tc-prose">
+        Q3最終日前日の9/29、四半期末リバランスのフローは<strong>本日が実質的なピーク</strong>と見込まれる。年金・ファンドの株→債券シフトと円買いが交錯する中、日経42,200円は9月月初比+1.8%の底堅さを維持している（見通し）。明日10/1は月初・四半期初・マイナ保険証完全移行・最低賃金改定が重なる特異日で、ボラティリティ拡大に注意が必要だ。金の+13.0%は地政学リスクと主要国の利下げ期待を双方向に織り込む異例の強さで、実物資産としての評価が定着しつつある。
+      </p>
+      <div class="card-tyler-view">
+        <div class="ctv-head">◈ TYLER VIEW</div>
+        <p>四半期末リバランスのフローは本日が実質ピーク。明日は月初・四半期初・雇用統計が重なる特異日。市場の方向性より、最低賃金改定の実務完了を最優先に。相場は追えるが、制度対応の期限は延びない。</p>
+      </div>
+      <div class="analysis-grid">
+        <div class="analysis-cell">
+          <span class="analysis-label">📌 なぜ今が分岐点か</span>
+          <div class="analysis-body">四半期末・月末・雇用統計前の三重構造。本日のリバランスフローで相場の短期方向性が決まりやすい局面。</div>
+        </div>
+        <div class="analysis-cell">
+          <span class="analysis-label">💹 資産クラス別の勝者と敗者</span>
+          <div class="analysis-body">金・日本株が上位。ドル安が続く中、円建て外貨資産の評価損が拡大中。米債はFed利下げ期待で小幅上昇。</div>
+        </div>
+        <div class="analysis-cell">
+          <span class="analysis-label">⚠️ 明日の特異日リスク</span>
+          <div class="analysis-body">10/1は月初フロー・制度変更・雇用統計前の持ち高調整が交錯。振れ幅拡大への備えを今日中に済ませておく。</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- W-02: FEATURED -->
+  <article class="topic-card featured">
+    <div class="tc-header">
+      <span class="tc-kicker">W-02 ／ FEATURED ／ 雇用統計</span>
+      <h2 class="tc-title">10/3米雇用統計★・非農業部門+165,000人予想・失業率4.1%・Fed11月利下げの最終判断材料</h2>
+      <div class="reader-tag">
+        <span class="rt-item">変動金利借入中</span>
+        <span class="rt-item">外貨建て資産保有者</span>
+        <span class="rt-item">輸出入企業担当者</span>
+      </div>
+      <span class="focus-badge">◆ 今日の注目</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-stat-row">
+        <div class="tc-stat">市場予想<strong>+165,000人</strong></div>
+        <div class="tc-stat">失業率予想<strong>4.1%</strong></div>
+        <div class="tc-stat">USD/JPY現値<strong>¥134.0</strong></div>
+      </div>
+      <p class="tc-prose">
+        10月3日（金）発表の米9月雇用統計は、Fed（米連邦準備制度理事会）が<strong>11月会合で追加利下げを実施するかどうかの最終判断材料</strong>となる（予測）。市場コンセンサスは非農業部門+165,000人・失業率4.1%。強弱どちらに外れても為替が大きく動く可能性があり、発表前72時間のポジション調整が本日〜明日のUSD/JPYを揺らす主要因と見られる。
+      </p>
+      <div class="analysis-grid">
+        <div class="analysis-cell">
+          <span class="analysis-label">📌 なぜ今？</span>
+          <div class="analysis-body">Fed利下げサイクルの「次の一手」を決める統計。+200,000人超ならドル買い・円安、+130,000人未満ならFed利下げ加速・円高が焦点。</div>
+        </div>
+        <div class="analysis-cell">
+          <span class="analysis-label">💹 シナリオ別・市場影響</span>
+          <div class="analysis-body">強い数字→USD/JPY ¥136〜138台・輸出株高。弱い数字→¥131〜133台・円高で国内消費関連優位。発表後2時間の値幅に注意。</div>
+        </div>
+        <div class="analysis-cell">
+          <span class="analysis-label">⚠️ 日本への波及リスク</span>
+          <div class="analysis-body">最低賃金改定直後（10/1〜）の円高進行は輸出企業の業績予想修正リスク。変動金利借入企業は円高メリットと輸出減益のトレードオフを今週中に試算しておく。</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- W-03: STANDARD -->
+  <article class="topic-card">
+    <div class="tc-header">
+      <span class="tc-kicker">W-03 ／ 欧州経済</span>
+      <h2 class="tc-title">ユーロ圏CPI+1.8%（9月速報）・目標2%割れ初・ECB10/17追加-25bp有力・欧州利下げサイクル加速</h2>
+      <div class="reader-tag">
+        <span class="rt-item">EU向け輸出企業</span>
+        <span class="rt-item">外貨建て調達担当</span>
+      </div>
+    </div>
+    <div class="tc-body">
+      <div class="tc-stat-row">
+        <div class="tc-stat">ユーロ圏CPI（速報）<strong>+1.8%</strong></div>
+        <div class="tc-stat">ECB政策金利<strong>3.25%</strong></div>
+        <div class="tc-stat">EUR/JPY<strong>¥148.2</strong></div>
+      </div>
+      <p class="tc-prose">
+        欧州統計局が発表した9月ユーロ圏消費者物価指数（CPI）速報値は前年比<strong>+1.8%</strong>と、ECB（欧州中央銀行）の目標とする2%を<strong>初めて下回った</strong>（速報値）。エネルギー価格の下落と需要鈍化が同時進行しており、10月17日のECB理事会での追加-25bp利下げ実施の市場確率は88%に達している（見通し）。欧州の利下げサイクルが米国に先行して加速する展開が見込まれる。
+      </p>
+      <div class="analysis-grid">
+        <div class="analysis-cell">
+          <span class="analysis-label">📌 なぜ今？</span>
+          <div class="analysis-body">2%割れは目標達成ではなく「行き過ぎ」の可能性も。景気後退回避と利下げ継続のバランスがECBの最大課題となっている。</div>
+        </div>
+        <div class="analysis-cell">
+          <span class="analysis-label">🌏 日本企業への影響</span>
+          <div class="analysis-body">EUR安進行で欧州向け輸出の円建て採算が悪化するリスク。自動車・機械メーカーの欧州向け価格戦略見直しが必要になる可能性がある。</div>
+        </div>
+        <div class="analysis-cell">
+          <span class="analysis-label">⚠️ 利下げ反転リスク</span>
+          <div class="analysis-body">エネルギー価格が反騰した場合、ECBは利下げを一時停止する可能性がある。中東情勢が欧州インフレの外生変数として機能し続けている点に注意。</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- W-04: STANDARD -->
+  <article class="topic-card">
+    <div class="tc-header">
+      <span class="tc-kicker">W-04 ／ 中国経済</span>
+      <h2 class="tc-title">中国PMI製造業50.2（9月）・8ヶ月ぶり拡張域回復・4兆元景気刺激策の効果が数字に出始める</h2>
+      <div class="reader-tag">
+        <span class="rt-item">中国向け製造業</span>
+        <span class="rt-item">原材料・部品調達担当</span>
+      </div>
+    </div>
+    <div class="tc-body">
+      <div class="tc-stat-row">
+        <div class="tc-stat">製造業PMI<strong>50.2</strong></div>
+        <div class="tc-stat">景気刺激策規模<strong>4兆元</strong></div>
+        <div class="tc-stat">前月比<strong>+0.7pt</strong></div>
+      </div>
+      <p class="tc-prose">
+        中国国家統計局が発表した9月製造業PMI（購買担当者景況指数）は<strong>50.2</strong>と、8カ月ぶりに景気拡張の分岐点50を上回った（発表値）。政府が7月に打ち出した4兆元（約78兆円）規模の景気刺激策が製造業の新規受注と在庫に波及し始めている。ただし不動産セクターの不振は継続しており、消費者信頼感指数は依然として低水準にとどまっている。
+      </p>
+      <div class="analysis-grid">
+        <div class="analysis-cell">
+          <span class="analysis-label">📌 なぜ今？</span>
+          <div class="analysis-body">景気刺激策の効果検証として市場が注目していた統計。PMI50超回復で「底打ち確認」との見方が広がり始めた局面。</div>
+        </div>
+        <div class="analysis-cell">
+          <span class="analysis-label">🌏 サプライチェーンへの影響</span>
+          <div class="analysis-body">中国向け部品・素材の需要回復が見込まれる。電池・半導体・樹脂系素材への引き合いが10月以降強まる可能性がある。</div>
+        </div>
+        <div class="analysis-cell">
+          <span class="analysis-label">⚠️ 回復の持続性リスク</span>
+          <div class="analysis-body">刺激策頼みの数字が四半期をまたいで持続するかは不透明。不動産デフレが個人消費の足を引き続き引っ張るリスクが残る。</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- W-05: WIDE -->
+  <article class="topic-card wide">
+    <div class="tc-header">
+      <span class="tc-kicker">W-05 ／ WIDE ／ 制度変更カレンダー</span>
+      <h2 class="tc-title">10月1日から変わること★★・最低賃金1,078円・社保適用拡大51人以上・マイナ保険証完全移行</h2>
+      <div class="reader-tag">
+        <span class="rt-item">全事業者</span>
+        <span class="rt-item">人事・総務担当者</span>
+        <span class="rt-item">医療・介護事業者</span>
+      </div>
+    </div>
+    <div class="tc-body">
+      <p class="tc-prose" style="margin-bottom:.2rem">明日10月1日から施行される主要制度変更の全体像。本日中に完了すべき対応と、今後のスケジュールを一覧で整理した。</p>
+      <div class="table-scroll">
+        <table class="change-table">
+          <thead>
+            <tr>
+              <th>施行日</th>
+              <th>制度変更</th>
+              <th>主な対象</th>
+              <th>対応期限</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>10/1（水）</strong></td>
+              <td>最低賃金改定（全国加重平均1,078円 ／ +23円）</td>
+              <td>全事業者</td>
+              <td><span class="urgency-tag">本日中</span></td>
+            </tr>
+            <tr>
+              <td><strong>10/1（水）</strong></td>
+              <td>社会保険適用拡大（51〜100人企業が新規対象）</td>
+              <td>従業員51人以上企業</td>
+              <td><span class="urgency-tag">本日中</span></td>
+            </tr>
+            <tr>
+              <td><strong>10/1（水）</strong></td>
+              <td>マイナ保険証への完全移行（旧保険証廃止）</td>
+              <td>医療機関・薬局・患者全員</td>
+              <td>移行済み確認</td>
+            </tr>
+            <tr>
+              <td>9/23〜</td>
+              <td>フリーランス保護法施行（本日6日目）</td>
+              <td>フリーランス発注事業者</td>
+              <td>書面交付・継続確認</td>
+            </tr>
+            <tr>
+              <td>10/3（金）</td>
+              <td>米国9月雇用統計発表（USD/JPY変動注意）</td>
+              <td>外貨取引・輸出入企業</td>
+              <td>ヘッジ方針確認</td>
+            </tr>
+            <tr>
+              <td>10/30〜31</td>
+              <td>日銀金融政策決定会合（利上げ観測85%超）</td>
+              <td>変動金利借入企業</td>
+              <td>金利感応度試算</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </article>
+
+</div>
+
+<!-- ════════════ 日本セクション ════════════ -->
+<div class="section-divider">
+  <span class="section-label">Japan — 日本</span>
+</div>
+
+<div class="topic-grid">
+
+  <!-- J-01: LEAD -->
+  <article class="topic-card lead">
+    <div class="tc-header">
+      <span class="tc-kicker">J-01 ／ LEAD ／ 最低賃金・緊急対応</span>
+      <h2 class="tc-title">最低賃金改定まで2日★★・給与システム改定は本日中が限界・明日が実質的最終チェック日</h2>
+      <div class="reader-tag">
+        <span class="rt-item">最低賃金</span>
+        <span class="rt-item">緊急対応</span>
+        <span class="rt-item">人事労務担当者</span>
+      </div>
+      <a href="../reports/morning-brief-20260928.html" class="zoku-badge">📎 Vol.091 続報：最低賃金改定手順</a>
+    </div>
+    <div class="lead-visual">
+      <svg viewBox="0 0 700 165" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="最低賃金改定2日前カウントダウンタイムライン">
+        <rect width="700" height="165" fill="#EAE6DE"/>
+        <text x="22" y="22" font-family="Georgia,'Times New Roman',serif" font-size="10" font-weight="700" fill="#0B1F35" letter-spacing="1">残り2日 — 最低賃金改定カウントダウン</text>
+        <!-- timeline spine -->
+        <line x1="80" y1="92" x2="620" y2="92" stroke="#DDD8CE" stroke-width="2"/>
+        <!-- connector dashes -->
+        <line x1="220" y1="92" x2="280" y2="92" stroke="#B85C00" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <line x1="420" y1="92" x2="480" y2="92" stroke="#1A5F8A" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+        <!-- Step 1: 本日 9/29 — 実質デッドライン -->
+        <rect x="80" y="68" width="140" height="48" fill="#B85C00"/>
+        <text x="150" y="87" font-family="'Hiragino Kaku Gothic ProN','Hiragino Sans',sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">本日（9/29）</text>
+        <text x="150" y="105" font-family="'Hiragino Kaku Gothic ProN','Hiragino Sans',sans-serif" font-size="8" fill="#fff" text-anchor="middle">給与システム改定完了</text>
+        <text x="150" y="135" font-family="'Hiragino Kaku Gothic ProN','Hiragino Sans',sans-serif" font-size="8" fill="#B85C00" text-anchor="middle">◀ 実質デッドライン</text>
+
+        <!-- Step 2: 明日 9/30 -->
+        <rect x="280" y="68" width="140" height="48" fill="#1A5F8A"/>
+        <text x="350" y="87" font-family="'Hiragino Kaku Gothic ProN','Hiragino Sans',sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">明日（9/30）</text>
+        <text x="350" y="105" font-family="'Hiragino Kaku Gothic ProN','Hiragino Sans',sans-serif" font-size="8" fill="#fff" text-anchor="middle">就業規則・最終確認</text>
+        <text x="350" y="135" font-family="'Hiragino Kaku Gothic ProN','Hiragino Sans',sans-serif" font-size="8" fill="#1A5F8A" text-anchor="middle">四半期末・多忙日</text>
+
+        <!-- Step 3: 10/1 施行 -->
+        <rect x="480" y="48" width="140" height="88" fill="#0B1F35"/>
+        <text x="550" y="79" font-family="Georgia,serif" font-size="13" font-weight="700" fill="#C0870B" text-anchor="middle">10/1</text>
+        <text x="550" y="99" font-family="'Hiragino Kaku Gothic ProN','Hiragino Sans',sans-serif" font-size="9" font-weight="700" fill="#fff" text-anchor="middle">最低賃金改定施行</text>
+        <text x="550" y="117" font-family="Georgia,serif" font-size="9" fill="#C0870B" text-anchor="middle">1,078円（+23円）</text>
+      </svg>
+    </div>
+    <div class="tc-body">
+      <div class="tc-stat-row">
+        <div class="tc-stat">新最低賃金（全国加重平均）<strong>1,078円</strong></div>
+        <div class="tc-stat">前年比<strong>+23円</strong></div>
+        <div class="tc-stat">施行まで<strong>2日</strong></div>
+      </div>
+      <p class="tc-prose">
+        10月1日の最低賃金改定まで残り2日。<strong>給与システムの時給・賃金テーブル改定は本日中が実質的なデッドライン</strong>だ。明日（9/30）は四半期末・月末の経理・総務処理が集中するため、最低賃金対応に充てられる工数がほぼゼロになる。就業規則の変更届（労働基準監督署への届出義務あり）も本日内に着手しなければ、施行日までの提出が間に合わなくなる可能性がある。未対応のまま10/1を迎えた場合、最低賃金法違反として行政指導・最大30万円以下の罰金リスクが生じる。
+      </p>
+      <div class="card-tyler-view">
+        <div class="ctv-head">◈ TYLER VIEW</div>
+        <p>本日が給与システム・就業規則改定の実質デッドライン。明日（四半期末）は経理・総務が月次・四半期処理で多忙のため、最低賃金対応は今日中に完了させることが必須。「明日やろう」は今号最大のリスクワード。</p>
+      </div>
+      <div class="analysis-grid">
+        <div class="analysis-cell">
+          <span class="analysis-label">🎯 本日中に完了すべき3点</span>
+          <div class="analysis-body">①給与システム・賃金テーブルを1,078円以上に改定 ②就業規則変更届の作成・提出 ③パート・アルバイト全員への個別周知</div>
+        </div>
+        <div class="analysis-cell">
+          <span class="analysis-label">⚠️ 未対応のリスク</span>
+          <div class="analysis-body">行政指導・是正勧告の対象。最大30万円以下の罰金。複数拠点企業は各都道府県の地域別最低賃金（東京1,163円等）も個別確認が必要。</div>
+        </div>
+        <div class="analysis-cell">
+          <span class="analysis-label">💸 人件費への影響試算</span>
+          <div class="analysis-body">時給1,055円→1,078円（+23円）の場合、週20時間勤務×12名で月額+22,080円（年間約265,000円増）。採用・離職コストと比較した実質コストの試算も今週中に。</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- J-02: SMB -->
+  <article class="topic-card smb">
+    <div class="tc-header">
+      <span class="tc-kicker">J-02 ／ 中小企業 ／ 社会保険</span>
+      <h2 class="tc-title">社会保険適用拡大10/1から★・51〜100人企業が対象追加・週20時間以上・月給8.8万円以上・新規加入手続き</h2>
+      <div class="reader-tag">
+        <span class="rt-item">従業員51〜100人企業</span>
+        <span class="rt-item">パート・アルバイト雇用中</span>
+        <span class="rt-item">人事・総務担当者</span>
+      </div>
+      <span class="smb-badge">◎ 中小企業</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-stat-row">
+        <div class="tc-stat">新規対象規模<strong>51〜100人企業</strong></div>
+        <div class="tc-stat">週労働時間要件<strong>20時間以上</strong></div>
+        <div class="tc-stat">月給要件<strong>88,000円以上</strong></div>
+      </div>
+      <p class="tc-prose">
+        10月1日から<strong>従業員51〜100人規模の企業</strong>が社会保険（健康保険・厚生年金）の適用拡大対象に加わる（段階的拡大の最終フェーズ）。対象となるパートタイム労働者の条件は①週20時間以上勤務②月給88,000円以上③学生でない④継続雇用見込み2カ月超、の4条件を全て満たす場合。従業員数カウントには直近12カ月の月末平均を用いる。未対応のまま施行日を迎えると行政から是正指導が入るリスクがある。
+      </p>
+      <div class="analysis-grid">
+        <div class="analysis-cell">
+          <span class="analysis-label">🎯 自社に当てはまるか</span>
+          <div class="analysis-body">直近12カ月の月末従業員数（パート含む）の平均が51人以上なら対象。派遣社員は派遣元でカウント。役員・日雇い労働者は含まない。</div>
+        </div>
+        <div class="analysis-cell">
+          <span class="analysis-label">📋 手続きの流れ</span>
+          <div class="analysis-body">①対象者リストアップ→②年金事務所への加入申請（e-Gov電子申請が最速）→③標準報酬月額の算定→④10/1付で保険料控除開始。</div>
+        </div>
+        <div class="analysis-cell">
+          <span class="analysis-label">💸 コスト影響試算</span>
+          <div class="analysis-body">月給10万円のパート1名あたり事業主負担は約14,700円/月（健保+厚年）。10名加入で月約147,000円・年約176万円の人件費増となる。</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- J-03: FEATURED -->
+  <article class="topic-card featured">
+    <div class="tc-header">
+      <span class="tc-kicker">J-03 ／ FEATURED ／ フリーランス法</span>
+      <h2 class="tc-title">フリーランス法施行1週間・書面交付80%完了・20%未対応企業に是正指導・電子契約の活用急増</h2>
+      <div class="reader-tag">
+        <span class="rt-item">フリーランス発注事業者</span>
+        <span class="rt-item">クリエイティブ・IT発注企業</span>
+        <span class="rt-item">調達・外注担当者</span>
+      </div>
+      <span class="focus-badge">◆ 今日の注目</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-stat-row">
+        <div class="tc-stat">書面交付完了（見込み）<strong>約80%</strong></div>
+        <div class="tc-stat">未対応企業<strong>約20%</strong></div>
+        <div class="tc-stat">施行日<strong>2026/9/23</strong></div>
+      </div>
+      <p class="tc-prose">
+        フリーランス・事業者間取引適正化等法施行から1週間（9/23〜）。厚生労働省・公正取引委員会の初動調査では、<strong>書面交付義務を履行した企業は約80%</strong>にとどまる見通し（暫定値）。残り20%の未対応企業には是正指導が順次開始される見込みだ。電子契約サービスの新規申込みは施行前後1週間で前年同期比+340%超と急増しており、電子化対応が事実上の標準となりつつある（試算値）。
+      </p>
+      <div class="analysis-grid">
+        <div class="analysis-cell">
+          <span class="analysis-label">📌 なぜ今？</span>
+          <div class="analysis-body">施行1週間で行政が初動把握に入る段階。是正指導の対象となる前に書面交付・取引条件明示を完了させることが急務。</div>
+        </div>
+        <div class="analysis-cell">
+          <span class="analysis-label">✅ 対応完了の確認方法</span>
+          <div class="analysis-body">①業務委託契約書の書面（電子可）交付済み→②報酬・納期・業務内容の明示→③60日以内の支払い設定。3点チェックで対応完了と判断できる。</div>
+        </div>
+        <div class="analysis-cell">
+          <span class="analysis-label">⚠️ 未対応リスク</span>
+          <div class="analysis-body">是正指導→勧告→命令→罰則（50万円以下）の行政処分フロー。SNSでの情報拡散リスクが高く、採用・取引先ブランドへの影響が早期に出る可能性がある。</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- J-04: STANDARD -->
+  <article class="topic-card">
+    <div class="tc-header">
+      <span class="tc-kicker">J-04 ／ 金融政策</span>
+      <h2 class="tc-title">日銀10月会合まで約1ヶ月・利上げ確率85%超・0.25%→0.5%観測・円高¥134台の影響を精査中</h2>
+      <div class="reader-tag">
+        <span class="rt-item">変動金利借入企業</span>
+        <span class="rt-item">不動産投資・賃貸業</span>
+        <span class="rt-item">輸出企業経営者</span>
+      </div>
+    </div>
+    <div class="tc-body">
+      <div class="tc-stat-row">
+        <div class="tc-stat">現行政策金利<strong>0.25%</strong></div>
+        <div class="tc-stat">次回会合<strong>10/30〜31</strong></div>
+        <div class="tc-stat">市場の利上げ確率<strong>85%超</strong></div>
+      </div>
+      <p class="tc-prose">
+        日本銀行の次回金融政策決定会合（10月30〜31日）に向けた市場の利上げ観測は<strong>85%超に上昇</strong>している（市場推計）。政策金利を現行0.25%から0.5%へ引き上げる可能性が主シナリオ。円高¥134台の進行は輸出企業にとってネガティブだが、日銀は最低賃金引上げと実質賃金への波及を精査しており、10/3雇用統計後の米Fed動向が最終判断に影響を与える可能性がある。
+      </p>
+      <div class="analysis-grid">
+        <div class="analysis-cell">
+          <span class="analysis-label">📌 なぜ今？</span>
+          <div class="analysis-body">最低賃金+23円の施行直後に0.25%利上げが重なると、SMBの資金繰りへの同時圧力となる。今から感応度試算をしておく必要がある。</div>
+        </div>
+        <div class="analysis-cell">
+          <span class="analysis-label">💹 利上げ後の市場影響</span>
+          <div class="analysis-body">0.5%利上げで変動金利ローン（残高1,000万円）は年利払い+25,000円程度増加（試算）。円高加速の場合、輸出株全般の業績下方修正リスクが高まる。</div>
+        </div>
+        <div class="analysis-cell">
+          <span class="analysis-label">⚠️ 利上げ見送りリスク</span>
+          <div class="analysis-body">10/3雇用統計が弱ければ円高急進→日銀が外的不確実性を理由に利上げを先送りする可能性も残る。10/3〜4の市場動向を要確認。</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- J-05: STANDARD -->
+  <article class="topic-card">
+    <div class="tc-header">
+      <span class="tc-kicker">J-05 ／ 物価・実質賃金</span>
+      <h2 class="tc-title">9月東京CPI今月末発表予定・8月+2.9%から+2.7%予想・最低賃金+23円と実質賃金の連動試算</h2>
+      <div class="reader-tag">
+        <span class="rt-item">価格改定を検討中の事業者</span>
+        <span class="rt-item">小売・食品・外食業</span>
+      </div>
+    </div>
+    <div class="tc-body">
+      <div class="tc-stat-row">
+        <div class="tc-stat">東京CPI 8月実績<strong>+2.9%</strong></div>
+        <div class="tc-stat">9月予想<strong>+2.7%</strong></div>
+        <div class="tc-stat">実質賃金（7月）<strong>▼-0.3%</strong></div>
+      </div>
+      <p class="tc-prose">
+        9月東京消費者物価指数（CPI）は今月末発表予定。8月の+2.9%から<strong>+2.7%への小幅鈍化</strong>が市場コンセンサス（予測値）。エネルギー補助金の縮小が下支え要因で、生鮮食品除きコアCPIは+2.4%程度と予想される。最低賃金+23円（+2.2%）の引上げ幅がCPI+2.7%を下回る場合、実質賃金はマイナス圏での推移が続く計算となり、個人消費の本格回復には課題が残る。
+      </p>
+      <div class="analysis-grid">
+        <div class="analysis-cell">
+          <span class="analysis-label">🔭 今何が始まっているか</span>
+          <div class="analysis-body">名目賃金上昇（+2.2%）とCPI鈍化（予想+2.7%）のギャップが縮小しつつある。実質賃金プラス転換は早ければ2026年末〜2027年Q1が見込まれる。</div>
+        </div>
+        <div class="analysis-cell">
+          <span class="analysis-label">📆 長期の構造変化</span>
+          <div class="analysis-body">最低賃金が年+23円ペースで推移した場合、5年後に全国加重平均1,193円水準に達する試算。サービス業の価格設定見直しは不可避な経営課題となる。</div>
+        </div>
+        <div class="analysis-cell">
+          <span class="analysis-label">🏃 先行企業の動き</span>
+          <div class="analysis-body">最低賃金水準での採用を避け、+100〜200円上乗せで離職率・採用コストを削減する中小飲食・介護が増加中。「人件費コスト」から「採用投資」への転換が始まっている。</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- J-06: WIDE -->
+  <article class="topic-card wide">
+    <div class="tc-header">
+      <span class="tc-kicker">J-06 ／ WIDE ／ 必須アクション（2日前最終版）</span>
+      <h2 class="tc-title">明日・明後日の必須アクション — 最低賃金2日前★★・社保適用拡大2日前★★・フリーランス法6日後</h2>
+      <div class="reader-tag">
+        <span class="rt-item">経営者・管理職</span>
+        <span class="rt-item">人事・総務担当者</span>
+        <span class="rt-item">経理担当者</span>
+      </div>
+    </div>
+    <div class="tc-body">
+      <div class="countdown-row">
+        <div class="cd-chip urgent">
+          <span class="cd-num">2</span>
+          <span class="cd-label">日後<br>最低賃金改定（10/1）</span>
+        </div>
+        <div class="cd-chip urgent">
+          <span class="cd-num">2</span>
+          <span class="cd-label">日後<br>社保適用拡大（10/1）</span>
+        </div>
+        <div class="cd-chip">
+          <span class="cd-num">6</span>
+          <span class="cd-label">日経過<br>フリーランス法（9/23〜）</span>
+        </div>
+        <div class="cd-chip">
+          <span class="cd-num">4</span>
+          <span class="cd-label">日後<br>米国雇用統計（10/3）</span>
+        </div>
+      </div>
+      <div class="wide-inner">
+        <div>
+          <div class="action-col-head">本日中（9/29）必須</div>
+          <ul class="action-list">
+            <li data-mark="①">給与システム・賃金テーブルを新最低賃金（全国加重平均1,078円、各都道府県の地域別最低賃金も確認）に改定。従業員への周知を本日中に完了させる。</li>
+            <li data-mark="②">社会保険適用拡大の対象者（従業員51人以上企業）を確定し、加入申請書類を年金事務所に送付。e-Gov電子申請が最速。</li>
+            <li data-mark="③">フリーランス発注先への書面交付・電子契約の未完了分を本日中に送付し、対応完了リストの最終確認を実施する。</li>
+          </ul>
+        </div>
+        <div>
+          <div class="action-col-head">明日確認（9/30 四半期末）</div>
+          <ul class="action-list">
+            <li data-mark="①">就業規則変更届の提出確認（労働基準監督署・電子申請可）。10/1施行に間に合わせる最終確認日。午前中に完了させることを推奨。</li>
+            <li data-mark="②">10月分給与計算の設定テスト。10/1以降の給与明細に新賃金単価が正しく反映されているかシステムで確認。</li>
+            <li data-mark="③">10/3米雇用統計に向けた外貨ポジション・ヘッジ方針の確認。円高進行シナリオでの影響額を試算し、対応方針を確定させておく。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</div>
+
+<!-- ── THEME ARCHIVE ── -->
+<div class="theme-archive">
+  <div class="theme-archive-head">📚 今号のキーテーマ — バックナンバーで深掘りする</div>
+  <div class="theme-chips">
+    <a href="../index.html?theme=wage" class="theme-chip">最低賃金</a>
+    <a href="../index.html?theme=insurance" class="theme-chip">社会保険</a>
+    <a href="../index.html?theme=freelance" class="theme-chip">フリーランス法</a>
+    <a href="../index.html?theme=quarter" class="theme-chip">四半期末</a>
+    <a href="../index.html?theme=employment" class="theme-chip">雇用統計</a>
+    <a href="../index.html?theme=boj" class="theme-chip">日銀政策</a>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<div class="footer">
+  <div>
+    <div class="footer-head">次号予告</div>
+    <div class="footer-body">
+      <strong>Vol.093 — 2026年10月1日（木）</strong><br>
+      最低賃金改定施行初日・社保適用拡大施行・マイナ保険証完全移行初日。制度変更「当日」の総点検号。
+    </div>
+  </div>
+  <div>
+    <div class="footer-head">バックナンバー</div>
+    <div class="footer-body">
+      <a href="../reports/morning-brief-20260928.html">Vol.091 — 2026.09.28（月）</a><br>
+      <a href="../reports/morning-brief-20260927.html">Vol.090 — 2026.09.27（日）</a><br>
+      <a href="../index.html">すべてのバックナンバーを見る →</a>
+    </div>
+  </div>
+  <div>
+    <div class="footer-head">About TYLER</div>
+    <div class="footer-body">
+      TYLER MORNING BRIEF は毎朝配信される日本語ビジネスインテリジェンスレターです。グローバル市場・日本の制度変更・SMB経営に関わる情報を編集・分析して届けます。Vol.001〜092まで連続発行中。
+    </div>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+
+<script>
+document.querySelectorAll('.tc-stat strong').forEach(function(el) {
+  var t = el.textContent.trim();
+  if (/^[▲▼-]/.test(t)) { el.style.color = '#B85C00'; }
+  else if (/^\+/.test(t)) { el.style.color = '#1A7A5E'; }
+});
+</script>
+</body>
+</html>
