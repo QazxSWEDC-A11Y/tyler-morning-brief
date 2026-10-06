@@ -1,0 +1,815 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Vol.099 - 2026-10-06 | TYLER MORNING BRIEF</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+:root{
+  --ink:#0B1F35;--paper:#F8F5EF;--gold:#C0870B;--navy:#1E3A5F;
+  --jade:#1A7A5E;--sky:#1A5F8A;--positive:#1A7A5E;--negative:#B85C00;
+  --rule:#DDD8CE;--muted:#EAE6DE;--caption:#7A7368;
+  --f-serif:"Source Serif 4","Playfair Display",Georgia,"Times New Roman","Hiragino Mincho ProN","MS Mincho",serif;
+  --f-display:"Playfair Display",Georgia,"Hiragino Mincho ProN",serif;
+  --f-sans:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Meiryo",system-ui,sans-serif;
+}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#E8E2D6;--paper:#111820;--gold:#D4A030;--navy:#7BA8D4;
+    --jade:#3EAA80;--sky:#4A8FBF;--positive:#3EAA80;--negative:#E07040;
+    --rule:#2A3540;--muted:#1C2830;--caption:#8A8278;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#E8E2D6;--paper:#111820;--gold:#D4A030;--navy:#7BA8D4;
+  --jade:#3EAA80;--sky:#4A8FBF;--positive:#3EAA80;--negative:#E07040;
+  --rule:#2A3540;--muted:#1C2830;--caption:#8A8278;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:var(--f-sans);font-size:.85rem;line-height:1.65;
+  padding:0 16px;padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:inherit;text-decoration:none}
+strong{font-weight:700}
+
+.wrapper{max-width:900px;margin:0 auto}
+
+/* MASTHEAD */
+.masthead{
+  border-top:3px solid var(--ink);border-bottom:2px solid var(--ink);
+  padding:.55rem 0;margin-bottom:.9rem;
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:.5rem;
+}
+.mast-left{font-size:.58rem;color:var(--caption);font-family:var(--f-sans);letter-spacing:.02em;line-height:1.4}
+.mast-center{text-align:center}
+.mast-title{font-family:var(--f-display);font-size:1.52rem;font-weight:700;letter-spacing:.04em;color:var(--ink);line-height:1}
+.mast-sub{font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--caption);margin-top:.18rem}
+.mast-right{font-size:.58rem;color:var(--caption);text-align:right;line-height:1.4}
+
+/* VOL META */
+.vol-meta{margin-bottom:1.2rem;border-bottom:1px solid var(--rule);padding-bottom:.7rem}
+
+/* TYLER VIEW */
+.tyler-view{border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);padding:.82rem 0 .9rem;margin-bottom:1.5rem}
+.tv-head{font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--ink);margin-bottom:.4rem;font-family:var(--f-sans)}
+.tv-body{font-size:.82rem;line-height:1.78;color:var(--ink);font-family:var(--f-serif);font-style:italic}
+
+/* SECTION DIVIDER */
+.section-divider{
+  display:flex;align-items:center;gap:.7rem;margin:1.6rem 0 1rem;
+}
+.sd-label{
+  font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--paper);background:var(--ink);padding:.22rem .7rem;white-space:nowrap;
+}
+.sd-line{flex:1;height:1px;background:var(--ink)}
+
+/* TOPIC GRID */
+.topic-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-bottom:1rem}
+.japan-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+
+/* TOPIC CARD BASE */
+.topic-card{background:var(--paper);border:1px solid var(--rule);box-shadow:0 2px 8px rgba(11,31,53,.08)}
+.topic-card.lead{grid-column:1/-1}
+.topic-card.wide{grid-column:1/-1}
+
+/* FEATURED */
+.topic-card.featured{border-top:3px solid var(--sky)}
+.topic-card.featured .tc-header{background:linear-gradient(135deg,#E2ECF4 0%,#D0E2EF 100%)}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .topic-card.featured .tc-header{background:linear-gradient(135deg,#1A2A38 0%,#152030 100%)}
+}
+:root[data-theme="dark"] .topic-card.featured .tc-header{background:linear-gradient(135deg,#1A2A38 0%,#152030 100%)}
+.focus-badge{display:inline-flex;align-items:center;gap:.3rem;background:var(--sky);color:#fff;font-size:.54rem;font-weight:700;letter-spacing:.08em;padding:.18rem .52rem;margin-top:.35rem}
+
+/* SMB */
+.topic-card.smb{border-top:3px solid var(--gold)}
+.topic-card.smb .tc-header{background:linear-gradient(135deg,#F2EADC 0%,#E8DACC 100%)}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .topic-card.smb .tc-header{background:linear-gradient(135deg,#2A2010 0%,#201808 100%)}
+}
+:root[data-theme="dark"] .topic-card.smb .tc-header{background:linear-gradient(135deg,#2A2010 0%,#201808 100%)}
+.smb-badge{display:inline-flex;align-items:center;background:var(--gold);color:#fff;font-size:.54rem;font-weight:700;letter-spacing:.08em;padding:.18rem .52rem;margin-top:.35rem}
+
+/* CARD HEADER */
+.tc-header{
+  background:linear-gradient(135deg,#EBE8E2 0%,#D8D3CB 100%);
+  padding:.62rem .75rem .55rem;border-bottom:1px solid var(--rule);
+}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .tc-header{background:linear-gradient(135deg,#1C2430 0%,#141C26 100%)}
+}
+:root[data-theme="dark"] .tc-header{background:linear-gradient(135deg,#1C2430 0%,#141C26 100%)}
+.tc-kicker{font-size:.6rem;color:var(--navy);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-family:var(--f-sans);display:block;margin-bottom:.22rem}
+.tc-title{font-size:1.08rem;font-family:var(--f-serif);font-weight:600;line-height:1.38;color:var(--ink);text-wrap:balance}
+.topic-card.lead .tc-title{font-size:1.28rem}
+
+/* READER TAG */
+.reader-tag{display:flex;flex-wrap:wrap;gap:.22rem;margin-top:.32rem}
+.rt-item{font-size:.52rem;font-weight:700;letter-spacing:.04em;padding:.1rem .38rem;background:rgba(30,58,95,.07);border:1px solid rgba(30,58,95,.14);color:var(--navy);white-space:nowrap}
+
+/* ZOKU BADGE */
+.zoku-badge{display:inline-flex;align-items:center;gap:.28rem;background:rgba(26,122,94,.08);border:1px solid rgba(26,122,94,.22);color:var(--jade);font-size:.52rem;font-weight:700;letter-spacing:.04em;padding:.1rem .42rem;margin-top:.28rem;text-decoration:none}
+.zoku-badge:hover{background:rgba(26,122,94,.16)}
+
+/* CARD BODY */
+.tc-body{padding:.65rem .75rem .72rem}
+.tc-prose{font-size:.82rem;line-height:1.75;font-family:var(--f-sans)}
+.tc-stat-row{display:flex;flex-wrap:wrap;gap:.3rem .7rem;margin-bottom:.55rem}
+.tc-stat{font-size:.7rem;color:var(--caption)}
+.tc-stat strong{font-size:.82rem;font-weight:700;font-variant-numeric:tabular-nums}
+
+/* ANALYSIS GRID */
+.analysis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:.7rem;border-top:1px solid var(--rule);padding-top:.6rem}
+.ag-cell{}
+.analysis-label{font-size:.61rem;font-weight:700;letter-spacing:.06em;color:var(--navy);margin-bottom:.22rem;font-family:var(--f-sans)}
+.analysis-body{font-size:.72rem;line-height:1.62;color:var(--ink);font-family:var(--f-sans)}
+
+/* LEAD VISUAL */
+.lead-visual{padding:.7rem .75rem .4rem;border-bottom:1px solid var(--rule)}
+.lead-visual svg{display:block;width:100%;overflow:visible}
+
+/* WIDE CARD INNER */
+.wide-inner{display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:.65rem .75rem .72rem}
+.wide-col{}
+.wide-col-head{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--caption);border-bottom:1px solid var(--rule);padding-bottom:.3rem;margin-bottom:.5rem}
+
+/* CALENDAR */
+.cal-row{display:grid;grid-template-columns:3.5rem 1fr;gap:.4rem .5rem;font-size:.74rem;margin-bottom:.32rem;line-height:1.4}
+.cal-date{font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums;white-space:nowrap}
+.cal-item{color:var(--ink)}
+.cal-item .star{color:var(--gold);font-weight:700}
+
+/* COUNTDOWN */
+.countdown-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.7rem}
+.cd-chip{font-size:.65rem;font-weight:700;padding:.2rem .6rem;background:var(--muted);border:1px solid var(--rule);color:var(--navy)}
+.cd-chip.urgent{background:rgba(184,92,0,.1);border-color:rgba(184,92,0,.3);color:var(--negative)}
+
+/* ACTION LIST */
+.action-list{list-style:none;font-size:.78rem;line-height:1.6}
+.action-list li{padding:.22rem 0;border-bottom:1px solid var(--rule);padding-left:1.1rem;position:relative}
+.action-list li::before{content:"→";position:absolute;left:0;color:var(--gold);font-weight:700}
+.action-list li:last-child{border-bottom:none}
+
+/* THEME ARCHIVE */
+.theme-archive{border-top:1px solid var(--rule);margin-top:2rem;padding-top:1rem;margin-bottom:.5rem}
+.theme-archive-head{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--caption);margin-bottom:.52rem}
+.theme-chips{display:flex;flex-wrap:wrap;gap:.35rem}
+.theme-chip{font-size:.63rem;font-weight:700;padding:.22rem .68rem;background:var(--muted);border:1px solid var(--rule);color:var(--navy);text-decoration:none}
+.theme-chip:hover{background:var(--ink);color:var(--paper)}
+
+/* FOOTER */
+.footer{border-top:2px solid var(--ink);margin-top:2.5rem;padding:1.25rem 0 .75rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+.footer-head{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin-bottom:.5rem}
+.footer-body{font-size:.72rem;line-height:1.6;color:var(--caption)}
+.footer-link{color:var(--navy);text-decoration:underline}
+
+/* RESPONSIVE */
+@media(max-width:620px){
+  .masthead{grid-template-columns:1fr;text-align:center;gap:.3rem}
+  .mast-right{text-align:center}
+  .topic-grid,.japan-grid{grid-template-columns:1fr}
+  .topic-card.lead,.topic-card.wide{grid-column:1}
+  .analysis-grid{grid-template-columns:1fr}
+  .wide-inner{grid-template-columns:1fr}
+  .footer{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="mast-left">火曜日エディション — Fed高官発言★<br>FOMC議事録今夜・日銀支店長会議明日・CPI週へ</div>
+  <div class="mast-center">
+    <div class="mast-title">TYLER<br>MORNING BRIEF</div>
+    <div class="mast-sub">Independent Economic Intelligence</div>
+  </div>
+  <div class="mast-right">Tuesday Edition<br>Vol.001〜099 ／ 2026.10.06</div>
+</div>
+
+<!-- VOL META -->
+<div class="vol-meta">
+  <div><span style="font-size:.75rem;color:var(--caption)">火曜日エディション — Fed高官発言★・FOMC議事録今夜公表★・日銀支店長会議明日★ ／ USD/JPY¥135.0 ドル高継続 ／ 日経平均42,100円（+0.4%） ／ 最低賃金施行6日目</span></div>
+</div>
+
+<!-- TYLER VIEW -->
+<div class="tyler-view">
+  <div class="tv-head">◈ TYLER VIEW — 今号の編集視点</div>
+  <p class="tv-body">Fed高官発言ラッシュDay2とFOMC議事録公表が重なる今夜、市場の「11月-0.25bp」コンセンサスが追認されれば一時的な安定感をもたらす。しかし真の焦点は明日の日銀支店長会議だ——最低賃金引き上げと社保適用拡大が同時施行された初月の地域経済への影響を9地域が報告する。10/10米CPI発表まで5日。今週は静かに見えて、来週以降の大波に向けたポジション調整が進む週である。</p>
+</div>
+
+<!-- SECTION: 世界 -->
+<div class="section-divider">
+  <span class="sd-label">世界 GLOBAL</span>
+  <span class="sd-line"></span>
+</div>
+
+<div class="topic-grid">
+
+<!-- W-01 LEAD -->
+<div class="topic-card lead">
+  <div class="tc-header">
+    <span class="tc-kicker">W-01 ／ LEAD ／ Fed高官発言</span>
+    <h2 class="tc-title">Fed高官発言ラッシュDay2★・ウィリアムズ「データ次第で11月に動く」・ジェファーソン「インフレ沈静化を確認」・11月-0.25bp折り込み98%・USD/JPY¥135.0</h2>
+    <div class="reader-tag">
+      <span class="rt-item">変動金利借入中</span>
+      <span class="rt-item">外貨建て取引企業</span>
+      <span class="rt-item">Fed動向フォロワー</span>
+    </div>
+    <a href="../reports/morning-brief-20261005.html" class="zoku-badge">📎 Vol.098 続報：Fed高官発言Day1・ドル高動向</a>
+  </div>
+  <div class="lead-visual">
+    <svg viewBox="0 0 820 160" xmlns="http://www.w3.org/2000/svg" aria-label="Fed11月利下げ確率・為替推移チャート">
+      <rect width="820" height="160" fill="none"/>
+      <!-- grid lines vertical -->
+      <line x1="160" y1="15" x2="160" y2="130" stroke="var(--rule)" stroke-width="1"/>
+      <line x1="310" y1="15" x2="310" y2="130" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="460" y1="15" x2="460" y2="130" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="610" y1="15" x2="610" y2="130" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="760" y1="15" x2="760" y2="130" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+      <!-- axis labels -->
+      <text x="160" y="148" text-anchor="middle" font-size="10" fill="var(--caption)">0%</text>
+      <text x="310" y="148" text-anchor="middle" font-size="10" fill="var(--caption)">25%</text>
+      <text x="460" y="148" text-anchor="middle" font-size="10" fill="var(--caption)">50%</text>
+      <text x="610" y="148" text-anchor="middle" font-size="10" fill="var(--caption)">75%</text>
+      <text x="760" y="148" text-anchor="middle" font-size="10" fill="var(--caption)">100%</text>
+      <!-- scale: 600px = 100% → 1%=6px, offset=160 -->
+      <!-- 11月-0.25bp確率 98% → 160+588=748 -->
+      <text x="155" y="33" text-anchor="end" font-size="11" fill="var(--ink)">11月 -0.25bp</text>
+      <rect x="160" y="18" width="588" height="18" fill="#1A7A5E"/>
+      <text x="753" y="33" font-size="10" fill="#1A7A5E" font-weight="700">98%</text>
+      <!-- 11月-0.50bp確率 2% → 160+12=172 -->
+      <text x="155" y="57" text-anchor="end" font-size="11" fill="var(--ink)">11月 -0.50bp</text>
+      <rect x="160" y="42" width="12" height="18" fill="var(--caption)"/>
+      <text x="177" y="57" font-size="10" fill="var(--caption)" font-weight="700">2%</text>
+      <!-- 12月追加 -0.25bp 72% → 160+432=592 -->
+      <text x="155" y="81" text-anchor="end" font-size="11" fill="var(--ink)">12月 -0.25bp</text>
+      <rect x="160" y="66" width="432" height="18" fill="#1A5F8A"/>
+      <text x="597" y="81" font-size="10" fill="#1A5F8A" font-weight="700">72%</text>
+      <!-- USD/JPY ¥135.0 比較ベース -->
+      <text x="155" y="105" text-anchor="end" font-size="11" fill="var(--ink)">USD/JPY</text>
+      <rect x="160" y="90" width="510" height="18" fill="#C0870B"/>
+      <text x="675" y="105" font-size="10" fill="#C0870B" font-weight="700">¥135.0（ドル高）</text>
+      <!-- ドル高 先週比 +0.2 -->
+      <text x="155" y="129" text-anchor="end" font-size="11" fill="var(--ink)">先週比変化</text>
+      <rect x="160" y="114" width="72" height="18" fill="#B85C00"/>
+      <text x="237" y="129" font-size="10" fill="#B85C00" font-weight="700">+¥0.2</text>
+    </svg>
+  </div>
+  <div class="tc-body">
+    <div class="tc-stat-row">
+      <span class="tc-stat">USD/JPY <strong>¥135.0</strong></span>
+      <span class="tc-stat">11月-0.25bp折り込み <strong>98%</strong></span>
+      <span class="tc-stat">ウィリアムズNY連銀総裁 <strong>データ次第で11月に動く</strong></span>
+      <span class="tc-stat">ジェファーソン副議長 <strong>インフレ沈静化を確認</strong></span>
+    </div>
+    <p class="tc-prose">Fed高官発言ラッシュ2日目。ウィリアムズNY連銀総裁は「経済データが予想通りなら11月に追加利下げを行う用意がある」と発言し、ジェファーソン副議長も「インフレの沈静化を確認している」とハト派スタンスを維持した。市場のFedWatchは11月-0.25bp確率を98%まで引き上げ、USD/JPYは¥135.0でドル高が継続。<strong>今夜のFOMC議事録（9月分）</strong>が大幅利下げ（-0.50bp）決定の内部議論を詳らかにするかに注目が集まる。</p>
+    <div class="analysis-grid">
+      <div class="ag-cell">
+        <div class="analysis-label">📌 高官発言ラッシュの意味</div>
+        <div class="analysis-body">Fed高官がこれだけ一斉に発言するのは「市場へのシグナリング」の一環。9月-0.50bpの大幅利下げ後、11月を「通常ペース」-0.25bpに戻すことへの地ならし局面。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">💹 ドル高継続の構図</div>
+        <div class="analysis-body">「利下げは続くが緩やかなペース」というコンセンサス形成がドルの下支えになっている。¥135台は短期的な均衡水準。10/10CPI次第でどちらへも5円以上の動きあり。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">⚠️ 今夜の議事録リスク</div>
+        <div class="analysis-body">9月FOMC議事録で「ハト派優勢・早期追加利下げ支持」の記述が多ければ、ドル安・円高方向へ修正される可能性。今夜遅くの動意に注意。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- W-02 FEATURED -->
+<div class="topic-card featured">
+  <div class="tc-header">
+    <span class="tc-kicker">W-02 ／ FEATURED ／ FOMC議事録</span>
+    <h2 class="tc-title">今夜FOMC議事録（9月分）公表★・0.50bp大幅利下げの内部議論が明らかに・ハト派vs慎重派の綱引き確認へ・FedWatch11月利下げ確率98%</h2>
+    <div class="reader-tag">
+      <span class="rt-item">変動金利借入中</span>
+      <span class="rt-item">外貨建て資産保有者</span>
+      <span class="rt-item">Fed政策フォロワー</span>
+    </div>
+    <span class="focus-badge">◆ 今日の注目</span>
+  </div>
+  <div class="lead-visual">
+    <svg viewBox="0 0 820 140" xmlns="http://www.w3.org/2000/svg" aria-label="Fed政策金利パスとFOMC議事録注目点">
+      <rect width="820" height="140" fill="none"/>
+      <!-- timeline base line -->
+      <line x1="60" y1="90" x2="780" y2="90" stroke="var(--ink)" stroke-width="1.5"/>
+      <!-- tick marks -->
+      <line x1="120" y1="85" x2="120" y2="95" stroke="var(--ink)" stroke-width="1.5"/>
+      <line x1="280" y1="85" x2="280" y2="95" stroke="var(--ink)" stroke-width="1.5"/>
+      <line x1="440" y1="85" x2="440" y2="95" stroke="var(--ink)" stroke-width="1.5"/>
+      <line x1="600" y1="85" x2="600" y2="95" stroke="var(--ink)" stroke-width="1.5"/>
+      <line x1="740" y1="85" x2="740" y2="95" stroke="var(--ink)" stroke-width="1.5"/>
+      <!-- labels -->
+      <text x="120" y="112" text-anchor="middle" font-size="10" fill="var(--caption)">9月FOMC</text>
+      <text x="120" y="123" text-anchor="middle" font-size="9" fill="var(--caption)">-0.50bp</text>
+      <text x="280" y="112" text-anchor="middle" font-size="10" fill="var(--caption)">10/6</text>
+      <text x="280" y="123" text-anchor="middle" font-size="9" fill="var(--gold)">議事録公表★</text>
+      <text x="440" y="112" text-anchor="middle" font-size="10" fill="var(--caption)">11月FOMC</text>
+      <text x="440" y="123" text-anchor="middle" font-size="9" fill="var(--jade)">-0.25bp予想</text>
+      <text x="600" y="112" text-anchor="middle" font-size="10" fill="var(--caption)">10/10 CPI</text>
+      <text x="600" y="123" text-anchor="middle" font-size="9" fill="var(--negative)">最大焦点★★</text>
+      <text x="740" y="112" text-anchor="middle" font-size="10" fill="var(--caption)">12月FOMC</text>
+      <text x="740" y="123" text-anchor="middle" font-size="9" fill="var(--caption)">-0.25bp想定</text>
+      <!-- event dots -->
+      <circle cx="120" cy="90" r="7" fill="var(--sky)"/>
+      <circle cx="280" cy="90" r="9" fill="var(--gold)" stroke="var(--ink)" stroke-width="1"/>
+      <circle cx="440" cy="90" r="7" fill="var(--jade)"/>
+      <circle cx="600" cy="90" r="9" fill="var(--negative)" stroke="var(--ink)" stroke-width="1"/>
+      <circle cx="740" cy="90" r="7" fill="var(--jade)"/>
+      <!-- annotations above -->
+      <text x="280" y="30" text-anchor="middle" font-size="11" fill="var(--gold)" font-weight="700">今夜公表</text>
+      <line x1="280" y1="35" x2="280" y2="80" stroke="var(--gold)" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="120" y="55" text-anchor="middle" font-size="10" fill="var(--sky)">大幅利下げ</text>
+      <text x="120" y="67" text-anchor="middle" font-size="10" fill="var(--sky)">内部議論</text>
+      <text x="600" y="55" text-anchor="middle" font-size="10" fill="var(--negative)">次の分岐点</text>
+    </svg>
+  </div>
+  <div class="tc-body">
+    <div class="tc-stat-row">
+      <span class="tc-stat">9月FOMC決定 <strong>-0.50bp（大幅利下げ）</strong></span>
+      <span class="tc-stat">11月FedWatch <strong>-0.25bp 98%</strong></span>
+      <span class="tc-stat">公表時刻 <strong>今夜（日本時間未明）</strong></span>
+    </div>
+    <p class="tc-prose">本日、9月FOMCの議事録が公表される。9月会合では<strong>-0.50bp（50bp）という大幅利下げ</strong>が決定されたが、その内部議論がどこまでハト派寄りだったかが今回の焦点。「緊急的な利下げ」と捉えるか「正常化の加速」と捉えるかで、今後の政策パスへの解釈が分かれる。タカ派委員の反対意見の強さや、次回11月の利下げペースに関する議論の内容次第で、夜間の為替・金利市場が動意づく可能性がある。</p>
+    <div class="analysis-grid">
+      <div class="ag-cell">
+        <div class="analysis-label">📋 議事録で確認すべき点</div>
+        <div class="analysis-body">①-0.50bpに反対票はあったか。②「次回は-0.25bp」とする合意の強さ。③インフレより雇用を優先した議論の比重。④今後の利下げペースについての委員間の温度差。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">📈 市場へのシナリオ影響</div>
+        <div class="analysis-body">ハト派優勢の議事録→ドル安・円高・金上昇。タカ派が予想以上に強い→ドル高継続。現在の「11月-0.25bp確実」というコンセンサスが崩れるかが最大のリスク。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">🏢 企業財務への含意</div>
+        <div class="analysis-body">議事録がハト派寄りであれば中長期的な円高シナリオが強化される。為替予約・借入コスト見直しのタイミングとして、今夜の議事録発表後の市場反応を確認してから行動するのが賢明。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- W-03 STANDARD -->
+<div class="topic-card">
+  <div class="tc-header">
+    <span class="tc-kicker">W-03 ／ 原油・中東</span>
+    <h2 class="tc-title">原油WTI小反落 $73.8/bbl（-1.5%）・中東停戦交渉に進展との報道・サウジ・イラン間接協議再開</h2>
+    <div class="reader-tag">
+      <span class="rt-item">輸送・物流企業</span>
+      <span class="rt-item">製造業コスト管理者</span>
+    </div>
+  </div>
+  <div class="tc-body">
+    <div class="tc-stat-row">
+      <span class="tc-stat">WTI原油 <strong>$73.8/bbl</strong></span>
+      <span class="tc-stat">前日比 <strong>-1.5%</strong></span>
+      <span class="tc-stat">中東停戦交渉 <strong>進展報道</strong></span>
+    </div>
+    <p class="tc-prose">中東における停戦交渉に進展があるとの報道を受け、地政学的リスクプレミアムが剥落し原油WTI価格が$73.8まで小反落した。サウジアラビアとイランの間接協議が再開されたとの情報も伝わっており、短期的な供給不安懸念が後退した。ただしOPECの減産体制は維持されており、需給面では大幅な下落余地も限られる。日本の輸入コスト、特に製造業・物流事業者にとっては小幅な追い風。</p>
+    <div class="analysis-grid">
+      <div class="ag-cell">
+        <div class="analysis-label">🛢️ 日本企業へのインパクト</div>
+        <div class="analysis-body">円安（¥135）と原油安（-1.5%）が綱引き。円安効果が原油安を上回り、円建て輸入コストは依然高止まり。エネルギー集約型産業は見た目ほど恩恵は少ない。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">🌍 中東停戦の持続性</div>
+        <div class="analysis-body">停戦交渉は過去にも破談を繰り返してきた。今回の「進展」は楽観視より慎重視が適切。地政学プレミアム消滅は一時的で、原油$70台が定着するかは不透明。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">📅 今後の注目ポイント</div>
+        <div class="analysis-body">OPECプラス次回会合（11月予定）での減産延長議論が原油価格の中期見通しを左右する。減産継続なら$70台前半が下値支持となる見込み。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- W-04 STANDARD -->
+<div class="topic-card">
+  <div class="tc-header">
+    <span class="tc-kicker">W-04 ／ 欧州市場</span>
+    <h2 class="tc-title">欧州市場 DAX+0.4%・ECBラガルド総裁「インフレは鎮静化の道筋」・ユーロ圏10月PMI改定値確認待ち</h2>
+    <div class="reader-tag">
+      <span class="rt-item">欧州取引先を持つ企業</span>
+      <span class="rt-item">グローバル資産運用者</span>
+    </div>
+  </div>
+  <div class="tc-body">
+    <div class="tc-stat-row">
+      <span class="tc-stat">DAX <strong>+0.4%</strong></span>
+      <span class="tc-stat">ECBスタンス <strong>インフレ鎮静化の道筋</strong></span>
+      <span class="tc-stat">10月PMI改定値 <strong>確認待ち</strong></span>
+    </div>
+    <p class="tc-prose">欧州市場はラガルドECB総裁の「インフレは鎮静化の道筋にある」発言を好感し、DAXが+0.4%の小幅続伸。ECBは10月追加利下げ（-0.25bp）を市場コンセンサスが織り込んでおり、欧州株は比較的落ち着いた値動き。ユーロ圏の10月PMI改定値（製造業・サービス業）の確認が今週の欧州イベントとして残る。<strong>ユーロ圏経済の鈍化はFedより積極的な利下げを促す可能性</strong>があり、対ドル・対円でのユーロ動向にも注目。</p>
+    <div class="analysis-grid">
+      <div class="ag-cell">
+        <div class="analysis-label">🇪🇺 ECBと Fed の乖離</div>
+        <div class="analysis-body">ECBはFedより積極的な利下げペースになる可能性が高い。ユーロ圏の成長鈍化・製造業PMI低迷が続くなら、ECBは今後半年で2〜3回の追加利下げも視野に。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">🌍 対日本企業の示唆</div>
+        <div class="analysis-body">ユーロ安傾向が続けば、欧州向け輸出企業のユーロ建て収益が円換算で目減りするリスク。EU市場での販売比率の高い製造業は為替ヘッジ方針を再点検。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">📊 PMI改定値の見方</div>
+        <div class="analysis-body">速報値で50割れが続くユーロ圏製造業PMI。改定値でも確認されれば、ECBの早期追加利下げ観測が強まる。サービス業PMIが50超を維持できるかが分岐点。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- W-05 WIDE: スケジュール -->
+<div class="topic-card wide">
+  <div class="tc-header">
+    <span class="tc-kicker">W-05 ／ 今週の注目指標②</span>
+    <h2 class="tc-title">今週の注目指標②・10/7日銀支店長会議★・10/8日本GDP速報（8月）・10/10米CPI★★（9月）・10/10日本CPI（9月）</h2>
+    <div class="reader-tag">
+      <span class="rt-item">経営者・CFO</span>
+      <span class="rt-item">財務・資金調達担当</span>
+    </div>
+  </div>
+  <div class="wide-inner">
+    <div class="wide-col">
+      <div class="wide-col-head">📅 今週残りのカレンダー（10/6〜10/10）</div>
+      <div class="cal-row"><span class="cal-date">10/6 火</span><span class="cal-item">FOMC議事録（9月分）今夜公表<span class="star"> ★</span> ／ Fed高官発言ラッシュDay2</span></div>
+      <div class="cal-row"><span class="cal-date">10/7 水</span><span class="cal-item"><span class="star">★</span> 日銀支店長会議（9地域景気報告・最低賃金影響初集計）</span></div>
+      <div class="cal-row"><span class="cal-date">10/7 水</span><span class="cal-item">政府・賃上げ税制説明会</span></div>
+      <div class="cal-row"><span class="cal-date">10/8 木</span><span class="cal-item">日本GDP速報（8月）・米新規失業保険申請件数</span></div>
+      <div class="cal-row"><span class="cal-date">10/10 土</span><span class="cal-item"><span class="star">★★</span> 米CPI（9月）— 今週最大の焦点</span></div>
+      <div class="cal-row"><span class="cal-date">10/10 土</span><span class="cal-item"><span class="star">★</span> 日本CPI（9月）発表</span></div>
+    </div>
+    <div class="wide-col">
+      <div class="wide-col-head">🔍 今週の注目ポイント</div>
+      <p style="font-size:.78rem;line-height:1.7;margin-bottom:.6rem">今週最大のヤマ場は<strong>10/10米CPI（9月）</strong>。Fed高官が口を揃えて「データ次第」と言う中、このCPIが11月FOMC（-0.25bp）の最終確認材料となる。予想は前年比+2.5%前後。上振れならドル高加速・円安再拡大リスク。下振れなら円高方向への急転換もあり得る。</p>
+      <p style="font-size:.78rem;line-height:1.7"><strong>明日の日銀支店長会議</strong>では、最低賃金引き上げと社保適用拡大が同時施行された初月の地域経済への影響を9地域が報告。植田総裁のコメントが「引き続き注視」スタンスを維持するかが注目点。利上げ観測に影響するかも。</p>
+    </div>
+  </div>
+</div>
+
+</div><!-- /topic-grid -->
+
+<!-- SECTION: 日本 -->
+<div class="section-divider">
+  <span class="sd-label">日本 JAPAN</span>
+  <span class="sd-line"></span>
+</div>
+
+<div class="japan-grid">
+
+<!-- J-01 LEAD -->
+<div class="topic-card lead">
+  <div class="tc-header">
+    <span class="tc-kicker">J-01 ／ LEAD ／ 市場・最低賃金</span>
+    <h2 class="tc-title">日経平均42,100円（+0.4%）・USD/JPY¥135.0 ドル高継続・最低賃金施行6日目・現場順調・日銀支店長会議明日★・景気判断が注目点</h2>
+    <div class="reader-tag">
+      <span class="rt-item">経営者・CFO</span>
+      <span class="rt-item">人件費管理者</span>
+      <span class="rt-item">輸出入企業</span>
+    </div>
+    <a href="../reports/morning-brief-20261005.html" class="zoku-badge">📎 Vol.098 続報：最低賃金施行5日目・日銀観測</a>
+  </div>
+  <div class="lead-visual">
+    <svg viewBox="0 0 820 155" xmlns="http://www.w3.org/2000/svg" aria-label="日本市場主要指標と最低賃金施行後状況">
+      <rect width="820" height="155" fill="none"/>
+      <!-- zero reference line -->
+      <line x1="200" y1="15" x2="200" y2="128" stroke="var(--rule)" stroke-width="1"/>
+      <!-- grid -->
+      <line x1="320" y1="15" x2="320" y2="128" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="440" y1="15" x2="440" y2="128" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="560" y1="15" x2="560" y2="128" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="680" y1="15" x2="680" y2="128" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+      <!-- axis labels: 0 / +0.3% / +0.6% / +0.9% / +1.2% -->
+      <text x="200" y="145" text-anchor="middle" font-size="10" fill="var(--caption)">0</text>
+      <text x="320" y="145" text-anchor="middle" font-size="10" fill="var(--caption)">+0.3%</text>
+      <text x="440" y="145" text-anchor="middle" font-size="10" fill="var(--caption)">+0.6%</text>
+      <text x="560" y="145" text-anchor="middle" font-size="10" fill="var(--caption)">+0.9%</text>
+      <text x="680" y="145" text-anchor="middle" font-size="10" fill="var(--caption)">+1.2%</text>
+      <!-- scale: 480px = 1.2% → 1%=400px, 0.1%=40px -->
+      <!-- 日経225 +0.4% → 200+133=333 -->
+      <text x="195" y="33" text-anchor="end" font-size="11" fill="var(--ink)">日経225</text>
+      <rect x="200" y="18" width="133" height="18" fill="#1A7A5E"/>
+      <text x="338" y="33" font-size="10" fill="#1A7A5E" font-weight="700">+0.4%（42,100円）</text>
+      <!-- TOPIX +0.3% → 200+100=300 -->
+      <text x="195" y="57" text-anchor="end" font-size="11" fill="var(--ink)">TOPIX</text>
+      <rect x="200" y="42" width="100" height="18" fill="#1A5F8A"/>
+      <text x="305" y="57" font-size="10" fill="#1A5F8A" font-weight="700">+0.3%</text>
+      <!-- USD/JPY ¥135.0 → ドル高ポジション表示 480px幅 -->
+      <text x="195" y="81" text-anchor="end" font-size="11" fill="var(--ink)">USD/JPY</text>
+      <rect x="200" y="66" width="400" height="18" fill="#C0870B"/>
+      <text x="605" y="81" font-size="10" fill="#C0870B" font-weight="700">¥135.0（ドル高）</text>
+      <!-- 最低賃金施行 6日目 進捗バー -->
+      <text x="195" y="105" text-anchor="end" font-size="11" fill="var(--ink)">賃金施行進捗</text>
+      <rect x="200" y="90" width="480" height="18" fill="var(--muted)" rx="2"/>
+      <rect x="200" y="90" width="288" height="18" fill="var(--jade)" rx="2"/>
+      <text x="695" y="105" font-size="10" fill="var(--jade)" font-weight="700">6日目／月末まで</text>
+      <!-- 日銀支店長会議 countdown -->
+      <text x="195" y="129" text-anchor="end" font-size="11" fill="var(--ink)">日銀会議まで</text>
+      <rect x="200" y="114" width="40" height="18" fill="#B85C00" rx="2"/>
+      <text x="245" y="129" font-size="10" fill="#B85C00" font-weight="700">明日★（10/7）</text>
+    </svg>
+  </div>
+  <div class="tc-body">
+    <div class="tc-stat-row">
+      <span class="tc-stat">日経225 <strong>42,100円（+0.4%）</strong></span>
+      <span class="tc-stat">USD/JPY <strong>¥135.0</strong></span>
+      <span class="tc-stat">最低賃金施行 <strong>6日目・現場順調</strong></span>
+      <span class="tc-stat">日銀支店長会議 <strong>明日★</strong></span>
+    </div>
+    <p class="tc-prose">日経平均は42,100円（+0.4%）と小幅続伸。ドル高・円安（¥135）が輸出セクターの追い風となり、自動車・電機株が相場を牽引した。最低賃金施行6日目は大きな現場混乱の報告なく推移しており、給与計算システムの対応も概ね完了している模様。<strong>明日（10/7）は日銀支店長会議</strong>——全国9地域が最低賃金引き上げと社保適用拡大の影響を初めて公式報告する場であり、植田総裁のコメントが利上げ観測に影響する可能性がある。</p>
+    <div class="analysis-grid">
+      <div class="ag-cell">
+        <div class="analysis-label">📌 日経42,100円の背景</div>
+        <div class="analysis-body">円安（¥135）が輸出採算を改善し、FOMC議事録待ちで海外勢の様子見が続く中、国内機関投資家の買いが下値を支える構図。42,000〜42,500円がしばらくのレンジか。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">🏭 最低賃金6日目の実態</div>
+        <div class="analysis-body">大企業・中堅企業の給与計算対応は概ね完了。課題が残るのは中小・零細の一部。今週末の給与支払いが最初の「実弾」となり、11月初旬の月次決算に人件費増加が反映される。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">🔍 明日の支店長会議 注目点</div>
+        <div class="analysis-body">①各地域の景気判断（前回比で「改善」「横ばい」「悪化」どちらが多いか）。②最低賃金の消費・物価への影響言及。③植田総裁の総括コメント——「引き続き注視」が続くかどうか。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- J-02 FEATURED -->
+<div class="topic-card featured">
+  <div class="tc-header">
+    <span class="tc-kicker">J-02 ／ FEATURED ／ 日銀支店長会議</span>
+    <h2 class="tc-title">日銀支店長会議★明日（10/7）・全国9地域の景気報告・最低賃金・社保適用拡大の影響を初集計・植田総裁「引き続き注視」スタンス維持か</h2>
+    <div class="reader-tag">
+      <span class="rt-item">地方事業者</span>
+      <span class="rt-item">日銀政策フォロワー</span>
+      <span class="rt-item">金利動向注目者</span>
+    </div>
+    <span class="focus-badge">◆ 今日の注目</span>
+  </div>
+  <div class="tc-body">
+    <div class="tc-stat-row">
+      <span class="tc-stat">会議開催 <strong>明日（10/7）</strong></span>
+      <span class="tc-stat">対象地域 <strong>全国9地域</strong></span>
+      <span class="tc-stat">初集計項目 <strong>最低賃金・社保適用拡大影響</strong></span>
+    </div>
+    <p class="tc-prose">明日（10/7）開催の日銀支店長会議では、全国9地域（北海道・東北・北陸・関東甲信越・東海・近畿・中国・四国・九州・沖縄）の景気報告が行われる。今回は<strong>最低賃金引き上げと社会保険適用拡大の影響を初めて公式集計</strong>する場として注目度が高い。施行からわずか6日での報告となるため数字の精度は限られるが、地域間のバラつきや特定業種（介護・飲食・小売）への影響言及があれば市場に与えるシグナルは大きい。植田総裁は「引き続き注視」スタンスを維持するとの見方が大勢だが、一部でハト派シフトへの期待もある。</p>
+    <div class="analysis-grid">
+      <div class="ag-cell">
+        <div class="analysis-label">🗾 地域ごとの注目ポイント</div>
+        <div class="analysis-body">景気判断の改善・悪化バランス：前回会合比で「改善」判断が増えれば利上げ地ならし継続。「悪化・横ばい」が増えれば慎重スタンス強化。地方の消費動向言及に注目。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">💹 金融市場への影響</div>
+        <div class="analysis-body">支店長会議単体での市場インパクトは通常限定的だが、植田総裁コメントが想定外にハト的（「当面据え置き示唆」など）であれば、円安加速・国債利回り低下要因になり得る。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">🏢 中小企業への含意</div>
+        <div class="analysis-body">「最低賃金の消費刺激効果が出始めている」との報告があれば価格転嫁交渉の追い風になる。逆に「コスト増・利益圧迫」の報告が多ければ政府の追加支援策の可能性が高まる。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- J-03 SMB -->
+<div class="topic-card smb">
+  <div class="tc-header">
+    <span class="tc-kicker">J-03 ／ SMB ／ 中小企業資金需要</span>
+    <h2 class="tc-title">中小企業の賃上げ資金需要続く・商工中金10月融資申込+28%・政策金融公庫に続く2番手の急増・「従業員50人未満」からの申込が7割</h2>
+    <div class="reader-tag">
+      <span class="rt-item">中小企業経営者</span>
+      <span class="rt-item">資金調達担当者</span>
+    </div>
+    <span class="smb-badge">◎ 中小企業</span>
+  </div>
+  <div class="tc-body">
+    <div class="tc-stat-row">
+      <span class="tc-stat">商工中金融資申込 <strong>+28%</strong></span>
+      <span class="tc-stat">申込の主体 <strong>従業員50人未満：7割</strong></span>
+    </div>
+    <p class="tc-prose">最低賃金引き上げと社保適用拡大の施行を受け、中小企業からの賃上げ対応資金需要が急増している。商工中金の10月融資申込件数は前年同月比+28%と急増しており、先行した日本政策金融公庫（+35%）に続く2番手の急増となっている。<strong>申込の7割が従業員50人未満の小規模事業者</strong>からで、賃上げコストの直撃を受けている実態が浮き彫りに。手元流動性の確保が喫緊の経営課題となっている。</p>
+    <div class="analysis-grid">
+      <div class="ag-cell">
+        <div class="analysis-label">🎯 申込増の背景</div>
+        <div class="analysis-body">10月から人件費が一斉に上昇する一方、売上への転嫁は遅れる。特に介護・飲食・小売は価格転嫁に時間がかかるため、「つなぎ資金」として融資申込が急増している典型的な構図。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">💰 活用できる資金調達手段</div>
+        <div class="analysis-body">①日本政策金融公庫「働き方改革対応資金」。②商工中金の賃上げ対応融資（金利優遇あり）。③信用保証協会の経営安定関連保証。申込は早いほど審査日程に余裕が生まれる。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">⚠️ 借入に頼る前に確認</div>
+        <div class="analysis-body">賃上げコストの価格転嫁交渉（取引先との単価見直し）を先行させることが本筋。借入で凌ぐのは一時的手段であり、価格転嫁が進まなければ借入負担が残る構造的問題になり得る。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- J-04 STANDARD -->
+<div class="topic-card">
+  <div class="tc-header">
+    <span class="tc-kicker">J-04 ／ フリーランス法</span>
+    <h2 class="tc-title">フリーランス法施行17日後・大手発注者の契約書対応率・経団連調査「書面化完了」大企業74%・中小は43%にとどまる</h2>
+    <div class="reader-tag">
+      <span class="rt-item">フリーランス発注企業</span>
+      <span class="rt-item">法務・契約担当者</span>
+    </div>
+  </div>
+  <div class="tc-body">
+    <div class="tc-stat-row">
+      <span class="tc-stat">施行から <strong>17日</strong></span>
+      <span class="tc-stat">大企業 書面化完了 <strong>74%</strong></span>
+      <span class="tc-stat">中小企業 書面化完了 <strong>43%</strong></span>
+    </div>
+    <p class="tc-prose">フリーランス取引適正化法（フリーランス法）施行から17日。経団連調査によると<strong>大企業の74%が書面化を完了</strong>した一方、中小企業は43%にとどまり、企業規模による対応格差が明確になっている。中小企業では法務部門のリソース不足や既存取引慣行の変更コストが対応の壁になっているケースが多い。未対応の企業は公正取引委員会の監視強化期間が続く中でリスクを抱える状態が継続する。</p>
+    <div class="analysis-grid">
+      <div class="ag-cell">
+        <div class="analysis-label">📋 未完了企業の対応優先順位</div>
+        <div class="analysis-body">①継続取引中のフリーランスへの書面未交付案件を特定。②取引額・継続頻度の大きい案件から電子書面（PDF・クラウドサービス）で即時送付。③社内テンプレート整備を今週中に完了させる。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">🔍 43%という数字の意味</div>
+        <div class="analysis-body">中小企業の半数以上が未対応は深刻。公正取引委員会は施行後3ヶ月以内に実態調査を行うとしており、11月〜12月が実質的なコンプライアンスの峠。今月中に完了させることが必須。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">💼 電子書面の有効な使い方</div>
+        <div class="analysis-body">フリーランス法は電子書面（PDF・メール・クラウドサービスでの共有）で要件を満たす。押印不要。既存の発注メールに必須記載事項（業務内容・報酬・支払期限）を加えた書面を追送するだけでよい。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- J-05 STANDARD -->
+<div class="topic-card">
+  <div class="tc-header">
+    <span class="tc-kicker">J-05 ／ 社保適用拡大</span>
+    <h2 class="tc-title">社保適用拡大6日後・50人超企業での新規適用者・被扶養者から切り替え手続き件数・協会けんぽへの問合せ前週比+25%</h2>
+    <div class="reader-tag">
+      <span class="rt-item">パート・アルバイト雇用事業者</span>
+      <span class="rt-item">給与・社保担当者</span>
+    </div>
+  </div>
+  <div class="tc-body">
+    <div class="tc-stat-row">
+      <span class="tc-stat">施行から <strong>6日</strong></span>
+      <span class="tc-stat">協会けんぽ問合せ <strong>前週比+25%</strong></span>
+      <span class="tc-stat">主な手続き <strong>被扶養者からの切り替え</strong></span>
+    </div>
+    <p class="tc-prose">社会保険適用拡大（従業員50人超企業への対象拡大）施行から6日。従来の被扶養者（いわゆる「130万円の壁」内で就労していた配偶者等）から新たに社保加入者に切り替える手続きが集中しており、<strong>協会けんぽへの問合せが前週比+25%と急増</strong>している。企業側の届出処理が追いつかないケースも散見されており、年金事務所への事前相談を経て届出の優先順位をつけることが実務対応の鍵となっている。</p>
+    <div class="analysis-grid">
+      <div class="ag-cell">
+        <div class="analysis-label">🧮 企業側の実務チェックリスト</div>
+        <div class="analysis-body">①週20h以上・月額賃金8.8万円以上の新規加入対象者を確定。②資格取得届の提出（取得日から5日以内が原則）。③給与明細への保険料控除額反映。④労働者への説明と同意確認。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">👩 従業員側の対応支援</div>
+        <div class="analysis-body">「扶養外れ」を懸念して労働時間を削る従業員が出るケースに注意。実際には社保加入後の手取り計算を一緒に確認することで継続勤務を促せる。人事担当による個別面談を推奨。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">⏰ 問合せ急増への対処</div>
+        <div class="analysis-body">協会けんぽや年金事務所への電話が繋がりにくい状況が続く可能性。オンライン申請（e-Gov）の活用や、社労士経由での一括処理が混雑回避の有効手段。早めの対応が優先。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- J-06 WIDE: アクションリスト -->
+<div class="topic-card wide">
+  <div class="tc-header">
+    <span class="tc-kicker">J-06 ／ 明日の重要イベント（10/7）</span>
+    <h2 class="tc-title">明日の重要イベント（10/7）・日銀支店長会議（景気判断・最低賃金影響確認）・政府の賃上げ税制説明会・来週10/10 CPI★★発表まで5日</h2>
+    <div class="reader-tag">
+      <span class="rt-item">経営者・CFO</span>
+      <span class="rt-item">管理部門責任者</span>
+    </div>
+  </div>
+  <div class="wide-inner">
+    <div class="wide-col">
+      <div class="wide-col-head">⏱️ カウントダウン</div>
+      <div class="countdown-row">
+        <span class="cd-chip urgent">米CPI（10/10）まで4日</span>
+        <span class="cd-chip urgent">日銀支店長会議：明日★</span>
+        <span class="cd-chip">FOMC議事録：今夜公表★</span>
+        <span class="cd-chip">最低賃金施行：6日経過</span>
+        <span class="cd-chip">社保適用拡大：届出期限10月末</span>
+      </div>
+      <div class="wide-col-head" style="margin-top:.8rem">✅ 今日〜明日の経営アクション</div>
+      <ul class="action-list">
+        <li><strong>FOMC議事録（今夜）確認</strong>：日本時間深夜〜未明に公表。翌朝の為替水準を確認し、輸出入取引の為替予約タイミングを判断（W-02・W-01参照）。</li>
+        <li><strong>日銀支店長会議（明日）注視</strong>：植田総裁コメントで利上げ観測に変化があれば、円高方向への急転換リスクに備える（J-02参照）。</li>
+        <li><strong>政府・賃上げ税制説明会（明日）</strong>：賃上げ促進税制の適用要件・控除額を確認。人件費増の一部を税額控除で回収できる可能性を試算（J-03参照）。</li>
+        <li><strong>フリーランス法 書面整備</strong>：未対応案件を今週中に完了させる。テンプレートへの必須4項目記載を確認（J-04参照）。</li>
+        <li><strong>社保届出 進捗確認</strong>：新規加入対象者の届出完了状況を確認。協会けんぽ混雑時はe-Govオンライン申請を活用（J-05参照）。</li>
+      </ul>
+    </div>
+    <div class="wide-col">
+      <div class="wide-col-head">📊 今日の数字まとめ</div>
+      <table style="width:100%;border-collapse:collapse;font-size:.76rem">
+        <thead>
+          <tr style="border-bottom:2px solid var(--ink)">
+            <th style="text-align:left;padding:.28rem .4rem;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--caption)">指標</th>
+            <th style="text-align:right;padding:.28rem .4rem;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--caption)">現在値</th>
+            <th style="text-align:right;padding:.28rem .4rem;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--caption)">前日比</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--rule)">
+            <td style="padding:.28rem .4rem;color:var(--ink)">日経225</td>
+            <td style="padding:.28rem .4rem;text-align:right;font-weight:700;font-variant-numeric:tabular-nums">42,100円</td>
+            <td style="padding:.28rem .4rem;text-align:right;font-variant-numeric:tabular-nums" class="val-pos">+0.4%</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--rule)">
+            <td style="padding:.28rem .4rem;color:var(--ink)">USD/JPY</td>
+            <td style="padding:.28rem .4rem;text-align:right;font-weight:700;font-variant-numeric:tabular-nums">¥135.0</td>
+            <td style="padding:.28rem .4rem;text-align:right;font-variant-numeric:tabular-nums" class="val-neg">ドル高継続</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--rule)">
+            <td style="padding:.28rem .4rem;color:var(--ink)">WTI原油</td>
+            <td style="padding:.28rem .4rem;text-align:right;font-weight:700;font-variant-numeric:tabular-nums">$73.8/bbl</td>
+            <td style="padding:.28rem .4rem;text-align:right;font-variant-numeric:tabular-nums" class="val-pos">-1.5%</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--rule)">
+            <td style="padding:.28rem .4rem;color:var(--ink)">11月利下げ確率</td>
+            <td style="padding:.28rem .4rem;text-align:right;font-weight:700;font-variant-numeric:tabular-nums">98%</td>
+            <td style="padding:.28rem .4rem;text-align:right;font-variant-numeric:tabular-nums" class="val-pos">+2pt</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--rule)">
+            <td style="padding:.28rem .4rem;color:var(--ink)">DAX（欧州）</td>
+            <td style="padding:.28rem .4rem;text-align:right;font-weight:700;font-variant-numeric:tabular-nums">+0.4%</td>
+            <td style="padding:.28rem .4rem;text-align:right;font-variant-numeric:tabular-nums">小幅続伸</td>
+          </tr>
+          <tr>
+            <td style="padding:.28rem .4rem;color:var(--ink)">商工中金融資申込</td>
+            <td style="padding:.28rem .4rem;text-align:right;font-weight:700;font-variant-numeric:tabular-nums">+28%</td>
+            <td style="padding:.28rem .4rem;text-align:right;font-variant-numeric:tabular-nums" class="val-neg">前年同月比</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+</div><!-- /japan-grid -->
+
+<!-- THEME ARCHIVE -->
+<div class="theme-archive">
+  <div class="theme-archive-head">📚 今号のキーテーマ — バックナンバーで深掘りする</div>
+  <div class="theme-chips">
+    <a href="../index.html?theme=fed" class="theme-chip">Fed利下げ</a>
+    <a href="../index.html?theme=fomc" class="theme-chip">FOMC議事録</a>
+    <a href="../index.html?theme=boj" class="theme-chip">日銀支店長会議</a>
+    <a href="../index.html?theme=minimum-wage" class="theme-chip">最低賃金</a>
+    <a href="../index.html?theme=social-insurance" class="theme-chip">社会保険拡大</a>
+    <a href="../index.html?theme=usdjpy" class="theme-chip">USD/JPY</a>
+    <a href="../index.html?theme=freelance" class="theme-chip">フリーランス法</a>
+    <a href="../index.html?theme=cpi" class="theme-chip">米CPI</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div>
+    <div class="footer-head">次号予告</div>
+    <div class="footer-body">
+      <strong>Vol.100（2026.10.07 水曜日）</strong><br>
+      日銀支店長会議レポート速報。FOMC議事録の内容分析。政府賃上げ税制説明会の要点まとめ。CPI発表まで3日——ポジション調整の最終局面へ。
+    </div>
+  </div>
+  <div>
+    <div class="footer-head">バックナンバー</div>
+    <div class="footer-body">
+      <a href="../reports/morning-brief-20261005.html" class="footer-link">Vol.098（2026.10.05）Fed高官発言Day1</a><br>
+      <a href="../reports/morning-brief-20261003.html" class="footer-link">Vol.096（2026.10.03）雇用統計+192K週次総括</a><br>
+      <a href="../index.html" class="footer-link">→ バックナンバー一覧へ</a>
+    </div>
+  </div>
+  <div>
+    <div class="footer-head">About TYLER</div>
+    <div class="footer-body">
+      TYLER MORNING BRIEF は、AI主導の独立調査機関TYLERが毎朝発行する経済インテリジェンスレポート。世界と日本の主要経済ニュースを経営判断に直結する形で届けます。Vol.001より継続発行中。
+    </div>
+  </div>
+</div>
+
+</div><!-- /wrapper -->
+
+<script>
+document.querySelectorAll('.tc-stat strong').forEach(function(el){
+  var t=el.textContent.trim();
+  if(/^[▲▼-]/.test(t)){el.style.color='#B85C00';}
+  else if(/^\+/.test(t)){el.style.color='#1A7A5E';}
+});
+document.querySelectorAll('.val-pos').forEach(function(el){el.style.color='#1A7A5E';el.style.fontWeight='700';});
+document.querySelectorAll('.val-neg').forEach(function(el){el.style.color='#B85C00';el.style.fontWeight='700';});
+</script>
+</body>
+</html>
