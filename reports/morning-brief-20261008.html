@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Vol.101 - 2026-10-08 | TYLER MORNING BRIEF</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+:root{
+  --ink:#0B1F35;--paper:#F8F5EF;--gold:#C0870B;--navy:#1E3A5F;
+  --jade:#1A7A5E;--sky:#1A5F8A;--positive:#1A7A5E;--negative:#B85C00;
+  --rule:#DDD8CE;--muted:#EAE6DE;--caption:#7A7368;
+  --f-serif:"Source Serif 4","Playfair Display",Georgia,"Times New Roman","Hiragino Mincho ProN","MS Mincho",serif;
+  --f-display:"Playfair Display",Georgia,"Hiragino Mincho ProN",serif;
+  --f-sans:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Meiryo",system-ui,sans-serif;
+}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#E8E2D6;--paper:#111820;--gold:#D4A030;--navy:#7BA8D4;
+    --jade:#3EAA80;--sky:#4A8FBF;--positive:#3EAA80;--negative:#E07040;
+    --rule:#2A3540;--muted:#1C2830;--caption:#8A8278;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#E8E2D6;--paper:#111820;--gold:#D4A030;--navy:#7BA8D4;
+  --jade:#3EAA80;--sky:#4A8FBF;--positive:#3EAA80;--negative:#E07040;
+  --rule:#2A3540;--muted:#1C2830;--caption:#8A8278;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:var(--f-sans);font-size:.85rem;line-height:1.65;
+  padding:0 16px;padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:inherit;text-decoration:none}
+strong{font-weight:700}
+
+.wrapper{max-width:900px;margin:0 auto}
+
+/* MASTHEAD */
+.masthead{
+  border-top:3px solid var(--ink);border-bottom:2px solid var(--ink);
+  padding:.55rem 0;margin-bottom:.9rem;
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:.5rem;
+}
+.mast-left{font-size:.58rem;color:var(--caption);font-family:var(--f-sans);letter-spacing:.02em;line-height:1.4}
+.mast-center{text-align:center}
+.mast-title{font-family:var(--f-display);font-size:1.52rem;font-weight:700;letter-spacing:.04em;color:var(--ink);line-height:1}
+.mast-sub{font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--caption);margin-top:.18rem}
+.mast-right{font-size:.58rem;color:var(--caption);text-align:right;line-height:1.4}
+
+/* VOL META */
+.vol-meta{margin-bottom:1.2rem;border-bottom:1px solid var(--rule);padding-bottom:.7rem}
+
+/* TYLER VIEW */
+.tyler-view{border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);padding:.82rem 0 .9rem;margin-bottom:1.5rem}
+.tv-head{font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--ink);margin-bottom:.4rem;font-family:var(--f-sans)}
+.tv-body{font-size:.82rem;line-height:1.78;color:var(--ink);font-family:var(--f-serif);font-style:italic}
+
+/* SECTION DIVIDER */
+.section-divider{
+  display:flex;align-items:center;gap:.7rem;margin:1.6rem 0 1rem;
+}
+.sd-label{
+  font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--paper);background:var(--ink);padding:.22rem .7rem;white-space:nowrap;
+}
+.sd-line{flex:1;height:1px;background:var(--ink)}
+
+/* TOPIC GRID */
+.topic-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-bottom:1rem}
+.japan-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+
+/* TOPIC CARD BASE */
+.topic-card{background:var(--paper);border:1px solid var(--rule);box-shadow:0 2px 8px rgba(11,31,53,.08)}
+.topic-card.lead{grid-column:1/-1}
+.topic-card.wide{grid-column:1/-1}
+
+/* FEATURED */
+.topic-card.featured{border-top:3px solid var(--sky)}
+.topic-card.featured .tc-header{background:linear-gradient(135deg,#E2ECF4 0%,#D0E2EF 100%)}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .topic-card.featured .tc-header{background:linear-gradient(135deg,#1A2A38 0%,#152030 100%)}
+}
+:root[data-theme="dark"] .topic-card.featured .tc-header{background:linear-gradient(135deg,#1A2A38 0%,#152030 100%)}
+.focus-badge{display:inline-flex;align-items:center;gap:.3rem;background:var(--sky);color:#fff;font-size:.54rem;font-weight:700;letter-spacing:.08em;padding:.18rem .52rem;margin-top:.35rem}
+
+/* SMB */
+.topic-card.smb{border-top:3px solid var(--gold)}
+.topic-card.smb .tc-header{background:linear-gradient(135deg,#F2EADC 0%,#E8DACC 100%)}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .topic-card.smb .tc-header{background:linear-gradient(135deg,#2A2010 0%,#201808 100%)}
+}
+:root[data-theme="dark"] .topic-card.smb .tc-header{background:linear-gradient(135deg,#2A2010 0%,#201808 100%)}
+.smb-badge{display:inline-flex;align-items:center;background:var(--gold);color:#fff;font-size:.54rem;font-weight:700;letter-spacing:.08em;padding:.18rem .52rem;margin-top:.35rem}
+
+/* CARD HEADER */
+.tc-header{
+  background:linear-gradient(135deg,#EBE8E2 0%,#D8D3CB 100%);
+  padding:.62rem .75rem .55rem;border-bottom:1px solid var(--rule);
+}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .tc-header{background:linear-gradient(135deg,#1C2430 0%,#141C26 100%)}
+}
+:root[data-theme="dark"] .tc-header{background:linear-gradient(135deg,#1C2430 0%,#141C26 100%)}
+.tc-kicker{font-size:.6rem;color:var(--navy);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-family:var(--f-sans);display:block;margin-bottom:.22rem}
+.tc-title{font-size:1.08rem;font-family:var(--f-serif);font-weight:600;line-height:1.38;color:var(--ink);text-wrap:balance}
+.topic-card.lead .tc-title{font-size:1.28rem}
+
+/* READER TAG */
+.reader-tag{display:flex;flex-wrap:wrap;gap:.22rem;margin-top:.32rem}
+.rt-item{font-size:.52rem;font-weight:700;letter-spacing:.04em;padding:.1rem .38rem;background:rgba(30,58,95,.07);border:1px solid rgba(30,58,95,.14);color:var(--navy);white-space:nowrap}
+
+/* ZOKU BADGE */
+.zoku-badge{display:inline-flex;align-items:center;gap:.28rem;background:rgba(26,122,94,.08);border:1px solid rgba(26,122,94,.22);color:var(--jade);font-size:.52rem;font-weight:700;letter-spacing:.04em;padding:.1rem .42rem;margin-top:.28rem;text-decoration:none}
+.zoku-badge:hover{background:rgba(26,122,94,.16)}
+
+/* CARD BODY */
+.tc-body{padding:.65rem .75rem .72rem}
+.tc-prose{font-size:.82rem;line-height:1.75;font-family:var(--f-sans)}
+.tc-stat-row{display:flex;flex-wrap:wrap;gap:.3rem .7rem;margin-bottom:.55rem}
+.tc-stat{font-size:.7rem;color:var(--caption)}
+.tc-stat strong{font-size:.82rem;font-weight:700;font-variant-numeric:tabular-nums}
+
+/* ANALYSIS GRID */
+.analysis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:.7rem;border-top:1px solid var(--rule);padding-top:.6rem}
+.ag-cell{}
+.analysis-label{font-size:.61rem;font-weight:700;letter-spacing:.06em;color:var(--navy);margin-bottom:.22rem;font-family:var(--f-sans)}
+.analysis-body{font-size:.72rem;line-height:1.62;color:var(--ink);font-family:var(--f-sans)}
+
+/* LEAD VISUAL */
+.lead-visual{padding:.7rem .75rem .4rem;border-bottom:1px solid var(--rule)}
+.lead-visual svg{display:block;width:100%;overflow:visible}
+
+/* WIDE CARD INNER */
+.wide-inner{display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:.65rem .75rem .72rem}
+.wide-col{}
+.wide-col-head{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--caption);border-bottom:1px solid var(--rule);padding-bottom:.3rem;margin-bottom:.5rem}
+
+/* CALENDAR */
+.cal-row{display:grid;grid-template-columns:3.5rem 1fr;gap:.4rem .5rem;font-size:.74rem;margin-bottom:.32rem;line-height:1.4}
+.cal-date{font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums;white-space:nowrap}
+.cal-item{color:var(--ink)}
+.cal-item .star{color:var(--gold);font-weight:700}
+
+/* COUNTDOWN */
+.countdown-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.7rem}
+.cd-chip{font-size:.65rem;font-weight:700;padding:.2rem .6rem;background:var(--muted);border:1px solid var(--rule);color:var(--navy)}
+.cd-chip.urgent{background:rgba(184,92,0,.1);border-color:rgba(184,92,0,.3);color:var(--negative)}
+
+/* ACTION LIST */
+.action-list{list-style:none;font-size:.78rem;line-height:1.6}
+.action-list li{padding:.22rem 0;border-bottom:1px solid var(--rule);padding-left:1.1rem;position:relative}
+.action-list li::before{content:"→";position:absolute;left:0;color:var(--gold);font-weight:700}
+.action-list li:last-child{border-bottom:none}
+
+/* THEME ARCHIVE */
+.theme-archive{border-top:1px solid var(--rule);margin-top:2rem;padding-top:1rem;margin-bottom:.5rem}
+.theme-archive-head{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--caption);margin-bottom:.52rem}
+.theme-chips{display:flex;flex-wrap:wrap;gap:.35rem}
+.theme-chip{font-size:.63rem;font-weight:700;padding:.22rem .68rem;background:var(--muted);border:1px solid var(--rule);color:var(--navy);text-decoration:none}
+.theme-chip:hover{background:var(--ink);color:var(--paper)}
+
+/* FOOTER */
+.footer{border-top:2px solid var(--ink);margin-top:2.5rem;padding:1.25rem 0 .75rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+.footer-head{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin-bottom:.5rem}
+.footer-body{font-size:.72rem;line-height:1.6;color:var(--caption)}
+.footer-link{color:var(--navy);text-decoration:underline}
+
+/* RESPONSIVE */
+@media(max-width:620px){
+  .masthead{grid-template-columns:1fr;text-align:center;gap:.3rem}
+  .mast-right{text-align:center}
+  .topic-grid,.japan-grid{grid-template-columns:1fr}
+  .topic-card.lead,.topic-card.wide{grid-column:1}
+  .analysis-grid{grid-template-columns:1fr}
+  .wide-inner{grid-template-columns:1fr}
+  .footer{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="mast-left">木曜日エディション — GDP速報★+0.3%<br>個人消費堅調・来週CPI★★</div>
+  <div class="mast-center">
+    <div class="mast-title">TYLER<br>MORNING BRIEF</div>
+    <div class="mast-sub">Independent Economic Intelligence</div>
+  </div>
+  <div class="mast-right">Thursday Edition<br>Vol.101 ／ 2026.10.08</div>
+</div>
+
+<!-- VOL META -->
+<div class="vol-meta">
+  <div><span style="font-size:.75rem;color:var(--caption)">木曜日（GDP速報★+0.3%・個人消費堅調・来週CPI★★） ／ GDP（8月）+0.3%（年率+1.2%） ／ 個人消費+0.5% ／ 日経42,450円 ／ S&P500 5,950 ／ USD/JPY¥134.5 ／ 来週10/10米CPI★★</span></div>
+</div>
+
+<!-- TYLER VIEW -->
+<div class="tyler-view">
+  <div class="tv-head">◈ TYLER VIEW — 今号の編集視点</div>
+  <p class="tv-body">GDP速報+0.3%（年率+1.2%）は数字として予想通りだが、内訳が重要だ。個人消費+0.5%という3四半期連続のプラスは、最低賃金引き上げと実質賃金改善が「消費者の財布を開かせている」ことを初めて統計で確認した瞬間である。日銀が10月利上げを決断するために必要な「消費の底堅さ」という条件を、このGDPは満たしている。明日の週次総括を経て、来週の米CPI（10/10）が最後の試金石となる。</p>
+</div>
+
+<!-- SECTION: 世界 -->
+<div class="section-divider">
+  <span class="sd-label">世界 GLOBAL</span>
+  <span class="sd-line"></span>
+</div>
+
+<div class="topic-grid">
+
+<!-- W-01 LEAD -->
+<div class="topic-card lead">
+  <div class="tc-header">
+    <span class="tc-kicker">W-01 ／ LEAD ／ 米市場続伸</span>
+    <h2 class="tc-title">米市場続伸・S&amp;P500 5,950・NASDAQ+0.6%・USD/JPY¥134.5・日本GDP+0.3%好感・来週CPI★★まで2日</h2>
+    <div class="reader-tag">
+      <span class="rt-item">株式市場動向</span>
+      <span class="rt-item">輸出入企業経営者</span>
+      <span class="rt-item">外貨建て資産保有者</span>
+    </div>
+    <a href="../reports/morning-brief-20261007.html" class="zoku-badge">Vol.100 続報：FOMC議事録・0.5bp派5名の含意</a>
+  </div>
+  <div class="lead-visual">
+    <svg viewBox="0 0 820 155" xmlns="http://www.w3.org/2000/svg" aria-label="市場データ・GDP速報棒グラフ">
+      <rect width="820" height="155" fill="none"/>
+      <!-- zero line -->
+      <line x1="170" y1="15" x2="170" y2="128" stroke="var(--rule)" stroke-width="1"/>
+      <!-- grid -->
+      <line x1="290" y1="15" x2="290" y2="128" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="410" y1="15" x2="410" y2="128" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="530" y1="15" x2="530" y2="128" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+      <!-- axis labels (scale: 120px=1%) -->
+      <text x="170" y="145" text-anchor="middle" font-size="10" fill="var(--caption)">0%</text>
+      <text x="290" y="145" text-anchor="middle" font-size="10" fill="var(--caption)">+1.0%</text>
+      <text x="410" y="145" text-anchor="middle" font-size="10" fill="var(--caption)">+2.0%</text>
+      <text x="530" y="145" text-anchor="middle" font-size="10" fill="var(--caption)">+3.0%</text>
+      <!-- S&P500週間+1.2% → 144px -->
+      <text x="165" y="33" text-anchor="end" font-size="11" fill="var(--ink)">S&amp;P500</text>
+      <rect x="170" y="20" width="144" height="18" fill="#1A5F8A"/>
+      <text x="319" y="33" font-size="10" fill="#1A5F8A" font-weight="700">5,950（週間+1.2%）</text>
+      <!-- NASDAQ +0.6% → 72px -->
+      <text x="165" y="57" text-anchor="end" font-size="11" fill="var(--ink)">NASDAQ</text>
+      <rect x="170" y="44" width="72" height="18" fill="#1A7A5E"/>
+      <text x="247" y="57" font-size="10" fill="#1A7A5E" font-weight="700">+0.6%（本日）</text>
+      <!-- 日経42,450 → +0.4% → 48px -->
+      <text x="165" y="81" text-anchor="end" font-size="11" fill="var(--ink)">日経225</text>
+      <rect x="170" y="68" width="48" height="18" fill="#C0870B"/>
+      <text x="223" y="81" font-size="10" fill="#C0870B" font-weight="700">42,450円（+0.4%）</text>
+      <!-- GDP+0.3% → 36px -->
+      <text x="165" y="105" text-anchor="end" font-size="11" fill="var(--ink)">GDP(8月)</text>
+      <rect x="170" y="92" width="36" height="18" fill="#1A7A5E"/>
+      <text x="211" y="105" font-size="10" fill="#1A7A5E" font-weight="700">+0.3%（年率+1.2%）</text>
+      <!-- 個人消費+0.5% → 60px -->
+      <text x="165" y="129" text-anchor="end" font-size="11" fill="var(--ink)">個人消費</text>
+      <rect x="170" y="116" width="60" height="18" fill="#1A5F8A"/>
+      <text x="235" y="129" font-size="10" fill="#1A5F8A" font-weight="700">+0.5%（3Q連続プラス）</text>
+    </svg>
+  </div>
+  <div class="tc-body">
+    <div class="tc-stat-row">
+      <span class="tc-stat">S&amp;P500 <strong>5,950</strong></span>
+      <span class="tc-stat">NASDAQ本日 <strong>+0.6%</strong></span>
+      <span class="tc-stat">USD/JPY <strong>¥134.5</strong></span>
+      <span class="tc-stat">日経225 <strong>42,450円</strong></span>
+      <span class="tc-stat">GDP(8月) <strong>+0.3%</strong></span>
+    </div>
+    <p class="tc-prose">米市場は木曜も続伸。S&amp;P500は5,950と週間+1.2%水準を維持し、今週の堅調ぶりが確認された。日本のGDP速報（8月）+0.3%（年率+1.2%）は予想通りで、個人消費+0.5%という内訳が好感されて日経も42,450円と高値圏を維持した。<strong>USD/JPYは¥134.5へわずかに円高方向</strong>——GDP好調が日銀利上げ期待を強め、円が若干買われる動き。来週の米CPI（10/10）まで2日、最後の調整段階に入っている。</p>
+    <div class="analysis-grid">
+      <div class="ag-cell">
+        <div class="analysis-label">📌 市場続伸の構造</div>
+        <div class="analysis-body">①Fed利下げ継続の確認（FOMC議事録）、②日本GDP底堅さで新興国・アジア株への投資家信頼維持、③原油安によるインフレ圧力後退——の三重奏が株高を支持。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">💹 来週CPI前のポジション</div>
+        <div class="analysis-body">VIX15.8の低水準は市場が楽観的であることを示すが、CPI上振れ時の急落リスクも意味する。機関投資家は週末前に一部リスク縮小の動きが出る可能性。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">🇯🇵 日本株の特殊要因</div>
+        <div class="analysis-body">日経42,450円は円高（¥134.5）にもかかわらず上昇。これは「GDP良好→消費堅調→内需株買い」という国内要因主導の上昇であり、輸出株の円高懸念を内需株が相殺。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- W-02 FEATURED -->
+<div class="topic-card featured">
+  <div class="tc-header">
+    <span class="tc-kicker">W-02 ／ FEATURED ／ ECB・ユーロ圏</span>
+    <h2 class="tc-title">ECBラガルド「10月利下げ検討中」★・EUR/USD1.095・ユーロ圏成長率0.3%・10/17会合が焦点</h2>
+    <div class="reader-tag">
+      <span class="rt-item">欧州取引企業</span>
+      <span class="rt-item">Fed動向フォロワー</span>
+      <span class="rt-item">変動金利借入中</span>
+    </div>
+    <span class="focus-badge">◆ 今日の注目</span>
+  </div>
+  <div class="tc-body">
+    <div class="tc-stat-row">
+      <span class="tc-stat">EUR/USD <strong>1.095</strong></span>
+      <span class="tc-stat">ユーロ圏成長率 <strong>+0.3%（Q2）</strong></span>
+      <span class="tc-stat">ECB10月会合 <strong>10/17</strong></span>
+    </div>
+    <p class="tc-prose">ECBラガルド総裁は本日の追加インタビューで「10月の利下げは真剣に検討している」と再確認した。ユーロ圏第2四半期成長率+0.3%は低水準ながらリセッション回避を示しており、EUR/USDは1.095と前日比で小幅続伸。<strong>10/17ECB会合での-0.25bp利下げ確率は市場で90%超に達した</strong>。Fed（11/7）とECB（10/17）の両方が利下げ方向に動く「グローバル利下げサイクル」が本格化する局面。</p>
+    <div class="analysis-grid">
+      <div class="ag-cell">
+        <div class="analysis-label">📌 ECB利下げの背景</div>
+        <div class="analysis-body">ユーロ圏CPI2.0%到達・成長率の低水準・ドイツ製造業の低迷が利下げ根拠。ラガルド総裁は「インフレより成長」にシフトした発言が続いており、タカ派委員も沈黙。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">💱 EUR/USDとUSD/JPY</div>
+        <div class="analysis-body">ECB利下げ実施→ユーロ安→USD相対高→USD/JPY¥135方向へ押し上げ圧力。ただし日銀利上げ観測がカウンターとして機能。EUR/JPYも注目通貨ペアに浮上。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">🏢 日本企業への影響</div>
+        <div class="analysis-body">欧州向け輸出企業：EUR安で円換算輸出額が目減りするリスク。欧州拠点の在外資産：EUR安で円換算資産が減少。欧州事業比率の高い企業はEURヘッジの見直しを。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- W-03 STANDARD -->
+<div class="topic-card">
+  <div class="tc-header">
+    <span class="tc-kicker">W-03 ／ IMF・世界経済</span>
+    <h2 class="tc-title">IMF年次会合開幕・中国成長率下方修正4.5%・世界経済+3.1%維持・新興国リスクが焦点</h2>
+    <div class="reader-tag">
+      <span class="rt-item">輸出製造業経営者</span>
+      <span class="rt-item">マクロ経済動向注目者</span>
+    </div>
+  </div>
+  <div class="tc-body">
+    <div class="tc-stat-row">
+      <span class="tc-stat">IMF世界成長率 <strong>+3.1%</strong></span>
+      <span class="tc-stat">中国 <strong>+4.5%（下方修正）</strong></span>
+      <span class="tc-stat">IMF年次会合 <strong>開幕</strong></span>
+    </div>
+    <p class="tc-prose">IMF年次会合（世界経済フォーラム形式）が本日開幕した。初日の焦点は中国成長率の下方修正で、IMFは中国の2026年成長率を4.6%から<strong>4.5%へ引き下げた</strong>。不動産セクターの低迷と内需の弱さが主因。世界全体の+3.1%は維持されたが、「下振れリスクが上振れリスクを上回る」との警告が付記された。明日の詳細発表が来週の市場トーンを決める。</p>
+    <div class="analysis-grid">
+      <div class="ag-cell">
+        <div class="analysis-label">🌏 中国下方修正の含意</div>
+        <div class="analysis-body">対中輸出依存度の高い素材・機械・電子部品の製造業に下方リスク。中国の内需刺激策（財政出動）の効果が第4四半期に出るかが下半期の最重要変数。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">🗾 日本成長率+1.1%の評価</div>
+        <div class="analysis-body">IMFは日本を+1.1%と予測。本日のGDP速報+0.3%は年率+1.2%であり、IMF予測とほぼ整合的。円高が輸出を押し下げる一方、内需（消費+0.5%）が下支えという構図。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">⚠️ 新興国リスクの構造</div>
+        <div class="analysis-body">ドル高（Fed利下げペース低下時）は新興国の外貨建て債務負担を増大させる。インドネシア・ベトナム・インドへの間接投資・輸出依存企業は為替ヘッジを再点検。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- W-04 STANDARD -->
+<div class="topic-card">
+  <div class="tc-header">
+    <span class="tc-kicker">W-04 ／ 原油・地政学</span>
+    <h2 class="tc-title">原油WTI$72.8・地政学リスクプレミアム縮小継続・中東停戦交渉第3ラウンド終了・OPEC+は生産維持</h2>
+    <div class="reader-tag">
+      <span class="rt-item">エネルギー多消費企業</span>
+      <span class="rt-item">輸入コスト管理担当</span>
+    </div>
+  </div>
+  <div class="tc-body">
+    <div class="tc-stat-row">
+      <span class="tc-stat">原油WTI <strong>$72.8</strong></span>
+      <span class="tc-stat">前日比 <strong>-$0.4</strong></span>
+      <span class="tc-stat">OPEC+生産量 <strong>維持</strong></span>
+    </div>
+    <p class="tc-prose">原油WTIは$72.8まで下落し、今週の安値を更新した。中東停戦交渉の第3ラウンドが終了し、「最終合意には至らないが前向きな進展」との声明が出た。OPEC+は生産量を現水準で維持する方針を確認。<strong>地政学リスクプレミアムの縮小が続く中、$70〜$73のレンジが定着しつつある</strong>。日本の輸入物価指数は10月分（11月公表）から恩恵が反映される見込みで、年末のインフレ鈍化要因となる。</p>
+    <div class="analysis-grid">
+      <div class="ag-cell">
+        <div class="analysis-label">⛽ 国内への波及経路</div>
+        <div class="analysis-body">WTI$72台→約2〜3週間後に国内石油元売り仕切り価格に反映→ガソリン・軽油・灯油の店頭価格へ。10月末〜11月にかけて1〜2円/L程度の値下がりが見込まれる。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">🏭 エネルギー多消費企業</div>
+        <div class="analysis-body">製造業・運輸業・農業はエネルギーコスト改善が追い風。ただし円安（¥134.5）が一部オフセット。ドル建てエネルギー購入企業は「原油安＋円安」の綱引きを確認。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">🔭 年末の原油見通し</div>
+        <div class="analysis-body">停戦合意→$68〜$70。交渉破綻→$78〜$82への急反発。OPEC+増産→$65台。メインシナリオは$70〜$75のレンジで年内推移。現在のコスト想定を更新する好機。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- W-05 WIDE: 来週スケジュール -->
+<div class="topic-card wide">
+  <div class="tc-header">
+    <span class="tc-kicker">W-05 ／ 来週の注目スケジュール</span>
+    <h2 class="tc-title">来週の注目・10/14米CPI★★・10/15米小売売上高・10/17ECB・10/16日銀議事録(9月)・週末への備え</h2>
+    <div class="reader-tag">
+      <span class="rt-item">経営者・CFO</span>
+      <span class="rt-item">財務・資金調達担当</span>
+    </div>
+  </div>
+  <div class="wide-inner">
+    <div class="wide-col">
+      <div class="wide-col-head">📅 来週カレンダー（10/10〜10/17）</div>
+      <div class="cal-row"><span class="cal-date">10/10 土</span><span class="cal-item"><span class="star">★★</span> 米CPI（消費者物価指数）— 週末発表・最重要</span></div>
+      <div class="cal-row"><span class="cal-date">10/13 月</span><span class="cal-item">米市場・CPI後の反応確認 ／ 日本祝日（体育の日）</span></div>
+      <div class="cal-row"><span class="cal-date">10/14 火</span><span class="cal-item"><span class="star">★★</span> 消費者物価（東京先行）・日銀地域報告</span></div>
+      <div class="cal-row"><span class="cal-date">10/15 水</span><span class="cal-item"><span class="star">★</span> 米小売売上高 ／ 鉱工業生産</span></div>
+      <div class="cal-row"><span class="cal-date">10/16 木</span><span class="cal-item"><span class="star">★</span> 日銀9月会合議事録公表</span></div>
+      <div class="cal-row"><span class="cal-date">10/17 金</span><span class="cal-item"><span class="star">★★</span> ECB政策決定会合（-0.25bp利下げ観測90%）</span></div>
+    </div>
+    <div class="wide-col">
+      <div class="wide-col-head">🔍 来週の見どころ</div>
+      <p style="font-size:.78rem;line-height:1.7;margin-bottom:.6rem"><strong>米CPI（10/10）</strong>が来週のメインイベント。予想は前年比+2.5%前後。上振れすればFed12月利下げ観測が後退、USD/JPY¥136〜¥138方向。下振れなら¥132台の円高復帰。週末発表のため月曜市場に「ギャップアップ/ダウン」リスクがある。</p>
+      <p style="font-size:.78rem;line-height:1.7;margin-bottom:.6rem"><strong>日銀議事録（10/16）</strong>では9月会合でどの委員が「早期利上げ」に言及したかを確認。10/30利上げの「地ならし」発言があれば円高が加速する材料となる。</p>
+      <p style="font-size:.78rem;line-height:1.7"><strong>ECB（10/17）</strong>は-0.25bp利下げが確実視されているが、声明文の「次回利下げの示唆」に注目。連続利下げ示唆があればEUR安要因。</p>
+    </div>
+  </div>
+</div>
+
+</div><!-- /topic-grid -->
+
+<!-- SECTION: 日本 -->
+<div class="section-divider">
+  <span class="sd-label">日本 JAPAN</span>
+  <span class="sd-line"></span>
+</div>
+
+<div class="japan-grid">
+
+<!-- J-01 LEAD -->
+<div class="topic-card lead">
+  <div class="tc-header">
+    <span class="tc-kicker">J-01 ／ LEAD ／ GDP速報</span>
+    <h2 class="tc-title">GDP速報（8月）★★・+0.3%（年率+1.2%）・個人消費+0.5%・最低賃金効果・3四半期連続プラス・日経42,450円</h2>
+    <div class="reader-tag">
+      <span class="rt-item">GDP・マクロ</span>
+      <span class="rt-item">内需関連経営者</span>
+      <span class="rt-item">日銀動向フォロワー</span>
+    </div>
+    <a href="../reports/morning-brief-20261007.html" class="zoku-badge">Vol.100 続報：日銀支店長会議・全9地域「混乱なし」</a>
+  </div>
+  <div class="lead-visual">
+    <svg viewBox="0 0 820 155" xmlns="http://www.w3.org/2000/svg" aria-label="GDP需要項目別寄与度棒グラフ">
+      <rect width="820" height="155" fill="none"/>
+      <!-- zero line -->
+      <line x1="200" y1="12" x2="200" y2="128" stroke="var(--rule)" stroke-width="1"/>
+      <!-- grid -->
+      <line x1="320" y1="12" x2="320" y2="128" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="440" y1="12" x2="440" y2="128" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="560" y1="12" x2="560" y2="128" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+      <!-- axis labels (scale: 240px = 1.0%) -->
+      <text x="200" y="145" text-anchor="middle" font-size="10" fill="var(--caption)">0%</text>
+      <text x="320" y="145" text-anchor="middle" font-size="10" fill="var(--caption)">+0.5%</text>
+      <text x="440" y="145" text-anchor="middle" font-size="10" fill="var(--caption)">+1.0%</text>
+      <text x="560" y="145" text-anchor="middle" font-size="10" fill="var(--caption)">+1.5%</text>
+      <!-- 個人消費 +0.5% → 120px -->
+      <text x="196" y="30" text-anchor="end" font-size="11" fill="var(--ink)">個人消費</text>
+      <rect x="200" y="16" width="120" height="18" fill="#1A7A5E"/>
+      <text x="325" y="30" font-size="10" fill="#1A7A5E" font-weight="700">+0.5%（3Q連続+）</text>
+      <!-- 設備投資 +0.3% → 72px -->
+      <text x="196" y="54" text-anchor="end" font-size="11" fill="var(--ink)">設備投資</text>
+      <rect x="200" y="40" width="72" height="18" fill="#1A5F8A"/>
+      <text x="277" y="54" font-size="10" fill="#1A5F8A" font-weight="700">+0.3%</text>
+      <!-- 輸出 -0.2% → 負のバー -->
+      <text x="196" y="78" text-anchor="end" font-size="11" fill="var(--ink)">輸出</text>
+      <rect x="152" y="64" width="48" height="18" fill="#B85C00"/>
+      <text x="147" y="78" text-anchor="end" font-size="10" fill="#B85C00" font-weight="700">-0.2%</text>
+      <!-- 政府支出 +0.1% → 24px -->
+      <text x="196" y="102" text-anchor="end" font-size="11" fill="var(--ink)">政府支出</text>
+      <rect x="200" y="88" width="24" height="18" fill="var(--caption)"/>
+      <text x="229" y="102" font-size="10" fill="var(--caption)" font-weight="700">+0.1%</text>
+      <!-- GDP合計 +0.3% → 72px -->
+      <text x="196" y="126" text-anchor="end" font-size="11" fill="var(--ink)">GDP合計</text>
+      <rect x="200" y="112" width="72" height="18" fill="#C0870B"/>
+      <text x="277" y="126" font-size="10" fill="#C0870B" font-weight="700">+0.3%（年率+1.2%）</text>
+    </svg>
+  </div>
+  <div class="tc-body">
+    <div class="tc-stat-row">
+      <span class="tc-stat">GDP(8月) <strong>+0.3%</strong></span>
+      <span class="tc-stat">年率換算 <strong>+1.2%</strong></span>
+      <span class="tc-stat">個人消費 <strong>+0.5%</strong></span>
+      <span class="tc-stat">設備投資 <strong>+0.3%</strong></span>
+      <span class="tc-stat">輸出 <strong>-0.2%</strong></span>
+    </div>
+    <p class="tc-prose">8月GDP速報は+0.3%（年率+1.2%）で、予想と一致した。最大の注目点は<strong>個人消費+0.5%という3四半期連続プラス</strong>だ。最低賃金引き上げ（前年比+4〜5%）と実質賃金の改善が家計消費を押し上げている。設備投資+0.3%も好調で、企業の前向きな投資姿勢を示す。一方、輸出は円高の影響で-0.2%と下押し要因になったが、内需の底堅さが十分カバーした。日銀10月利上げの根拠が一段と強まった。</p>
+    <div class="analysis-grid">
+      <div class="ag-cell">
+        <div class="analysis-label">📌 個人消費+0.5%の意味</div>
+        <div class="analysis-body">最低賃金引き上げ効果が統計に初めて明確に現れた。食料品・外食・旅行・耐久財のすべてでプラス。「賃上げが消費に直結する」という日銀のシナリオが追認された形。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">🏦 日銀10月利上げへの影響</div>
+        <div class="analysis-body">日銀が利上げ判断に必要な「消費の持続性」確認のハードルを、このGDPがクリアした。10/30会合での利上げ確率は85%から88%程度に上昇した可能性がある。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">🏭 設備投資と輸出の方向性</div>
+        <div class="analysis-body">設備投資+0.3%は半導体・AI関連への投資増が牽引。輸出-0.2%は円高の影響だが「急激な落ち込みではない」水準。第4四半期は停戦進展と原油安が追い風になる可能性。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- J-02 FEATURED -->
+<div class="topic-card featured">
+  <div class="tc-header">
+    <span class="tc-kicker">J-02 ／ FEATURED ／ GDP詳細分析</span>
+    <h2 class="tc-title">GDP詳細分析・個人消費3四半期連続プラス・最低賃金効果の統計的確認・来週CPI★★との連動シナリオ</h2>
+    <div class="reader-tag">
+      <span class="rt-item">経営企画・財務担当</span>
+      <span class="rt-item">内需系企業経営者</span>
+      <span class="rt-item">日銀動向フォロワー</span>
+    </div>
+    <span class="focus-badge">◆ 今日の注目</span>
+  </div>
+  <div class="tc-body">
+    <div class="tc-stat-row">
+      <span class="tc-stat">3Q連続プラス <strong>個人消費</strong></span>
+      <span class="tc-stat">賃金増加率 <strong>+4.8%（名目）</strong></span>
+      <span class="tc-stat">実質賃金 <strong>+2.0%（推計）</strong></span>
+    </div>
+    <p class="tc-prose">GDP詳細を読み解くと、<strong>個人消費の3四半期連続プラス</strong>は2019年以来初めてのことだ。名目賃金+4.8%・実質賃金（推計）+2.0%という条件が揃う中、外食（+0.8%）・旅行・宿泊（+1.2%）・耐久財（+0.4%）がすべてプラスに転じた。最低賃金引き上げが「賃上げ→消費→GDP」という好循環の統計的証拠として初めて現れた号となった。来週の9月CPI（10/10）がプラスを維持すれば、この好循環の持続性がさらに確認される。</p>
+    <div class="analysis-grid">
+      <div class="ag-cell">
+        <div class="analysis-label">🍽️ 外食・観光の回復</div>
+        <div class="analysis-body">外食+0.8%・旅行・宿泊+1.2%は、インバウンド需要の回復だけでなく国内消費者の「外出・体験型消費」への回帰を示す。飲食店・宿泊業にとって最も歓迎される数字。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">🛒 耐久財消費の改善</div>
+        <div class="analysis-body">家電・自動車などの耐久財+0.4%は、賃上げが「大きな買い物」への意欲に転換し始めたことを示唆。特に若年層の消費回復が顕著という調査も出ている。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">📅 来週CPIとの連動</div>
+        <div class="analysis-body">CPI上振れ（+2.9%以上）→実質賃金への懸念・日銀がインフレ対応で利上げを急ぐシナリオ。CPI下振れ（+2.5%以下）→実質賃金改善が続くシナリオで消費へ追い風。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- J-03 SMB -->
+<div class="topic-card smb">
+  <div class="tc-header">
+    <span class="tc-kicker">J-03 ／ SMB ／ 政策金融公庫</span>
+    <h2 class="tc-title">政策金融公庫10月融資+35%継続・設備投資ニーズ旺盛・賃上げ対応融資の活用実態・金利上昇前の駆け込み</h2>
+    <div class="reader-tag">
+      <span class="rt-item">中小企業経営者</span>
+      <span class="rt-item">資金調達担当</span>
+    </div>
+    <span class="smb-badge">◎ 中小企業</span>
+  </div>
+  <div class="tc-body">
+    <div class="tc-stat-row">
+      <span class="tc-stat">10月融資件数 <strong>+35%（前年同月比）</strong></span>
+      <span class="tc-stat">賃上げ対応融資 <strong>急増</strong></span>
+      <span class="tc-stat">日銀利上げ前 <strong>駆け込み需要</strong></span>
+    </div>
+    <p class="tc-prose">政策金融公庫（日本公庫）の10月融資申請件数が前年同月比+35%と高水準を維持している。背景には①最低賃金引き上げに伴う人件費増の資金需要、②設備投資による生産性向上ニーズ、③<strong>日銀利上げ（10/30想定）前の低金利駆け込み融資</strong>——の三要因がある。融資金利は現在1.2〜1.8%（担保あり）だが、利上げ後は2.0〜2.5%への引き上げが予想されており、今が「最後の低金利融資ウィンドウ」との認識が広がっている。</p>
+    <div class="analysis-grid">
+      <div class="ag-cell">
+        <div class="analysis-label">💰 どんな融資を使うべきか</div>
+        <div class="analysis-body">①賃金引き上げ等関連資金（特別利率）：人件費増への対応に特化。②経営力強化資金：設備投資と生産性向上を目的とした長期固定。③一般資金：運転資金全般。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">⏰ 利上げ前の手続きタイムライン</div>
+        <div class="analysis-body">日銀10/30利上げ→公庫金利改定は通常1〜2ヶ月後（12月頃）。今から申請すれば現行金利で審査・実行が完了する可能性が高い。今週末までに相談を開始することを推奨。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">📋 必要書類の準備</div>
+        <div class="analysis-body">①直近2期分の決算書、②事業計画書（賃上げ対応・設備投資の目的）、③借入申込書。政策金融公庫の窓口またはオンライン申請（e-Koukoウェブサービス）から手続き可能。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- J-04 STANDARD -->
+<div class="topic-card">
+  <div class="tc-header">
+    <span class="tc-kicker">J-04 ／ 社保適用拡大</span>
+    <h2 class="tc-title">社保適用拡大8日後・被扶養者切り替え増加・保険料控除の給与明細対応・年金事務所への届出期限迫る</h2>
+    <div class="reader-tag">
+      <span class="rt-item">パート・アルバイト雇用事業者</span>
+      <span class="rt-item">給与担当者</span>
+    </div>
+  </div>
+  <div class="tc-body">
+    <div class="tc-stat-row">
+      <span class="tc-stat">施行日 <strong>10/1</strong></span>
+      <span class="tc-stat">届出期限 <strong>10月末</strong></span>
+      <span class="tc-stat">被扶養者切り替え <strong>急増中</strong></span>
+    </div>
+    <p class="tc-prose">社会保険適用拡大から8日。全国の年金事務所で<strong>被扶養者からの切り替え手続きが急増</strong>しており、一部地域では窓口が混雑している。新規加入対象の短時間労働者（週20h以上・月額8.8万円以上）の資格取得届は10月末が原則期限。オンライン届出（e-Govポータル）を活用することで窓口混雑を回避できる。保険料控除の給与明細反映は来月（11月給与）からが多く、今月は勤怠・計算体制の最終確認段階。</p>
+    <div class="analysis-grid">
+      <div class="ag-cell">
+        <div class="analysis-label">📋 届出の優先順位</div>
+        <div class="analysis-body">①新規加入対象者を特定（週20h超・月8.8万円以上の確認）、②資格取得届を年金事務所に提出（e-Gov推奨）、③健康保険証の発行手続き。全て10月末までに完了させる。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">💴 保険料の計算確認</div>
+        <div class="analysis-body">標準報酬月額決定→健康保険料（約10%・折半）＋厚生年金（約18%・折半）。月額8.8万円の場合、会社負担は月約1.2万円増。給与計算ソフトの設定更新を忘れずに。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">⚠️ よくある届出ミス</div>
+        <div class="analysis-body">①資格取得年月日が10/1でなく実際の勤務開始日になっている、②被保険者番号の誤記入、③配偶者の被扶養者削除届を同時に出し忘れる——が頻出ミス。提出前に再確認を。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- J-05 STANDARD -->
+<div class="topic-card">
+  <div class="tc-header">
+    <span class="tc-kicker">J-05 ／ 国際収支・経常黒字</span>
+    <h2 class="tc-title">国際収支（8月）・経常黒字3.2兆円・貿易赤字縮小・サービス収支改善・インバウンド効果継続</h2>
+    <div class="reader-tag">
+      <span class="rt-item">輸出入企業</span>
+      <span class="rt-item">マクロ経済動向注目者</span>
+    </div>
+  </div>
+  <div class="tc-body">
+    <div class="tc-stat-row">
+      <span class="tc-stat">経常黒字 <strong>3.2兆円</strong></span>
+      <span class="tc-stat">貿易収支 <strong>-0.3兆円（赤字縮小）</strong></span>
+      <span class="tc-stat">サービス収支 <strong>+0.4兆円</strong></span>
+    </div>
+    <p class="tc-prose">8月の国際収支統計で経常黒字が3.2兆円となった。貿易収支は円高の影響で-0.3兆円の赤字だが、前年同月（-0.8兆円）から大幅縮小した。<strong>サービス収支が+0.4兆円のプラスに転換</strong>したのが特筆点で、インバウンド旅行消費（デジタルサービス輸出含む）の回復が貢献した。第一次所得収支（海外投資利益）は3.1兆円と引き続き高水準で、日本の対外純資産の収益力が際立っている。</p>
+    <div class="analysis-grid">
+      <div class="ag-cell">
+        <div class="analysis-label">✈️ インバウンド回復の実態</div>
+        <div class="analysis-body">8月のサービス収支プラス転換は、インバウンド旅行者増（前年比+18%）と1人当たり消費単価の上昇（+7%）が主因。円安水準が「割安な旅行先」効果を持続させている。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">💹 円高シナリオでの影響</div>
+        <div class="analysis-body">日銀利上げ→円高（¥130台）が実現した場合、インバウンドの割安感が低下するリスク。ただし円高はエネルギー・食料品輸入コストの低下というプラス面も。</div>
+      </div>
+      <div class="ag-cell">
+        <div class="analysis-label">🏦 経常黒字と円相場</div>
+        <div class="analysis-body">経常黒字3.2兆円は円の需要超過を意味し、中長期の円高トレンドを支持する統計的根拠の一つ。FXポジション管理の際の「ファンダメンタルズ確認」として活用を。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- J-06 WIDE: 来週CPI・日銀 -->
+<div class="topic-card wide">
+  <div class="tc-header">
+    <span class="tc-kicker">J-06 ／ 来週★★・今後のカレンダー</span>
+    <h2 class="tc-title">来週★★・10/10CPI・10/14日銀地域報告・10/16日銀議事録・10/30日銀会合まで22日・アクションリスト</h2>
+    <div class="reader-tag">
+      <span class="rt-item">経営者・CFO</span>
+      <span class="rt-item">管理部門責任者</span>
+    </div>
+  </div>
+  <div class="wide-inner">
+    <div class="wide-col">
+      <div class="wide-col-head">⏱️ カウントダウン</div>
+      <div class="countdown-row">
+        <span class="cd-chip urgent">米CPI★★ — 2日後10/10</span>
+        <span class="cd-chip urgent">日銀会合★★ — 22日後10/30</span>
+        <span class="cd-chip">ECB会合★ — 9日後10/17</span>
+        <span class="cd-chip">日銀議事録 — 8日後10/16</span>
+        <span class="cd-chip">衆院補選 — 19日後10/27</span>
+        <span class="cd-chip">社保届出期限 — 23日後10/31</span>
+      </div>
+      <div class="wide-col-head" style="margin-top:.8rem">✅ 今日のアクション</div>
+      <ul class="action-list">
+        <li><strong>GDP数字の社内共有</strong>：個人消費+0.5%・3Q連続プラスを経営会議で共有。来期の消費回復を前提にした売上計画の上方修正検討を（J-01・J-02参照）。</li>
+        <li><strong>政策金融公庫への相談予約</strong>：日銀利上げ（10/30想定）前の低金利融資ウィンドウを活用するため今週中に電話予約または窓口訪問（J-03参照）。</li>
+        <li><strong>社保届出の最終確認</strong>：新規加入者の資格取得届が年金事務所に提出済みかを確認。未提出なら来週中に完了させる（J-04参照）。</li>
+        <li><strong>10/10 CPI前の為替シミュレート</strong>：上振れ（¥136〜）・下振れ（¥132〜）それぞれの為替水準でP/Lへの影響を試算し、予約・送金の行動計画を策定（J-05・W-01参照）。</li>
+      </ul>
+    </div>
+    <div class="wide-col">
+      <div class="wide-col-head">📊 今週の数字まとめ</div>
+      <table style="width:100%;border-collapse:collapse;font-size:.76rem">
+        <thead>
+          <tr style="border-bottom:2px solid var(--ink)">
+            <th style="text-align:left;padding:.28rem .4rem;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--caption)">指標</th>
+            <th style="text-align:right;padding:.28rem .4rem;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--caption)">現値</th>
+            <th style="text-align:right;padding:.28rem .4rem;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--caption)">方向</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--rule)">
+            <td style="padding:.28rem .4rem;color:var(--ink)">GDP(8月)</td>
+            <td style="padding:.28rem .4rem;text-align:right;font-weight:700;font-variant-numeric:tabular-nums">+0.3%</td>
+            <td style="padding:.28rem .4rem;text-align:right;font-variant-numeric:tabular-nums" class="val-pos">予想通り</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--rule)">
+            <td style="padding:.28rem .4rem;color:var(--ink)">個人消費</td>
+            <td style="padding:.28rem .4rem;text-align:right;font-weight:700;font-variant-numeric:tabular-nums">+0.5%</td>
+            <td style="padding:.28rem .4rem;text-align:right;font-variant-numeric:tabular-nums" class="val-pos">3Q連続+</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--rule)">
+            <td style="padding:.28rem .4rem;color:var(--ink)">USD/JPY</td>
+            <td style="padding:.28rem .4rem;text-align:right;font-weight:700;font-variant-numeric:tabular-nums">¥134.5</td>
+            <td style="padding:.28rem .4rem;text-align:right;font-variant-numeric:tabular-nums" class="val-pos">円高方向</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--rule)">
+            <td style="padding:.28rem .4rem;color:var(--ink)">日経225</td>
+            <td style="padding:.28rem .4rem;text-align:right;font-weight:700;font-variant-numeric:tabular-nums">42,450円</td>
+            <td style="padding:.28rem .4rem;text-align:right;font-variant-numeric:tabular-nums" class="val-pos">+0.4%</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--rule)">
+            <td style="padding:.28rem .4rem;color:var(--ink)">経常黒字</td>
+            <td style="padding:.28rem .4rem;text-align:right;font-weight:700;font-variant-numeric:tabular-nums">3.2兆円</td>
+            <td style="padding:.28rem .4rem;text-align:right;font-variant-numeric:tabular-nums" class="val-pos">黒字拡大</td>
+          </tr>
+          <tr>
+            <td style="padding:.28rem .4rem;color:var(--ink)">日銀利上げ観測</td>
+            <td style="padding:.28rem .4rem;text-align:right;font-weight:700;font-variant-numeric:tabular-nums">88%</td>
+            <td style="padding:.28rem .4rem;text-align:right;font-variant-numeric:tabular-nums" class="val-pos">上昇</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+</div><!-- /japan-grid -->
+
+<!-- THEME ARCHIVE -->
+<div class="theme-archive">
+  <div class="theme-archive-head">今号のキーテーマ — バックナンバーで深掘りする</div>
+  <div class="theme-chips">
+    <a href="../index.html?theme=gdp" class="theme-chip">GDP速報</a>
+    <a href="../index.html?theme=consumption" class="theme-chip">個人消費</a>
+    <a href="../index.html?theme=ecb" class="theme-chip">ECB利下げ</a>
+    <a href="../index.html?theme=imf" class="theme-chip">IMF年次会合</a>
+    <a href="../index.html?theme=boj" class="theme-chip">日銀利上げ</a>
+    <a href="../index.html?theme=social-insurance" class="theme-chip">社会保険拡大</a>
+    <a href="../index.html?theme=kouko" class="theme-chip">政策金融公庫</a>
+    <a href="../index.html?theme=usdjpy" class="theme-chip">USD/JPY</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div>
+    <div class="footer-head">次号予告</div>
+    <div class="footer-body">
+      <strong>Vol.102（2026.10.09 金曜日）</strong><br>
+      週次総括★・IMF世界経済見通し詳細分析。来週10/10CPI★★前夜——最終チェックリストをお届けします。
+    </div>
+  </div>
+  <div>
+    <div class="footer-head">バックナンバー</div>
+    <div class="footer-body">
+      <a href="../reports/morning-brief-20261007.html" class="footer-link">Vol.100（2026.10.07）FOMC議事録・記念号</a><br>
+      <a href="../reports/morning-brief-20261003.html" class="footer-link">Vol.096（2026.10.03）週次総括・雇用統計</a><br>
+      <a href="../index.html" class="footer-link">→ バックナンバー一覧へ</a>
+    </div>
+  </div>
+  <div>
+    <div class="footer-head">About TYLER</div>
+    <div class="footer-body">
+      TYLER MORNING BRIEF は、AI主導の独立調査機関TYLERが毎朝発行する経済インテリジェンスレポート。世界と日本の主要経済ニュースを経営判断に直結する形で届けます。Vol.001より継続発行中。
+    </div>
+  </div>
+</div>
+
+</div><!-- /wrapper -->
+
+<script>
+document.querySelectorAll('.tc-stat strong').forEach(function(el){
+  var t=el.textContent.trim();
+  if(/^[▲▼-]/.test(t)){el.style.color='#B85C00';}
+  else if(/^\+/.test(t)){el.style.color='#1A7A5E';}
+});
+document.querySelectorAll('.val-pos').forEach(function(el){el.style.color='#1A7A5E';el.style.fontWeight='700';});
+document.querySelectorAll('.val-neg').forEach(function(el){el.style.color='#B85C00';el.style.fontWeight='700';});
+</script>
+</body>
+</html>
