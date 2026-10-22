@@ -1,0 +1,1209 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TYLER MORNING BRIEF — Vol.111</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+/* ── Design tokens ── */
+:root {
+  --ink: #0B1F35;
+  --paper: #F8F5EF;
+  --gold: #C0870B;
+  --navy: #1E3A5F;
+  --jade: #1A7A5E;
+  --sky: #1A5F8A;
+  --positive: #1A7A5E;
+  --negative: #B85C00;
+  --rule: #DDD8CE;
+  --muted: #EAE6DE;
+  --caption: #7A7368;
+  --f-serif: Georgia, "Times New Roman", "Hiragino Mincho ProN", "MS Mincho", serif;
+  --f-sans: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", system-ui, sans-serif;
+  --f-display: "Playfair Display", Georgia, serif;
+  --header-bg: linear-gradient(135deg, #EBE8E2 0%, #D8D3CB 100%);
+  --header-bg-featured: linear-gradient(135deg, #E2ECF4 0%, #D0E2EF 100%);
+  --header-bg-smb: linear-gradient(135deg, #F4ECD8 0%, #ECDBC0 100%);
+  --chart-bg: #EAE6DE;
+  --chart-axis: #DDD8CE;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #E2DDCF;
+    --paper: #0D1A27;
+    --gold: #D4A435;
+    --navy: #7BAED0;
+    --jade: #38A87A;
+    --sky: #5B99C0;
+    --positive: #38A87A;
+    --negative: #E08240;
+    --rule: #263547;
+    --muted: #152030;
+    --caption: #8B9BAA;
+    --header-bg: linear-gradient(135deg, #172232 0%, #1C2C40 100%);
+    --header-bg-featured: linear-gradient(135deg, #162537 0%, #1C3248 100%);
+    --header-bg-smb: linear-gradient(135deg, #26200E 0%, #322A12 100%);
+    --chart-bg: #152030;
+    --chart-axis: #263547;
+  }
+}
+
+:root[data-theme="dark"] {
+  --ink: #E2DDCF;
+  --paper: #0D1A27;
+  --gold: #D4A435;
+  --navy: #7BAED0;
+  --jade: #38A87A;
+  --sky: #5B99C0;
+  --positive: #38A87A;
+  --negative: #E08240;
+  --rule: #263547;
+  --muted: #152030;
+  --caption: #8B9BAA;
+  --header-bg: linear-gradient(135deg, #172232 0%, #1C2C40 100%);
+  --header-bg-featured: linear-gradient(135deg, #162537 0%, #1C3248 100%);
+  --header-bg-smb: linear-gradient(135deg, #26200E 0%, #322A12 100%);
+  --chart-bg: #152030;
+  --chart-axis: #263547;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-sans);
+  font-size: 14px;
+  line-height: 1.65;
+  padding-inline: 16px;
+  padding-block: env(safe-area-inset-top, 0px) env(safe-area-inset-bottom, 0px);
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; }
+
+/* ── Wrapper ── */
+.wrap { max-width: 864px; margin: 0 auto; }
+
+/* ── Masthead ── */
+.masthead {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: .6rem;
+  border-top: 3px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding-block: .78rem;
+  margin-block: 1.25rem .65rem;
+}
+
+.mast-side {
+  font-size: .57rem;
+  color: var(--caption);
+  letter-spacing: .02em;
+  line-height: 1.5;
+}
+
+.mast-side:last-child { text-align: right; }
+
+.mast-center { text-align: center; }
+
+.mast-brand {
+  font-family: var(--f-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: var(--ink);
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.mast-sub {
+  font-size: .53rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--caption);
+  margin-top: .2rem;
+}
+
+/* ── Vol-meta ── */
+.vol-meta {
+  margin-bottom: 1.2rem;
+  padding: .5rem .78rem;
+  background: var(--muted);
+  border-left: 2px solid var(--gold);
+}
+
+/* ── TYLER VIEW (top) ── */
+.tyler-view {
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding-block: .85rem .92rem;
+  margin-bottom: 1.5rem;
+}
+
+.tv-head {
+  font-size: .57rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  color: var(--ink);
+  margin-bottom: .42rem;
+}
+
+.tv-body {
+  font-size: .82rem;
+  line-height: 1.78;
+  color: var(--ink);
+}
+
+/* ── Section divider ── */
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin-block: 1.65rem 1.05rem;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+.section-label {
+  font-size: .57rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--caption);
+  white-space: nowrap;
+}
+
+/* ── Topic grid ── */
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+}
+
+/* ── Topic card base ── */
+.topic-card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  box-shadow: 0 2px 8px rgba(11,31,53,.07);
+  display: flex;
+  flex-direction: column;
+}
+
+.topic-card.lead,
+.topic-card.wide {
+  grid-column: 1 / -1;
+}
+
+/* ── Featured card ── */
+.topic-card.featured { border-top: 3px solid var(--sky); }
+.topic-card.featured .tc-header { background: var(--header-bg-featured); }
+
+/* ── SMB card ── */
+.topic-card.smb { border-top: 3px solid var(--gold); }
+.topic-card.smb .tc-header { background: var(--header-bg-smb); }
+
+/* ── tc-header ── */
+.tc-header {
+  background: var(--header-bg);
+  padding: .72rem .92rem .64rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.tc-kicker {
+  display: block;
+  font-size: .63rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: .18rem;
+}
+
+.tc-title {
+  font-size: 1.06rem;
+  font-family: var(--f-serif);
+  font-weight: 700;
+  line-height: 1.38;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.topic-card.lead .tc-title { font-size: 1.26rem; }
+
+/* ── Reader tag ── */
+.reader-tag {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .22rem;
+  margin-top: .34rem;
+}
+
+.rt-item {
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: .1rem .38rem;
+  background: rgba(30,58,95,.07);
+  border: 1px solid rgba(30,58,95,.14);
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+/* ── Zoku badge ── */
+.zoku-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .28rem;
+  background: rgba(26,122,94,.08);
+  border: 1px solid rgba(26,122,94,.22);
+  color: var(--jade);
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: .1rem .42rem;
+  margin-top: .28rem;
+  text-decoration: none;
+}
+
+.zoku-badge:hover { background: rgba(26,122,94,.16); }
+
+/* ── SMB badge ── */
+.smb-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(192,135,11,.1);
+  border: 1px solid rgba(192,135,11,.28);
+  color: var(--gold);
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: .1rem .42rem;
+  margin-top: .28rem;
+}
+
+/* ── Focus badge ── */
+.focus-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  background: var(--sky);
+  color: #fff;
+  font-size: .54rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  padding: .18rem .52rem;
+  margin-top: .35rem;
+}
+
+/* ── Lead visual (SVG wrapper) ── */
+.lead-visual {
+  width: 100%;
+  border-bottom: 1px solid var(--rule);
+  background: var(--chart-bg);
+  overflow: hidden;
+}
+
+.lead-visual svg { width: 100%; display: block; }
+
+/* ── tc-body ── */
+.tc-body {
+  padding: .82rem .92rem;
+  display: flex;
+  flex-direction: column;
+  gap: .68rem;
+  flex: 1;
+}
+
+/* ── Stat row ── */
+.tc-stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .85rem;
+}
+
+.tc-stat { font-size: .72rem; }
+.tc-stat strong { font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* ── Prose ── */
+.tc-prose {
+  font-size: .82rem;
+  line-height: 1.76;
+  color: var(--ink);
+}
+
+/* ── Inline card TYLER VIEW ── */
+.card-tyler-view {
+  background: rgba(11,31,53,.04);
+  border-left: 2px solid var(--ink);
+  padding: .5rem .68rem;
+}
+
+.ctv-head {
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--caption);
+  margin-bottom: .2rem;
+}
+
+.card-tyler-view p {
+  font-size: .72rem;
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+/* ── Analysis grid ── */
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .72rem;
+  border-top: 1px solid var(--rule);
+  padding-top: .68rem;
+}
+
+.analysis-label {
+  display: block;
+  font-size: .61rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: .05em;
+  margin-bottom: .2rem;
+}
+
+.analysis-body {
+  font-size: .72rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+/* ── Wide card internals ── */
+.wide-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+/* ── Change table ── */
+.table-scroll { overflow-x: auto; }
+
+.change-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .72rem;
+  min-width: 480px;
+}
+
+.change-table th {
+  font-size: .59rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-align: left;
+  color: var(--caption);
+  border-bottom: 1px solid var(--rule);
+  padding: .32rem .52rem;
+}
+
+.change-table td {
+  padding: .36rem .52rem;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  line-height: 1.45;
+  vertical-align: top;
+}
+
+.change-table tr:last-child td { border-bottom: none; }
+
+.urgency-tag {
+  display: inline-block;
+  font-size: .5rem;
+  font-weight: 700;
+  padding: .06rem .35rem;
+  background: rgba(184,92,0,.1);
+  color: var(--negative);
+  border: 1px solid rgba(184,92,0,.22);
+}
+
+/* ── Countdown chips ── */
+.countdown-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin-bottom: .45rem;
+}
+
+.cd-chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: .42rem .88rem;
+  border: 1px solid var(--rule);
+  background: var(--muted);
+  min-width: 100px;
+}
+
+.cd-chip.urgent { border-color: var(--negative); background: rgba(184,92,0,.06); }
+
+.cd-num {
+  font-size: 1.45rem;
+  font-weight: 700;
+  font-family: var(--f-serif);
+  font-variant-numeric: tabular-nums;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.cd-chip.urgent .cd-num { color: var(--negative); }
+
+.cd-label {
+  font-size: .51rem;
+  color: var(--caption);
+  margin-top: .1rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ── Action list ── */
+.action-col-head {
+  font-size: .59rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--caption);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: .32rem;
+  margin-bottom: .52rem;
+}
+
+.action-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+.action-list li {
+  font-size: .76rem;
+  line-height: 1.52;
+  padding-left: 1.1rem;
+  position: relative;
+  color: var(--ink);
+}
+
+.action-list li::before {
+  content: attr(data-mark);
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: var(--jade);
+}
+
+/* ── Theme archive ── */
+.theme-archive {
+  border-top: 1px solid var(--rule);
+  margin-top: 2.1rem;
+  padding-top: 1rem;
+  margin-bottom: .5rem;
+}
+
+.theme-archive-head {
+  font-size: .59rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--caption);
+  margin-bottom: .52rem;
+}
+
+.theme-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .38rem;
+}
+
+.theme-chip {
+  font-size: .63rem;
+  font-weight: 700;
+  padding: .22rem .68rem;
+  background: var(--muted);
+  border: 1px solid var(--rule);
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.theme-chip:hover { background: var(--ink); color: var(--paper); }
+
+/* ── Footer ── */
+.footer {
+  border-top: 2px solid var(--ink);
+  margin-top: 2.5rem;
+  padding: 1.25rem 0 .9rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.1rem;
+}
+
+.footer-head {
+  font-size: .59rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: .44rem;
+}
+
+.footer-body {
+  font-size: .68rem;
+  line-height: 1.65;
+  color: var(--caption);
+}
+
+.footer-body a { color: var(--navy); text-decoration: underline; text-decoration-thickness: 1px; }
+.footer-body a:hover { color: var(--ink); }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .masthead { grid-template-columns: 1fr; text-align: center; }
+  .mast-side:last-child { text-align: center; }
+  .topic-grid { grid-template-columns: 1fr; }
+  .analysis-grid { grid-template-columns: 1fr; }
+  .wide-inner { grid-template-columns: 1fr; }
+  .footer { grid-template-columns: 1fr; }
+  .mast-brand { font-size: 1.15rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div class="mast-side">
+      火曜エディション<br>
+      テスラ決算★・IBM上振れ・9月貿易統計発表・日銀会合11日前
+    </div>
+    <div class="mast-center">
+      <div class="mast-brand">TYLER</div>
+      <div class="mast-sub">Morning Brief</div>
+    </div>
+    <div class="mast-side">
+      Tuesday Edition<br>
+      Vol.111 ／ 2026.10.20
+    </div>
+  </header>
+
+  <!-- VOL META -->
+  <div class="vol-meta" style="font-size:.72rem;">
+    火曜日（テスラQ3★・IBM Q3上振れ・9月貿易統計・米住宅着工125万戸・日銀全9地区改善確認）
+  </div>
+
+  <!-- TYLER VIEW -->
+  <section class="tyler-view">
+    <div class="tv-head">TYLER VIEW</div>
+    <p class="tv-body" style="font-family:var(--f-sans);font-style:normal;">
+      テスラとIBMという「EVの試練とAIの希望」が同日決算という火曜日。テスラはEPS前年比-4%下振れで粗利率14.6%と価格競争の深刻さが数字に表れた。一方IBMはwatsonx採用+65%でEPS上振れと、AI時代の企業IT需要の強さを示した。国内では9月貿易統計が輸出-1.8%と円高影響の初表面化を確認した。
+    </p>
+  </section>
+
+  <!-- WORLD SECTION -->
+  <div class="section-divider"><span class="section-label">World — W</span></div>
+  <div class="topic-grid">
+
+    <!-- W-01 LEAD -->
+    <article class="topic-card lead">
+      <div class="tc-header">
+        <span class="tc-kicker">W-01 ／ LEAD ／ テスラ決算</span>
+        <h2 class="tc-title">テスラQ3決算★・EPS $0.56（予想-4%下振れ）・粗利率14.6%（前年17.9%から急低下）・売上 $25.2B +8%・時間外 -4%</h2>
+        <div class="reader-tag">
+          <span class="rt-item">EV投資家</span>
+          <span class="rt-item">テクノロジー株投資家</span>
+          <span class="rt-item">自動車業界</span>
+        </div>
+      </div>
+      <!-- SVG Chart: テスラ四半期EPS縦棒グラフ -->
+      <div class="lead-visual">
+        <svg viewBox="0 0 820 170" xmlns="http://www.w3.org/2000/svg" aria-label="テスラ四半期EPS推移">
+          <!-- Background -->
+          <rect width="820" height="170" fill="var(--chart-bg)"/>
+          <!-- Axis line -->
+          <line x1="60" y1="140" x2="790" y2="140" stroke="var(--chart-axis)" stroke-width="1"/>
+          <!-- Bars: Q4'24 Q1'25 Q2'25 Q3'25 Q4'25e Q3'26 -->
+          <!-- Max value ~0.73, scale: (val/0.80)*100px height, base y=140 -->
+          <!-- Q4'24 = 0.73 → h=91.25 → y=48.75 -->
+          <rect x="80"  y="49"  width="80" height="91" fill="var(--navy)" rx="2"/>
+          <text x="120" y="44"  text-anchor="middle" font-size="11" font-family="var(--f-sans)" fill="var(--ink)" font-weight="700">$0.73</text>
+          <!-- Q1'25 = 0.45 → h=56.25 → y=83.75 -->
+          <rect x="205" y="84"  width="80" height="56" fill="var(--navy)" rx="2"/>
+          <text x="245" y="79"  text-anchor="middle" font-size="11" font-family="var(--f-sans)" fill="var(--ink)" font-weight="700">$0.45</text>
+          <!-- Q2'25 = 0.52 → h=65 → y=75 -->
+          <rect x="330" y="75"  width="80" height="65" fill="var(--navy)" rx="2"/>
+          <text x="370" y="70"  text-anchor="middle" font-size="11" font-family="var(--f-sans)" fill="var(--ink)" font-weight="700">$0.52</text>
+          <!-- Q3'25 = 0.62 → h=77.5 → y=62.5 -->
+          <rect x="455" y="63"  width="80" height="77" fill="var(--navy)" rx="2"/>
+          <text x="495" y="58"  text-anchor="middle" font-size="11" font-family="var(--f-sans)" fill="var(--ink)" font-weight="700">$0.62</text>
+          <!-- Q4'25e = 0.58 → h=72.5 → y=67.5 -->
+          <rect x="580" y="68"  width="80" height="72" fill="var(--sky)" rx="2" opacity="0.6"/>
+          <text x="620" y="63"  text-anchor="middle" font-size="11" font-family="var(--f-sans)" fill="var(--ink)" font-weight="700">$0.58e</text>
+          <!-- Q3'26 = 0.56 → h=70 → y=70 (orange = 下振れ) -->
+          <rect x="705" y="70"  width="80" height="70" fill="var(--negative)" rx="2"/>
+          <text x="745" y="65"  text-anchor="middle" font-size="11" font-family="var(--f-sans)" fill="var(--negative)" font-weight="700">$0.56</text>
+          <!-- X axis labels -->
+          <text x="120" y="157" text-anchor="middle" font-size="10" font-family="var(--f-sans)" fill="var(--caption)">Q4'24</text>
+          <text x="245" y="157" text-anchor="middle" font-size="10" font-family="var(--f-sans)" fill="var(--caption)">Q1'25</text>
+          <text x="370" y="157" text-anchor="middle" font-size="10" font-family="var(--f-sans)" fill="var(--caption)">Q2'25</text>
+          <text x="495" y="157" text-anchor="middle" font-size="10" font-family="var(--f-sans)" fill="var(--caption)">Q3'25</text>
+          <text x="620" y="157" text-anchor="middle" font-size="10" font-family="var(--f-sans)" fill="var(--caption)">Q4'25e</text>
+          <text x="745" y="157" text-anchor="middle" font-size="10" font-family="var(--f-sans)" fill="var(--negative)" font-weight="700">Q3'26★</text>
+          <!-- Legend -->
+          <rect x="700" y="10" width="10" height="10" fill="var(--negative)" rx="1"/>
+          <text x="714" y="19" font-size="9" font-family="var(--f-sans)" fill="var(--caption)">下振れ</text>
+        </svg>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <span class="tc-stat"><strong>EPS</strong> $0.56</span>
+          <span class="tc-stat"><strong>予想比</strong> -4%</span>
+          <span class="tc-stat"><strong>粗利率</strong> 14.6%</span>
+          <span class="tc-stat"><strong>売上</strong> $25.2B</span>
+          <span class="tc-stat"><strong>時間外</strong> -4%</span>
+        </div>
+        <p class="tc-prose">テスラのQ3決算はEPS $0.56と予想 $0.58を4%下回った。自動車粗利率は14.6%と前年の17.9%から急低下しており、中国勢との価格競争の深刻さが数字に表れた。一方売上は $25.2Bと前年比+8%成長を維持。Full Self-Drivingソフトウェア収入が増加傾向にあり、EVメーカーからAIモビリティ企業への転換を長期評価する声もある。</p>
+        <div class="analysis-grid">
+          <div>
+            <span class="analysis-label">粗利率低下の構造</span>
+            <p class="analysis-body">BYD・現代との価格競争で引下げ継続。ソフトウェア収入が利益率を下支えしていなければさらに悪化していた。</p>
+          </div>
+          <div>
+            <span class="analysis-label">FSD収入の可能性</span>
+            <p class="analysis-body">完全自動運転の月額課金が本格化すれば高利益率ソフトウェアビジネスへ転換。Cybercab 2026年量産開始が鍵。</p>
+          </div>
+          <div>
+            <span class="analysis-label">株価評価の乖離</span>
+            <p class="analysis-body">PER 80倍超は成長・利益率改善を織り込む。EPS下振れ継続なら再評価リスク大。</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- W-02 FEATURED -->
+    <article class="topic-card featured">
+      <div class="tc-header">
+        <span class="tc-kicker">W-02 ／ FEATURED ／ IBM決算</span>
+        <h2 class="tc-title">IBM Q3決算★★・EPS $2.38（予想+2%上振れ）・watsonx採用+65%・AIコンサル売上+28%・株価+6%</h2>
+        <div class="focus-badge">◆ 今日の注目</div>
+        <div class="reader-tag">
+          <span class="rt-item">エンタープライズIT投資家</span>
+          <span class="rt-item">AI・クラウド</span>
+          <span class="rt-item">ITコンサル</span>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <span class="tc-stat"><strong>EPS</strong> $2.38</span>
+          <span class="tc-stat"><strong>予想比</strong> +2%</span>
+          <span class="tc-stat"><strong>AIコンサル</strong> +28%</span>
+          <span class="tc-stat"><strong>watsonx</strong> +65%</span>
+          <span class="tc-stat"><strong>株価</strong> +6%</span>
+        </div>
+        <p class="tc-prose">IBMのQ3はEPS $2.38と予想を上回り、watsonx採用企業数が前年比+65%と急増。AIコンサルティング部門売上は+28%成長で「SI+AI企業」としてのポジションを確立しつつある。既存システムのAI化というニッチを押さえ、メインフレーム企業のイメージを脱しつつある。</p>
+        <div class="analysis-grid">
+          <div>
+            <span class="analysis-label">IBMの強い領域</span>
+            <p class="analysis-body">金融・医療・製造大企業向けに特化。レガシーシステムとAIの橋渡し役として不可欠な存在。</p>
+          </div>
+          <div>
+            <span class="analysis-label">日本企業への示唆</span>
+            <p class="analysis-body">国内SIerとの協業加速。IBM Japanのwatsonx浸透で既存顧客基盤の競合関係が変化しつつある。</p>
+          </div>
+          <div>
+            <span class="analysis-label">競合圧力</span>
+            <p class="analysis-body">アクセンチュアのAIコンサルおよびAWSのエンタープライズ向け生成AI強化が中期的な脅威。</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- W-03 standard -->
+    <article class="topic-card">
+      <div class="tc-header">
+        <span class="tc-kicker">W-03 ／ 米経済指標</span>
+        <h2 class="tc-title">米住宅着工9月・125万戸（前月比-1.3%）・金利6.9%高止まり・高額物件vs手頃価格の二極化</h2>
+        <div class="reader-tag">
+          <span class="rt-item">不動産投資家</span>
+          <span class="rt-item">住宅業界</span>
+          <span class="rt-item">マクロ分析者</span>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <span class="tc-stat"><strong>住宅着工</strong> 125万戸</span>
+          <span class="tc-stat"><strong>前月比</strong> -1.3%</span>
+          <span class="tc-stat"><strong>30年固定金利</strong> 6.9%</span>
+          <span class="tc-stat"><strong>住宅価格中央値</strong> $435,000</span>
+        </div>
+        <p class="tc-prose">9月の米住宅着工125万戸と前月比-1.3%の小幅減少。住宅ローン金利6.9%の高止まりが需要を抑制しているが供給不足は継続で価格は高水準維持。高額物件は需要堅調、中価格帯は停滞という二極化が鮮明。</p>
+        <div class="analysis-grid">
+          <div>
+            <span class="analysis-label">金利高と一次取得者排除</span>
+            <p class="analysis-body">月々の返済負担が所得の40%超に達するケースも。若年層の持ち家取得が延期されリースへのシフトが加速。</p>
+          </div>
+          <div>
+            <span class="analysis-label">日本不動産との比較</span>
+            <p class="analysis-body">日本も首都圏で同様の二極化。金利上昇局面で日米ともに一次取得者が市場から押し出されるリスクが高まる。</p>
+          </div>
+          <div>
+            <span class="analysis-label">景気後退シナリオ</span>
+            <p class="analysis-body">住宅着工が100万戸を割れば景気後退の先行指標。現在125万戸は警戒域だが即座の崩壊リスクは低い。</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- W-04 SMB -->
+    <article class="topic-card smb">
+      <div class="tc-header">
+        <span class="tc-kicker">W-04 ／ SMB ／ AI導入</span>
+        <h2 class="tc-title">IBM決算から読む中小企業AI導入★・コンサル不要で使える無料AIツール3選・平均ROI +23%</h2>
+        <div class="smb-badge">◎ 中小企業</div>
+        <div class="reader-tag">
+          <span class="rt-item">IT投資検討中の中小企業経営者</span>
+          <span class="rt-item">DX担当者</span>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <span class="tc-stat"><strong>国内AI活用率</strong> 18%</span>
+          <span class="tc-stat"><strong>未導入理由1位</strong> コスト</span>
+          <span class="tc-stat"><strong>無料ツール活用後ROI</strong> +23%</span>
+          <span class="tc-stat"><strong>月額目安</strong> ¥2,000〜</span>
+        </div>
+        <p class="tc-prose">中小企業のAI活用率は18%に留まるがコスト障壁は低下している。無料または月額1万円以下のAIツールで業務効率+20%以上を達成している事例が増加。まず1人・1業務・1ツールから始めることが普及の鍵。</p>
+        <div class="analysis-grid">
+          <div>
+            <span class="analysis-label">無料で始めるAI 3選</span>
+            <p class="analysis-body">Claude（文書作成・分析）/ Notion AI（ナレッジ管理）/ Microsoft Copilot（Office連携）。いずれも無料プランで試用可能。</p>
+          </div>
+          <div>
+            <span class="analysis-label">費用対効果の計算法</span>
+            <p class="analysis-body">「1時間×節約時間×時給×月稼働日数」で月次ROIを試算。多くの場合3か月以内に月額費用を回収できる。</p>
+          </div>
+          <div>
+            <span class="analysis-label">よくある失敗</span>
+            <p class="analysis-body">研修先行で実装なし。まず現場で使い、課題を洗い出してから本格導入するほうが定着率が高い。</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- W-05 WIDE -->
+    <article class="topic-card wide">
+      <div class="tc-header">
+        <span class="tc-kicker">W-05 ／ 週次カレンダー（火曜版）</span>
+        <h2 class="tc-title">今週の決算進捗と残りのスケジュール（水/ボーイング・木/ECB★★・金/CPI速報）</h2>
+        <div class="reader-tag">
+          <span class="rt-item">投資家</span>
+          <span class="rt-item">マクロウォッチャー</span>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="analysis-grid" style="grid-template-columns:1fr 1fr;">
+          <div>
+            <span class="analysis-label">今日の結果（10/20）</span>
+            <p class="analysis-body">
+              テスラ Q3: EPS $0.56、予想-4%下振れ<br>
+              IBM Q3: EPS $2.38、予想+2%上振れ<br>
+              米住宅着工: 125万戸、前月比-1.3%
+            </p>
+          </div>
+          <div>
+            <span class="analysis-label">残りの主要予定</span>
+            <p class="analysis-body">
+              水(10/21): ボーイング決算（赤字見込み）・米中古住宅販売<br>
+              木(10/22): ECB理事会★★（利下げ判断）<br>
+              金(10/23): 欧州PMI・日本CPI速報（日銀最終材料）
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div><!-- /topic-grid World -->
+
+  <!-- JAPAN SECTION -->
+  <div class="section-divider"><span class="section-label">Japan — J</span></div>
+  <div class="topic-grid">
+
+    <!-- J-01 LEAD -->
+    <article class="topic-card lead">
+      <div class="tc-header">
+        <span class="tc-kicker">J-01 ／ LEAD ／ 9月貿易統計</span>
+        <h2 class="tc-title">9月貿易統計★・輸出-1.8%（円高影響初表面化）・輸入-4.2%・貿易収支+2,100億円（4か月ぶり黒字）</h2>
+        <a class="zoku-badge" href="morning-brief-20261019.html">📎 Vol.110 続報：日銀支店長会議・全9地区物価改善確認</a>
+        <div class="reader-tag">
+          <span class="rt-item">輸出企業経営者</span>
+          <span class="rt-item">為替リスク管理</span>
+          <span class="rt-item">マクロ経済分析者</span>
+        </div>
+      </div>
+      <!-- SVG Chart: 9月貿易統計横棒グラフ -->
+      <div class="lead-visual">
+        <svg viewBox="0 0 820 170" xmlns="http://www.w3.org/2000/svg" aria-label="9月貿易統計">
+          <!-- Background -->
+          <rect width="820" height="170" fill="var(--chart-bg)"/>
+          <!-- Center axis -->
+          <line x1="260" y1="15" x2="260" y2="155" stroke="var(--chart-axis)" stroke-width="1"/>
+          <!-- Row labels -->
+          <text x="250" y="42"  text-anchor="end" font-size="11" font-family="var(--f-sans)" fill="var(--ink)">輸出変化率</text>
+          <text x="250" y="77"  text-anchor="end" font-size="11" font-family="var(--f-sans)" fill="var(--ink)">輸入変化率</text>
+          <text x="250" y="112" text-anchor="end" font-size="11" font-family="var(--f-sans)" fill="var(--ink)">貿易収支</text>
+          <text x="250" y="147" text-anchor="end" font-size="11" font-family="var(--f-sans)" fill="var(--ink)">対米輸出</text>
+          <!-- Bars (negative left, positive right; scale: 1% = 20px, ¥100B = 8px) -->
+          <!-- 輸出 -1.8% → left 36px -->
+          <rect x="224" y="29" width="36" height="18" fill="var(--negative)" rx="2"/>
+          <text x="218" y="42" text-anchor="end" font-size="10" font-family="var(--f-sans)" fill="var(--negative)" font-weight="700">-1.8%</text>
+          <!-- 輸入 -4.2% → left 84px -->
+          <rect x="176" y="64" width="84" height="18" fill="var(--jade)" rx="2"/>
+          <text x="170" y="77" text-anchor="end" font-size="10" font-family="var(--f-sans)" fill="var(--jade)" font-weight="700">-4.2%</text>
+          <!-- 貿易収支 +2100億 → right 168px -->
+          <rect x="261" y="99" width="168" height="18" fill="var(--jade)" rx="2"/>
+          <text x="435" y="112" text-anchor="start" font-size="10" font-family="var(--f-sans)" fill="var(--jade)" font-weight="700" dx="4">+2,100億円</text>
+          <!-- 対米輸出 +0.3% → right 6px -->
+          <rect x="261" y="134" width="6" height="18" fill="var(--jade)" rx="2"/>
+          <text x="273" y="147" text-anchor="start" font-size="10" font-family="var(--f-sans)" fill="var(--jade)" font-weight="700" dx="4">+0.3%</text>
+          <!-- Legend -->
+          <rect x="680" y="12" width="10" height="10" fill="var(--negative)" rx="1"/>
+          <text x="694" y="21" font-size="9" font-family="var(--f-sans)" fill="var(--caption)">マイナス</text>
+          <rect x="680" y="28" width="10" height="10" fill="var(--jade)" rx="1"/>
+          <text x="694" y="37" font-size="9" font-family="var(--f-sans)" fill="var(--caption)">プラス（円高恩恵）</text>
+        </svg>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <span class="tc-stat"><strong>輸出</strong> -1.8%</span>
+          <span class="tc-stat"><strong>輸入</strong> -4.2%</span>
+          <span class="tc-stat"><strong>貿易収支</strong> +2,100億円</span>
+          <span class="tc-stat"><strong>対米輸出</strong> +0.3%</span>
+        </div>
+        <p class="tc-prose">9月貿易統計は円高¥132〜133台の影響が輸出額に初めて表れた結果となった。円建て輸出額は前年比-1.8%と小幅減少。ただし輸入も-4.2%と大幅減少（エネルギー・食料コスト低下）したため、貿易収支は4か月ぶりに黒字転換（+2,100億円）。対米輸出は+0.3%と自動車輸出が下支えした。円高がさらに進めばQ4は急減速リスク。</p>
+        <div class="analysis-grid">
+          <div>
+            <span class="analysis-label">数量増・金額減の構造</span>
+            <p class="analysis-body">輸出数量は増えているが円高で円建て金額が目減り。この「数量トラップ」が企業収益を圧迫する構造的問題。</p>
+          </div>
+          <div>
+            <span class="analysis-label">貿易黒字→さらなる円高圧力</span>
+            <p class="analysis-body">黒字転換により円買い圧力が強まる需給サイクルが発動。日銀利上げと相乗効果で¥130台到達の可能性が高まる。</p>
+          </div>
+          <div>
+            <span class="analysis-label">Q4リスク（¥130台）</span>
+            <p class="analysis-body">¥130台定着なら輸出企業の業績予想に大幅下方修正リスク。電機・自動車セクターの決算が注目される。</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- J-02 standard -->
+    <article class="topic-card">
+      <div class="tc-header">
+        <span class="tc-kicker">J-02 ／ 日銀・金融政策</span>
+        <h2 class="tc-title">日銀支店長会議結果★・全9地区が物価改善・賃金上昇を確認・利上げ確率92%に上昇</h2>
+        <div class="reader-tag">
+          <span class="rt-item">金融機関</span>
+          <span class="rt-item">住宅ローン利用者</span>
+          <span class="rt-item">政策ウォッチャー</span>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <span class="tc-stat"><strong>利上げ確率</strong> 92%</span>
+          <span class="tc-stat"><strong>全9地区</strong> 改善確認</span>
+          <span class="tc-stat"><strong>日銀会合まで</strong> 11日</span>
+          <span class="tc-stat"><strong>政策金利現行</strong> 0.25%</span>
+        </div>
+        <p class="tc-prose">昨日の日銀支店長会議で全9地区が物価上昇・賃金改善の継続を報告。市場の利上げ確率は92%に上昇し「サプライズがなければ確実」という見方が定着。焦点は決定の有無から声明の表現と12月利上げへの示唆へ移りつつある。</p>
+        <div class="analysis-grid">
+          <div>
+            <span class="analysis-label">全9地区改善の意味</span>
+            <p class="analysis-body">地域格差が縮小し、一部大都市圏に偏っていた改善傾向が地方にも波及。日銀が「広がりがある」と判断する根拠が揃った。</p>
+          </div>
+          <div>
+            <span class="analysis-label">声明文の読み方</span>
+            <p class="analysis-body">「慎重に」「段階的に」の削除や「適切なタイミング」への変更が利上げ加速シグナル。文言変化に注目。</p>
+          </div>
+          <div>
+            <span class="analysis-label">唯一のリスク</span>
+            <p class="analysis-body">外部ショック（円急騰・海外株暴落・地政学リスク）のみが利上げを回避させる唯一のシナリオ。</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- J-03 FEATURED -->
+    <article class="topic-card featured">
+      <div class="tc-header">
+        <span class="tc-kicker">J-03 ／ FEATURED ／ 製造業AI</span>
+        <h2 class="tc-title">国内製造業AI導入最前線★・三菱電機不良品率-23%・ファナック段取り時間-40%・中小製造業SaaS展開</h2>
+        <div class="focus-badge">◆ 今日の注目</div>
+        <div class="reader-tag">
+          <span class="rt-item">製造業経営者</span>
+          <span class="rt-item">IT・DX担当者</span>
+          <span class="rt-item">AI投資家</span>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <span class="tc-stat"><strong>国内製造業AI導入率</strong> 31%</span>
+          <span class="tc-stat"><strong>生産性向上</strong> 平均+15%</span>
+          <span class="tc-stat"><strong>不良品率低下</strong> -23%</span>
+          <span class="tc-stat"><strong>投資回収</strong> 2.8年</span>
+        </div>
+        <p class="tc-prose">三菱電機がAI異常検知で不良品率-23%削減、ファナックがロボット制御AIで段取り替え時間-40%短縮。米IBMのwatsonxが大企業向けに浸透する中、日本製造業の現場密着型AIは「職人的技術のデジタル化」という独自価値で差別化している。</p>
+        <div class="analysis-grid">
+          <div>
+            <span class="analysis-label">製造業AI 3分野</span>
+            <p class="analysis-body">不良品検出（画像AI）・異常予知（センサーAI）・在庫最適化（需要予測AI）の3領域で導入効果が顕著。</p>
+          </div>
+          <div>
+            <span class="analysis-label">中小製造業への展開</span>
+            <p class="analysis-body">大企業の実績をパッケージ化したSaaSが月額15〜50万円で提供開始。資本力のない中小でも導入可能な土台が整いつつある。</p>
+          </div>
+          <div>
+            <span class="analysis-label">人材不足の課題</span>
+            <p class="analysis-body">AI運用人材の不足が最大の障壁。ベンダーのリモートサポートと現場OJTの組み合わせが定着の鍵。</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- J-04 SMB -->
+    <article class="topic-card smb">
+      <div class="tc-header">
+        <span class="tc-kicker">J-04 ／ SMB ／ 為替対策</span>
+        <h2 class="tc-title">9月貿易統計から中小輸出企業が学ぶ・数量は増えているのに円換算売上が減る「数量トラップ」対策</h2>
+        <div class="smb-badge">◎ 中小企業</div>
+        <div class="reader-tag">
+          <span class="rt-item">輸出型中小企業</span>
+          <span class="rt-item">商社・卸売業</span>
+          <span class="rt-item">外貨建て契約の事業者</span>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <span class="tc-stat"><strong>輸出金額</strong> -1.8%</span>
+          <span class="tc-stat"><strong>輸出数量</strong> +0.8%</span>
+          <span class="tc-stat"><strong>外貨建て契約率 中小</strong> 43%</span>
+          <span class="tc-stat"><strong>為替予約コスト</strong> 約0.3%</span>
+        </div>
+        <p class="tc-prose">輸出金額-1.8%・数量+0.8%は中小輸出企業の「数量トラップ」を示す。数量は増えているのに円換算収入が減る状態。外貨建て契約の中小43%が円高リスクを無防備に受けている。為替予約（ヘッジ）で対応可能。</p>
+        <div class="analysis-grid">
+          <div>
+            <span class="analysis-label">今すぐできる対策3つ</span>
+            <p class="analysis-body">①契約の円建て化（バイヤーと交渉）②為替予約（銀行で6か月先まで可能）③インコタームズ変更（CIFからFOBへ）。</p>
+          </div>
+          <div>
+            <span class="analysis-label">為替予約の具体例</span>
+            <p class="analysis-body">¥133/$1のレートで3か月先の売上$10万を予約すると¥1,330万を確定できる。コストは額面の0.3%程度。</p>
+          </div>
+          <div>
+            <span class="analysis-label">よくある誤解</span>
+            <p class="analysis-body">「円高になっても数量が増えれば売上は保てる」という誤解が最大の落とし穴。金額ベースで収益管理することが必須。</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- J-05 standard -->
+    <article class="topic-card">
+      <div class="tc-header">
+        <span class="tc-kicker">J-05 ／ 不動産</span>
+        <h2 class="tc-title">首都圏マンション供給9月・3,200戸（前年比-8%）・坪単価418万円・即日完売の45%が坪500万超</h2>
+        <div class="reader-tag">
+          <span class="rt-item">不動産投資家</span>
+          <span class="rt-item">マイホーム検討者</span>
+          <span class="rt-item">住宅ローン担当</span>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <span class="tc-stat"><strong>供給</strong> 3,200戸</span>
+          <span class="tc-stat"><strong>前年比</strong> -8%</span>
+          <span class="tc-stat"><strong>坪単価</strong> 418万円</span>
+          <span class="tc-stat"><strong>即日完売率</strong> 45%</span>
+        </div>
+        <p class="tc-prose">首都圏マンション供給は3,200戸と前年比-8%。坪単価中央値は418万円と高水準で即日完売物件の45%は坪500万超。低中価格帯は「買いたくても買えない」市場構造が固定化している。</p>
+        <div class="analysis-grid">
+          <div>
+            <span class="analysis-label">供給減の理由</span>
+            <p class="analysis-body">用地取得コストの高騰と建設費・人件費の上昇が重なり、採算の取れる物件が高額帯に絞られている。</p>
+          </div>
+          <div>
+            <span class="analysis-label">利上げ後の影響</span>
+            <p class="analysis-body">日銀利上げで変動金利が上昇すれば高額物件の需要が一時的に冷却する可能性。ただし供給不足が底支えする構造は変わらない。</p>
+          </div>
+          <div>
+            <span class="analysis-label">中古市場への注目</span>
+            <p class="analysis-body">新築高騰の反動で中古需要が上昇。築20年以内のリノベ物件に割安感。中古+リノベのコストパフォーマンスが改めて評価されている。</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- J-06 WIDE -->
+    <article class="topic-card wide">
+      <div class="tc-header">
+        <span class="tc-kicker">J-06 ／ 今週の国内スケジュール</span>
+        <h2 class="tc-title">今週残りの国内注目イベント・木曜ECB→円高影響・金曜CPI速報★（日銀最終材料）・日銀会合まで11日</h2>
+        <div class="reader-tag">
+          <span class="rt-item">投資家</span>
+          <span class="rt-item">経営者</span>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="analysis-grid" style="grid-template-columns:1fr 1fr;">
+          <div>
+            <span class="analysis-label">木曜（10/22）ECB理事会★★</span>
+            <p class="analysis-body">
+              ECBタカ派発言→ユーロ高→円高加速リスク。<br>
+              利下げ見送りの場合、ドル安・円高の連鎖が予想される。<br>
+              東証3Q決算ラッシュが本格化。輸出企業の修正予想に注目。
+            </p>
+          </div>
+          <div>
+            <span class="analysis-label">金曜（10/23）CPI速報★★</span>
+            <p class="analysis-body">
+              9月分CPI速報が発表。日銀会合前の最終物価データ。<br>
+              コアCPIが前年比+2.5%超なら利上げ決定を後押し。<br>
+              欧州PMI・米製造業PMIとの同日発表でマクロ指標の集中日。
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div><!-- /topic-grid Japan -->
+
+  <!-- THEME ARCHIVE -->
+  <div class="theme-archive">
+    <div class="theme-archive-head">Theme Archive — Vol.111</div>
+    <div class="theme-chips">
+      <span class="theme-chip">テスラ決算</span>
+      <span class="theme-chip">IBM決算</span>
+      <span class="theme-chip">AI導入</span>
+      <span class="theme-chip">9月貿易統計</span>
+      <span class="theme-chip">円高対策</span>
+      <span class="theme-chip">日銀カウントダウン</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div>
+      <div class="footer-head">Next Issue</div>
+      <div class="footer-body">
+        Vol.112 / 2026.10.21（水）<br>
+        ボーイング決算・米中古住宅
+      </div>
+    </div>
+    <div>
+      <div class="footer-head">Back Issues</div>
+      <div class="footer-body">
+        <a href="morning-brief-20261019.html">Vol.110 (10/19)</a><br>
+        <a href="morning-brief-20261016.html">Vol.109 (10/16)</a><br>
+        <a href="morning-brief-20261015.html">Vol.108 (10/15)</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-head">TYLER Morning Brief</div>
+      <div class="footer-body">
+        AI主導による毎朝の経営情報ブリーフィング。<br>
+        世界と日本の重要ニュースを11枚のカードで届ける。
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /wrap -->
+
+<script>
+(function() {
+  // Inject CSS custom property overrides for SVG elements that cannot read CSS vars
+  const root = document.documentElement;
+  function applyChartColors() {
+    const cs = getComputedStyle(root);
+    const ink = cs.getPropertyValue('--ink').trim();
+    const navy = cs.getPropertyValue('--navy').trim();
+    const jade = cs.getPropertyValue('--jade').trim();
+    const negative = cs.getPropertyValue('--negative').trim();
+    const caption = cs.getPropertyValue('--caption').trim();
+    const chartBg = cs.getPropertyValue('--chart-bg').trim();
+    const chartAxis = cs.getPropertyValue('--chart-axis').trim();
+    const sky = cs.getPropertyValue('--sky').trim();
+
+    document.querySelectorAll('.lead-visual svg').forEach(svg => {
+      svg.querySelectorAll('rect[fill="var(--chart-bg)"]').forEach(el => el.setAttribute('fill', chartBg));
+      svg.querySelectorAll('line[stroke="var(--chart-axis)"]').forEach(el => el.setAttribute('stroke', chartAxis));
+      svg.querySelectorAll('rect[fill="var(--navy)"]').forEach(el => el.setAttribute('fill', navy));
+      svg.querySelectorAll('rect[fill="var(--jade)"]').forEach(el => el.setAttribute('fill', jade));
+      svg.querySelectorAll('rect[fill="var(--negative)"]').forEach(el => el.setAttribute('fill', negative));
+      svg.querySelectorAll('rect[fill="var(--sky)"]').forEach(el => el.setAttribute('fill', sky));
+      svg.querySelectorAll('text[fill="var(--ink)"]').forEach(el => el.setAttribute('fill', ink));
+      svg.querySelectorAll('text[fill="var(--caption)"]').forEach(el => el.setAttribute('fill', caption));
+      svg.querySelectorAll('text[fill="var(--jade)"]').forEach(el => el.setAttribute('fill', jade));
+      svg.querySelectorAll('text[fill="var(--negative)"]').forEach(el => el.setAttribute('fill', negative));
+    });
+  }
+
+  applyChartColors();
+
+  // Theme toggle button
+  const btn = document.createElement('button');
+  btn.textContent = '◑';
+  btn.title = 'Toggle dark / light mode';
+  Object.assign(btn.style, {
+    position: 'fixed', bottom: '1.2rem', right: '1.2rem',
+    width: '2.4rem', height: '2.4rem',
+    borderRadius: '50%', border: '1px solid var(--rule)',
+    background: 'var(--muted)', color: 'var(--ink)',
+    fontSize: '1rem', cursor: 'pointer',
+    display: 'flex', alignItems: 'center', justifyContent: 'center',
+    zIndex: '999', lineHeight: '1'
+  });
+  btn.addEventListener('click', function() {
+    const current = root.getAttribute('data-theme');
+    if (current === 'dark') {
+      root.setAttribute('data-theme', 'light');
+    } else if (current === 'light') {
+      root.removeAttribute('data-theme');
+    } else {
+      root.setAttribute('data-theme', 'dark');
+    }
+    setTimeout(applyChartColors, 50);
+  });
+  document.body.appendChild(btn);
+
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
+      setTimeout(applyChartColors, 50);
+    });
+  }
+})();
+</script>
+</body>
+</html>
