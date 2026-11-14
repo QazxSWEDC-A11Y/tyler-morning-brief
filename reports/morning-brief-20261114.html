@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TYLER MORNING BRIEF — Vol.116 特別号</title>
+<style>
+/* ── Design tokens ── */
+:root {
+  --ink: #0B1F35;
+  --paper: #F8F5EF;
+  --gold: #C0870B;
+  --navy: #1E3A5F;
+  --jade: #1A7A5E;
+  --sky: #1A5F8A;
+  --positive: #1A7A5E;
+  --negative: #B85C00;
+  --rule: #DDD8CE;
+  --muted: #EAE6DE;
+  --caption: #7A7368;
+  --f-serif: Georgia, "Times New Roman", "Hiragino Mincho ProN", "MS Mincho", serif;
+  --f-sans: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", system-ui, sans-serif;
+  --f-display: "Playfair Display", Georgia, serif;
+  --header-bg: linear-gradient(135deg, #EBE8E2 0%, #D8D3CB 100%);
+  --header-bg-featured: linear-gradient(135deg, #E2ECF4 0%, #D0E2EF 100%);
+  --header-bg-smb: linear-gradient(135deg, #F4ECD8 0%, #ECDBC0 100%);
+  --chart-bg: #EAE6DE;
+  --chart-axis: #DDD8CE;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #E2DDCF;
+    --paper: #0D1A27;
+    --gold: #D4A435;
+    --navy: #7BAED0;
+    --jade: #38A87A;
+    --sky: #5B99C0;
+    --positive: #38A87A;
+    --negative: #E08240;
+    --rule: #263547;
+    --muted: #152030;
+    --caption: #8B9BAA;
+    --header-bg: linear-gradient(135deg, #172232 0%, #1C2C40 100%);
+    --header-bg-featured: linear-gradient(135deg, #162537 0%, #1C3248 100%);
+    --header-bg-smb: linear-gradient(135deg, #26200E 0%, #322A12 100%);
+    --chart-bg: #152030;
+    --chart-axis: #263547;
+  }
+}
+
+:root[data-theme="dark"] {
+  --ink: #E2DDCF;
+  --paper: #0D1A27;
+  --gold: #D4A435;
+  --navy: #7BAED0;
+  --jade: #38A87A;
+  --sky: #5B99C0;
+  --positive: #38A87A;
+  --negative: #E08240;
+  --rule: #263547;
+  --muted: #152030;
+  --caption: #8B9BAA;
+  --header-bg: linear-gradient(135deg, #172232 0%, #1C2C40 100%);
+  --header-bg-featured: linear-gradient(135deg, #162537 0%, #1C3248 100%);
+  --header-bg-smb: linear-gradient(135deg, #26200E 0%, #322A12 100%);
+  --chart-bg: #152030;
+  --chart-axis: #263547;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-sans);
+  font-size: 14px;
+  line-height: 1.65;
+  padding-inline: 16px;
+  padding-block: env(safe-area-inset-top, 0px) env(safe-area-inset-bottom, 0px);
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; }
+
+/* ── Wrapper ── */
+.wrap { max-width: 864px; margin: 0 auto; }
+
+/* ── Masthead ── */
+.masthead {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: .6rem;
+  border-top: 3px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding-block: .78rem;
+  margin-block: 1.25rem .65rem;
+}
+
+.mast-side {
+  font-size: .57rem;
+  color: var(--caption);
+  letter-spacing: .02em;
+  line-height: 1.5;
+}
+
+.mast-side:last-child { text-align: right; }
+
+.mast-center { text-align: center; }
+
+.mast-brand {
+  font-family: var(--f-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: var(--ink);
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.mast-sub {
+  font-size: .53rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--caption);
+  margin-top: .2rem;
+}
+
+/* ── Vol-meta ── */
+.vol-meta {
+  margin-bottom: 1.2rem;
+  padding: .5rem .78rem;
+  background: var(--muted);
+  border-left: 2px solid var(--gold);
+}
+
+/* ── TYLER VIEW (top) ── */
+.tyler-view {
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding-block: .85rem .92rem;
+  margin-bottom: 1.5rem;
+}
+
+.tv-head {
+  font-size: .57rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  color: var(--ink);
+  margin-bottom: .42rem;
+}
+
+.tv-body {
+  font-size: .82rem;
+  line-height: 1.78;
+  color: var(--ink);
+}
+
+/* ── Section divider ── */
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin-block: 1.65rem 1.05rem;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+.section-label {
+  font-size: .57rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--caption);
+  white-space: nowrap;
+}
+
+/* ── Topic grid ── */
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+}
+
+/* ── Topic card base ── */
+.topic-card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  box-shadow: 0 2px 8px rgba(11,31,53,.07);
+  display: flex;
+  flex-direction: column;
+}
+
+.topic-card.lead,
+.topic-card.wide {
+  grid-column: 1 / -1;
+}
+
+/* ── Featured card ── */
+.topic-card.featured { border-top: 3px solid var(--sky); }
+.topic-card.featured .tc-header { background: var(--header-bg-featured); }
+
+/* ── SMB card ── */
+.topic-card.smb { border-top: 3px solid var(--gold); }
+.topic-card.smb .tc-header { background: var(--header-bg-smb); }
+
+/* ── tc-header ── */
+.tc-header {
+  background: var(--header-bg);
+  padding: .72rem .92rem .64rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.tc-kicker {
+  display: block;
+  font-size: .63rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: .18rem;
+}
+
+.tc-title {
+  font-size: 1.06rem;
+  font-family: var(--f-serif);
+  font-weight: 700;
+  line-height: 1.38;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.topic-card.lead .tc-title { font-size: 1.26rem; }
+
+/* ── Reader tag ── */
+.reader-tag {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .22rem;
+  margin-top: .34rem;
+}
+
+.rt-item {
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: .1rem .38rem;
+  background: rgba(30,58,95,.07);
+  border: 1px solid rgba(30,58,95,.14);
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+/* ── Zoku badge ── */
+.zoku-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .28rem;
+  background: rgba(26,122,94,.08);
+  border: 1px solid rgba(26,122,94,.22);
+  color: var(--jade);
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: .1rem .42rem;
+  margin-top: .28rem;
+  text-decoration: none;
+}
+
+.zoku-badge:hover { background: rgba(26,122,94,.16); }
+
+/* ── SMB badge ── */
+.smb-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(192,135,11,.1);
+  border: 1px solid rgba(192,135,11,.28);
+  color: var(--gold);
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: .1rem .42rem;
+  margin-top: .28rem;
+}
+
+/* ── Focus badge ── */
+.focus-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  background: var(--sky);
+  color: #fff;
+  font-size: .54rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  padding: .18rem .52rem;
+  margin-top: .35rem;
+}
+
+/* ── Lead visual (SVG wrapper) ── */
+.lead-visual {
+  width: 100%;
+  border-bottom: 1px solid var(--rule);
+  background: var(--chart-bg);
+  overflow: hidden;
+}
+
+.lead-visual svg { width: 100%; display: block; }
+
+/* ── tc-body ── */
+.tc-body {
+  padding: .82rem .92rem;
+  display: flex;
+  flex-direction: column;
+  gap: .68rem;
+  flex: 1;
+}
+
+/* ── Stat row ── */
+.tc-stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .85rem;
+}
+
+.tc-stat { font-size: .72rem; }
+.tc-stat strong { font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* ── Prose ── */
+.tc-prose {
+  font-size: .82rem;
+  line-height: 1.76;
+  color: var(--ink);
+}
+
+/* ── Inline card TYLER VIEW ── */
+.card-tyler-view {
+  background: rgba(11,31,53,.04);
+  border-left: 2px solid var(--ink);
+  padding: .5rem .68rem;
+}
+
+.ctv-head {
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--caption);
+  margin-bottom: .2rem;
+}
+
+.card-tyler-view p {
+  font-size: .72rem;
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+/* ── Analysis grid ── */
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .72rem;
+  border-top: 1px solid var(--rule);
+  padding-top: .68rem;
+}
+
+.analysis-label {
+  display: block;
+  font-size: .61rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: .05em;
+  margin-bottom: .2rem;
+}
+
+.analysis-body {
+  font-size: .72rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+/* ── Wide card internals ── */
+.wide-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+/* ── Change table ── */
+.table-scroll { overflow-x: auto; }
+
+.change-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .72rem;
+  min-width: 480px;
+}
+
+.change-table th {
+  font-size: .59rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-align: left;
+  color: var(--caption);
+  border-bottom: 1px solid var(--rule);
+  padding: .32rem .52rem;
+}
+
+.change-table td {
+  padding: .36rem .52rem;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  line-height: 1.45;
+  vertical-align: top;
+}
+
+.change-table tr:last-child td { border-bottom: none; }
+
+.urgency-tag {
+  display: inline-block;
+  font-size: .5rem;
+  font-weight: 700;
+  padding: .06rem .35rem;
+  background: rgba(184,92,0,.1);
+  color: var(--negative);
+  border: 1px solid rgba(184,92,0,.22);
+}
+
+/* ── Countdown chips ── */
+.countdown-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin-bottom: .45rem;
+}
+
+.cd-chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: .42rem .88rem;
+  border: 1px solid var(--rule);
+  background: var(--muted);
+  min-width: 100px;
+}
+
+.cd-chip.urgent { border-color: var(--negative); background: rgba(184,92,0,.06); }
+
+.cd-num {
+  font-size: 1.45rem;
+  font-weight: 700;
+  font-family: var(--f-serif);
+  font-variant-numeric: tabular-nums;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.cd-chip.urgent .cd-num { color: var(--negative); }
+
+.cd-label {
+  font-size: .51rem;
+  color: var(--caption);
+  margin-top: .1rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ── Action list ── */
+.action-col-head {
+  font-size: .59rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--caption);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: .32rem;
+  margin-bottom: .52rem;
+}
+
+.action-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+.action-list li {
+  font-size: .76rem;
+  line-height: 1.52;
+  padding-left: 1.1rem;
+  position: relative;
+  color: var(--ink);
+}
+
+.action-list li::before {
+  content: attr(data-mark);
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: var(--jade);
+}
+
+/* ── Theme archive ── */
+.theme-archive {
+  border-top: 1px solid var(--rule);
+  margin-top: 2.1rem;
+  padding-top: 1rem;
+  margin-bottom: .5rem;
+}
+
+.theme-archive-head {
+  font-size: .59rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--caption);
+  margin-bottom: .52rem;
+}
+
+.theme-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .38rem;
+}
+
+.theme-chip {
+  font-size: .63rem;
+  font-weight: 700;
+  padding: .22rem .68rem;
+  background: var(--muted);
+  border: 1px solid var(--rule);
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.theme-chip:hover { background: var(--ink); color: var(--paper); }
+
+/* ── Footer ── */
+.footer {
+  border-top: 2px solid var(--ink);
+  margin-top: 2.5rem;
+  padding: 1.25rem 0 .9rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.1rem;
+}
+
+.footer-head {
+  font-size: .59rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: .44rem;
+}
+
+.footer-body {
+  font-size: .68rem;
+  line-height: 1.65;
+  color: var(--caption);
+}
+
+.footer-body a { color: var(--navy); text-decoration: underline; text-decoration-thickness: 1px; }
+.footer-body a:hover { color: var(--ink); }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .masthead { grid-template-columns: 1fr; text-align: center; }
+  .mast-side:last-child { text-align: center; }
+  .topic-grid { grid-template-columns: 1fr; }
+  .analysis-grid { grid-template-columns: 1fr; }
+  .wide-inner { grid-template-columns: 1fr; }
+  .footer { grid-template-columns: 1fr; }
+  .mast-brand { font-size: 1.15rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div class="mast-side">Vol. 116 ／ 特別号<br>2026年11月14日（金）</div>
+    <div class="mast-center">
+      <div class="mast-brand">TYLER MORNING BRIEF</div>
+      <div class="mast-sub">Business Intelligence / Daily Edition</div>
+    </div>
+    <div class="mast-side">2026.10.27 〜 11.14<br>3週間 総集編</div>
+  </header>
+
+  <!-- SPECIAL BANNER -->
+  <div style="background:linear-gradient(135deg,#1a4a6b 0%,#2d6a9f 100%);color:#fff;padding:12px 20px;text-align:center;font-size:13px;letter-spacing:.05em;margin-bottom:16px;">
+    ★ 特別号 — 10月27日〜11月14日（3週間分）重要ニュース総集編 ★
+  </div>
+
+  <!-- GRID -->
+  <main class="topic-grid">
+
+    <!-- W-01 lead / full-width -->
+    <article class="topic-card lead">
+      <div class="tc-header">
+        <span class="tc-kicker">WORLD W-01 ／ 中央銀行</span>
+        <div style="font-size:.59rem;color:var(--caption);margin-top:.1rem;">2026.10.31</div>
+        <a class="zoku-badge" href="../morning-brief-20261026.html" title="前号">← 前号</a>
+      </div>
+      <div class="lead-visual">
+        <svg viewBox="0 0 500 170" aria-label="日銀政策金利の推移バーチャート">
+          <!-- Chart title -->
+          <text x="250" y="13" text-anchor="middle" font-size="10" fill="#0B1F35" font-weight="700" letter-spacing=".04em">日銀政策金利の推移</text>
+          <!-- Y axis -->
+          <line x1="65" y1="22" x2="65" y2="145" stroke="#DDD8CE" stroke-width="1"/>
+          <!-- X axis -->
+          <line x1="65" y1="145" x2="470" y2="145" stroke="#DDD8CE" stroke-width="1"/>
+          <!-- Gridlines -->
+          <line x1="65" y1="105" x2="470" y2="105" stroke="#DDD8CE" stroke-width="1" stroke-dasharray="3,3"/>
+          <line x1="65" y1="65" x2="470" y2="65" stroke="#DDD8CE" stroke-width="1" stroke-dasharray="3,3"/>
+          <line x1="65" y1="25" x2="470" y2="25" stroke="#DDD8CE" stroke-width="1" stroke-dasharray="3,3"/>
+          <!-- Y-axis labels -->
+          <text x="60" y="148" text-anchor="end" font-size="9" fill="#7A7368">0%</text>
+          <text x="60" y="108" text-anchor="end" font-size="9" fill="#7A7368">0.25%</text>
+          <text x="60" y="68" text-anchor="end" font-size="9" fill="#7A7368">0.50%</text>
+          <text x="60" y="28" text-anchor="end" font-size="9" fill="#7A7368">0.75%</text>
+          <!-- Bar 1: 2024.1, 0.10% — height=16, top=129 -->
+          <rect x="80" y="129" width="65" height="16" fill="#1E3A5F"/>
+          <text x="112" y="123" text-anchor="middle" font-size="9" fill="#1E3A5F" font-weight="700">0.10%</text>
+          <text x="112" y="160" text-anchor="middle" font-size="9" fill="#7A7368">2024.1</text>
+          <!-- Bar 2: 2024.7, 0.25% — height=40, top=105 -->
+          <rect x="185" y="105" width="65" height="40" fill="#1E3A5F"/>
+          <text x="217" y="99" text-anchor="middle" font-size="9" fill="#1E3A5F" font-weight="700">0.25%</text>
+          <text x="217" y="160" text-anchor="middle" font-size="9" fill="#7A7368">2024.7</text>
+          <!-- Bar 3: 2025.1, 0.50% — height=80, top=65 -->
+          <rect x="290" y="65" width="65" height="80" fill="#1E3A5F"/>
+          <text x="322" y="59" text-anchor="middle" font-size="9" fill="#1E3A5F" font-weight="700">0.50%</text>
+          <text x="322" y="160" text-anchor="middle" font-size="9" fill="#7A7368">2025.1</text>
+          <!-- Bar 4: 2026.10, 0.75% — height=120, top=25 (highlighted gold) -->
+          <rect x="395" y="25" width="65" height="120" fill="#C0870B"/>
+          <text x="427" y="19" text-anchor="middle" font-size="9" fill="#C0870B" font-weight="700">0.75%</text>
+          <text x="427" y="160" text-anchor="middle" font-size="9" fill="#7A7368">2026.10</text>
+        </svg>
+      </div>
+      <div class="tc-body">
+        <h2 class="tc-title">日銀・0.75%へ利上げ実施★★★</h2>
+        <p class="tc-prose">10月31日、日銀は金融政策決定会合で政策金利を0.5%から0.75%に引き上げ。市場予想通りの決定で円相場は一時¥127.3台まで急騰。植田総裁は「物価安定目標の実現に向け、引き続き金融緩和の度合いを調整する」と声明。次回12月会合では据え置き観測が優勢。</p>
+        <div>
+          <div class="analysis-label">TYLER VIEW</div>
+          <div class="tv-body" style="font-family:var(--f-sans);">利上げは想定内だが、ペースが重要。12月据え置きは円高一服の可能性も。金融セクターには追い風継続。</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- W-02 featured / half-width -->
+    <article class="topic-card featured">
+      <div class="tc-header">
+        <span class="tc-kicker">WORLD W-02 ／ テック決算</span>
+        <div style="font-size:.59rem;color:var(--caption);margin-top:.1rem;">2026.10.29〜11.04</div>
+      </div>
+      <div class="tc-body">
+        <h2 class="tc-title">Big Tech Q3決算ラウンドアップ★★</h2>
+        <p class="tc-prose">アルファベット(10/29): EPS $2.31(予想比+8%)、Google Cloud売上高+28%でAI需要を反映。Meta(10/30): 広告収入+19%、Threads月間ユーザー4億突破。Apple(11/4): iPhone 17効果でEPS予想比+5%、サービス部門過去最高。3社合計時価総額が1週間で約$4,200億増加。</p>
+        <div><span class="focus-badge">FOCUS</span></div>
+        <div>
+          <div class="analysis-label">TYLER VIEW</div>
+          <div class="tv-body" style="font-family:var(--f-sans);">Cloudとモバイル広告の二軸が依然強い。生成AI投資の回収フェーズが本格化。</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- W-03 smb / half-width -->
+    <article class="topic-card smb">
+      <div class="tc-header">
+        <span class="tc-kicker">WORLD W-03 ／ 政治・政策</span>
+        <div style="font-size:.59rem;color:var(--caption);margin-top:.1rem;">2026.11.03</div>
+      </div>
+      <div class="tc-body">
+        <h2 class="tc-title">米中間選挙2026・共和党下院多数維持</h2>
+        <p class="tc-prose">11月3日の中間選挙で共和党が下院多数を維持(224議席)。上院は民主・共和が接戦で残り4議席の確定に時間。市場はねじれ議会継続を「政策不確実性の低下」と好感し、翌日S&amp;P500は+1.2%。財政拡大懸念は後退。</p>
+        <div><span class="smb-badge">SMB WATCH</span></div>
+        <div>
+          <div class="analysis-label">TYLER VIEW</div>
+          <div class="tv-body" style="font-family:var(--f-sans);">大型政策立法のハードルが上がる「穏やかなねじれ」は、市場にとって中立〜ポジティブ。</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- W-04 standard / half-width -->
+    <article class="topic-card">
+      <div class="tc-header">
+        <span class="tc-kicker">WORLD W-04 ／ 金融政策</span>
+        <div style="font-size:.59rem;color:var(--caption);margin-top:.1rem;">2026.11.07</div>
+      </div>
+      <div class="tc-body">
+        <h2 class="tc-title">FOMC11月会合・政策金利据え置き</h2>
+        <p class="tc-prose">FRBは11月会合でFF金利を4.75%に据え置き。「インフレの2%への収束を確認しつつある」と声明。次回12月会合での0.25%利下げ確率が市場で60%台に上昇。ドル安圧力が継続。</p>
+      </div>
+    </article>
+
+    <!-- W-05 standard / half-width -->
+    <article class="topic-card">
+      <div class="tc-header">
+        <span class="tc-kicker">WORLD W-05 ／ 商品市場</span>
+        <div style="font-size:.59rem;color:var(--caption);margin-top:.1rem;">2026.10.27〜11.14</div>
+      </div>
+      <div class="tc-body">
+        <h2 class="tc-title">原油・商品相場の3週間</h2>
+        <p class="tc-prose">WTI原油は$74〜$79レンジで推移。中東緊張緩和の報道で一時急落後、OPEC+生産調整で下値支持。金(ゴールド)は$2,850を突破し過去最高圏を更新。ドル安と地政学リスクの両面が支援。</p>
+      </div>
+    </article>
+
+    <!-- J-01 featured / half-width -->
+    <article class="topic-card featured">
+      <div class="tc-header">
+        <span class="tc-kicker">JAPAN J-01 ／ 国内市場</span>
+        <div style="font-size:.59rem;color:var(--caption);margin-top:.1rem;">2026.10.31〜11.14</div>
+      </div>
+      <div class="tc-body">
+        <h2 class="tc-title">利上げ後の日本市場・3週間の総括★★</h2>
+        <p class="tc-prose">日銀利上げ直後の円急騰(¥127台)で輸出株が急落。日経平均は11月1日に-2.1%の大幅下落。その後米国市場の好調・Big Tech決算を受けて買い戻し、11月14日時点では41,800円台まで回復。金融株(三菱UFJ・三井住友)が期間中+5〜7%。</p>
+        <div><span class="focus-badge">FOCUS</span></div>
+        <div>
+          <div class="analysis-label">TYLER VIEW</div>
+          <div class="tv-body" style="font-family:var(--f-sans);">利上げ=円高ショック後の「セクターローテーション」が明確に進行中。金融株への資金シフトは継続。</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- J-02 smb / half-width -->
+    <article class="topic-card smb">
+      <div class="tc-header">
+        <span class="tc-kicker">JAPAN J-02 ／ 企業決算</span>
+        <div style="font-size:.59rem;color:var(--caption);margin-top:.1rem;">2026.11.07〜11.11</div>
+      </div>
+      <div class="tc-body">
+        <h2 class="tc-title">国内主要企業Q2決算総括</h2>
+        <p class="tc-prose">トヨタ: 通期営業利益予想を4.8兆円に上方修正(円高影響を価格改定でカバー)。ソニーG: PS5後継機「PS6」発売効果でゲーム部門+32%。三菱UFJ: 利上げ恩恵で純利益+28%、配当増額発表。任天堂: Switch 2好調で通期ガイダンス引き上げ。</p>
+        <div><span class="smb-badge">SMB WATCH</span></div>
+        <div>
+          <div class="analysis-label">TYLER VIEW</div>
+          <div class="tv-body" style="font-family:var(--f-sans);">円高逆風の中でも価格転嫁力と構造変化で稼ぐ企業の格差が拡大。セレクティブな銘柄選択が重要。</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- J-03 standard / half-width -->
+    <article class="topic-card">
+      <div class="tc-header">
+        <span class="tc-kicker">JAPAN J-03 ／ 物価・賃金</span>
+        <div style="font-size:.59rem;color:var(--caption);margin-top:.1rem;">2026.11.14</div>
+      </div>
+      <div class="tc-body">
+        <h2 class="tc-title">10月コアCPI+2.3%・賃上げ持続</h2>
+        <p class="tc-prose">10月全国CPIコア(生鮮食品除く)は前年比+2.3%。食料・エネルギー除くコアコアは+2.1%でじわり鈍化。連合の10月賃上げ調査では中小企業平均+3.8%と基調は継続。日銀の物価見通しに沿った展開。</p>
+      </div>
+    </article>
+
+    <!-- J-04 standard / half-width -->
+    <article class="topic-card">
+      <div class="tc-header">
+        <span class="tc-kicker">JAPAN J-04 ／ 住宅・金融</span>
+        <div style="font-size:.59rem;color:var(--caption);margin-top:.1rem;">2026.11.01〜11.07</div>
+      </div>
+      <div class="tc-body">
+        <h2 class="tc-title">住宅ローン金利・各行が引き上げ</h2>
+        <p class="tc-prose">日銀利上げを受け、三菱UFJ・みずほ・三井住友の3メガが変動型基準金利を0.25%引き上げ。フラット35(固定20年)は2.68%に。新規住宅ローン申し込みは短期的に駆け込みがあった後、11月第2週から前年比-8%に減速。</p>
+      </div>
+    </article>
+
+    <!-- J-05 standard / half-width -->
+    <article class="topic-card">
+      <div class="tc-header">
+        <span class="tc-kicker">JAPAN J-05 ／ 週次まとめ</span>
+        <div style="font-size:.59rem;color:var(--caption);margin-top:.1rem;">2026.11.14</div>
+      </div>
+      <div class="tc-body">
+        <h2 class="tc-title">11月相場・週次まとめ(11/10〜14)</h2>
+        <p class="tc-prose">日経平均: 41,823円(前週比+1.3%)。ドル円: ¥130.2台(ドル反発で円安方向)。東証プライム売買代金: 4.1兆円/日と活況持続。今週の注目: 米CPI発表(予想+3.1%YoY)でFRB年内利下げシナリオの再評価が進む。</p>
+      </div>
+    </article>
+
+    <!-- J-06 wide / full-width -->
+    <article class="topic-card wide">
+      <div class="tc-header">
+        <span class="tc-kicker">JAPAN J-06 ／ 特別号・締め</span>
+        <div style="font-size:.59rem;color:var(--caption);margin-top:.1rem;">2026.11.14</div>
+      </div>
+      <div class="tc-body">
+        <h2 class="tc-title">【特別号・終】11月後半の注目点と次号予告</h2>
+        <p class="tc-prose">本号は2026.10.27〜11.14の3週間をカバーする特別総集編。次号Vol.117からは通常発行を再開予定。11月後半の注目点: ①12月日銀会合(12/18〜19)の利上げ or 据え置き判断、②年末に向けた米利下げ観測、③国内賃上げ交流の2027年春闘見通し公表。</p>
+        <div>
+          <div class="analysis-label">TYLER VIEW</div>
+          <div class="tv-body" style="font-family:var(--f-sans);">日銀利上げ・Big Tech好決算・米中間選挙の3大イベントをこなして市場は安定軌道へ。12月に向け「日米ともに政策方向感の明確化」というポジティブシナリオが基本線。</div>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div>
+      <div class="footer-head">TYLER MORNING BRIEF</div>
+      <div class="footer-body">
+        Vol.116 特別号 ／ 2026年11月14日<br>
+        2026.10.27〜11.14 重要ニュース総集編
+      </div>
+    </div>
+    <div>
+      <div class="footer-head">バックナンバー</div>
+      <div class="footer-body">
+        <a href="morning-brief-20261026.html">Vol.115 ／ 10月26日</a><br>
+        <a href="morning-brief-20261023.html">Vol.114 ／ 10月23日</a><br>
+        <a href="morning-brief-20261022.html">Vol.113 ／ 10月22日</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-head">この号を読む</div>
+      <div class="footer-body">
+        <a href="morning-brief-20261114.html" style="font-weight:700;">→ Vol.116 特別号</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
