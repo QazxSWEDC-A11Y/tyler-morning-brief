@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TYLER MORNING BRIEF — Vol.119</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+/* ── Design tokens ── */
+:root {
+  --ink: #0B1F35;
+  --paper: #F8F5EF;
+  --gold: #C0870B;
+  --navy: #1E3A5F;
+  --jade: #1A7A5E;
+  --sky: #1A5F8A;
+  --positive: #1A7A5E;
+  --negative: #B85C00;
+  --rule: #DDD8CE;
+  --muted: #EAE6DE;
+  --caption: #7A7368;
+  --f-serif: Georgia, "Times New Roman", "Hiragino Mincho ProN", "MS Mincho", serif;
+  --f-sans: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", system-ui, sans-serif;
+  --f-display: "Playfair Display", Georgia, serif;
+  --header-bg: linear-gradient(135deg, #EBE8E2 0%, #D8D3CB 100%);
+  --header-bg-featured: linear-gradient(135deg, #E2ECF4 0%, #D0E2EF 100%);
+  --header-bg-smb: linear-gradient(135deg, #F4ECD8 0%, #ECDBC0 100%);
+  --chart-bg: #EAE6DE;
+  --chart-axis: #DDD8CE;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #E2DDCF;
+    --paper: #0D1A27;
+    --gold: #D4A435;
+    --navy: #7BAED0;
+    --jade: #38A87A;
+    --sky: #5B99C0;
+    --positive: #38A87A;
+    --negative: #E08240;
+    --rule: #263547;
+    --muted: #152030;
+    --caption: #8B9BAA;
+    --header-bg: linear-gradient(135deg, #172232 0%, #1C2C40 100%);
+    --header-bg-featured: linear-gradient(135deg, #162537 0%, #1C3248 100%);
+    --header-bg-smb: linear-gradient(135deg, #26200E 0%, #322A12 100%);
+    --chart-bg: #152030;
+    --chart-axis: #263547;
+  }
+}
+
+:root[data-theme="dark"] {
+  --ink: #E2DDCF;
+  --paper: #0D1A27;
+  --gold: #D4A435;
+  --navy: #7BAED0;
+  --jade: #38A87A;
+  --sky: #5B99C0;
+  --positive: #38A87A;
+  --negative: #E08240;
+  --rule: #263547;
+  --muted: #152030;
+  --caption: #8B9BAA;
+  --header-bg: linear-gradient(135deg, #172232 0%, #1C2C40 100%);
+  --header-bg-featured: linear-gradient(135deg, #162537 0%, #1C3248 100%);
+  --header-bg-smb: linear-gradient(135deg, #26200E 0%, #322A12 100%);
+  --chart-bg: #152030;
+  --chart-axis: #263547;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-sans);
+  font-size: 14px;
+  line-height: 1.65;
+  padding-inline: 16px;
+  padding-block: env(safe-area-inset-top, 0px) env(safe-area-inset-bottom, 0px);
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; }
+
+/* ── Wrapper ── */
+.wrap { max-width: 864px; margin: 0 auto; }
+
+/* ── Masthead ── */
+.masthead {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: .6rem;
+  border-top: 3px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding-block: .78rem;
+  margin-block: 1.25rem .65rem;
+}
+
+.mast-side {
+  font-size: .57rem;
+  color: var(--caption);
+  letter-spacing: .02em;
+  line-height: 1.5;
+}
+
+.mast-side:last-child { text-align: right; }
+
+.mast-center { text-align: center; }
+
+.mast-brand {
+  font-family: var(--f-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: var(--ink);
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.mast-sub {
+  font-size: .53rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--caption);
+  margin-top: .2rem;
+}
+
+/* ── Vol-meta ── */
+.vol-meta {
+  margin-bottom: 1.2rem;
+  padding: .5rem .78rem;
+  background: var(--muted);
+  border-left: 2px solid var(--gold);
+}
+
+/* ── TYLER VIEW (top) ── */
+.tyler-view {
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding-block: .85rem .92rem;
+  margin-bottom: 1.5rem;
+}
+
+.tv-head {
+  font-size: .57rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  color: var(--ink);
+  margin-bottom: .42rem;
+}
+
+.tv-body {
+  font-size: .82rem;
+  line-height: 1.78;
+  color: var(--ink);
+}
+
+/* ── Section divider ── */
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin-block: 1.65rem 1.05rem;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+.section-label {
+  font-size: .57rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--caption);
+  white-space: nowrap;
+}
+
+/* ── Topic grid ── */
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+}
+
+/* ── Topic card base ── */
+.topic-card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  box-shadow: 0 2px 8px rgba(11,31,53,.07);
+  display: flex;
+  flex-direction: column;
+}
+
+.topic-card.lead,
+.topic-card.wide {
+  grid-column: 1 / -1;
+}
+
+/* ── Featured card ── */
+.topic-card.featured { border-top: 3px solid var(--sky); }
+.topic-card.featured .tc-header { background: var(--header-bg-featured); }
+
+/* ── SMB card ── */
+.topic-card.smb { border-top: 3px solid var(--gold); }
+.topic-card.smb .tc-header { background: var(--header-bg-smb); }
+
+/* ── tc-header ── */
+.tc-header {
+  background: var(--header-bg);
+  padding: .72rem .92rem .64rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.tc-kicker {
+  display: block;
+  font-size: .63rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: .18rem;
+}
+
+.tc-title {
+  font-size: 1.06rem;
+  font-family: var(--f-serif);
+  font-weight: 700;
+  line-height: 1.38;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.topic-card.lead .tc-title { font-size: 1.26rem; }
+
+/* ── Reader tag ── */
+.reader-tag {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .22rem;
+  margin-top: .34rem;
+}
+
+.rt-item {
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: .1rem .38rem;
+  background: rgba(30,58,95,.07);
+  border: 1px solid rgba(30,58,95,.14);
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+/* ── Zoku badge ── */
+.zoku-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .28rem;
+  background: rgba(26,122,94,.08);
+  border: 1px solid rgba(26,122,94,.22);
+  color: var(--jade);
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: .1rem .42rem;
+  margin-top: .28rem;
+  text-decoration: none;
+}
+
+.zoku-badge:hover { background: rgba(26,122,94,.16); }
+
+/* ── SMB badge ── */
+.smb-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(192,135,11,.1);
+  border: 1px solid rgba(192,135,11,.28);
+  color: var(--gold);
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: .1rem .42rem;
+  margin-top: .28rem;
+}
+
+/* ── Focus badge ── */
+.focus-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  background: var(--sky);
+  color: #fff;
+  font-size: .54rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  padding: .18rem .52rem;
+  margin-top: .35rem;
+}
+
+/* ── Lead visual (SVG wrapper) ── */
+.lead-visual {
+  width: 100%;
+  border-bottom: 1px solid var(--rule);
+  background: var(--chart-bg);
+  overflow: hidden;
+}
+
+.lead-visual svg { width: 100%; display: block; }
+
+/* ── tc-body ── */
+.tc-body {
+  padding: .82rem .92rem;
+  display: flex;
+  flex-direction: column;
+  gap: .68rem;
+  flex: 1;
+}
+
+/* ── Stat row ── */
+.tc-stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .85rem;
+}
+
+.tc-stat { font-size: .72rem; }
+.tc-stat strong { font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* ── Prose ── */
+.tc-prose {
+  font-size: .82rem;
+  line-height: 1.76;
+  color: var(--ink);
+}
+
+/* ── Inline card TYLER VIEW ── */
+.card-tyler-view {
+  background: rgba(11,31,53,.04);
+  border-left: 2px solid var(--ink);
+  padding: .5rem .68rem;
+}
+
+.ctv-head {
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--caption);
+  margin-bottom: .2rem;
+}
+
+.card-tyler-view p {
+  font-size: .72rem;
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+/* ── Analysis grid ── */
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .72rem;
+  border-top: 1px solid var(--rule);
+  padding-top: .68rem;
+}
+
+.analysis-label {
+  display: block;
+  font-size: .61rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: .05em;
+  margin-bottom: .2rem;
+}
+
+.analysis-body {
+  font-size: .72rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+/* ── Wide card internals ── */
+.wide-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+/* ── Action list ── */
+.action-col-head {
+  font-size: .59rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--caption);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: .32rem;
+  margin-bottom: .52rem;
+}
+
+.action-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+.action-list li {
+  font-size: .76rem;
+  line-height: 1.52;
+  padding-left: 1.1rem;
+  position: relative;
+  color: var(--ink);
+}
+
+.action-list li::before {
+  content: attr(data-mark);
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: var(--jade);
+}
+
+/* ── Theme archive ── */
+.theme-archive {
+  border-top: 1px solid var(--rule);
+  margin-top: 2.1rem;
+  padding-top: 1rem;
+  margin-bottom: .5rem;
+}
+
+.theme-archive-head {
+  font-size: .59rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--caption);
+  margin-bottom: .52rem;
+}
+
+.theme-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .38rem;
+}
+
+.theme-chip {
+  font-size: .63rem;
+  font-weight: 700;
+  padding: .22rem .68rem;
+  background: var(--muted);
+  border: 1px solid var(--rule);
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.theme-chip:hover { background: var(--ink); color: var(--paper); }
+
+/* ── Footer ── */
+.footer {
+  border-top: 2px solid var(--ink);
+  margin-top: 2.5rem;
+  padding: 1.25rem 0 .9rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.1rem;
+}
+
+.footer-head {
+  font-size: .59rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: .44rem;
+}
+
+.footer-body {
+  font-size: .68rem;
+  line-height: 1.65;
+  color: var(--caption);
+}
+
+.footer-body a { color: var(--navy); text-decoration: underline; text-decoration-thickness: 1px; }
+.footer-body a:hover { color: var(--ink); }
+
+.footer-cta {
+  display: inline-block;
+  padding: .32rem .9rem;
+  background: var(--navy);
+  color: #F8F5EF;
+  font-size: .65rem;
+  text-decoration: none;
+  margin-top: .35rem;
+}
+
+.footer-cta:hover { background: var(--ink); color: var(--paper); }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .masthead { grid-template-columns: 1fr; text-align: center; }
+  .mast-side:last-child { text-align: center; }
+  .topic-grid { grid-template-columns: 1fr; }
+  .analysis-grid { grid-template-columns: 1fr; }
+  .wide-inner { grid-template-columns: 1fr; }
+  .footer { grid-template-columns: 1fr; }
+  .mast-brand { font-size: 1.15rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ── MASTHEAD ── -->
+<header class="masthead">
+  <div class="mast-side">
+    TYLER MORNING BRIEF<br>
+    AI-CURATED BUSINESS INTELLIGENCE
+  </div>
+  <div class="mast-center">
+    <div class="mast-brand">TYLER</div>
+    <div class="mast-sub">Morning Brief</div>
+  </div>
+  <div class="mast-side">
+    VOL.119<br>
+    2026年11月18日（水曜日）
+  </div>
+</header>
+
+<!-- ── VOL META ── -->
+<div class="vol-meta">
+  <span style="font-size:.64rem;font-weight:700;color:var(--gold)">VOL.119</span>
+  <span style="font-size:.64rem;color:var(--caption);margin-left:.55rem">2026年11月18日（水曜日）</span>
+  <span style="font-size:.64rem;color:var(--caption);margin-left:.85rem">Nvidia EPS+9%★★★ · FOMC議事録 · 円安¥132台</span>
+</div>
+
+<!-- ── TYLER VIEW (top) ── -->
+<div class="tyler-view">
+  <div class="tv-head">◈ TYLER VIEW — 今号の編集視点</div>
+  <p class="tv-body">NvidiaのBlackwellサプライ圧倒とFOMC議事録の慎重なハト派転換が同日に浮上。AI設備投資の「構造化」と米金融緩和サイクルの再加速という二つのメガトレンドが交差し、東京市場の半導体セクターと輸出株はその最大受益者として照らし出されている。</p>
+</div>
+
+<!-- ── SECTION: WORLD ── -->
+<div class="section-divider"><span class="section-label">World</span></div>
+
+<div class="topic-grid">
+
+  <!-- W-01: LEAD -->
+  <article class="topic-card lead">
+    <div class="tc-header">
+      <span class="tc-kicker">W-01 ／ テック決算 · 2026.11.18</span>
+      <h2 class="tc-title">Nvidia Q3決算発表★★★ — EPS $0.81、ガイダンス上振れ</h2>
+      <div class="reader-tag">
+        <span class="rt-item">半導体・AI株投資家</span>
+        <span class="rt-item">テック企業経営者</span>
+        <span class="rt-item">DX・IT担当者</span>
+      </div>
+      <a href="../morning-brief-20261117.html" class="zoku-badge">📎 Vol.118 続報：Blackwell出荷状況</a>
+    </div>
+    <!-- SVG: Nvidia EPS bar chart — rect/text/line only -->
+    <div class="lead-visual">
+      <svg viewBox="0 0 540 160" xmlns="http://www.w3.org/2000/svg" aria-label="Nvidia EPS推移バーチャート Q1'25〜Q3'26">
+        <!-- Y-axis gridlines (y=115 is x-axis baseline) -->
+        <!-- y=0.80 → 115-(0.80-0.55)*333.3=115-83=32 -->
+        <line x1="52" y1="32" x2="528" y2="32" style="stroke:var(--rule);stroke-width:1;stroke-dasharray:3,3"/>
+        <text x="48" y="36" text-anchor="end" style="fill:var(--caption);font-size:9px;font-family:sans-serif">0.80</text>
+        <!-- y=0.70 → 115-50=65 -->
+        <line x1="52" y1="65" x2="528" y2="65" style="stroke:var(--rule);stroke-width:1;stroke-dasharray:3,3"/>
+        <text x="48" y="69" text-anchor="end" style="fill:var(--caption);font-size:9px;font-family:sans-serif">0.70</text>
+        <!-- y=0.60 → 115-16.7=98 -->
+        <line x1="52" y1="98" x2="528" y2="98" style="stroke:var(--rule);stroke-width:1;stroke-dasharray:3,3"/>
+        <text x="48" y="102" text-anchor="end" style="fill:var(--caption);font-size:9px;font-family:sans-serif">0.60</text>
+        <!-- X-axis baseline -->
+        <line x1="52" y1="115" x2="528" y2="115" style="stroke:var(--caption);stroke-width:1"/>
+
+        <!-- Bar 1: Q1'25, $0.61, height=20, y_top=95 -->
+        <rect x="82" y="95" width="62" height="20" style="fill:var(--navy);opacity:.55"/>
+        <text x="113" y="90" text-anchor="middle" style="fill:var(--caption);font-size:9px;font-family:sans-serif">$0.61</text>
+        <text x="113" y="130" text-anchor="middle" style="fill:var(--caption);font-size:9px;font-family:sans-serif">Q1&#39;25</text>
+
+        <!-- Bar 2: Q2'25, $0.68, height=43, y_top=72 -->
+        <rect x="174" y="72" width="62" height="43" style="fill:var(--navy);opacity:.55"/>
+        <text x="205" y="67" text-anchor="middle" style="fill:var(--caption);font-size:9px;font-family:sans-serif">$0.68</text>
+        <text x="205" y="130" text-anchor="middle" style="fill:var(--caption);font-size:9px;font-family:sans-serif">Q2&#39;25</text>
+
+        <!-- Bar 3: Q3'25, $0.74, height=63, y_top=52 -->
+        <rect x="266" y="52" width="62" height="63" style="fill:var(--navy);opacity:.55"/>
+        <text x="297" y="47" text-anchor="middle" style="fill:var(--caption);font-size:9px;font-family:sans-serif">$0.74</text>
+        <text x="297" y="130" text-anchor="middle" style="fill:var(--caption);font-size:9px;font-family:sans-serif">Q3&#39;25</text>
+
+        <!-- Bar 4: Q1'26, $0.78, height=77, y_top=38 -->
+        <rect x="358" y="38" width="62" height="77" style="fill:var(--navy);opacity:.55"/>
+        <text x="389" y="33" text-anchor="middle" style="fill:var(--caption);font-size:9px;font-family:sans-serif">$0.78</text>
+        <text x="389" y="130" text-anchor="middle" style="fill:var(--caption);font-size:9px;font-family:sans-serif">Q1&#39;26</text>
+
+        <!-- Bar 5: Q3'26, $0.81, height=87, y_top=28 — GOLD highlight -->
+        <rect x="450" y="28" width="62" height="87" style="fill:var(--gold)"/>
+        <text x="481" y="22" text-anchor="middle" style="fill:var(--gold);font-size:9px;font-weight:700;font-family:sans-serif">$0.81</text>
+        <text x="481" y="130" text-anchor="middle" style="fill:var(--gold);font-size:9px;font-weight:700;font-family:sans-serif">Q3&#39;26</text>
+
+        <!-- Source note -->
+        <text x="52" y="150" style="fill:var(--caption);font-size:8px;font-family:sans-serif">Nvidia EPS（調整後 $/株）· 出所: 決算発表より</text>
+      </svg>
+    </div>
+    <div class="tc-body">
+      <div class="tc-stat-row">
+        <div class="tc-stat">EPS <strong>$0.81</strong></div>
+        <div class="tc-stat">予想比 <strong>+1.3%</strong></div>
+        <div class="tc-stat">データセンター売上 <strong>$29.8B</strong></div>
+        <div class="tc-stat">時間外株価 <strong>+5.8%</strong></div>
+        <div class="tc-stat">ナスダック先物 <strong>+1.1%</strong></div>
+      </div>
+      <p class="tc-prose">Nvidiaは昨夜（日本時間今朝）Q3決算を発表。EPS $0.81（予想$0.80、+1.3%上振れ）、データセンター売上高$29.8B（予想$29.5B、+1.0%上振れ）。Q4ガイダンス収益$37.5B±2%（予想$35.8Bを上回る）。CEO Jensen Huang氏「Blackwellの需要は圧倒的。供給を最大化している」。時間外取引でNvidia株<strong>+5.8%</strong>、ナスダック先物<strong>+1.1%</strong>。東京市場寄り付きは半導体関連全面高を見込む。</p>
+      <div class="analysis-grid">
+        <div>
+          <span class="analysis-label">① なぜ今？</span>
+          <p class="analysis-body">Blackwellサイクルが本格量産フェーズに入ったタイミングでの確認。ガイダンスの強さがAI設備投資の「構造化」を裏付ける最大のサプライズ。</p>
+        </div>
+        <div>
+          <span class="analysis-label">② 💹 市場への波及</span>
+          <p class="analysis-body">東京市場の半導体セクター全面高が予想。東エレ・アドバンテスト等への波及が主な投資機会として注目される。</p>
+        </div>
+        <div>
+          <span class="analysis-label">③ ⚠️ 注視点</span>
+          <p class="analysis-body">中国輸出規制強化による供給配分変更リスクが潜在。Q4ガイダンス強気も規制環境の変化には引き続き注意が必要。</p>
+        </div>
+      </div>
+      <div class="card-tyler-view">
+        <div class="ctv-head">TYLER VIEW</div>
+        <p>ガイダンスの強さが最大のサプライズ。Q4への上乗せはAI設備投資が「構造的」であることの証拠。東京市場の半導体セクターにとっては今年の仕上げの花火となりうる。</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- W-02: FEATURED -->
+  <article class="topic-card featured">
+    <div class="tc-header">
+      <span class="tc-kicker">W-02 ／ Fed · 2026.11.18</span>
+      <h2 class="tc-title">FOMC議事録★★ — 「年内1回の追加利下げ余地」</h2>
+      <div class="reader-tag">
+        <span class="rt-item">外貨建て資産保有者</span>
+        <span class="rt-item">変動金利借入中</span>
+        <span class="rt-item">輸出企業経営者</span>
+      </div>
+      <span class="focus-badge">◆ 今日の注目</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-stat-row">
+        <div class="tc-stat">12月利下げ確率 <strong>70%台</strong></div>
+        <div class="tc-stat">前日比 <strong>+5pp</strong></div>
+        <div class="tc-stat">想定利下げ幅 <strong>25bp</strong></div>
+      </div>
+      <p class="tc-prose">11月FOMC議事録（本日公開）では「物価目標達成に向けたさらなる進展が確認されれば、12月に25bpの追加利下げが適切」と複数委員が発言したことが判明。一方で2名の委員が「次回会合を含めた一時停止（<strong>pause</strong>）を支持する」と慎重姿勢も。総合すると12月利下げ確率は市場で<strong>70%台</strong>（前日比+5pp）に上昇。ドルインデックスは小幅下落。</p>
+      <div class="analysis-grid">
+        <div>
+          <span class="analysis-label">① なぜ今？</span>
+          <p class="analysis-body">年内最後の政策会合（12月）前の最後のFed内部議論の開示。市場のプライシングに直接影響するタイミング。</p>
+        </div>
+        <div>
+          <span class="analysis-label">② 💹 市場への影響</span>
+          <p class="analysis-body">ドル安→円高・新興国通貨高のトレンド支持。債券高（利回り低下）で株式のバリュエーション上昇圧力。</p>
+        </div>
+        <div>
+          <span class="analysis-label">③ ⚠️ 利下げ反転リスク</span>
+          <p class="analysis-body">来週PCEデフレーターが予想を上回れば12月据え置きに転換する可能性。データへの高い感応度が続く。</p>
+        </div>
+      </div>
+      <div class="card-tyler-view">
+        <div class="ctv-head">TYLER VIEW</div>
+        <p>議事録のトーンは「ハト派優位」。12月利下げのベースケース確認で、ドル安・円高・新興国通貨高のトレンドを支持。</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- W-03: SMB -->
+  <article class="topic-card smb">
+    <div class="tc-header">
+      <span class="tc-kicker">W-03 ／ 外交・貿易 · 2026.11.18</span>
+      <h2 class="tc-title">日米首脳会談 — 貿易・安全保障で協調宣言</h2>
+      <div class="reader-tag">
+        <span class="rt-item">輸出入企業経営者</span>
+        <span class="rt-item">防衛・安保関連企業</span>
+        <span class="rt-item">農業・食品業界</span>
+      </div>
+      <span class="smb-badge">◎ 中小企業</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-stat-row">
+        <div class="tc-stat">防衛費 <strong>GDP比2%達成</strong></div>
+        <div class="tc-stat">会談地 <strong>ニューヨーク</strong></div>
+      </div>
+      <p class="tc-prose">G20サミット直前の日米首脳会談（ニューヨーク）で、両首脳は「自由で公正な貿易体制の維持」と「インド太平洋地域の安全保障強化」で一致。日本の防衛費増額（GDP比2%達成）をトランプ側が評価。<strong>半導体・AI分野でのサプライチェーン協力深化</strong>を盛り込んだ共同声明を発表。日本側は農産物市場アクセス問題での追加譲歩を回避。</p>
+      <div class="analysis-grid">
+        <div>
+          <span class="analysis-label">① なぜ今？</span>
+          <p class="analysis-body">G20直前の事前調整。農産物問題での追加譲歩回避は日本側の成果として評価できる重要な外交実績。</p>
+        </div>
+        <div>
+          <span class="analysis-label">② 🏭 恩恵を受ける産業</span>
+          <p class="analysis-body">半導体・AI協力深化で、日本の製造装置・材料メーカーへの受注増期待。防衛関連企業にも追い風。</p>
+        </div>
+        <div>
+          <span class="analysis-label">③ ⚠️ 注視点</span>
+          <p class="analysis-body">自動車関税問題は共同声明に明記されず、今後の火種として残存。次回交渉での対応が焦点となる。</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- W-04: STANDARD -->
+  <article class="topic-card">
+    <div class="tc-header">
+      <span class="tc-kicker">W-04 ／ コモディティ · 2026.11.18</span>
+      <h2 class="tc-title">金価格・$2,870突破 — 年内最高値更新</h2>
+      <div class="reader-tag">
+        <span class="rt-item">外貨建て資産保有者</span>
+        <span class="rt-item">資産運用検討中</span>
+      </div>
+    </div>
+    <div class="tc-body">
+      <div class="tc-stat-row">
+        <div class="tc-stat">金価格 <strong>$2,872/oz</strong></div>
+        <div class="tc-stat">年初来 <strong>+28%</strong></div>
+      </div>
+      <p class="tc-prose">金(GOLD)は$2,872/ozと年内最高値を更新。ドル安・実質金利低下・地政学リスク・中央銀行の金購入（新興国中銀が継続）が重なり「四重の追い風」。年初来<strong>+28%</strong>の高パフォーマンス。個人投資家の金ETF流入も加速しており、$3,000の節目が市場で意識される。</p>
+      <div class="analysis-grid">
+        <div>
+          <span class="analysis-label">① なぜ今？</span>
+          <p class="analysis-body">四重の追い風（ドル安・実質金利低下・地政学・中銀買い）が揃った稀なコンフルエンスが年初来+28%を演出。</p>
+        </div>
+        <div>
+          <span class="analysis-label">② 💹 投資家への示唆</span>
+          <p class="analysis-body">年内$3,000到達の可能性を市場が意識。金ETF流入が加速しており、個人投資家のポートフォリオ見直しの好機。</p>
+        </div>
+        <div>
+          <span class="analysis-label">③ ⚠️ 注視点</span>
+          <p class="analysis-body">Fed利下げ停止リスクが浮上すればドル高転換で金価格急落の可能性。来週PCEデフレーターに要注意。</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- W-05: STANDARD -->
+  <article class="topic-card">
+    <div class="tc-header">
+      <span class="tc-kicker">W-05 ／ 欧州政治 · 2026.11.18</span>
+      <h2 class="tc-title">ドイツ・早期総選挙へ — 2月に議会選挙</h2>
+      <div class="reader-tag">
+        <span class="rt-item">欧州ビジネス展開中</span>
+        <span class="rt-item">製造業・輸出企業</span>
+      </div>
+    </div>
+    <div class="tc-body">
+      <div class="tc-stat-row">
+        <div class="tc-stat">選挙日程 <strong>2027年2月</strong></div>
+        <div class="tc-stat">解散理由 <strong>財政規律対立</strong></div>
+      </div>
+      <p class="tc-prose">ドイツのショルツ首相が連立解消・早期議会選挙（2027年2月）を正式表明。財政規律を巡るFDP・SPD・緑の党の対立が修復不可能と判断。暫定政権が来年予算を執行する異例の事態に。欧州株はドイツ政治不安で上値を抑えられているが、CDU/CSU中心の新政権では<strong>財政規律強化と構造改革加速</strong>の期待も高まる。</p>
+      <div class="analysis-grid">
+        <div>
+          <span class="analysis-label">① なぜ今？</span>
+          <p class="analysis-body">連立崩壊で欧州最大経済圏が政治空白。EU全体の財政議論に影響し、欧州株の上値を抑える短期的要因。</p>
+        </div>
+        <div>
+          <span class="analysis-label">② 🌏 欧州経済への影響</span>
+          <p class="analysis-body">CDU/CSU中心の新政権では財政規律強化と製造業支援を期待。中長期では構造改革加速の可能性が浮上。</p>
+        </div>
+        <div>
+          <span class="analysis-label">③ ⚠️ 注視点</span>
+          <p class="analysis-body">2月選挙まで暫定政権が予算執行。設備投資の停滞と景気後退リスクが短期的な不確実性要因として残る。</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</div><!-- /topic-grid W -->
+
+<!-- ── SECTION: JAPAN ── -->
+<div class="section-divider"><span class="section-label">Japan</span></div>
+
+<div class="topic-grid">
+
+  <!-- J-01: FEATURED -->
+  <article class="topic-card featured">
+    <div class="tc-header">
+      <span class="tc-kicker">J-01 ／ 為替 · 2026.11.18</span>
+      <h2 class="tc-title">円安転換★★ ¥132台 — FOMC利下げ確率低下で</h2>
+      <div class="reader-tag">
+        <span class="rt-item">輸出企業経営者</span>
+        <span class="rt-item">外貨建て資産保有者</span>
+        <span class="rt-item">為替ヘッジ検討中</span>
+      </div>
+      <span class="focus-badge">◆ 今日の注目</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-stat-row">
+        <div class="tc-stat">ドル円 <strong>¥132.3台</strong></div>
+        <div class="tc-stat">3週間ぶりの <strong>円安水準</strong></div>
+      </div>
+      <p class="tc-prose">ドル円は¥132.3台と10月利上げ後最高値圏のドル安から転じ3週間ぶりの円安水準。FOMCで慎重派の声が浮上したことで12月利下げ確率が一時低下し、ドルが反発。ただしNvidia決算後の「リスクオン」でドル高は一時的との見方も。日銀の姿勢に変化がない限り¥130〜133のレンジ内と考えられる。<strong>輸出関連株には追い風。</strong></p>
+      <div class="analysis-grid">
+        <div>
+          <span class="analysis-label">① なぜ今？</span>
+          <p class="analysis-body">Nvidia決算後のリスクオンとFOMC慎重派浮上の複合要因で円安転換。短期的かつ複合的な要因でタイミング判断が難しい。</p>
+        </div>
+        <div>
+          <span class="analysis-label">② 💹 恩恵を受けるセクター</span>
+          <p class="analysis-body">輸出関連株（自動車・精密機器）に追い風。為替ヘッジなし企業が最大受益者として市場で注目される。</p>
+        </div>
+        <div>
+          <span class="analysis-label">③ ⚠️ 注視点</span>
+          <p class="analysis-body">¥130〜133のレンジ上抜けで日銀の口先介入が警戒され始めるライン。日銀の姿勢変化が最大のリスク。</p>
+        </div>
+      </div>
+      <div class="card-tyler-view">
+        <div class="ctv-head">TYLER VIEW</div>
+        <p>¥132台は輸出株にとってプラス。しかしボラティリティが高く、為替前提を¥130で置いている製造業にとっては「棚ぼた」以上の予想変化に慎重なコメントが多い。</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- J-02: SMB -->
+  <article class="topic-card smb">
+    <div class="tc-header">
+      <span class="tc-kicker">J-02 ／ 自動車 · 2026.11.18</span>
+      <h2 class="tc-title">トヨタ・ホンダ — 通期為替前提見直しへ</h2>
+      <div class="reader-tag">
+        <span class="rt-item">自動車関連サプライヤー</span>
+        <span class="rt-item">製造業・輸出企業</span>
+      </div>
+      <span class="smb-badge">◎ 中小企業</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-stat-row">
+        <div class="tc-stat">トヨタ（1円円安） <strong>+500億円</strong></div>
+        <div class="tc-stat">ホンダ（1円円安） <strong>+100億円</strong></div>
+      </div>
+      <p class="tc-prose">トヨタ・ホンダが通期の為替前提（現在¥130/ドル）を¥132〜133に見直す方向で検討と複数メディアが報道。為替前提1円の円安で①トヨタ営業利益<strong>+500億円</strong>程度、②ホンダ<strong>+100億円</strong>程度の増益要因。両社の通期ガイダンス引き上げが年度後半に期待される。円安転換が自動車セクターの買い直しトリガーとなる可能性。</p>
+      <div class="analysis-grid">
+        <div>
+          <span class="analysis-label">① 🎯 サプライヤー直結</span>
+          <p class="analysis-body">ガイダンス引き上げは株価カタリスト。仕入れ価格交渉の新規レバレッジとして中小サプライヤーにも活用できる。</p>
+        </div>
+        <div>
+          <span class="analysis-label">② 💹 利益影響</span>
+          <p class="analysis-body">1円の円安でトヨタ+500億・ホンダ+100億（年換算）。為替前提2〜3円の見直しは数百〜千億円規模の増益要因。</p>
+        </div>
+        <div>
+          <span class="analysis-label">③ ⚠️ 注視点</span>
+          <p class="analysis-body">次回四半期決算（2月）まで実績確認が必要。円安の持続性については引き続き慎重な姿勢が主流。</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- J-03: STANDARD -->
+  <article class="topic-card">
+    <div class="tc-header">
+      <span class="tc-kicker">J-03 ／ 株式市場 · 2026.11.18</span>
+      <h2 class="tc-title">日経平均42,800円 — Nvidia急騰で半導体が大幅高</h2>
+      <div class="reader-tag">
+        <span class="rt-item">国内株式投資家</span>
+        <span class="rt-item">半導体関連株保有者</span>
+      </div>
+    </div>
+    <div class="tc-body">
+      <div class="tc-stat-row">
+        <div class="tc-stat">日経平均 <strong>42,815円</strong></div>
+        <div class="tc-stat">前日比 <strong>+1.1%</strong></div>
+        <div class="tc-stat">売買代金 <strong>5.0兆円</strong></div>
+      </div>
+      <p class="tc-prose">Nvidia決算を受けて日経平均は<strong>+1.1%の42,815円</strong>。東京エレクトロン<strong>+4.2%</strong>、アドバンテスト<strong>+5.1%</strong>、ソシオネクスト<strong>+6.3%</strong>など半導体関連全面高。円安も輸出株を押し上げ。売買代金は5.0兆円と今年最高水準に迫る活況。ただし一部銘柄は「材料出尽くし」感も。</p>
+      <div class="analysis-grid">
+        <div>
+          <span class="analysis-label">① なぜ今？</span>
+          <p class="analysis-body">Nvidia決算を直接受ける形で東京市場が反応。5.0兆円の売買代金は今年最高水準に迫る市場全体の活況を示す。</p>
+        </div>
+        <div>
+          <span class="analysis-label">② 💹 注目銘柄</span>
+          <p class="analysis-body">東エレ（+4.2%）・アドバンテスト（+5.1%）・ソシオネクスト（+6.3%）が個別物色の中心に。</p>
+        </div>
+        <div>
+          <span class="analysis-label">③ ⚠️ 材料出尽くし</span>
+          <p class="analysis-body">半導体関連の急騰後は利確売りのタイミングに注意。短期的な調整も視野に入れたリスク管理を。</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- J-04: STANDARD -->
+  <article class="topic-card">
+    <div class="tc-header">
+      <span class="tc-kicker">J-04 ／ 設備投資 · 2026.11.18</span>
+      <h2 class="tc-title">機械受注10月+2.8% — 設備投資の底入れ確認</h2>
+      <div class="reader-tag">
+        <span class="rt-item">製造業・設備投資担当者</span>
+        <span class="rt-item">電力・冷却設備関連企業</span>
+      </div>
+    </div>
+    <div class="tc-body">
+      <div class="tc-stat-row">
+        <div class="tc-stat">機械受注（民需） <strong>+2.8%</strong></div>
+        <div class="tc-stat">予想比 <strong>+1.3pp上振れ</strong></div>
+        <div class="tc-stat">外需 <strong>+1.2%</strong></div>
+      </div>
+      <p class="tc-prose">内閣府の10月機械受注（民需、除く船舶・電力）は前月比<strong>+2.8%</strong>（予想+1.5%を大幅上回り）。AIデータセンター向けの電力設備・冷却システム投資が急増。外需（輸出向け）は+1.2%と底堅く推移。<strong>設備投資サイクルの本格回復</strong>を示唆し、設備投資関連株に買い。</p>
+      <div class="analysis-grid">
+        <div>
+          <span class="analysis-label">① なぜ今？</span>
+          <p class="analysis-body">AI・データセンター向け設備投資が民需を牽引。製造業の生産能力拡大サイクル本格回復の確認となる重要指標。</p>
+        </div>
+        <div>
+          <span class="analysis-label">② 🏭 恩恵を受けるセクター</span>
+          <p class="analysis-body">電力設備・冷却システム・産業機械メーカーが直接受益。外需+1.2%も輸出向け設備の底堅さを確認。</p>
+        </div>
+        <div>
+          <span class="analysis-label">③ 📌 継続条件</span>
+          <p class="analysis-body">補正予算のAI・半導体支援（1.2兆円）が民間投資の呼び水となるかが設備投資サイクル継続の鍵。</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- J-05: STANDARD -->
+  <article class="topic-card">
+    <div class="tc-header">
+      <span class="tc-kicker">J-05 ／ 財政政策 · 2026.11.18</span>
+      <h2 class="tc-title">衆参予算委員会 — 補正予算10.2兆円の審議開始</h2>
+      <div class="reader-tag">
+        <span class="rt-item">AI・半導体関連企業</span>
+        <span class="rt-item">電力・ガス使用事業者</span>
+      </div>
+    </div>
+    <div class="tc-body">
+      <div class="tc-stat-row">
+        <div class="tc-stat">補正予算総額 <strong>10.2兆円</strong></div>
+        <div class="tc-stat">AI・半導体支援 <strong>1.2兆円</strong></div>
+        <div class="tc-stat">防衛費上乗せ <strong>2.1兆円</strong></div>
+      </div>
+      <p class="tc-prose">国会では総額<strong>10.2兆円</strong>の補正予算（2026年度）の審議が開始。電力・ガス代補助の延長（1.8兆円）、AI・半導体産業支援（1.2兆円）、防衛費上乗せ（2.1兆円）が主な内容。物価対策への支出継続は日銀の利上げ判断を複雑にするとの指摘も。12月中旬の成立を目指す。</p>
+      <div class="analysis-grid">
+        <div>
+          <span class="analysis-label">① なぜ今？</span>
+          <p class="analysis-body">10.2兆円の補正予算は過去最大規模の一つ。AI・防衛・物価対策が三本柱で幅広い産業に波及効果。</p>
+        </div>
+        <div>
+          <span class="analysis-label">② 🏭 恩恵を受ける産業</span>
+          <p class="analysis-body">AI・半導体産業支援1.2兆円→ラピダス・データセンター関連に直接裨益。電力補助延長は中小企業の経営に恩恵。</p>
+        </div>
+        <div>
+          <span class="analysis-label">③ ⚠️ 財政・日銀への影響</span>
+          <p class="analysis-body">電力補助継続が物価指標を人為的に押し下げ、日銀の利上げ判断を複雑化。財政規律との兼ね合いが課題。</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- J-06: WIDE -->
+  <article class="topic-card wide">
+    <div class="tc-header">
+      <span class="tc-kicker">J-06 ／ 金融政策 · 2026.11.18</span>
+      <h2 class="tc-title">FOMC議事録詳報 — 12月利下げシナリオ整理</h2>
+      <div class="reader-tag">
+        <span class="rt-item">外貨建て資産保有者</span>
+        <span class="rt-item">変動金利借入中</span>
+        <span class="rt-item">日本株・為替トレーダー</span>
+      </div>
+    </div>
+    <div class="tc-body">
+      <div class="wide-inner">
+        <div>
+          <div class="action-col-head">議事録要点</div>
+          <ul class="action-list">
+            <li data-mark="①">景気認識：「雇用は緩やかに軟化、物価は目標に向け着実に前進」</li>
+            <li data-mark="②">利下げ賛成派：「12月に25bpの追加利下げが適切」と複数委員が発言</li>
+            <li data-mark="③">据え置き派：「不確実性が高く、会合をまたいで様子見が賢明」（2名）</li>
+            <li data-mark="④">全員一致の認識：「データ次第で判断を随時見直す」姿勢を確認</li>
+          </ul>
+          <p class="tc-prose" style="margin-top:.68rem">市場コンセンサスは<strong>12月利下げ→25bp</strong>、来年（2027年）は2〜3回で合計<strong>50〜75bp</strong>の利下げサイクル継続。議事録の「ハト派70%・タカ派30%」の構成が示す通り、Fed自身がまだ迷っている状態。</p>
+        </div>
+        <div>
+          <div class="action-col-head">日本への影響シナリオ</div>
+          <div class="tc-stat-row" style="flex-direction:column;gap:.42rem;margin-bottom:.6rem">
+            <div class="tc-stat">12月利下げ確率 <strong>70%台</strong>（+5pp）</div>
+            <div class="tc-stat">2027年利下げ見通し <strong>50〜75bp</strong></div>
+          </div>
+          <p class="tc-prose">米利下げ→ドル安→円高圧力継続で日銀の判断余地が広がる逆説的構図。円高が進めば輸出株には逆風、内需株・インバウンド関連には追い風。日銀は米動向を踏まえた「データ依存」姿勢を継続する見通しで、次回利上げのタイミングは2027年前半以降との見方が市場のコンセンサス。</p>
+          <div class="card-tyler-view" style="margin-top:.6rem">
+            <div class="ctv-head">TYLER VIEW</div>
+            <p>議事録の「ハト派70%・タカ派30%」の構成は、Fed自身がまだ迷っている証拠。12月利下げは7割確率だが、次の重要指標（来週PCEデフレーター）で揺れる可能性。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</div><!-- /topic-grid J -->
+
+<!-- ── THEME ARCHIVE ── -->
+<div class="theme-archive">
+  <div class="theme-archive-head">📚 今号のキーテーマ — バックナンバーで深掘りする</div>
+  <div class="theme-chips">
+    <a href="../index.html?theme=ai" class="theme-chip">AI設備投資</a>
+    <a href="../index.html?theme=semi" class="theme-chip">半導体決算</a>
+    <a href="../index.html?theme=fed" class="theme-chip">Fed利下げサイクル</a>
+    <a href="../index.html?theme=fx" class="theme-chip">円安・為替</a>
+    <a href="../index.html?theme=japan-us" class="theme-chip">日米関係</a>
+    <a href="../index.html?theme=gold" class="theme-chip">金・代替資産</a>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div>
+    <div class="footer-head">About</div>
+    <p class="footer-body">TYLER MORNING BRIEFは、AIが選別・分析した朝のビジネス情報ブリーフィングです。毎朝、世界と日本の重要ニュースをコンパクトに整理し、経営判断に直結するインサイトをお届けします。</p>
+  </div>
+  <div>
+    <div class="footer-head">最新号</div>
+    <p class="footer-body">
+      Vol.119 ／ 2026年11月18日<br>
+      Nvidia EPS+9%★★★ · FOMC議事録 · 円安¥132台
+    </p>
+    <a href="morning-brief-20261118.html" class="footer-cta">この号を読む →</a>
+  </div>
+  <div>
+    <div class="footer-head">バックナンバー</div>
+    <p class="footer-body">
+      <a href="morning-brief-20261117.html">Vol.118 ／ 11月17日</a><br>
+      <a href="morning-brief-20261116.html">Vol.117 ／ 11月16日</a><br>
+      <a href="morning-brief-20261114.html">Vol.116 ／ 11月14日</a>
+    </p>
+  </div>
+</footer>
+
+</div><!-- /wrap -->
+
+<script>
+document.querySelectorAll('.tc-stat strong').forEach(function(el) {
+  var t = el.textContent.trim();
+  if (/^[▲▼\-]/.test(t)) { el.style.color = '#B85C00'; }
+  else if (/^\+/.test(t)) { el.style.color = '#1A7A5E'; }
+});
+</script>
+</body>
+</html>
