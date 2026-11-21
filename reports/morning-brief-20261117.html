@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TYLER MORNING BRIEF — Vol.118 / 2026-11-17</title>
+<style>
+/* ── Design tokens ── */
+:root {
+  --ink: #0B1F35;
+  --paper: #F8F5EF;
+  --gold: #C0870B;
+  --navy: #1E3A5F;
+  --jade: #1A7A5E;
+  --sky: #1A5F8A;
+  --positive: #1A7A5E;
+  --negative: #B85C00;
+  --rule: #DDD8CE;
+  --muted: #EAE6DE;
+  --caption: #7A7368;
+  --f-serif: Georgia, "Times New Roman", "Hiragino Mincho ProN", "MS Mincho", serif;
+  --f-sans: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", system-ui, sans-serif;
+  --f-display: "Playfair Display", Georgia, serif;
+  --header-bg: linear-gradient(135deg, #EBE8E2 0%, #D8D3CB 100%);
+  --header-bg-featured: linear-gradient(135deg, #E2ECF4 0%, #D0E2EF 100%);
+  --header-bg-smb: linear-gradient(135deg, #F4ECD8 0%, #ECDBC0 100%);
+  --chart-bg: #EAE6DE;
+  --chart-axis: #DDD8CE;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #E2DDCF;
+    --paper: #0D1A27;
+    --gold: #D4A435;
+    --navy: #7BAED0;
+    --jade: #38A87A;
+    --sky: #5B99C0;
+    --positive: #38A87A;
+    --negative: #E08240;
+    --rule: #263547;
+    --muted: #152030;
+    --caption: #8B9BAA;
+    --header-bg: linear-gradient(135deg, #172232 0%, #1C2C40 100%);
+    --header-bg-featured: linear-gradient(135deg, #162537 0%, #1C3248 100%);
+    --header-bg-smb: linear-gradient(135deg, #26200E 0%, #322A12 100%);
+    --chart-bg: #152030;
+    --chart-axis: #263547;
+  }
+}
+
+:root[data-theme="dark"] {
+  --ink: #E2DDCF;
+  --paper: #0D1A27;
+  --gold: #D4A435;
+  --navy: #7BAED0;
+  --jade: #38A87A;
+  --sky: #5B99C0;
+  --positive: #38A87A;
+  --negative: #E08240;
+  --rule: #263547;
+  --muted: #152030;
+  --caption: #8B9BAA;
+  --header-bg: linear-gradient(135deg, #172232 0%, #1C2C40 100%);
+  --header-bg-featured: linear-gradient(135deg, #162537 0%, #1C3248 100%);
+  --header-bg-smb: linear-gradient(135deg, #26200E 0%, #322A12 100%);
+  --chart-bg: #152030;
+  --chart-axis: #263547;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-sans);
+  font-size: 14px;
+  line-height: 1.65;
+  padding-inline: 16px;
+  padding-block: env(safe-area-inset-top, 0px) env(safe-area-inset-bottom, 0px);
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; }
+
+/* ── Wrapper ── */
+.wrap { max-width: 864px; margin: 0 auto; }
+
+/* ── Masthead ── */
+.masthead {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: .6rem;
+  border-top: 3px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding-block: .78rem;
+  margin-block: 1.25rem .65rem;
+}
+
+.mast-side {
+  font-size: .57rem;
+  color: var(--caption);
+  letter-spacing: .02em;
+  line-height: 1.5;
+}
+
+.mast-side:last-child { text-align: right; }
+
+.mast-center { text-align: center; }
+
+.mast-brand {
+  font-family: var(--f-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: var(--ink);
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.mast-sub {
+  font-size: .53rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--caption);
+  margin-top: .2rem;
+}
+
+/* ── Vol-meta ── */
+.vol-meta {
+  margin-bottom: 1.2rem;
+  padding: .5rem .78rem;
+  background: var(--muted);
+  border-left: 2px solid var(--gold);
+}
+
+/* ── TYLER VIEW (top) ── */
+.tyler-view {
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding-block: .85rem .92rem;
+  margin-bottom: 1.5rem;
+}
+
+.tv-head {
+  font-size: .57rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  color: var(--ink);
+  margin-bottom: .42rem;
+}
+
+.tv-body {
+  font-size: .82rem;
+  line-height: 1.78;
+  color: var(--ink);
+}
+
+/* ── Section divider ── */
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin-block: 1.65rem 1.05rem;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+.section-label {
+  font-size: .57rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--caption);
+  white-space: nowrap;
+}
+
+/* ── Topic grid ── */
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+}
+
+/* ── Topic card base ── */
+.topic-card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  box-shadow: 0 2px 8px rgba(11,31,53,.07);
+  display: flex;
+  flex-direction: column;
+}
+
+.topic-card.lead,
+.topic-card.wide {
+  grid-column: 1 / -1;
+}
+
+/* ── Featured card ── */
+.topic-card.featured { border-top: 3px solid var(--sky); }
+.topic-card.featured .tc-header { background: var(--header-bg-featured); }
+
+/* ── SMB card ── */
+.topic-card.smb { border-top: 3px solid var(--gold); }
+.topic-card.smb .tc-header { background: var(--header-bg-smb); }
+
+/* ── tc-header ── */
+.tc-header {
+  background: var(--header-bg);
+  padding: .72rem .92rem .64rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.tc-kicker {
+  display: block;
+  font-size: .63rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: .18rem;
+}
+
+.tc-title {
+  font-size: 1.06rem;
+  font-family: var(--f-serif);
+  font-weight: 700;
+  line-height: 1.38;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.topic-card.lead .tc-title { font-size: 1.26rem; }
+
+/* ── Reader tag ── */
+.reader-tag {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .22rem;
+  margin-top: .34rem;
+}
+
+.rt-item {
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: .1rem .38rem;
+  background: rgba(30,58,95,.07);
+  border: 1px solid rgba(30,58,95,.14);
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+/* ── Zoku badge ── */
+.zoku-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .28rem;
+  background: rgba(26,122,94,.08);
+  border: 1px solid rgba(26,122,94,.22);
+  color: var(--jade);
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: .1rem .42rem;
+  margin-top: .28rem;
+  text-decoration: none;
+}
+
+.zoku-badge:hover { background: rgba(26,122,94,.16); }
+
+/* ── SMB badge ── */
+.smb-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(192,135,11,.1);
+  border: 1px solid rgba(192,135,11,.28);
+  color: var(--gold);
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: .1rem .42rem;
+  margin-top: .28rem;
+}
+
+/* ── Focus badge ── */
+.focus-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  background: var(--sky);
+  color: #fff;
+  font-size: .54rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  padding: .18rem .52rem;
+  margin-top: .35rem;
+}
+
+/* ── Lead visual (SVG wrapper) ── */
+.lead-visual {
+  width: 100%;
+  border-bottom: 1px solid var(--rule);
+  background: var(--chart-bg);
+  overflow: hidden;
+}
+
+.lead-visual svg { width: 100%; display: block; }
+
+/* ── tc-body ── */
+.tc-body {
+  padding: .82rem .92rem;
+  display: flex;
+  flex-direction: column;
+  gap: .68rem;
+  flex: 1;
+}
+
+/* ── Stat row ── */
+.tc-stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .85rem;
+}
+
+.tc-stat { font-size: .72rem; }
+.tc-stat strong { font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* ── Prose ── */
+.tc-prose {
+  font-size: .82rem;
+  line-height: 1.76;
+  color: var(--ink);
+}
+
+/* ── Inline card TYLER VIEW ── */
+.card-tyler-view {
+  background: rgba(11,31,53,.04);
+  border-left: 2px solid var(--ink);
+  padding: .5rem .68rem;
+}
+
+.ctv-head {
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--caption);
+  margin-bottom: .2rem;
+}
+
+.card-tyler-view p {
+  font-size: .72rem;
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+/* ── Analysis grid ── */
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .72rem;
+  border-top: 1px solid var(--rule);
+  padding-top: .68rem;
+}
+
+.analysis-label {
+  display: block;
+  font-size: .61rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: .05em;
+  margin-bottom: .2rem;
+}
+
+.analysis-body {
+  font-size: .72rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+/* ── Wide card internals ── */
+.wide-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+/* ── Change table ── */
+.table-scroll { overflow-x: auto; }
+
+.change-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .72rem;
+  min-width: 480px;
+}
+
+.change-table th {
+  font-size: .59rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-align: left;
+  color: var(--caption);
+  border-bottom: 1px solid var(--rule);
+  padding: .32rem .52rem;
+}
+
+.change-table td {
+  padding: .36rem .52rem;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  line-height: 1.45;
+  vertical-align: top;
+}
+
+.change-table tr:last-child td { border-bottom: none; }
+
+.urgency-tag {
+  display: inline-block;
+  font-size: .5rem;
+  font-weight: 700;
+  padding: .06rem .35rem;
+  background: rgba(184,92,0,.1);
+  color: var(--negative);
+  border: 1px solid rgba(184,92,0,.22);
+}
+
+/* ── Countdown chips ── */
+.countdown-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin-bottom: .45rem;
+}
+
+.cd-chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: .42rem .88rem;
+  border: 1px solid var(--rule);
+  background: var(--muted);
+  min-width: 100px;
+}
+
+.cd-chip.urgent { border-color: var(--negative); background: rgba(184,92,0,.06); }
+
+.cd-num {
+  font-size: 1.45rem;
+  font-weight: 700;
+  font-family: var(--f-serif);
+  font-variant-numeric: tabular-nums;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.cd-chip.urgent .cd-num { color: var(--negative); }
+
+.cd-label {
+  font-size: .51rem;
+  color: var(--caption);
+  margin-top: .1rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ── Action list ── */
+.action-col-head {
+  font-size: .59rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--caption);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: .32rem;
+  margin-bottom: .52rem;
+}
+
+.action-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+.action-list li {
+  font-size: .76rem;
+  line-height: 1.52;
+  padding-left: 1.1rem;
+  position: relative;
+  color: var(--ink);
+}
+
+.action-list li::before {
+  content: attr(data-mark);
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: var(--jade);
+}
+
+/* ── Theme archive ── */
+.theme-archive {
+  border-top: 1px solid var(--rule);
+  margin-top: 2.1rem;
+  padding-top: 1rem;
+  margin-bottom: .5rem;
+}
+
+.theme-archive-head {
+  font-size: .59rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--caption);
+  margin-bottom: .52rem;
+}
+
+.theme-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .38rem;
+}
+
+.theme-chip {
+  font-size: .63rem;
+  font-weight: 700;
+  padding: .22rem .68rem;
+  background: var(--muted);
+  border: 1px solid var(--rule);
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.theme-chip:hover { background: var(--ink); color: var(--paper); }
+
+/* ── Footer ── */
+.footer {
+  border-top: 2px solid var(--ink);
+  margin-top: 2.5rem;
+  padding: 1.25rem 0 .9rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.1rem;
+}
+
+.footer-head {
+  font-size: .59rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: .44rem;
+}
+
+.footer-body {
+  font-size: .68rem;
+  line-height: 1.65;
+  color: var(--caption);
+}
+
+.footer-body a { color: var(--navy); text-decoration: underline; text-decoration-thickness: 1px; }
+.footer-body a:hover { color: var(--ink); }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .masthead { grid-template-columns: 1fr; text-align: center; }
+  .mast-side:last-child { text-align: center; }
+  .topic-grid { grid-template-columns: 1fr; }
+  .analysis-grid { grid-template-columns: 1fr; }
+  .wide-inner { grid-template-columns: 1fr; }
+  .footer { grid-template-columns: 1fr; }
+  .mast-brand { font-size: 1.15rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* ── Supplementary classes ── */
+.page-wrap { max-width: 864px; margin: 0 auto; }
+
+.mh-left { font-size: .57rem; color: var(--caption); letter-spacing: .02em; line-height: 1.5; }
+.mh-right { font-size: .57rem; color: var(--caption); letter-spacing: .02em; line-height: 1.5; text-align: right; }
+.mh-center { text-align: center; }
+
+.brand-name {
+  font-family: var(--f-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  color: var(--ink);
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.brand-sub {
+  font-size: .5rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--caption);
+  margin-top: .18rem;
+}
+
+.brand-logo {
+  font-family: var(--f-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+  border: 2px solid var(--ink);
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.issue-vol {
+  font-size: .68rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: .04em;
+}
+
+.issue-date {
+  font-size: .54rem;
+  color: var(--caption);
+  margin-top: .15rem;
+  letter-spacing: .02em;
+}
+
+.footer-text {
+  font-size: .68rem;
+  line-height: 1.65;
+  color: var(--caption);
+}
+
+.footer-text a { color: var(--navy); text-decoration: underline; text-decoration-thickness: 1px; }
+.footer-text a:hover { color: var(--ink); }
+
+.footer-cta {
+  display: inline-block;
+  font-size: .68rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-top: .44rem;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+.footer-cta:hover { color: var(--ink); }
+
+/* section-divider inside grid */
+.section-divider-grid {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin-block: .4rem .2rem;
+}
+
+.section-divider-grid::before,
+.section-divider-grid::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- ── Masthead ── -->
+  <header class="masthead">
+    <div class="mh-left">
+      <div class="brand-name">TYLER MORNING BRIEF</div>
+      <div class="brand-sub">Business Intelligence / Daily Edition</div>
+    </div>
+    <div class="mh-center">
+      <div class="brand-logo">T</div>
+    </div>
+    <div class="mh-right">
+      <div class="issue-vol">Vol. 118 ／ Latest Issue</div>
+      <div class="issue-date">2026年11月17日（火曜日）</div>
+    </div>
+  </header>
+
+  <!-- ── Topic grid ── -->
+  <main class="topic-grid">
+
+    <!-- ── World section divider ── -->
+    <div class="section-divider-grid">
+      <span class="section-label">WORLD / 国際ニュース</span>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         W-01  LEAD  Nvidia Q3決算
+    ══════════════════════════════════════ -->
+    <article class="topic-card lead">
+      <div class="tc-header">
+        <span class="tc-kicker">W-01 ／ テック決算 · 2026.11.17</span>
+        <h2 class="tc-title">Nvidia Q3決算★★★ — AI需要爆発継続</h2>
+        <div class="reader-tag">
+          <span class="rt-item">半導体</span>
+          <span class="rt-item">AI投資</span>
+          <span class="rt-item">決算</span>
+          <span class="rt-item">データセンター</span>
+        </div>
+        <a href="../morning-brief-20261116.html" class="zoku-badge">← 前号 Vol.117 より続く</a>
+      </div>
+
+      <!-- SVG bar chart: Nvidia Data Center Revenue Q1–Q4 2026 -->
+      <!-- Rules: rect, text, line ONLY. No path/circle/polygon. -->
+      <div class="lead-visual">
+        <svg viewBox="0 0 760 230" xmlns="http://www.w3.org/2000/svg" aria-label="Nvidia データセンター売上推移 Q1–Q4 2026">
+
+          <!-- Background -->
+          <rect x="0" y="0" width="760" height="230" fill="#EAE6DE"/>
+
+          <!-- Chart title -->
+          <text x="380" y="22" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#0B1F35" letter-spacing="0.04em">Nvidia データセンター部門 売上高推移（2026年）</text>
+
+          <!-- Grid lines (y-axis) -->
+          <!-- $10B line -->
+          <line x1="70" y1="162" x2="720" y2="162" stroke="#DDD8CE" stroke-width="1"/>
+          <!-- $20B line -->
+          <line x1="70" y1="118" x2="720" y2="118" stroke="#DDD8CE" stroke-width="1"/>
+          <!-- $30B line -->
+          <line x1="70" y1="74" x2="720" y2="74" stroke="#DDD8CE" stroke-width="1"/>
+
+          <!-- X-axis baseline -->
+          <line x1="70" y1="188" x2="720" y2="188" stroke="#0B1F35" stroke-width="1.5"/>
+
+          <!-- Y-axis -->
+          <line x1="70" y1="40" x2="70" y2="188" stroke="#0B1F35" stroke-width="1.5"/>
+
+          <!-- Y-axis labels -->
+          <text x="62" y="166" text-anchor="end" font-family="system-ui,sans-serif" font-size="9" fill="#7A7368">$10B</text>
+          <text x="62" y="122" text-anchor="end" font-family="system-ui,sans-serif" font-size="9" fill="#7A7368">$20B</text>
+          <text x="62" y="78" text-anchor="end" font-family="system-ui,sans-serif" font-size="9" fill="#7A7368">$30B</text>
+
+          <!-- Scale: chart area y=40 to y=188 → 148px for $0–$35B
+               $1B = 148/35 = 4.229px
+               Q1 $22.6B: h=95.5 → y=188-95.5=92.5
+               Q2 $26.3B: h=111.2 → y=188-111.2=76.8
+               Q3 $29.5B: h=124.8 → y=188-124.8=63.2  ← GOLD
+               Q4 $32.8B: h=138.7 → y=188-138.7=49.3
+               Bar x positions (slot width=160, bar width=100, margin=30 each):
+               Slot 1: 80–240  bar x=110
+               Slot 2: 240–400 bar x=270
+               Slot 3: 400–560 bar x=430
+               Slot 4: 560–720 bar x=590 -->
+
+          <!-- Q1 2026 bar -->
+          <rect x="110" y="92" width="100" height="96" fill="#1E3A5F" opacity="0.75"/>
+          <!-- Q1 value label -->
+          <text x="160" y="86" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#1E3A5F">$22.6B</text>
+          <!-- Q1 x label -->
+          <text x="160" y="202" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#7A7368">Q1 2026</text>
+
+          <!-- Q2 2026 bar -->
+          <rect x="270" y="77" width="100" height="111" fill="#1E3A5F" opacity="0.75"/>
+          <!-- Q2 value label -->
+          <text x="320" y="71" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#1E3A5F">$26.3B</text>
+          <!-- Q2 x label -->
+          <text x="320" y="202" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#7A7368">Q2 2026</text>
+
+          <!-- Q3 2026 bar — GOLD highlight (current quarter) -->
+          <rect x="430" y="63" width="100" height="125" fill="#C0870B"/>
+          <!-- Q3 value label -->
+          <text x="480" y="57" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#C0870B">$29.5B</text>
+          <!-- Q3 x label -->
+          <text x="480" y="202" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#C0870B">Q3 2026</text>
+          <!-- Q3 "今日発表" badge -->
+          <rect x="435" y="43" width="90" height="12" fill="#C0870B" opacity="0.15"/>
+          <text x="480" y="52" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#C0870B" letter-spacing="0.04em">今日発表</text>
+
+          <!-- Q4 2026 bar (forecast) -->
+          <rect x="590" y="49" width="100" height="139" fill="#1A5F8A" opacity="0.55"/>
+          <!-- Q4 value label -->
+          <text x="640" y="43" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#1A5F8A">$32.8B</text>
+          <!-- Q4 x label -->
+          <text x="640" y="202" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#7A7368">Q4 2026</text>
+          <!-- Q4 "予想" label -->
+          <text x="640" y="215" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#7A7368" letter-spacing="0.02em">（予想）</text>
+
+          <!-- Legend -->
+          <rect x="260" y="220" width="10" height="8" fill="#1E3A5F" opacity="0.75"/>
+          <text x="275" y="228" font-family="system-ui,sans-serif" font-size="8" fill="#7A7368">実績</text>
+          <rect x="316" y="220" width="10" height="8" fill="#C0870B"/>
+          <text x="331" y="228" font-family="system-ui,sans-serif" font-size="8" fill="#C0870B" font-weight="700">今日発表</text>
+          <rect x="390" y="220" width="10" height="8" fill="#1A5F8A" opacity="0.55"/>
+          <text x="405" y="228" font-family="system-ui,sans-serif" font-size="8" fill="#7A7368">予想</text>
+
+        </svg>
+      </div>
+
+      <div class="tc-body">
+        <p class="tc-prose">本日場後（東京時間18日早朝）にNvidiaがQ3決算を発表。市場コンセンサスEPS $0.80〜$0.82、データセンター向け売上高は前年同期比+105%予想。Blackwellアーキテクチャの供給制約緩和が焦点で、CEO Jensen Huang氏は「需要は供給をはるかに上回っている」と前回会見で言及。東京市場では先行して半導体関連株が上昇、ソシオネクスト+3.2%、東京エレクトロン+2.1%。</p>
+        <div class="card-tyler-view">
+          <div class="ctv-head">Tyler View</div>
+          <p>Nvidia決算はAI投資サイクル全体の「体温計」。ガイダンス上振れなら半導体セクター全体にポジティブサプライズとなる。日本の半導体関連サプライチェーンにも恩恵。</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════════════════
+         W-02  FEATURED  米10月小売売上高
+    ══════════════════════════════════════ -->
+    <article class="topic-card featured">
+      <div class="tc-header">
+        <span class="tc-kicker">W-02 ／ 米国経済 · 2026.11.17</span>
+        <h2 class="tc-title">米10月小売売上高+0.4%・消費の底堅さ確認</h2>
+        <div class="reader-tag">
+          <span class="rt-item">米国消費</span>
+          <span class="rt-item">FRB</span>
+          <span class="rt-item">12月利下げ</span>
+        </div>
+        <div class="focus-badge">▶ FOCUS</div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <div class="tc-stat"><strong>+0.4%</strong> 前月比（予想+0.3%上振れ）</div>
+          <div class="tc-stat"><strong>+0.5%</strong> コア小売（自動車除く）</div>
+          <div class="tc-stat"><strong>+0.6%</strong> ガソリン除くベース</div>
+        </div>
+        <p class="tc-prose">米10月小売売上高は前月比+0.4%（予想+0.3%を上振れ）。自動車除くコア小売は+0.5%。ガソリン価格下落の影響を除いたベースでは+0.6%と堅調。消費者は雇用・賃金環境の改善を背景に旺盛な支出継続。ただしクレジットカード延滞率は+0.3ppと上昇傾向にあり、中低所得層の「疲れ」に注意が必要。FRBの12月利下げ根拠として「過熱でも急冷でもない」ゴルディロックス環境が維持。</p>
+        <div class="card-tyler-view">
+          <div class="ctv-head">Tyler View</div>
+          <p>消費の二極化が進行中。高所得層は株高・資産効果で強いが、中低所得層は実質賃金の伸び鈍化で支出慎重化。12月の判断に影響しない水準。</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════════════════
+         W-03  SMB  英国CPI
+    ══════════════════════════════════════ -->
+    <article class="topic-card smb">
+      <div class="tc-header">
+        <span class="tc-kicker">W-03 ／ 欧州経済 · 2026.11.17</span>
+        <h2 class="tc-title">英国CPI10月+2.3%・BoE利下げ慎重に</h2>
+        <div class="reader-tag">
+          <span class="rt-item">英国経済</span>
+          <span class="rt-item">BoE</span>
+          <span class="rt-item">インフレ</span>
+        </div>
+        <div class="smb-badge">SMB WATCH</div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <div class="tc-stat"><strong>+2.3%</strong> 英CPI前年比（前月+1.7%から加速）</div>
+          <div class="tc-stat"><strong>35%</strong> BoE12月利下げ確率（前日55%→急落）</div>
+        </div>
+        <p class="tc-prose">英国10月CPI前年比+2.3%（前月+1.7%から加速）。エネルギー補助金の剥落が主因で、コアは+3.3%と根強い。これを受けBoEの12月利下げ確率は35%に低下（前日55%から急落）。スターマー政権の予算拡張策も物価上振れリスクとして意識される。英ポンドは対ドルで+0.6%反発。</p>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════════════════
+         W-04  中国鉱工業生産
+    ══════════════════════════════════════ -->
+    <article class="topic-card">
+      <div class="tc-header">
+        <span class="tc-kicker">W-04 ／ 中国経済 · 2026.11.17</span>
+        <h2 class="tc-title">中国・10月鉱工業生産+5.3%・景気刺激の効果浸透</h2>
+        <div class="reader-tag">
+          <span class="rt-item">中国経済</span>
+          <span class="rt-item">製造業</span>
+          <span class="rt-item">対中輸出</span>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <div class="tc-stat"><strong>+5.3%</strong> 鉱工業生産（予想+5.0%上振れ）</div>
+          <div class="tc-stat"><strong>+4.9%</strong> 小売売上高</div>
+          <div class="tc-stat"><strong>−9.3%</strong> 不動産投資（依然低迷）</div>
+        </div>
+        <p class="tc-prose">中国国家統計局発表の10月鉱工業生産は前年比+5.3%（予想+5.0%を上回る）。同小売売上高は+4.9%と消費回復も確認。不動産投資は依然-9.3%と弱いが、EV・太陽光パネル・バッテリーの輸出が牽引役に。日本の対中輸出の正常化に追い風。</p>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════════════════
+         W-05  Bitcoin
+    ══════════════════════════════════════ -->
+    <article class="topic-card">
+      <div class="tc-header">
+        <span class="tc-kicker">W-05 ／ 暗号資産 · 2026.11.17</span>
+        <h2 class="tc-title">Bitcoin・$95,000台で推移・機関投資家ETF流入続く</h2>
+        <div class="reader-tag">
+          <span class="rt-item">Bitcoin</span>
+          <span class="rt-item">ETF</span>
+          <span class="rt-item">機関投資家</span>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <div class="tc-stat"><strong>$95,200</strong> BTC現在値（24h +1.8%）</div>
+          <div class="tc-stat"><strong>$650億+</strong> 米国現物ETF累計流入</div>
+        </div>
+        <p class="tc-prose">Bitcoinは$95,200（24h +1.8%）。米国でのBitcoin現物ETFへの累計流入額が$650億を突破。機関投資家の「代替資産」としての需要が根強い。SEC新体制下での規制明確化期待もポジティブ材料。日本でも現物ETF解禁の議論が浮上しており、暗号資産関連株に注目が集まる。</p>
+      </div>
+    </article>
+
+    <!-- ── Japan section divider ── -->
+    <div class="section-divider-grid">
+      <span class="section-label">JAPAN / 国内ニュース</span>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         J-01  FEATURED  10月貿易統計
+    ══════════════════════════════════════ -->
+    <article class="topic-card featured">
+      <div class="tc-header">
+        <span class="tc-kicker">J-01 ／ 貿易統計 · 2026.11.17</span>
+        <h2 class="tc-title">10月貿易統計★・輸出−1.2%・円高影響が顕在化</h2>
+        <div class="reader-tag">
+          <span class="rt-item">貿易統計</span>
+          <span class="rt-item">円高</span>
+          <span class="rt-item">輸出企業</span>
+        </div>
+        <div class="focus-badge">▶ FOCUS</div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <div class="tc-stat"><strong>−1.2%</strong> 輸出前年比（3ヶ月ぶりマイナス）</div>
+          <div class="tc-stat"><strong>−2.8%</strong> 対米輸出</div>
+          <div class="tc-stat"><strong>+3,850億円</strong> 貿易収支黒字</div>
+        </div>
+        <p class="tc-prose">財務省発表の10月貿易統計では輸出が前年比-1.2%と3ヶ月ぶりのマイナスへ転落。日銀利上げ後の円高（¥127〜130台）が輸出価格競争力に影響。対米輸出が-2.8%、対中輸出は+1.1%で持ちこたえ。輸入は原油安・円高の複合効果で-3.1%と大幅減少。貿易収支は+3,850億円の黒字（予想比+500億円）。</p>
+        <div class="card-tyler-view">
+          <div class="ctv-head">Tyler View</div>
+          <p>円高による輸出減と輸入コスト低下が相殺。自動車メーカーの為替前提（¥130〜135）に対し足元¥130で際どいラインだが、ヘッジで当面は影響軽微。</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════════════════
+         J-02  SMB  半導体関連株急騰
+    ══════════════════════════════════════ -->
+    <article class="topic-card smb">
+      <div class="tc-header">
+        <span class="tc-kicker">J-02 ／ テクノロジー · 2026.11.17</span>
+        <h2 class="tc-title">半導体関連株急騰・Nvidia決算前後の東京市場</h2>
+        <div class="reader-tag">
+          <span class="rt-item">半導体</span>
+          <span class="rt-item">東証</span>
+          <span class="rt-item">AI関連株</span>
+        </div>
+        <div class="smb-badge">SMB WATCH</div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <div class="tc-stat"><strong>+3.5%</strong> アドバンテスト</div>
+          <div class="tc-stat"><strong>+3.2%</strong> ソシオネクスト</div>
+          <div class="tc-stat"><strong>+2.1%</strong> 東京エレクトロン</div>
+          <div class="tc-stat"><strong>+45%</strong> 半導体セクター年初来</div>
+        </div>
+        <p class="tc-prose">Nvidia決算を控え東京市場の半導体関連株が全面高。東京エレクトロン+2.1%、アドバンテスト+3.5%、ソシオネクスト+3.2%、ルネサスエレクトロニクス+1.8%。日経半導体指数は過去最高値を更新。日本のHBMサプライヤーへの受注増期待もあり、2026年の半導体セクターは年初来+45%の高パフォーマンス。</p>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════════════════
+         J-03  日経平均
+    ══════════════════════════════════════ -->
+    <article class="topic-card">
+      <div class="tc-header">
+        <span class="tc-kicker">J-03 ／ 株式市場 · 2026.11.17</span>
+        <h2 class="tc-title">日経平均42,350円・半導体高で続伸</h2>
+        <div class="reader-tag">
+          <span class="rt-item">日経平均</span>
+          <span class="rt-item">東証プライム</span>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <div class="tc-stat"><strong>42,352円</strong> 日経平均（前日比+0.6%）</div>
+          <div class="tc-stat"><strong>4.4兆円</strong> 東証プライム売買代金</div>
+        </div>
+        <p class="tc-prose">日経平均は前日比+0.6%の42,352円。半導体セクターが指数を+180円押し上げ。金融・保険株も日銀議事要旨の「慎重派優勢」を受けて小幅軟化。東証プライム売買代金は4.4兆円と増加。今後の焦点はNvidia決算後（水曜朝）のギャップアップ or ダウン。</p>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════════════════
+         J-04  国内PMI
+    ══════════════════════════════════════ -->
+    <article class="topic-card">
+      <div class="tc-header">
+        <span class="tc-kicker">J-04 ／ 景気指標 · 2026.11.17</span>
+        <h2 class="tc-title">国内PMI11月速報・製造業50.1と辛うじて拡張圏</h2>
+        <div class="reader-tag">
+          <span class="rt-item">PMI</span>
+          <span class="rt-item">製造業</span>
+          <span class="rt-item">景況感</span>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <div class="tc-stat"><strong>50.1</strong> 製造業PMI（前月49.8、3ヶ月ぶり拡張）</div>
+          <div class="tc-stat"><strong>52.4</strong> サービス業PMI（継続拡張）</div>
+          <div class="tc-stat"><strong>56.3</strong> 製造業コスト指数</div>
+        </div>
+        <p class="tc-prose">10月国内PMI速報：製造業50.1（前月49.8から改善、3ヶ月ぶり拡張圏）、サービス業52.4（継続拡張）。製造業は輸出の弱さを国内需要がカバーした格好。受注残は+0.5ptと先行き改善の兆し。賃上げに伴うコストプレッシャーは継続（製造業コスト指数56.3）。</p>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════════════════
+         J-05  暗号資産課税
+    ══════════════════════════════════════ -->
+    <article class="topic-card">
+      <div class="tc-header">
+        <span class="tc-kicker">J-05 ／ 規制・税制 · 2026.11.17</span>
+        <h2 class="tc-title">金融庁・暗号資産課税簡素化へ検討開始</h2>
+        <div class="reader-tag">
+          <span class="rt-item">暗号資産</span>
+          <span class="rt-item">税制改正</span>
+          <span class="rt-item">金融庁</span>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <div class="tc-stat"><strong>最大55%→20%</strong> 総合課税から申告分離課税へ変更検討</div>
+        </div>
+        <p class="tc-prose">金融庁は暗号資産に係る税制について、現行の「総合課税（最大55%）」から「申告分離課税（20%）」への変更を検討するタスクフォースを設置したことを明らかにした。2027年度税制改正への盛り込みを目指す。これを受けて国内取引所株（GMOフィナンシャルHD等）が急騰。</p>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════════════════
+         J-06  WIDE  Nvidia決算詳報予告
+    ══════════════════════════════════════ -->
+    <article class="topic-card wide">
+      <div class="tc-header">
+        <span class="tc-kicker">J-06 ／ 市場展望 · 2026.11.17</span>
+        <h2 class="tc-title">Nvidia決算詳報予告・AI半導体サプライチェーンへの影響</h2>
+        <div class="reader-tag">
+          <span class="rt-item">Nvidia</span>
+          <span class="rt-item">AIサプライチェーン</span>
+          <span class="rt-item">HBM</span>
+          <span class="rt-item">東京エレクトロン</span>
+          <span class="rt-item">明日号プレビュー</span>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="wide-inner">
+          <div>
+            <p class="tc-prose">本日場後のNvidia Q3決算を受け、明日の号でAIサプライチェーンへの影響を詳報予定。注目ポイントは①データセンター向けBlackwell GPU出荷量②Q4ガイダンスの強弱③HBM3E（SK Hynix・マイクロン）需要コメント④日本企業（TEL・東芝・レーザーテック）への言及——の4点。東京市場は今夜のNvidia決算で明日の寄付きが大幅変動する可能性。</p>
+          </div>
+          <div>
+            <div class="card-tyler-view">
+              <div class="ctv-head">Tyler View</div>
+              <p>Nvidiaは単なる1銘柄ではなく、AI投資トレンドの「体温計」。超過達成なら先週来の半導体ラリーが継続し、日本のAI関連株にも火がつく。ミスなら短期調整を想定しておきたい。</p>
+            </div>
+          </div>
+        </div>
+        <div class="analysis-grid">
+          <div>
+            <span class="analysis-label">WATCH POINT 1</span>
+            <div class="analysis-body">Blackwell GPU出荷量：供給制約の緩和度合いが今後の成長率を左右。四半期ごとの推移に注目。</div>
+          </div>
+          <div>
+            <span class="analysis-label">WATCH POINT 2</span>
+            <div class="analysis-body">Q4ガイダンス：コンセンサス$32〜33Bに対し上振れるかが最大の注目点。株価の寄付きを決定する。</div>
+          </div>
+          <div>
+            <span class="analysis-label">WATCH POINT 3</span>
+            <div class="analysis-body">日本サプライチェーン：TEL・アドバンテスト・レーザーテックへの言及があれば東京市場に直接影響。</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </main><!-- /topic-grid -->
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div>
+      <div class="footer-head">About</div>
+      <div class="footer-text">
+        TYLER MORNING BRIEF<br>
+        毎朝発行のビジネスインテリジェンス。世界5本 ＋ 国内6本を<br>
+        多角並列検索 ＋ ファクトチェック済みでお届け。
+      </div>
+    </div>
+    <div>
+      <div class="footer-head">最新号</div>
+      <div class="footer-text">
+        Vol.118 ／ 2026年11月17日<br>
+        Nvidia Q3決算★★★・米小売好調・10月貿易統計
+      </div>
+      <a href="morning-brief-20261117.html" class="footer-cta">→ 最新号を読む</a>
+    </div>
+    <div>
+      <div class="footer-head">バックナンバー</div>
+      <div class="footer-text">
+        <a href="morning-brief-20261116.html" style="color:var(--navy);">Vol.117 ／ 11月16日</a><br>
+        <a href="morning-brief-20261114.html" style="color:var(--navy);">Vol.116 ／ 11月14日</a><br>
+        <a href="morning-brief-20261026.html" style="color:var(--navy);">Vol.115 ／ 10月26日</a>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /page-wrap -->
+</body>
+</html>
