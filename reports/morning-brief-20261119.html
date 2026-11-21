@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TYLER MORNING BRIEF — Vol.120 / 2026年11月19日</title>
+<style>
+/* ── Design tokens ── */
+:root {
+  --ink: #0B1F35;
+  --paper: #F8F5EF;
+  --gold: #C0870B;
+  --navy: #1E3A5F;
+  --jade: #1A7A5E;
+  --sky: #1A5F8A;
+  --positive: #1A7A5E;
+  --negative: #B85C00;
+  --rule: #DDD8CE;
+  --muted: #EAE6DE;
+  --caption: #7A7368;
+  --f-serif: Georgia, "Times New Roman", "Hiragino Mincho ProN", "MS Mincho", serif;
+  --f-sans: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", system-ui, sans-serif;
+  --f-display: "Playfair Display", Georgia, serif;
+  --header-bg: linear-gradient(135deg, #EBE8E2 0%, #D8D3CB 100%);
+  --header-bg-featured: linear-gradient(135deg, #E2ECF4 0%, #D0E2EF 100%);
+  --header-bg-smb: linear-gradient(135deg, #F4ECD8 0%, #ECDBC0 100%);
+  --chart-bg: #EAE6DE;
+  --chart-axis: #DDD8CE;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #E2DDCF;
+    --paper: #0D1A27;
+    --gold: #D4A435;
+    --navy: #7BAED0;
+    --jade: #38A87A;
+    --sky: #5B99C0;
+    --positive: #38A87A;
+    --negative: #E08240;
+    --rule: #263547;
+    --muted: #152030;
+    --caption: #8B9BAA;
+    --header-bg: linear-gradient(135deg, #172232 0%, #1C2C40 100%);
+    --header-bg-featured: linear-gradient(135deg, #162537 0%, #1C3248 100%);
+    --header-bg-smb: linear-gradient(135deg, #26200E 0%, #322A12 100%);
+    --chart-bg: #152030;
+    --chart-axis: #263547;
+  }
+}
+
+:root[data-theme="dark"] {
+  --ink: #E2DDCF;
+  --paper: #0D1A27;
+  --gold: #D4A435;
+  --navy: #7BAED0;
+  --jade: #38A87A;
+  --sky: #5B99C0;
+  --positive: #38A87A;
+  --negative: #E08240;
+  --rule: #263547;
+  --muted: #152030;
+  --caption: #8B9BAA;
+  --header-bg: linear-gradient(135deg, #172232 0%, #1C2C40 100%);
+  --header-bg-featured: linear-gradient(135deg, #162537 0%, #1C3248 100%);
+  --header-bg-smb: linear-gradient(135deg, #26200E 0%, #322A12 100%);
+  --chart-bg: #152030;
+  --chart-axis: #263547;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-sans);
+  font-size: 14px;
+  line-height: 1.65;
+  padding-inline: 16px;
+  padding-block: env(safe-area-inset-top, 0px) env(safe-area-inset-bottom, 0px);
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; }
+
+/* ── Wrapper ── */
+.wrap { max-width: 864px; margin: 0 auto; }
+
+/* ── Masthead ── */
+.masthead {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: .6rem;
+  border-top: 3px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding-block: .78rem;
+  margin-block: 1.25rem .65rem;
+}
+
+.mast-side {
+  font-size: .57rem;
+  color: var(--caption);
+  letter-spacing: .02em;
+  line-height: 1.5;
+}
+
+.mast-side:last-child { text-align: right; }
+
+.mast-center { text-align: center; }
+
+.mast-brand {
+  font-family: var(--f-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: var(--ink);
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.mast-sub {
+  font-size: .53rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--caption);
+  margin-top: .2rem;
+}
+
+/* ── Vol-meta ── */
+.vol-meta {
+  margin-bottom: 1.2rem;
+  padding: .5rem .78rem;
+  background: var(--muted);
+  border-left: 2px solid var(--gold);
+}
+
+/* ── TYLER VIEW (top) ── */
+.tyler-view {
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding-block: .85rem .92rem;
+  margin-bottom: 1.5rem;
+}
+
+.tv-head {
+  font-size: .57rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  color: var(--ink);
+  margin-bottom: .42rem;
+}
+
+.tv-body {
+  font-size: .82rem;
+  line-height: 1.78;
+  color: var(--ink);
+}
+
+/* ── Section divider ── */
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin-block: 1.65rem 1.05rem;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+.section-label {
+  font-size: .57rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--caption);
+  white-space: nowrap;
+}
+
+/* ── Topic grid ── */
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+}
+
+/* ── Topic card base ── */
+.topic-card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  box-shadow: 0 2px 8px rgba(11,31,53,.07);
+  display: flex;
+  flex-direction: column;
+}
+
+.topic-card.lead,
+.topic-card.wide {
+  grid-column: 1 / -1;
+}
+
+/* ── Featured card ── */
+.topic-card.featured { border-top: 3px solid var(--sky); }
+.topic-card.featured .tc-header { background: var(--header-bg-featured); }
+
+/* ── SMB card ── */
+.topic-card.smb { border-top: 3px solid var(--gold); }
+.topic-card.smb .tc-header { background: var(--header-bg-smb); }
+
+/* ── tc-header ── */
+.tc-header {
+  background: var(--header-bg);
+  padding: .72rem .92rem .64rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.tc-kicker {
+  display: block;
+  font-size: .63rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: .18rem;
+}
+
+.tc-title {
+  font-size: 1.06rem;
+  font-family: var(--f-serif);
+  font-weight: 700;
+  line-height: 1.38;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.topic-card.lead .tc-title { font-size: 1.26rem; }
+
+/* ── Reader tag ── */
+.reader-tag {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .22rem;
+  margin-top: .34rem;
+}
+
+.rt-item {
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: .1rem .38rem;
+  background: rgba(30,58,95,.07);
+  border: 1px solid rgba(30,58,95,.14);
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+/* ── Zoku badge ── */
+.zoku-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .28rem;
+  background: rgba(26,122,94,.08);
+  border: 1px solid rgba(26,122,94,.22);
+  color: var(--jade);
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: .1rem .42rem;
+  margin-top: .28rem;
+  text-decoration: none;
+}
+
+.zoku-badge:hover { background: rgba(26,122,94,.16); }
+
+/* ── SMB badge ── */
+.smb-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(192,135,11,.1);
+  border: 1px solid rgba(192,135,11,.28);
+  color: var(--gold);
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: .1rem .42rem;
+  margin-top: .28rem;
+}
+
+/* ── Focus badge ── */
+.focus-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  background: var(--sky);
+  color: #fff;
+  font-size: .54rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  padding: .18rem .52rem;
+  margin-top: .35rem;
+}
+
+/* ── Lead visual (SVG wrapper) ── */
+.lead-visual {
+  width: 100%;
+  border-bottom: 1px solid var(--rule);
+  background: var(--chart-bg);
+  overflow: hidden;
+}
+
+.lead-visual svg { width: 100%; display: block; }
+
+/* ── tc-body ── */
+.tc-body {
+  padding: .82rem .92rem;
+  display: flex;
+  flex-direction: column;
+  gap: .68rem;
+  flex: 1;
+}
+
+/* ── Stat row ── */
+.tc-stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .85rem;
+}
+
+.tc-stat { font-size: .72rem; }
+.tc-stat strong { font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* ── Prose ── */
+.tc-prose {
+  font-size: .82rem;
+  line-height: 1.76;
+  color: var(--ink);
+}
+
+/* ── Inline card TYLER VIEW ── */
+.card-tyler-view {
+  background: rgba(11,31,53,.04);
+  border-left: 2px solid var(--ink);
+  padding: .5rem .68rem;
+}
+
+.ctv-head {
+  font-size: .52rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--caption);
+  margin-bottom: .2rem;
+}
+
+.card-tyler-view p {
+  font-size: .72rem;
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+/* ── Analysis grid ── */
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .72rem;
+  border-top: 1px solid var(--rule);
+  padding-top: .68rem;
+}
+
+.analysis-label {
+  display: block;
+  font-size: .61rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: .05em;
+  margin-bottom: .2rem;
+}
+
+.analysis-body {
+  font-size: .72rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+/* ── Wide card internals ── */
+.wide-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+/* ── Change table ── */
+.table-scroll { overflow-x: auto; }
+
+.change-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .72rem;
+  min-width: 300px;
+}
+
+.change-table th {
+  font-size: .59rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-align: left;
+  color: var(--caption);
+  border-bottom: 1px solid var(--rule);
+  padding: .32rem .52rem;
+}
+
+.change-table td {
+  padding: .36rem .52rem;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  line-height: 1.45;
+  vertical-align: top;
+}
+
+.change-table tr:last-child td { border-bottom: none; }
+
+.urgency-tag {
+  display: inline-block;
+  font-size: .5rem;
+  font-weight: 700;
+  padding: .06rem .35rem;
+  background: rgba(184,92,0,.1);
+  color: var(--negative);
+  border: 1px solid rgba(184,92,0,.22);
+}
+
+/* ── Countdown chips ── */
+.countdown-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin-bottom: .45rem;
+}
+
+.cd-chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: .42rem .88rem;
+  border: 1px solid var(--rule);
+  background: var(--muted);
+  min-width: 100px;
+}
+
+.cd-chip.urgent { border-color: var(--negative); background: rgba(184,92,0,.06); }
+
+.cd-num {
+  font-size: 1.45rem;
+  font-weight: 700;
+  font-family: var(--f-serif);
+  font-variant-numeric: tabular-nums;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.cd-chip.urgent .cd-num { color: var(--negative); }
+
+.cd-label {
+  font-size: .51rem;
+  color: var(--caption);
+  margin-top: .1rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ── Action list ── */
+.action-col-head {
+  font-size: .59rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--caption);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: .32rem;
+  margin-bottom: .52rem;
+}
+
+.action-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+.action-list li {
+  font-size: .76rem;
+  line-height: 1.52;
+  padding-left: 1.1rem;
+  position: relative;
+  color: var(--ink);
+}
+
+.action-list li::before {
+  content: attr(data-mark);
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: var(--jade);
+}
+
+/* ── Theme archive ── */
+.theme-archive {
+  border-top: 1px solid var(--rule);
+  margin-top: 2.1rem;
+  padding-top: 1rem;
+  margin-bottom: .5rem;
+}
+
+.theme-archive-head {
+  font-size: .59rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--caption);
+  margin-bottom: .52rem;
+}
+
+.theme-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .38rem;
+}
+
+.theme-chip {
+  font-size: .63rem;
+  font-weight: 700;
+  padding: .22rem .68rem;
+  background: var(--muted);
+  border: 1px solid var(--rule);
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.theme-chip:hover { background: var(--ink); color: var(--paper); }
+
+/* ── Footer ── */
+.footer {
+  border-top: 2px solid var(--ink);
+  margin-top: 2.5rem;
+  padding: 1.25rem 0 .9rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.1rem;
+}
+
+.footer-head {
+  font-size: .59rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: .44rem;
+}
+
+.footer-body {
+  font-size: .68rem;
+  line-height: 1.65;
+  color: var(--caption);
+}
+
+.footer-body a { color: var(--navy); text-decoration: underline; text-decoration-thickness: 1px; }
+.footer-body a:hover { color: var(--ink); }
+
+.footer-cta {
+  display: inline-block;
+  padding: .32rem .9rem;
+  background: var(--navy);
+  color: #F8F5EF;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  margin-top: .5rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .masthead { grid-template-columns: 1fr; text-align: center; }
+  .mast-side:last-child { text-align: center; }
+  .topic-grid { grid-template-columns: 1fr; }
+  .analysis-grid { grid-template-columns: 1fr; }
+  .wide-inner { grid-template-columns: 1fr; }
+  .footer { grid-template-columns: 1fr; }
+  .mast-brand { font-size: 1.15rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 1. Masthead -->
+  <div class="masthead">
+    <div class="mast-side">
+      VOL. 120<br>
+      2026.11.19 木曜日
+    </div>
+    <div class="mast-center">
+      <div class="mast-brand">TYLER</div>
+      <div class="mast-sub">Morning Brief</div>
+    </div>
+    <div class="mast-side">
+      AI-CURATED<br>
+      BUSINESS INTELLIGENCE
+    </div>
+  </div>
+
+  <!-- 2. Vol-meta -->
+  <div class="vol-meta">
+    <span style="font-size:.72rem;font-weight:700;">Vol.120 ／ 2026年11月19日（木曜日）</span>
+    <span style="font-size:.68rem;color:var(--caption);margin-left:.8rem;">米雇用ゴルディロックス★ · G20開幕 · 経団連春闘+5%以上</span>
+  </div>
+
+  <!-- 3. TYLER VIEW (top) -->
+  <div class="tyler-view">
+    <div class="tv-head">◈ TYLER VIEW — 今号の編集視点</div>
+    <p class="tv-body">雇用のソフトランディングが確認される中、G20が自由貿易の帰趨を問う。国内では経団連の賃上げ継続方針と国債残高1,100兆円突破による財政拡張が並走し、円高リスクと内需復調が同時進行する。各指標が示す「冷えすぎず・熱すぎず」の均衡は、Fed利下げサイクルと日銀の賃金・物価の好循環を同時成立させる稀有な条件だ。</p>
+  </div>
+
+  <!-- 4. World section -->
+  <div class="section-divider"><span class="section-label">World</span></div>
+
+  <div class="topic-grid">
+
+    <!-- W-01 LEAD -->
+    <div class="topic-card lead">
+      <div class="tc-header">
+        <span class="tc-kicker">W-01 ／ LEAD ／ 米国経済 ／ 2026.11.19</span>
+        <h2 class="tc-title">米新規失業保険申請件数・22.3万件 — ゴルディロックス水準を維持、Fed12月利下げシナリオを支持</h2>
+        <div class="reader-tag">
+          <span class="rt-item">株式・金融投資家</span>
+          <span class="rt-item">外貨建て資産保有者</span>
+          <span class="rt-item">輸出企業経営者</span>
+        </div>
+        <a href="../morning-brief-20261118.html" class="zoku-badge">📎 Vol.119 続報：Fed利下げサイクル</a>
+      </div>
+      <div class="lead-visual">
+        <svg viewBox="0 0 760 195" xmlns="http://www.w3.org/2000/svg" aria-label="米新規失業保険申請件数の週次推移（過去8週）">
+          <!-- Y-axis grid lines -->
+          <line x1="55" y1="15" x2="745" y2="15" stroke="#DDD8CE" stroke-width="1"/>
+          <line x1="55" y1="52" x2="745" y2="52" stroke="#DDD8CE" stroke-width="1" stroke-dasharray="4,3"/>
+          <line x1="55" y1="90" x2="745" y2="90" stroke="#DDD8CE" stroke-width="1" stroke-dasharray="4,3"/>
+          <line x1="55" y1="127" x2="745" y2="127" stroke="#DDD8CE" stroke-width="1" stroke-dasharray="4,3"/>
+          <line x1="55" y1="165" x2="745" y2="165" stroke="#DDD8CE" stroke-width="1.5"/>
+          <!-- Y-axis labels -->
+          <text x="50" y="19" font-size="9" font-family="Georgia,serif" text-anchor="end" fill="#7A7368">24.0</text>
+          <text x="50" y="56" font-size="9" font-family="Georgia,serif" text-anchor="end" fill="#7A7368">23.5</text>
+          <text x="50" y="94" font-size="9" font-family="Georgia,serif" text-anchor="end" fill="#7A7368">23.0</text>
+          <text x="50" y="131" font-size="9" font-family="Georgia,serif" text-anchor="end" fill="#7A7368">22.5</text>
+          <text x="50" y="169" font-size="9" font-family="Georgia,serif" text-anchor="end" fill="#7A7368">22.0</text>
+          <text x="50" y="9" font-size="8" font-family="Georgia,serif" text-anchor="end" fill="#7A7368">万件</text>
+          <!-- X axis baseline -->
+          <line x1="55" y1="165" x2="745" y2="165" stroke="#DDD8CE" stroke-width="1.5"/>
+          <!-- Bars: 8 slots, slot width=86.25, bar width=50, offset=18.125 -->
+          <!-- Y: chart top=15, bottom=165, height=150. scale=(val-22.0)/2.0*150 -->
+          <!-- i=0: 9/27, 23.5 → scale=112.5, bar_y=52.5≈53, h=112 -->
+          <rect x="73" y="53" width="50" height="112" fill="#8FA8C0"/>
+          <text x="98" y="49" font-size="9" font-family="Georgia,serif" text-anchor="middle" fill="#7A7368">23.5</text>
+          <!-- i=1: 10/4, 22.8 → scale=60, bar_y=105, h=60 -->
+          <rect x="159" y="105" width="50" height="60" fill="#8FA8C0"/>
+          <text x="184" y="101" font-size="9" font-family="Georgia,serif" text-anchor="middle" fill="#7A7368">22.8</text>
+          <!-- i=2: 10/11, 23.1 → scale=82.5, bar_y=82.5≈83, h=82 -->
+          <rect x="246" y="83" width="50" height="82" fill="#8FA8C0"/>
+          <text x="271" y="79" font-size="9" font-family="Georgia,serif" text-anchor="middle" fill="#7A7368">23.1</text>
+          <!-- i=3: 10/18, 22.9 → scale=67.5, bar_y=97.5≈98, h=67 -->
+          <rect x="332" y="98" width="50" height="67" fill="#8FA8C0"/>
+          <text x="357" y="94" font-size="9" font-family="Georgia,serif" text-anchor="middle" fill="#7A7368">22.9</text>
+          <!-- i=4: 10/25, 22.6 → scale=45, bar_y=120, h=45 -->
+          <rect x="418" y="120" width="50" height="45" fill="#8FA8C0"/>
+          <text x="443" y="116" font-size="9" font-family="Georgia,serif" text-anchor="middle" fill="#7A7368">22.6</text>
+          <!-- i=5: 11/1, 23.0 → scale=75, bar_y=90, h=75 -->
+          <rect x="504" y="90" width="50" height="75" fill="#8FA8C0"/>
+          <text x="529" y="86" font-size="9" font-family="Georgia,serif" text-anchor="middle" fill="#7A7368">23.0</text>
+          <!-- i=6: 11/8, 22.5 → scale=37.5, bar_y=127.5≈128, h=37 -->
+          <rect x="591" y="128" width="50" height="37" fill="#8FA8C0"/>
+          <text x="616" y="124" font-size="9" font-family="Georgia,serif" text-anchor="middle" fill="#7A7368">22.5</text>
+          <!-- i=7: 11/14, 22.3 → scale=22.5, bar_y=142.5≈143, h=22 — GOLD highlight -->
+          <rect x="677" y="143" width="50" height="22" fill="#C0870B"/>
+          <text x="702" y="138" font-size="9" font-family="Georgia,serif" text-anchor="middle" fill="#C0870B" font-weight="bold">22.3</text>
+          <!-- X-axis date labels -->
+          <text x="98" y="179" font-size="9" font-family="Georgia,serif" text-anchor="middle" fill="#7A7368">9/27</text>
+          <text x="184" y="179" font-size="9" font-family="Georgia,serif" text-anchor="middle" fill="#7A7368">10/4</text>
+          <text x="271" y="179" font-size="9" font-family="Georgia,serif" text-anchor="middle" fill="#7A7368">10/11</text>
+          <text x="357" y="179" font-size="9" font-family="Georgia,serif" text-anchor="middle" fill="#7A7368">10/18</text>
+          <text x="443" y="179" font-size="9" font-family="Georgia,serif" text-anchor="middle" fill="#7A7368">10/25</text>
+          <text x="529" y="179" font-size="9" font-family="Georgia,serif" text-anchor="middle" fill="#7A7368">11/1</text>
+          <text x="616" y="179" font-size="9" font-family="Georgia,serif" text-anchor="middle" fill="#7A7368">11/8</text>
+          <text x="702" y="179" font-size="9" font-family="Georgia,serif" text-anchor="middle" fill="#C0870B" font-weight="bold">11/14</text>
+          <!-- Chart subtitle -->
+          <text x="400" y="192" font-size="8" font-family="Georgia,serif" text-anchor="middle" fill="#7A7368">週次・新規失業保険申請件数（万件）／ 直近値: 22.3万件（予想22.0・前週22.5）</text>
+        </svg>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <span class="tc-stat">申請件数 <strong>22.3万件</strong></span>
+          <span class="tc-stat">予想 <strong>22.0万件</strong></span>
+          <span class="tc-stat">前週 <strong>22.5万件</strong></span>
+          <span class="tc-stat">4週平均 <strong>22.8万件</strong></span>
+          <span class="tc-stat">継続受給者 <strong>182万人</strong></span>
+          <span class="tc-stat">12月利下げ確率 <strong>72%</strong></span>
+          <span class="tc-stat">フィラデルフィア指数 <strong>+16.2</strong></span>
+        </div>
+        <p class="tc-prose">先週の米新規失業保険申請件数は22.3万件（予想22.0万件、前週22.5万件から改善）。4週間平均は22.8万件と「緩やかな軟化」が継続。継続受給者数は182万人と前週から横ばい。雇用市場は「冷えすぎず・熱すぎず」の<strong>ゴルディロックス水準</strong>を維持。12月FOMCでの25bp利下げシナリオ（市場確率72%）を支持する内容。フィラデルフィア連銀製造業指数11月は<strong>+16.2</strong>と予想+8.0を大幅上振れ（前月-5.5から急改善）で製造業の底入れも確認。</p>
+        <div class="analysis-grid">
+          <div>
+            <span class="analysis-label">なぜ今？</span>
+            <p class="analysis-body">3会合連続の利下げ判断が問われる局面。雇用悪化なしで利下げを続けられるかが焦点で、今週のデータはその根拠を提供した。</p>
+          </div>
+          <div>
+            <span class="analysis-label">💹 市場への影響</span>
+            <p class="analysis-body">12月25bp利下げ確率72%を維持。ゴルディロックス環境が続くうちは株式・クレジット双方にとってフォローウィンド。フィラデルフィア急改善で設備投資関連株に追加の注目が集まる。</p>
+          </div>
+          <div>
+            <span class="analysis-label">⚠️ 利下げ反転リスク</span>
+            <p class="analysis-body">製造業急改善がCPI再加速につながるリスク。来週のPCEデフレーター（予想+2.4%）で上振れした場合、12月スキップへのシナリオ転換に注意。</p>
+          </div>
+        </div>
+        <div class="card-tyler-view">
+          <div class="ctv-head">◈ TYLER VIEW</div>
+          <p>雇用のソフトランディングシナリオが続いており、Fed12月利下げの根拠として十分。フィラデルフィア指数の急改善は製造業復活の兆し — 設備投資関連に注目。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- W-02 FEATURED -->
+    <div class="topic-card featured">
+      <div class="tc-header">
+        <span class="tc-kicker">W-02 ／ 国際政治 ／ 2026.11.19</span>
+        <h2 class="tc-title">G20サミット開幕（リオ）— 貿易・AI規制・気候変動が焦点</h2>
+        <div class="reader-tag">
+          <span class="rt-item">グローバル調達担当</span>
+          <span class="rt-item">貿易・輸出入関連企業</span>
+          <span class="rt-item">DX・AI導入担当者</span>
+        </div>
+        <span class="focus-badge">◆ 今日の注目</span>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <span class="tc-stat">開催地 <strong>リオデジャネイロ</strong></span>
+          <span class="tc-stat">会期 <strong>11/19〜20</strong></span>
+          <span class="tc-stat">二国間会談 <strong>石破首相×トランプ大統領</strong></span>
+        </div>
+        <p class="tc-prose">リオデジャネイロで主要20カ国・地域（G20）首脳会議が開幕（〜11/20）。主要議題は①自由貿易・保護主義への対抗 ②AI・デジタル規制の国際枠組み ③気候変動・クリーンエネルギー移行 ④途上国債務問題。日本の石破首相は貿易自由化の維持とAI安全性ガバナンスの国際ルール形成を提唱。トランプ米大統領との二国間会談も予定。</p>
+        <div class="card-tyler-view">
+          <div class="ctv-head">◈ TYLER VIEW</div>
+          <p>G20宣言文の「保護主義」への言及強度が今後の貿易摩擦リスクの先行指標。宣言が弱ければ関税リスク再燃サインとして警戒。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- W-03 SMB -->
+    <div class="topic-card smb">
+      <div class="tc-header">
+        <span class="tc-kicker">W-03 ／ 賃金・労働 ／ 2026.11.19</span>
+        <h2 class="tc-title">経団連・春闘2027年目標を「+5%以上」に設定 — 3年連続高水準</h2>
+        <div class="reader-tag">
+          <span class="rt-item">中小企業経営者</span>
+          <span class="rt-item">採用・人事担当者</span>
+          <span class="rt-item">価格改定を検討中の事業者</span>
+        </div>
+        <span class="smb-badge">◎ 中小企業</span>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <span class="tc-stat">経団連目標 <strong>+5%以上</strong></span>
+          <span class="tc-stat">うちベア <strong>+3%以上</strong></span>
+          <span class="tc-stat">連合要求予定 <strong>+6%以上</strong></span>
+          <span class="tc-stat">妥結見通し <strong>+5〜5.5%</strong></span>
+        </div>
+        <p class="tc-prose">経団連は2027年春闘に向けた経営側の基本スタンスとして「ベア+3%以上を含む総額+5%以上の賃上げを目指す」方針を発表。3年連続で高水準の賃上げ目標を維持。背景には物価上昇への対応と人材確保競争の激化がある。連合は「+6%以上」を要求する見通しで、妥結水準は+5〜5.5%程度と予想される。<strong>日銀の賃金・物価の好循環判断を後押し。</strong></p>
+      </div>
+    </div>
+
+    <!-- W-04 STANDARD -->
+    <div class="topic-card">
+      <div class="tc-header">
+        <span class="tc-kicker">W-04 ／ 欧州経済 ／ 2026.11.19</span>
+        <h2 class="tc-title">欧州株・ドイツ政情混乱継続で上値重い</h2>
+        <div class="reader-tag">
+          <span class="rt-item">欧州ビジネス関連企業</span>
+          <span class="rt-item">株式・為替投資家</span>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <span class="tc-stat">EUROSTOXX <strong>▼-0.3%</strong></span>
+          <span class="tc-stat">DAX <strong>3日連続下落</strong></span>
+          <span class="tc-stat">CAC40 <strong>+0.4%</strong></span>
+          <span class="tc-stat">ユーロ圏CPI確報 <strong>+2.3%</strong></span>
+        </div>
+        <p class="tc-prose">EUROSTOXXは-0.3%。ドイツDAXはショルツ首相の早期選挙表明後3日連続下落。対照的にフランスCAC40は+0.4%と底堅い。欧州全体のGDPへの影響は軽微との見方が多いが、ECBの12月利下げに対してはドイツ財政規律強化期待が逆に「タカ派」圧力となる見方も。ユーロ圏CPI確報（+2.3%）はほぼ予想通り。</p>
+      </div>
+    </div>
+
+    <!-- W-05 STANDARD -->
+    <div class="topic-card">
+      <div class="tc-header">
+        <span class="tc-kicker">W-05 ／ エネルギー ／ 2026.11.19</span>
+        <h2 class="tc-title">LNG調達・冬季需要で価格3ヶ月ぶり高値</h2>
+        <div class="reader-tag">
+          <span class="rt-item">製造・調達担当者</span>
+          <span class="rt-item">電力コスト管理担当</span>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <span class="tc-stat">アジアLNGスポット <strong>$13.8/MMBtu</strong></span>
+          <span class="tc-stat">3ヶ月ぶり高値</span>
+        </div>
+        <p class="tc-prose">アジアのLNG（液化天然ガス）スポット価格はMMBtu $13.8と3ヶ月ぶり高値。冬季暖房需要と欧州の在庫補充が重なり需給タイト化。日本の電力大手・ガス会社は多くを長期契約でカバーしており直撃は限定的だが、来年の価格交渉に影響。再生可能エネルギーの不安定性を補う火力発電需要で<strong>中部電力・JERA株に注目。</strong></p>
+      </div>
+    </div>
+
+  </div><!-- /world topic-grid -->
+
+  <!-- 6. Japan section -->
+  <div class="section-divider"><span class="section-label">Japan</span></div>
+
+  <div class="topic-grid">
+
+    <!-- J-01 FEATURED -->
+    <div class="topic-card featured">
+      <div class="tc-header">
+        <span class="tc-kicker">J-01 ／ マクロ経済 ／ 2026.11.19</span>
+        <h2 class="tc-title">11月月例経済報告 — 「内需緩やか回復」据え置き、輸出に下方リスク注記</h2>
+        <div class="reader-tag">
+          <span class="rt-item">設備投資・経営計画担当</span>
+          <span class="rt-item">輸出関連企業</span>
+          <span class="rt-item">マクロ経済関心の経営者</span>
+        </div>
+        <span class="focus-badge">◆ 今日の注目</span>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <span class="tc-stat">景気基調判断 <strong>緩やかに回復</strong></span>
+          <span class="tc-stat">個人消費 <strong>持ち直しの動き</strong></span>
+          <span class="tc-stat">設備投資 <strong>上方修正</strong></span>
+          <span class="tc-stat">コアCPI（食品・エネ除く） <strong>+2%台</strong></span>
+        </div>
+        <p class="tc-prose">内閣府の11月月例経済報告では景気の基調判断を「緩やかに回復している」で据え置き。個人消費は「持ち直しの動き」、設備投資は「増加傾向」に上方修正。一方で輸出は「円高の影響を注視が必要」として下方リスクに追記。物価については「食料・エネルギー除くコアCPIは安定的に+2%台で推移」と評価。<strong>政府の景気認識はおおむね日銀と整合的。</strong></p>
+        <div class="card-tyler-view">
+          <div class="ctv-head">◈ TYLER VIEW</div>
+          <p>月例報告の「輸出に下方リスク注記」は円高ヘッジの重要性を示唆。ただし内需の底堅さが確認されており、景気は上昇基調の維持が基本線。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- J-02 SMB -->
+    <div class="topic-card smb">
+      <div class="tc-header">
+        <span class="tc-kicker">J-02 ／ 財政 ／ 2026.11.19</span>
+        <h2 class="tc-title">財務省・国債残高1,100兆円突破 — 利払い費拡大加速、長期金利最高水準</h2>
+        <div class="reader-tag">
+          <span class="rt-item">変動金利借入中の事業者</span>
+          <span class="rt-item">財務・資金調達担当</span>
+          <span class="rt-item">長期金利に敏感な経営者</span>
+        </div>
+        <span class="smb-badge">◎ 中小企業</span>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <span class="tc-stat">国債残高 <strong>1,100兆円突破</strong></span>
+          <span class="tc-stat">利払い費（2027年度） <strong>11.5兆円</strong></span>
+          <span class="tc-stat">前年度比 <strong>▼+2.0兆円</strong></span>
+          <span class="tc-stat">10年国債利回り <strong>1.1%</strong></span>
+        </div>
+        <p class="tc-prose">財務省の発表で普通国債残高が1,100兆円を突破。日銀利上げに伴い国債利払い費は2027年度に11.5兆円（前年度比+2.0兆円）に拡大する見通し。GDPの約2%に相当する利払い負担が財政の「構造問題」として顕在化。補正予算の審議でも財政健全化の議論が不可避に。<strong>長期金利（10年国債利回り）は1.1%と年初来最高水準。</strong></p>
+      </div>
+    </div>
+
+    <!-- J-03 STANDARD -->
+    <div class="topic-card">
+      <div class="tc-header">
+        <span class="tc-kicker">J-03 ／ 株式市場 ／ 2026.11.19</span>
+        <h2 class="tc-title">日経平均42,500円台・円安・G20期待でじり高</h2>
+        <div class="reader-tag">
+          <span class="rt-item">株式投資家</span>
+          <span class="rt-item">輸出関連企業</span>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <span class="tc-stat">日経平均 <strong>42,543円</strong></span>
+          <span class="tc-stat">前日比 <strong>+0.4%</strong></span>
+          <span class="tc-stat">ドル円 <strong>¥132台</strong></span>
+        </div>
+        <p class="tc-prose">日経平均は+0.4%の42,543円。円安（¥132台）が輸出関連株を押し上げ、G20での自由貿易確認への期待もプラス。半導体関連は前日の急騰後に利食い売りが入り小幅軟化。内需株（小売・サービス）は賃上げ継続の確認で買い。来週（11/24週）は米感謝祭で薄商いが予想される。</p>
+      </div>
+    </div>
+
+    <!-- J-04 STANDARD -->
+    <div class="topic-card">
+      <div class="tc-header">
+        <span class="tc-kicker">J-04 ／ エネルギー・電力 ／ 2026.11.19</span>
+        <h2 class="tc-title">秋冬エネルギー需要・LNG・電力コストの見通し</h2>
+        <div class="reader-tag">
+          <span class="rt-item">製造・調達担当者</span>
+          <span class="rt-item">電力コスト管理担当</span>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <span class="tc-stat">冬季予備率 <strong>3〜5%</strong></span>
+          <span class="tc-stat">発電コスト前冬比 <strong>+5〜8%</strong></span>
+          <span class="tc-stat">企業向け電気料金再値上げ <strong>来年4月以降</strong></span>
+        </div>
+        <p class="tc-prose">電力各社は冬季の電力需給について「予備率3〜5%と安定供給圏内」との見通しを示した。LNG価格上昇で発電コストは上昇圧力があるが、太陽光・洋上風力の増設効果でトータルでは前冬比コスト+5〜8%程度と試算。企業向け電気料金の再値上げは来年4月以降に先送りの見方。</p>
+      </div>
+    </div>
+
+    <!-- J-05 STANDARD -->
+    <div class="topic-card">
+      <div class="tc-header">
+        <span class="tc-kicker">J-05 ／ 株式・テック ／ 2026.11.19</span>
+        <h2 class="tc-title">東証グロース市場・AI関連新興株が全面高</h2>
+        <div class="reader-tag">
+          <span class="rt-item">株式投資家</span>
+          <span class="rt-item">AI・テック関連企業</span>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-stat-row">
+          <span class="tc-stat">グロース250指数 年初来 <strong>+32%</strong></span>
+          <span class="tc-stat">プレイド <strong>+8.2%</strong></span>
+          <span class="tc-stat">データロボット <strong>+6.5%</strong></span>
+          <span class="tc-stat">セキュアサイクル <strong>+5.9%</strong></span>
+        </div>
+        <p class="tc-prose">Nvidia急騰を受けて東証グロース市場ではAI・クラウド関連の新興株が全面高。生成AIサービスのプレイド+8.2%、AIデータ基盤のデータロボット+6.5%、AIセキュリティのセキュアサイクル+5.9%など。グロース250指数は年初来+32%と主要指数で最高パフォーマンス。個人投資家の資金流入が加速。</p>
+      </div>
+    </div>
+
+    <!-- J-06 WIDE -->
+    <div class="topic-card wide">
+      <div class="tc-header">
+        <span class="tc-kicker">J-06 ／ 来週の注目 ／ 2026.11.19</span>
+        <h2 class="tc-title">来週の注目・G20宣言・PCEデフレーター・補正予算委採決</h2>
+        <div class="reader-tag">
+          <span class="rt-item">投資家全般</span>
+          <span class="rt-item">経営計画担当者</span>
+          <span class="rt-item">財務・資金調達担当</span>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="wide-inner">
+          <div>
+            <div class="action-col-head">来週（11/24〜28）主要イベント</div>
+            <div class="countdown-row">
+              <div class="cd-chip">
+                <span class="cd-num">5</span>
+                <span class="cd-label">日後 ／ 月曜<br>11/24 G20宣言</span>
+              </div>
+              <div class="cd-chip urgent">
+                <span class="cd-num">7</span>
+                <span class="cd-label">日後 ／ 水曜<br>11/26 米PCE</span>
+              </div>
+              <div class="cd-chip">
+                <span class="cd-num">8</span>
+                <span class="cd-label">日後 ／ 木曜<br>11/27 感謝祭</span>
+              </div>
+            </div>
+            <div class="table-scroll">
+              <table class="change-table">
+                <thead>
+                  <tr>
+                    <th>日付</th>
+                    <th>イベント</th>
+                    <th>注目ポイント</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>11/24（月）</td>
+                    <td>G20宣言採択後<br>市場反応</td>
+                    <td>自由貿易 vs 保護主義の表現を確認</td>
+                  </tr>
+                  <tr>
+                    <td>11/26（水）</td>
+                    <td>米PCEデフレーター10月<br><span class="urgency-tag">要注目</span></td>
+                    <td>予想+2.4%。上振れで12月スキップ懸念</td>
+                  </tr>
+                  <tr>
+                    <td>11/26〜27</td>
+                    <td>国内補正予算<br>委員会採決</td>
+                    <td>財政健全化論議の行方を注視</td>
+                  </tr>
+                  <tr>
+                    <td>11/27（木）</td>
+                    <td>米感謝祭<br>市場短縮取引</td>
+                    <td>東京市場の流動性低下に注意</td>
+                  </tr>
+                  <tr>
+                    <td>11/28（金）</td>
+                    <td>ブラックフライデー<br>米小売動向</td>
+                    <td>消費堅調→景気センチメント確認</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div>
+            <div class="action-col-head">来週のシナリオ分析</div>
+            <ul class="action-list">
+              <li data-mark="▲">PCE予想通り（+2.4%）：12月25bp利下げ確実視。株式・クレジット共に堅調維持。</li>
+              <li data-mark="⚠">PCE上振れ（+2.6%以上）：12月スキップシナリオ台頭。金利上昇・グロース株売りに警戒。</li>
+              <li data-mark="▲">G20宣言が自由貿易を明記：日経平均・輸出関連株の追加上昇シナリオ。</li>
+              <li data-mark="⚠">G20宣言が保護主義容認：関税リスク再燃。円高・輸出株売りに転じる可能性。</li>
+              <li data-mark="▲">補正予算成立：内需株（小売・建設）にプラス。経済対策規模が市場評価のカギ。</li>
+            </ul>
+            <div style="margin-top:.9rem;">
+              <div class="card-tyler-view">
+                <div class="ctv-head">◈ TYLER VIEW</div>
+                <p>感謝祭週は閑散期だが、PCEデフレーターの数字次第で12月FOMCへの確信度が変わる重要指標。G20宣言文の「保護主義vs自由貿易」の表現を注視。薄商いの中で価格変動が増幅される可能性があるため、ポジション管理を意識したい週。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /japan topic-grid -->
+
+  <!-- 8. Theme archive -->
+  <div class="theme-archive">
+    <div class="theme-archive-head">今号のキーテーマ — バックナンバーで深掘りする</div>
+    <div class="theme-chips">
+      <a href="../index.html?theme=employment" class="theme-chip">米雇用・ゴルディロックス</a>
+      <a href="../index.html?theme=fed" class="theme-chip">Fed利下げサイクル</a>
+      <a href="../index.html?theme=g20" class="theme-chip">G20・自由貿易</a>
+      <a href="../index.html?theme=wage" class="theme-chip">春闘・賃上げ</a>
+      <a href="../index.html?theme=energy" class="theme-chip">LNG・エネルギー</a>
+      <a href="../index.html?theme=fiscal" class="theme-chip">国債・財政問題</a>
+    </div>
+  </div>
+
+  <!-- 9. Footer -->
+  <div class="footer">
+    <div>
+      <div class="footer-head">About Tyler</div>
+      <p class="footer-body">AI主導の経営情報サービス。国内外の重要ニュースを毎朝キュレーションし、経営判断に直結するインサイトをお届けします。CEO・TYLERが編集方針を統括。</p>
+    </div>
+    <div>
+      <div class="footer-head">今号</div>
+      <p class="footer-body">
+        Vol.120 ／ 2026年11月19日<br>
+        米雇用ゴルディロックス★ · G20開幕 · 経団連春闘+5%以上
+      </p>
+      <a href="morning-brief-20261119.html" class="footer-cta">今号を読む →</a>
+    </div>
+    <div>
+      <div class="footer-head">バックナンバー</div>
+      <p class="footer-body">
+        <a href="morning-brief-20261118.html">Vol.119 ／ 11月18日</a><br>
+        <a href="morning-brief-20261117.html">Vol.118 ／ 11月17日</a><br>
+        <a href="morning-brief-20261116.html">Vol.117 ／ 11月16日</a>
+      </p>
+    </div>
+  </div>
+
+</div><!-- /wrap -->
+
+<script>
+document.querySelectorAll('.tc-stat strong').forEach(function(el) {
+  var t = el.textContent.trim();
+  if (/^[▲▼]/.test(t) || /^-/.test(t)) { el.style.color = '#B85C00'; }
+  else if (/^\+/.test(t)) { el.style.color = '#1A7A5E'; }
+});
+</script>
+</body>
+</html>
